@@ -1,0 +1,38 @@
+.stack {
+  display: flex;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm {
+  gap: var(--gap-sm);
+}
+
+.gap-md {
+  gap: var(--gap-md);
+}
+
+.gap-lg {
+  gap: var(--gap-lg);
+}
+
+.gap-xl {
+  gap: var(--gap-xl);
+}
+
+.gap-xxl {
+  gap: var(--gap-xxl);
+}

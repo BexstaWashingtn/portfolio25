@@ -1,0 +1,41 @@
+/* Headline Highlights */
+.highlight-peach {
+  color: rgb(var(--peach));
+}
+.highlight-peach-300 {
+  color: rgb(var(--peach-300));
+}
+
+:root {
+  /* Section Pedding */
+
+  /* Border-Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Buttons */
+  --btn-padding: 0.5rem 2rem;
+  --btn-radius: var(--radius-lg);
+  --btn-font-weight: 600;
+
+  /* Spacing */
+  --gap-xs: 0.5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 4rem;
+  --gap-xl: 8rem;
+  --gap-xxl: 16rem;
+
+  /* Shadows */
+  --shadow-sm: 0 0 4px rgba(var(--black), 0.6);
+  --shadow-md: 0 0 8px rgba(var(--black), 0.6);
+  --shadow-inset-sm: inset 0 0 4px rgba(var(--black), 0.6);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-default: 0.2s ease;
+
+  /* Input visibility Focusring */
+  --focus-ring: 2px solid rgb(var(--peach-300));
+}

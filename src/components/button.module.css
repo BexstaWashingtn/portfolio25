@@ -1,0 +1,19 @@
+.button {
+  border-radius: var(--btn-radius);
+  border: 2px solid rgb(var(--peach));
+  padding: var(--btn-padding);
+  background: rgba(var(--beige), 0.15);
+  color: rgb(var(--beige));
+  font-size: 1rem;
+  font-weight: var(--btn-font-weight);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+  align-self: flex-start;
+
+  &:hover {
+    background: rgb(var(--peach));
+    color: rgb(240, 228, 217);
+    border-color: rgb(var(--beige));
+    box-shadow: var(--shadow-inset-sm);
+  }
+}
