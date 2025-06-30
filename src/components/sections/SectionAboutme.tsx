@@ -5,7 +5,7 @@ import styles from "./aboutme.module.css";
 
 import Image from "next/image";
 
-export default function aboutme({}) {
+export default function SectionAboutme({}) {
   return (
     <section className={styles.about}>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>

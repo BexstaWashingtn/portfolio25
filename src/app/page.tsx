@@ -18,12 +18,14 @@ import { RiInstagramFill } from "react-icons/ri";
 import { SrOnly } from "@/components/a11y";
 import SectionHeader from "@/components/sections/SectionHeader";
 import SectionHero from "@/components/sections/SectionHero";
+import SectionAboutme from "@/components/sections/SectionAboutme";
 
 export default function Home() {
   return (
     <>
       <SectionHeader />
       <SectionHero />
+      <SectionAboutme />
 
       <main className={styles.main}>
         <section className={styles.projects}>
