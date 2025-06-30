@@ -3,8 +3,7 @@ import Stack from "../Stack";
 import ProjectsCardSlider from "../ProjectsCardSlider";
 import styles from "./SectionProjects.module.css";
 
-type Props = {};
-export default function SectionProjects({}: Props) {
+export default function SectionProjects() {
   return (
     <section className={styles.projects}>
       <div className={styles.projectsBackground}>

@@ -88,10 +88,10 @@ export default function SectionMusic() {
                     />
                   </div>
                   <h3 className={styles.musicFooterListItemHeadline}>
-                    Intsurmente
+                    Instrumente
                   </h3>
                   <p className={styles.musicFooterListItemText}>
-                    Überblick der analogen Musikinstrumente.
+                    Überblick der verwendeten Musikinstrumente.
                   </p>
                   <div className={styles.musicFooterListItemButtonCon}>
                     <Button>mehr erfahren</Button>
