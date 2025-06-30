@@ -49,3 +49,82 @@ section.about {
     }
   }
 }
+
+main.aboutMain {
+  .aboutMainInner {
+    max-width: 600px;
+    margin: 0 auto;
+    .aboutList {
+      list-style: none;
+      padding-left: 0;
+      .aboutListItem {
+        display: flex;
+        gap: 2rem;
+        .timeLine {
+          display: flex;
+          justify-content: center;
+          .timeLineContainer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .timeLineDot {
+              background: rgb(var(--peach-300));
+              border-radius: 50%;
+              width: 1rem;
+              height: 1rem;
+            }
+            .timeLineLineFirst {
+              width: 4px;
+              height: 50%;
+              background: rgb(var(--peach-300));
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+            .timeLineLine {
+              width: 4px;
+              height: 100%;
+              background: rgb(var(--peach-300));
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+            .timeLineLineLast {
+              width: 4px;
+              height: 75%;
+              background: rgb(var(--peach-300));
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+          .timeLineLineYear {
+            rotate: 90deg;
+            font-family: var(--font-inter);
+            font-size: 0.85rem;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            align-self: center;
+          }
+        }
+        .timeLineText {
+          display: flex;
+          gap: 0.5rem;
+          flex-direction: column;
+          .timeLineTextHeadline {
+            margin: 0;
+            padding: 0;
+          }
+          .timeLineTextContent {
+            margin: 0;
+            padding-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

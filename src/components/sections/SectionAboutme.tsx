@@ -35,7 +35,7 @@ export default function SectionAboutme({}) {
               <Button>weiter lesen</Button>
             </div>
           </header>
-          {/*}
+          {/*
           <main className={styles.aboutMain}>
             <div className={styles.aboutMainInner}>
               <ul className={styles.aboutList}>
@@ -111,7 +111,7 @@ export default function SectionAboutme({}) {
               </ul>
             </div>
           </main>
-          {*/}
+          */}
         </Stack>
       </Inner>
     </section>

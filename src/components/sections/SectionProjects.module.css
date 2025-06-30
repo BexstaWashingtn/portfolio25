@@ -1,0 +1,35 @@
+section.projects {
+  background-image: url("../../../public/img/background/projetcs_bckgrnd.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .projectsBackground {
+    background: radial-gradient(
+      circle at 25% -25%,
+      rgba(53, 33, 27, 0.8) 0%,
+      rgba(var(--black), 1) 100%
+    );
+    backdrop-filter: blur(16px);
+
+    .projectsHeader {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @media (max-width: 768px) {
+        max-width: 550px;
+      }
+
+      .projectsHeadline {
+        padding: 0;
+      }
+      .projectsText {
+        margin: 0;
+        column-width: 300px;
+      }
+    }
+    .projectsMain {
+    }
+  }
+}

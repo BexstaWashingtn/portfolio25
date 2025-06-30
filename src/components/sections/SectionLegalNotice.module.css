@@ -1,0 +1,32 @@
+.footerText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footerTextCopyright {
+    margin-block: 0;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    .footerTextContentLink {
+    }
+  }
+  .footerTextNavigation {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    .footerTextContentLink {
+      font-size: 1rem;
+    }
+  }
+}
