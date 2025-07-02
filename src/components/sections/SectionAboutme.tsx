@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function SectionAboutme({}) {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
         <Stack gap='lg'>
           <header className={styles.aboutHeader}>

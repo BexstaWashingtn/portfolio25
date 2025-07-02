@@ -12,7 +12,9 @@ import SectionLegalNotice from "@/components/sections/SectionLegalNotice";
 export default function Home() {
   return (
     <>
-      <SectionHeader />
+      <header className={styles.header}>
+        <SectionHeader />
+      </header>
 
       <main className={styles.main}>
         <SectionHero />

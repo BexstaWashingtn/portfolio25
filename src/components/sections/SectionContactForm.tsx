@@ -15,7 +15,7 @@ import styles from "./SectionContactForm.module.css";
 
 export default function SectionContactForm() {
   return (
-    <section className={styles.contact}>
+    <section className={styles.contact} id='contact'>
       <div className={styles.contactBackground}>
         <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
           <Stack gap='lg'>

@@ -5,8 +5,8 @@ import styles from "./SectionProjects.module.css";
 
 export default function SectionProjects() {
   return (
-    <section className={styles.projects}>
-      <div className={styles.projectsBackground}>
+    <section className={styles.projects} id='projects'>
+      <div className={styles.background}>
         <Inner variant='narrow' paddingTop='xxl'>
           <Stack gap='lg'>
             <header className={styles.projectsHeader}>

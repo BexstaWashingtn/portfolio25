@@ -6,14 +6,14 @@ import styles from "./SectionMusic.module.css";
 
 export default function SectionMusic() {
   return (
-    <section className={styles.music}>
+    <section className={styles.music} id='music'>
       <div className={styles.musicBackground}>
         <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
           <Stack gap='lg'>
             <header className={styles.musicHeader}>
               <div className={styles.musicHeaderText}>
                 <h2 className={styles.musicHeadline}>
-                  Musik <span className='highlight-peach'>Projekte</span>
+                  Ich & <span className='highlight-peach'>Musik</span>
                 </h2>
                 <p className={styles.musicText}>
                   Lorem ipsum dolor sit amet consectetur. Aliquam porttitor
@@ -28,7 +28,7 @@ export default function SectionMusic() {
               <div className={styles.musicHeaderImageCon}>
                 <Image
                   src='/img/music_header_image.jpg'
-                  alt='Foto einer Klaviertastatur'
+                  alt='Foto einer Klaviatur'
                   width={286}
                   height={382}
                   priority

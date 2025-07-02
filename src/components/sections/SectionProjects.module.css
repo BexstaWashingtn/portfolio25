@@ -4,7 +4,7 @@ section.projects {
   background-position: center;
   background-repeat: no-repeat;
 
-  .projectsBackground {
+  .background {
     background: radial-gradient(
       circle at 25% -25%,
       rgba(53, 33, 27, 0.8) 0%,
