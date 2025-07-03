@@ -26,11 +26,18 @@ export default function SectionAboutme({}) {
                 Über <span className='highlight-peach'>mich</span>
               </h2>
               <p className={styles.aboutText}>
-                Fullstack-Entwickler mit Fokus auf sauberen Code und
+                {/*Fullstack-Entwickler mit Fokus auf sauberen Code und
                 nutzerzentrierte Lösungen. Frontend und Backend aus einer Hand –
                 durchdacht, wartbar, effizient. Erfahrung in Webdesign, UX und
                 responsiven Anwendungen. Verbindet technisches Know-how mit
-                gestalterischem Verständnis.
+                gestalterischem Verständnis.*/}
+                Hi, ich bin Thomas, 43 Jahre alt aus Brandenburg. Schon früh
+                entdeckte ich meine Leidenschaft für Gestaltung – vom Zeichnen
+                über Graffiti bis hin zur digitalen Medienwelt. Seit meiner
+                Ausbildung zum Mediengestalter (2001) entwickle ich digitale
+                Produkte – heute vor allem moderne Webanwendungen mit React und
+                Next.js. Design trifft bei mir auf Technik – mit Kreativität,
+                Neugier und einem Sinn für saubere Umsetzung.
               </p>
               <Button>weiter lesen</Button>
             </div>

@@ -8,6 +8,7 @@ import SectionProjects from "@/components/sections/SectionProjects";
 import SectionMusic from "@/components/sections/SectionMusic";
 import SectionContactForm from "@/components/sections/SectionContactForm";
 import SectionLegalNotice from "@/components/sections/SectionLegalNotice";
+import BackToTopButton from "@/components/BackToTopButton";
 
 export default function Home() {
   return (
@@ -21,9 +22,10 @@ export default function Home() {
         <SectionAboutme />
         <SectionProjects />
         <SectionMusic />
+        <SectionContactForm />
+        <BackToTopButton />
       </main>
       <footer className={styles.footer}>
-        <SectionContactForm />
         <SectionLegalNotice />
       </footer>
     </>

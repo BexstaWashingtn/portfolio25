@@ -3,7 +3,7 @@ import styles from "./sectionHero.module.css";
 
 export default function SectionHero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id='hero'>
       <div className={styles.heroInner}>
         <div className={styles.heroImageCon}>
           <Image

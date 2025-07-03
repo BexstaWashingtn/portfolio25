@@ -1,0 +1,43 @@
+.backToTopSection {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 1000;
+
+  @media (max-width: 1024px) {
+    right: 10px;
+  }
+  @media (max-width: 480px) {
+    padding-inline: 1rem;
+  }
+
+  .backToTopButton {
+    display: flex;
+    background: transparent;
+    color: rgb(var(--ruby-900));
+    font-size: 2.5rem;
+    font-weight: var(--btn-font-weight);
+    align-self: flex-start;
+    box-shadow: var(--shadow-md);
+    margin: 0;
+    padding: 0;
+    border-radius: 100px;
+
+    .icon {
+      transition: color var(--transition-default);
+    }
+  }
+  .backToTopButton:hover .icon {
+    color: rgb(var(--peach-300));
+  }
+  .backToTopButton:focus {
+    outline: none;
+
+    .icon {
+      color: rgb(var(--peach-700));
+    }
+  }
+  .backToTopButton:active .icon {
+    color: rgb(var(--peach-300));
+  }
+}
