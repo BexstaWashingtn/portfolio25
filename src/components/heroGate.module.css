@@ -1,0 +1,12 @@
+header.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+main.main {
+}
+footer.footer {
+  padding-inline: 1rem;
+  background-color: rgb(var(--footer-background));
+}

@@ -7,7 +7,7 @@ export default function SectionHero() {
       <div className={styles.heroInner}>
         <div className={styles.logoImageCon}>
           <Image
-            src='/img/logo_white.svg'
+            src='/img/logo_beige.svg'
             alt='Logo Thomas Badrow'
             width={200}
             height={200}
@@ -17,21 +17,21 @@ export default function SectionHero() {
         </div>
         <div className={styles.heroImageCon}>
           <Image
-            src='/img/background/particel-waves_mono_1440x960.jpg'
+            src='/img/background/particel-waves_mono_1920x1280.jpg'
             alt='Heroe Image - Particel Waves'
-            width={1440}
-            height={960}
+            width={1920}
+            height={1280}
             priority
             className={styles.heroImage}
           />
         </div>
         <div className={styles.heroText}>
           <h1 className={styles.heroHeadline}>
-            „<span className='highlight-peach-300'>Code</span> ist mein{" "}
-            <span className='highlight-peach-300'>Werkzeug</span>
+            „<span className='highlight-peach'>Code</span> ist mein{" "}
+            <span className='highlight-peach'>Werkzeug</span>
             ,<br />
-            <span className='highlight-peach-300'>Gestaltung</span> meine{" "}
-            <span className='highlight-peach-300'>Sprache</span>
+            <span className='highlight-peach'>Gestaltung</span> meine{" "}
+            <span className='highlight-peach'>Sprache</span>
             .“
           </h1>
         </div>

@@ -6,7 +6,11 @@ import styles from "./sectionHeader.module.css";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useState, useEffect } from "react";
 
-export default function SectionHeader() {
+type SectionHeaderProps = {
+  onLogoClick: () => void;
+};
+
+export default function SectionHeader({ onLogoClick }: SectionHeaderProps) {
   // State to manage the mobile menu open/close state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Function to toggle the mobile menu
@@ -64,6 +68,8 @@ export default function SectionHeader() {
               // Close the mobile menu if it is open
               // and reset the active link
               setIsMobileMenuOpen(false);
+
+              onLogoClick();
 
               // Scroll to the top of the page smoothly
               window.scrollTo({

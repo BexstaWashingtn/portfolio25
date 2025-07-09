@@ -19,7 +19,7 @@ section.hero {
     .heroText {
       position: absolute;
       display: inline-block;
-      bottom: 20%;
+      bottom: 40%;
       left: 50%;
       transform: translate(-50%, 50%);
       width: 450px;
@@ -28,9 +28,10 @@ section.hero {
       border-radius: var(--radius-md);
       text-align: center;
 
-      @media (max-width: 480px) {
+      @media (max-width: 540px) {
         width: 350px;
         top: unset;
+        bottom: 20%;
       }
 
       .heroHeadline {
@@ -41,7 +42,7 @@ section.hero {
           font-size: 2.25rem;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 540px) {
           font-size: 2rem;
         }
 
