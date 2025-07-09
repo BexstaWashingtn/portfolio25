@@ -67,6 +67,13 @@
           &:hover {
             color: rgb(var(--nav-active-link-color));
           }
+          &:focus {
+            color: rgb(var(--nav-focus-link-color));
+            outline: none;
+          }
+        }
+        .active {
+          color: rgb(var(--nav-active-link-color));
         }
       }
     }

@@ -45,6 +45,7 @@
   --active-link-color: var(--beige);
   --nav-link-color: var(--beige);
   --nav-active-link-color: var(--clay-500);
+  --nav-focus-link-color: var(--clay-300);
   --header-background: linear-gradient(
     135deg,
     rgba(var(--black), 1) 0%,

@@ -13,7 +13,7 @@ import BackToTopButton from "@/components/BackToTopButton";
 export default function Home() {
   return (
     <>
-      <header className={styles.header}>
+      <header className={styles.header} id='header'>
         <SectionHeader />
       </header>
 
@@ -25,7 +25,7 @@ export default function Home() {
         <SectionContactForm />
         <BackToTopButton />
       </main>
-      <footer className={styles.footer}>
+      <footer className={styles.footer} id='footer'>
         <SectionLegalNotice />
       </footer>
     </>

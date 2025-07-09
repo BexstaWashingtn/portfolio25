@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Nokora, Inter, Quattrocento_Sans } from "next/font/google";
+import "./globals.css";
 import "../styles/styles.css";
 
 const oswald = Oswald({

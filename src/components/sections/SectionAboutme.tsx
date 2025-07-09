@@ -38,7 +38,7 @@ export default function SectionAboutme({}) {
                 Next.js. Design trifft bei mir auf Technik – mit Kreativität,
                 Neugier und einem Sinn für saubere Umsetzung.
               </p>
-              <Button>weiter lesen</Button>
+              {/*<Button>weiter lesen</Button>*/}
             </div>
           </header>
         </Stack>
