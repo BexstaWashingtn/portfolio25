@@ -36,10 +36,6 @@ a {
   text-decoration: none;
 }
 
-section {
-  scroll-margin-top: 4, 43rem; /* Adjust based on your header height */
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -13,7 +13,7 @@ import BackToTopButton from "@/components/BackToTopButton";
 export default function Home() {
   return (
     <>
-      <header className={styles.header} id='header'>
+      <header className={styles.header}>
         <SectionHeader />
       </header>
 

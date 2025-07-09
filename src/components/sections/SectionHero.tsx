@@ -5,12 +5,22 @@ export default function SectionHero() {
   return (
     <section className={styles.hero} id='hero'>
       <div className={styles.heroInner}>
+        <div className={styles.logoImageCon}>
+          <Image
+            src='/img/logo_white.svg'
+            alt='Logo Thomas Badrow'
+            width={200}
+            height={200}
+            priority
+            className={styles.logoImage}
+          />
+        </div>
         <div className={styles.heroImageCon}>
           <Image
-            src='/img/background/particel-waves_mono_1440x465.jpg'
+            src='/img/background/particel-waves_mono_1440x960.jpg'
             alt='Heroe Image - Particel Waves'
             width={1440}
-            height={436}
+            height={960}
             priority
             className={styles.heroImage}
           />
