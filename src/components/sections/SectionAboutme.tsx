@@ -1,4 +1,3 @@
-import Button from "../Button";
 import Inner from "../Inner";
 import Stack from "../Stack";
 import styles from "./SectionAboutme.module.css";
