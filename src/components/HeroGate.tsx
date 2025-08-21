@@ -5,7 +5,7 @@ import SectionHeader from "@/components/sections/SectionHeader";
 import SectionHero from "@/components/sections/SectionHero";
 import SectionAboutme from "@/components/sections/SectionAboutme";
 import SectionProjects from "@/components/sections/SectionProjects";
-import SectionMusic from "@/components/sections/SectionMusic";
+//import SectionMusic from "@/components/sections/SectionMusic";
 import SectionContactForm from "@/components/sections/SectionContactForm";
 import SectionLegalNotice from "@/components/sections/SectionLegalNotice";
 import BackToTopButton from "@/components/BackToTopButton";
@@ -70,7 +70,7 @@ export default function HeroGate() {
       {!showFullPage && (
         <motion.div
           key='hero'
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
@@ -97,7 +97,7 @@ export default function HeroGate() {
           <main className={styles.main}>
             <SectionAboutme />
             <SectionProjects />
-            <SectionMusic />
+            {/*<SectionMusic />*/}
             <SectionContactForm />
             <BackToTopButton />
           </main>

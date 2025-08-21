@@ -15,6 +15,7 @@ export default function SectionAboutme({}) {
         <Stack gap='lg'>
           <header className={styles.aboutHeader}>
             <div className={styles.aboutImageCon}>
+              {/*TODO: make actual photo */}
               <Image
                 src='/img/aboutme/tb_smile.png'
                 alt='Foto von Thomas mit einem Lächeln'
