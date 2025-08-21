@@ -11,6 +11,17 @@ export default function SectionMusic() {
         <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
           <Stack gap='lg'>
             <header className={styles.musicHeader}>
+              <div className={styles.musicHeaderImageCon}>
+                <Image
+                  src='/img/music/header.jpg'
+                  alt='Foto einer Klaviatur'
+                  title='Foto einer Klaviatur'
+                  width={286}
+                  height={382}
+                  priority
+                  className={styles.musicHeaderImage}
+                />
+              </div>
               <div className={styles.musicHeaderText}>
                 <h2 className={styles.musicHeadline}>
                   Ich & <span className='highlight-peach'>Musik</span>
@@ -24,16 +35,6 @@ export default function SectionMusic() {
                 <div className={styles.musicHeaderButtonCon}>
                   <Button>mehr erfahren</Button>
                 </div>
-              </div>
-              <div className={styles.musicHeaderImageCon}>
-                <Image
-                  src='/img/music_header_image.jpg'
-                  alt='Foto einer Klaviatur'
-                  width={286}
-                  height={382}
-                  priority
-                  className={styles.musicHeaderImage}
-                />
               </div>
             </header>
             <main className={styles.musicMain}>

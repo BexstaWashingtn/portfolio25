@@ -79,7 +79,7 @@ export default function SectionHeader({ onLogoClick }: SectionHeaderProps) {
             }}
           >
             <img
-              src='img/logo_beige.svg'
+              src='img/logo/logo_beige.svg'
               className={styles.logoImage}
               alt='Logo Thomas Badrow'
             />

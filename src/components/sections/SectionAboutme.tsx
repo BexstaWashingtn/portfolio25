@@ -16,8 +16,9 @@ export default function SectionAboutme({}) {
           <header className={styles.aboutHeader}>
             <div className={styles.aboutImageCon}>
               <Image
-                src='/img/me_gpt_clean-smile.jpg'
+                src='/img/aboutme/tb_smile.png'
                 alt='Foto von Thomas mit einem Lächeln'
+                title='Foto von Thomas mit einem Lächeln'
                 width={286}
                 height={382}
                 priority
@@ -29,15 +30,14 @@ export default function SectionAboutme({}) {
                 Über <span className='highlight-peach'>mich</span>
               </h2>
               <p className={styles.aboutText}>
-                Hi, ich bin Thomas, {age} Jahre alt aus Brandenburg. Schon früh
-                entdeckte ich meine Leidenschaft für Gestaltung – vom Zeichnen
-                über Graffiti bis hin zur digitalen Medienwelt. Seit meiner
-                Ausbildung zum Mediengestalter (2001) entwickle ich digitale
-                Produkte – heute vor allem moderne Webanwendungen mit React und
-                Next.js. Design trifft bei mir auf Technik – mit Kreativität,
-                Neugier und einem Sinn für saubere Umsetzung.
+                Hi, ich bin Thomas, {age} Jahre, aus Brandenburg.
+                <br />
+                Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
+                Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
+                meiner Ausbildung zum Mediengestalter (2001) entwickle ich
+                digitale Produkte – heute vor allem moderne Webanwendungen mit
+                React und Next.js.
               </p>
-              {/*<Button>weiter lesen</Button>*/}
             </div>
           </header>
         </Stack>

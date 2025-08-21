@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Oswald, Nokora, Inter, Quattrocento_Sans } from "next/font/google";
+import { Oswald, Inter, Quattrocento_Sans } from "next/font/google";
 import "./globals.css";
 import "../styles/styles.css";
+
+// TODO: add local fonts - remove google Api Fonts
 
 const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
   weight: ["200", "300", "400", "600", "700"],
-});
-
-const nokora = Nokora({
-  variable: "--font-nokora",
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
 });
 
 const quattrocento = Quattrocento_Sans({
@@ -43,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang='de'>
       <body
-        className={`${oswald.variable} ${nokora.variable} ${inter.variable} ${quattrocento.variable}`}
+        className={`${oswald.variable} ${inter.variable} ${quattrocento.variable}`}
       >
         {children}
       </body>

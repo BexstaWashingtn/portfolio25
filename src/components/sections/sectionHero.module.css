@@ -4,50 +4,56 @@ section.hero {
     overflow: hidden;
     min-height: 100vh;
 
-    .logoImageCon {
+    .logoImageOverlay {
       position: absolute;
       top: 20%;
       left: 50%;
       transform: translateX(-50%);
-      width: 200px;
-      height: 200px;
+      width: auto;
+      height: auto;
       z-index: 0;
       .logoImage {
+        @media (max-width: 540px) {
+          width: 140px;
+          height: auto;
+        }
       }
     }
 
-    .heroText {
+    .heroTextOverlay {
+      display: flex;
+      justify-content: center;
+      width: 100%;
       position: absolute;
-      display: inline-block;
-      bottom: 40%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      width: 450px;
-      padding: 0 1rem;
-      backdrop-filter: blur(30px);
-      border-radius: var(--radius-md);
-      text-align: center;
+      bottom: 20%;
 
-      @media (max-width: 540px) {
-        width: 350px;
-        top: unset;
+      @media (max-width: 1024px) {
         bottom: 20%;
       }
 
-      .heroHeadline {
-        line-height: 1.2;
+      .heroTextInner {
         display: inline-block;
+        width: auto;
+        padding: 0 1rem;
+        backdrop-filter: blur(30px);
+        border-radius: var(--radius-md);
+        text-align: center;
 
-        @media (max-width: 650px) {
-          font-size: 2.25rem;
-        }
+        .heroHeadline {
+          line-height: 1.2;
+          display: inline-block;
 
-        @media (max-width: 540px) {
-          font-size: 2rem;
-        }
+          @media (max-width: 650px) {
+            font-size: 2.25rem;
+          }
 
-        .heroHeadlineHighlighted {
-          color: rgb(var(--hero-headline-highlighted-color));
+          @media (max-width: 540px) {
+            font-size: 2rem;
+          }
+
+          .heroHeadlineHighlighted {
+            color: rgb(var(--hero-headline-highlighted-color));
+          }
         }
       }
     }
@@ -63,11 +69,57 @@ section.hero {
       align-items: center;
       justify-content: center;
       .heroImage {
-        height: 100%;
-
+        width: 100%;
+        height: auto;
         @media (max-width: 1024px) {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+    .lockOverlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .lockText {
+        color: var(--peach-brown);
+        font-size: 1rem;
+        text-align: center;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: var(--radius-md);
+
+        .lockIcon {
+          font-size: 1.5rem;
+          margin-right: 0.5rem;
+          color: var(--peach-brown);
         }
       }
     }
   }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 3s linear infinite;
+  font-size: 2rem; /* optional, für Größe */
 }
