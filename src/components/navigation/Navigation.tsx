@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./Navigation.module.css";
+import styles from "./navigation.module.css";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state

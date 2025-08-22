@@ -1,7 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 import { useState, useEffect } from "react";
 import Logo from "../elements/Logo";
 import Navigation from "../navigation/Navigation";

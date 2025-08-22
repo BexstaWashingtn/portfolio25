@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./Hero.module.css";
+import styles from "./hero.module.css";
 import { ImBlocked, ImSpinner6 } from "react-icons/im";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";

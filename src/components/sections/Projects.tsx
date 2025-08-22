@@ -1,7 +1,7 @@
 import Inner from "../utils/Inner";
 import Stack from "../utils/Stack";
 import ProjectsCardSlider from "../ProjectsCardSlider";
-import styles from "./Projects.module.css";
+import styles from "./projects.module.css";
 
 export default function SectionProjects() {
   return (

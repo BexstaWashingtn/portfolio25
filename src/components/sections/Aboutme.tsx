@@ -1,6 +1,6 @@
 import Inner from "../utils/Inner";
 import Stack from "../utils/Stack";
-import styles from "./Aboutme.module.css";
+import styles from "./aboutme.module.css";
 
 import Image from "next/image";
 

@@ -1,5 +1,5 @@
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import styles from "./MobileButton.module.css";
+import styles from "./mobileButton.module.css";
 
 type Props = {
   handleMenuToggle: () => void; // Function to toggle the mobile menu

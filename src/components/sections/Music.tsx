@@ -2,7 +2,7 @@ import Button from "../elements/Button";
 import Inner from "../utils/Inner";
 import Stack from "../utils/Stack";
 import Image from "next/image";
-import styles from "./Music.module.css";
+import styles from "./music.module.css";
 
 export default function SectionMusic() {
   return (

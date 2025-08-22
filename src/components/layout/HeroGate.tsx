@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import Aboutme from "@/components/sections/Aboutme";
 import Projects from "@/components/sections/Projects";
-//import SectionMusic from "@/components/sections/SectionMusic";
 import ContactForm from "@/components/sections/ContactForm";
 import LegalNotice from "@/components/layout/Footer";
 import BackToTopButton from "@/components/elements/BackToTopButton";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Inner from "../utils/Inner";
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 
 export default function SectionFooter() {
   return (

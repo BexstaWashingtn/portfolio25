@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
-import styles from "./ContactForm.module.css";
+import styles from "./contactForm.module.css";
 
 export default function SectionContactForm() {
   return (
