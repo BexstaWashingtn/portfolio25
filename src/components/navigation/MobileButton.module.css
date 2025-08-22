@@ -1,0 +1,28 @@
+.headerMobileCon {
+  display: none;
+  z-index: 3;
+  position: relative;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .headerMobileMenuBtn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(var(--beige));
+    font-size: 2rem;
+    transition: color var(--transition-default);
+    -webkit-tap-highlight-color: transparent;
+    &:hover {
+      color: rgb(var(--nav-active-link-color));
+    }
+
+    .headerMobileMenuicon {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+}

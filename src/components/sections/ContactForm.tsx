@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Button from "../Button";
-import Inner from "../Inner";
-import Stack from "../Stack";
-import { SrOnly } from "../a11y";
+import Button from "../elements/Button";
+import Inner from "../utils/Inner";
+import Stack from "../utils/Stack";
+import { SrOnly } from "../utils/a11y";
 import {
   FaLinkedinIn,
   FaTelegramPlane,
@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
-import styles from "./SectionContactForm.module.css";
+import styles from "./ContactForm.module.css";
 
 export default function SectionContactForm() {
   return (

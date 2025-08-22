@@ -1,8 +1,9 @@
 import Image from "next/image";
-import styles from "./sectionHero.module.css";
+import styles from "./Hero.module.css";
 import { ImBlocked, ImSpinner6 } from "react-icons/im";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
+import Logo from "../elements/Logo";
 
 export default function SectionHero({
   isCheckingUrlParams,
@@ -17,15 +18,7 @@ export default function SectionHero({
         className={`${styles.heroInner} ${!pageIsLocked ? styles.pointer : ""}`}
       >
         <div className={styles.logoImageOverlay}>
-          <Image
-            src='/img/logo/logo_beige_shadow.png'
-            alt='Logo - eine Person sitzt im Fensterrahmen und schaut in dem Himmel'
-            title='Logo Thomas Badrow'
-            width={180}
-            height={263}
-            priority
-            className={styles.logoImage}
-          />
+          <Logo width={180} height={263} linkDisabled={true} />
         </div>
         <div className={styles.heroImageCon}>
           <Image

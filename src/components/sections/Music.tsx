@@ -1,8 +1,8 @@
-import Button from "../Button";
-import Inner from "../Inner";
-import Stack from "../Stack";
+import Button from "../elements/Button";
+import Inner from "../utils/Inner";
+import Stack from "../utils/Stack";
 import Image from "next/image";
-import styles from "./SectionMusic.module.css";
+import styles from "./Music.module.css";
 
 export default function SectionMusic() {
   return (

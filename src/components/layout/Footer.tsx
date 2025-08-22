@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Inner from "../Inner";
-import styles from "./SectionLegalNotice.module.css";
+import Inner from "../utils/Inner";
+import styles from "./Footer.module.css";
 
-export default function SectionLegalNotice() {
+export default function SectionFooter() {
   return (
     <Inner variant='full' paddingTop='sm' paddingBottom='sm'>
       <div className={styles.footerText}>

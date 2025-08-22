@@ -1,14 +1,14 @@
 "use client";
 import styles from "./heroGate.module.css";
 
-import SectionHeader from "@/components/sections/SectionHeader";
-import SectionHero from "@/components/sections/SectionHero";
-import SectionAboutme from "@/components/sections/SectionAboutme";
-import SectionProjects from "@/components/sections/SectionProjects";
+import Header from "@/components/layout/Header";
+import Hero from "@/components/sections/Hero";
+import Aboutme from "@/components/sections/Aboutme";
+import Projects from "@/components/sections/Projects";
 //import SectionMusic from "@/components/sections/SectionMusic";
-import SectionContactForm from "@/components/sections/SectionContactForm";
-import SectionLegalNotice from "@/components/sections/SectionLegalNotice";
-import BackToTopButton from "@/components/BackToTopButton";
+import ContactForm from "@/components/sections/ContactForm";
+import LegalNotice from "@/components/layout/Footer";
+import BackToTopButton from "@/components/elements/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -75,12 +75,15 @@ export default function HeroGate() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <SectionHero
+          <Hero
             isCheckingUrlParams={isCheckingUrlParams}
             pageIsLocked={pageIsLocked}
           />
         </motion.div>
       )}
+
+      {/* TODO: add mouse wheel motion from section to section only for PC and Tablet */}
+      {/* TODO: add section navigation to left site only for PC and Tablet */}
 
       {showFullPage && (
         <motion.div
@@ -90,20 +93,18 @@ export default function HeroGate() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <header className={styles.header}>
-            <SectionHeader onLogoClick={() => setShowFullPage(false)} />
-          </header>
+          <Header onClick={() => setShowFullPage(false)} />
 
           <main className={styles.main}>
-            <SectionAboutme />
-            <SectionProjects />
+            <Aboutme />
+            <Projects />
             {/*<SectionMusic />*/}
-            <SectionContactForm />
+            <ContactForm />
             <BackToTopButton />
           </main>
 
           <footer className={styles.footer}>
-            <SectionLegalNotice />
+            <LegalNotice />
           </footer>
         </motion.div>
       )}

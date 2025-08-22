@@ -9,6 +9,8 @@ type Props = {
   className?: string;
 };
 
+// A simple stack component to align elements in a row or column with a gap.
+
 export default function Stack({
   children,
   gap = "xl",

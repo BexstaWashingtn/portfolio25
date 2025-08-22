@@ -68,18 +68,18 @@
 .pb-lg {
   padding-bottom: 6rem;
   @media (max-width: 768px) {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 }
 .pb-xl {
   padding-bottom: 8rem;
   @media (max-width: 768px) {
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
 }
 .pb-xxl {
   padding-bottom: 16rem;
   @media (max-width: 768px) {
-    padding-bottom: 4rem;
+    padding-bottom: 8rem;
   }
 }
