@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Inter, Quattrocento_Sans } from "next/font/google";
 import "./globals.css";
 import "../styles/styles.css";
+import { Analytics } from "@vercel/analytics/next";
 
 // TODO: add local fonts - remove google Api Fonts
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${oswald.variable} ${inter.variable} ${quattrocento.variable}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
