@@ -43,7 +43,7 @@ export default function RootLayout({
         className={`${oswald.variable} ${inter.variable} ${quattrocento.variable}`}
       >
         {children}
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
     </html>
   );
