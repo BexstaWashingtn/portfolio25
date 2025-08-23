@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./projectsCardSlider.module.css";
-import Button from "./elements/Button";
+import Button from "./ui/Button";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";

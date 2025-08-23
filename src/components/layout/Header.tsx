@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./header.module.css";
 import { useState, useEffect } from "react";
-import Logo from "../elements/Logo";
+import Logo from "../ui/Logo";
 import Navigation from "../navigation/Navigation";
 import MobileButton from "../navigation/MobileButton";
 
@@ -32,7 +32,6 @@ export default function SectionHeader({ onClick }: Props) {
   // It also cleans up the observer when the component unmounts
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
-    console.log("Sections to observe:", sections);
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntries = entries

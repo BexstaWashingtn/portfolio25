@@ -3,6 +3,7 @@ section.hero {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
+    width: 100%;
 
     .logoImageOverlay {
       position: absolute;
@@ -104,10 +105,6 @@ section.hero {
       }
     }
   }
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 @keyframes spin {

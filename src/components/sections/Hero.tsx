@@ -1,22 +1,18 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
-import { ImBlocked, ImSpinner6 } from "react-icons/im";
+import { ImBlocked } from "react-icons/im";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "../elements/Logo";
+import Logo from "../ui/Logo";
 
 export default function SectionHero({
-  isCheckingUrlParams,
-  pageIsLocked,
+  isLocked,
 }: {
-  isCheckingUrlParams?: boolean; // Optional prop to indicate if URL params are being checked
-  pageIsLocked: boolean; // Indicates if the page is locked for unauthorized access
+  isLocked: boolean; // Indicates if the page is locked for unauthorized access
 }) {
   return (
     <section className={styles.hero} id='hero'>
-      <div
-        className={`${styles.heroInner} ${!pageIsLocked ? styles.pointer : ""}`}
-      >
+      <div className={`${styles.heroInner} ${!isLocked ? "pointer" : ""}`}>
         <div className={styles.logoImageOverlay}>
           <Logo width={180} height={263} linkDisabled={true} />
         </div>
@@ -32,7 +28,9 @@ export default function SectionHero({
         </div>
         <div className={styles.heroTextOverlay}>
           <div className={styles.heroTextInner}>
-            <h1 className={styles.heroHeadline}>
+            <h1
+              className={`${styles.heroHeadline} ${!isLocked ? "pointer" : ""}`}
+            >
               „<span className='highlight-peach'>Code</span> ist mein{" "}
               <span className='highlight-peach'>Werkzeug</span>
               ,<br />
@@ -46,19 +44,7 @@ export default function SectionHero({
         <div className={styles.lockOverlay}>
           <div className={styles.lockText}>
             <AnimatePresence mode='wait'>
-              {isCheckingUrlParams && (
-                <motion.div
-                  key='spinner'
-                  initial={{ opacity: 1, scale: 1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.5 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <ImSpinner6 className={styles.spinner} />
-                </motion.div>
-              )}
-
-              {!isCheckingUrlParams && pageIsLocked && (
+              {isLocked && (
                 <motion.div
                   key='locked'
                   initial={{ opacity: 0 }}
@@ -73,7 +59,7 @@ export default function SectionHero({
                 </motion.div>
               )}
 
-              {!isCheckingUrlParams && !pageIsLocked && (
+              {!isLocked && (
                 <motion.div
                   key='arrow'
                   initial={{ opacity: 0, y: -20, scale: 1 }}

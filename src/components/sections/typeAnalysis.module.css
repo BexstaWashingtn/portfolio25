@@ -1,0 +1,9 @@
+section.typeAnalysis {
+  .background {
+    background-color: rgba(0, 0, 0, 0.25);
+
+    .h2 {
+      text-align: center;
+    }
+  }
+}

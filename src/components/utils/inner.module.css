@@ -24,11 +24,12 @@
 }
 
 .wide {
-  max-width: 1600px;
+  max-width: 1440px;
 }
 
 .full {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1440px;
   padding-inline: 0;
 }
 

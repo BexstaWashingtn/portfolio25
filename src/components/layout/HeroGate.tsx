@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "./heroGate.module.css";
 
 import Header from "@/components/layout/Header";
@@ -7,61 +8,50 @@ import Aboutme from "@/components/sections/Aboutme";
 import Projects from "@/components/sections/Projects";
 import ContactForm from "@/components/sections/ContactForm";
 import LegalNotice from "@/components/layout/Footer";
-import BackToTopButton from "@/components/elements/BackToTopButton";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import TypeAnalysis from "../sections/TypeAnalysis";
 
-export default function HeroGate() {
+export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
-  const [pageIsLocked, setPageIsLocked] = useState(true);
-  const [isCheckingUrlParams, setIsCheckingUrlParams] = useState(true);
 
   useEffect(() => {
-    // Check if the URL contains a query parameter for "freeentry"
-    // If it does, set showFullPage to true immediately
-    // This allows users to bypass the hero section if they have a special link
-    const params = new URLSearchParams(window.location.search);
-    const hasFreeEntry = params.has("freeentry");
+    if (!hasFreeEntry && showFullPage) return;
 
-    // If the full page is already shown, no need to add event listeners
-    // This prevents adding multiple event listeners if the component re-renders
-    if (showFullPage) return;
+    const unlock = () => setShowFullPage(true);
 
-    // If the user has a special link with "freeentry", show the full page immediately
-    // Otherwise, set up event listeners to unlock the full page on user interaction
-    if (hasFreeEntry) {
-      setPageIsLocked(false);
-      setIsCheckingUrlParams(false);
+    const timeout = setTimeout(() => {
+      // Add event listeners to unlock the full page on wheel or click
+      // This will allow the user to interact with the page after the initial hero section
+      window.addEventListener("wheel", unlock, { once: true });
+      window.addEventListener("click", unlock, { once: true });
+    }, 100);
 
-      const unlock = () => {
-        setShowFullPage(true);
-      };
+    // Clean up the event listeners when the component unmounts
+    // This ensures that the event listeners are removed to prevent memory leaks
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("wheel", unlock);
+      window.removeEventListener("click", unlock);
+    };
+  }, [hasFreeEntry, showFullPage]);
 
-      // Function to unlock the full page
-      // This function will be called when the user interacts with the page
+  useEffect(() => {
+    if (!showFullPage) return;
 
-      // Set a timeout to delay the unlocking of the full page
-      // This is to ensure that the hero section is displayed for a brief moment before allowing interaction
-      const timeout = setTimeout(() => {
-        // Add event listeners to unlock the full page on wheel or click
-        // This will allow the user to interact with the page after the initial hero section
-        window.addEventListener("wheel", unlock, { once: true });
-        window.addEventListener("click", unlock, { once: true });
-      }, 100);
+    const handleWheel = (e: WheelEvent) => {
+      // If the user scrolls up, hide the full page and show the hero section
+      if (window.scrollY === 0 && e.deltaY < 0) {
+        setShowFullPage(false); // Hide the full page
+      }
+    };
 
-      // Clean up the event listeners when the component unmounts
-      // This ensures that the event listeners are removed to prevent memory leaks
-      return () => {
-        clearTimeout(timeout);
-        window.removeEventListener("wheel", unlock);
-        window.removeEventListener("click", unlock);
-      };
-    } else {
-      console.log("Page is locked, checking URL parameters is ready");
+    window.addEventListener("wheel", handleWheel);
 
-      setPageIsLocked(true);
-      setIsCheckingUrlParams(false);
-    }
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
   }, [showFullPage]);
 
   return (
@@ -74,10 +64,7 @@ export default function HeroGate() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Hero
-            isCheckingUrlParams={isCheckingUrlParams}
-            pageIsLocked={pageIsLocked}
-          />
+          <Hero isLocked={!hasFreeEntry} />
         </motion.div>
       )}
 
@@ -96,6 +83,7 @@ export default function HeroGate() {
 
           <main className={styles.main}>
             <Aboutme />
+            <TypeAnalysis />
             <Projects />
             {/*<SectionMusic />*/}
             <ContactForm />

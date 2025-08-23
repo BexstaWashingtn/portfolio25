@@ -38,10 +38,18 @@ a {
 
 section[id] {
   scroll-margin-top: 4rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.pointer {
+  cursor: pointer;
 }

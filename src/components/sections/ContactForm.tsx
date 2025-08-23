@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "../elements/Button";
+import Button from "../ui/Button";
 import Inner from "../utils/Inner";
 import Stack from "../utils/Stack";
 import { SrOnly } from "../utils/a11y";
