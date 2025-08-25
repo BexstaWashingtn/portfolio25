@@ -1,4 +1,5 @@
 @import "normalize";
+@import "globals/fonts";
 @import "globals/colors";
 @import "globals/typographie";
 @import "globals/tokens";

@@ -1,28 +1,8 @@
 import type { Metadata } from "next";
-import { Oswald, Inter, Quattrocento_Sans } from "next/font/google";
 import "./globals.css";
 import "../styles/styles.css";
 //import { Analytics } from "@vercel/analytics/next";
-
-// TODO: add local fonts - remove google Api Fonts
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700"],
-});
-
-const quattrocento = Quattrocento_Sans({
-  variable: "--font-quattrocento",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-});
+// TODO: is Website ready acivate Analytics
 
 export const metadata: Metadata = {
   title: "Portfolio | Thomas Badrow",
@@ -39,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='de'>
-      <body
-        className={`${oswald.variable} ${inter.variable} ${quattrocento.variable}`}
-      >
+      <body>
         {children}
         {/* <Analytics /> */}
       </body>

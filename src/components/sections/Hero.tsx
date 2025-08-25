@@ -5,6 +5,8 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "../ui/Logo";
 
+// TODO: activate Y-Scrollbar for disabled FullPage Layout jumping
+
 export default function SectionHero({
   isLocked,
 }: {

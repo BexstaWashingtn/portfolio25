@@ -9,6 +9,8 @@ export default function SectionAboutme({}) {
   const currentYear = new Date().getFullYear();
   const age = currentYear - birthYear;
 
+  // TOOO: add background Components for Gradient and Image - as one???
+
   return (
     <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
