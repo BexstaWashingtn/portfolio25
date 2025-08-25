@@ -1,9 +1,9 @@
 section.about {
-  background: radial-gradient(
+  /*   background: radial-gradient(
     circle at 25% 85%,
     rgba(53, 33, 27, 0.8) 0%,
     rgba(var(--black), 1) 100%
-  );
+  ); */
 
   .aboutHeader {
     display: flex;

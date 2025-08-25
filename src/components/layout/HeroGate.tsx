@@ -4,14 +4,15 @@ import styles from "./heroGate.module.css";
 
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
+import { BackgroundWrapper } from "./BackgroundWrapper";
 import Aboutme from "@/components/sections/Aboutme";
+import TypeAnalysis from "../sections/TypeAnalysis";
 import Projects from "@/components/sections/Projects";
 import ContactForm from "@/components/sections/ContactForm";
 import LegalNotice from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import TypeAnalysis from "../sections/TypeAnalysis";
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
@@ -68,7 +69,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
         </motion.div>
       )}
 
-      {/* TODO: add mouse wheel motion from section to section only for PC and Tablet */}
+      {/* TODO: maybe add mouse wheel motion from section to section only for PC and Tablet */}
       {/* TODO: add section navigation to left site only for PC and Tablet */}
 
       {showFullPage && (
@@ -82,8 +83,39 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
           <Header onClick={() => setShowFullPage(false)} />
 
           <main className={styles.main}>
-            <Aboutme />
-            <TypeAnalysis />
+            <BackgroundWrapper
+              image={{
+                src: "/img/aboutme/backgroundImage.jpg",
+                size: "auto",
+                position: "center",
+                repeat: "no-repeat",
+              }}
+              gradient={{
+                type: "circle",
+                startX: "75%",
+                startY: "0%",
+                colorStops: [
+                  {
+                    color: "rgba(113,21,33, 0.75)",
+                    position: "0%",
+                  },
+
+                  {
+                    color: "rgba(0,0,0, 0.75)",
+                    position: "67%",
+                  },
+                  {
+                    color: "rgba(75, 47, 38, 0.75)",
+                    position: "100%",
+                  },
+                ],
+              }}
+              blur={0}
+            >
+              <Aboutme />
+              <TypeAnalysis />
+            </BackgroundWrapper>
+
             <Projects />
             {/*<SectionMusic />*/}
             <ContactForm />

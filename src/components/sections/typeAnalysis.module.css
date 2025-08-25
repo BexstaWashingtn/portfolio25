@@ -1,6 +1,8 @@
 section.typeAnalysis {
   .background {
     background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100vh;
 
     .h2 {
       text-align: center;

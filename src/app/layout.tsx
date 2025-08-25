@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../styles/styles.css";
 //import { Analytics } from "@vercel/analytics/next";
-// TODO: is Website ready acivate Analytics
+// TODO: is Website ready acivate Vercel Analytics
 
 export const metadata: Metadata = {
   title: "Portfolio | Thomas Badrow",
