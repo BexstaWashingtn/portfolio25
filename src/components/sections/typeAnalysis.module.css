@@ -33,6 +33,9 @@ section.typeAnalysis {
           @media (max-width: 768px) {
             align-self: center;
           }
+          @media (max-width: 480px) {
+            padding-block: unset;
+          }
 
           .contraTextListItem,
           .perTextListItem {

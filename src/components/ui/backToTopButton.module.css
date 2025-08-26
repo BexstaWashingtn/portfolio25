@@ -14,7 +14,7 @@
   .backToTopButton {
     display: flex;
     background: transparent;
-    color: rgb(var(--ruby-900));
+    color: rgb(var(--peach-700));
     font-size: 2.5rem;
     font-weight: var(--btn-font-weight);
     align-self: flex-start;
@@ -34,10 +34,10 @@
     outline: none;
 
     .icon {
-      color: rgb(var(--peach-700));
+      color: rgb(var(--peach-300));
     }
   }
   .backToTopButton:active .icon {
-    color: rgb(var(--peach-300));
+    color: rgb(var(--ruby-900));
   }
 }
