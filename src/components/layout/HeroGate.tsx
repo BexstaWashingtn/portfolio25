@@ -6,13 +6,14 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import { BackgroundWrapper } from "./BackgroundWrapper";
 import Aboutme from "@/components/sections/Aboutme";
-import TypeAnalysis from "../sections/TypeAnalysis";
+import TypeAnalysis from "@components//sections/TypeAnalysis";
 import Projects from "@/components/sections/Projects";
 import ContactForm from "@/components/sections/ContactForm";
 import LegalNotice from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import WorkingMethod from "../sections/WorkingMethod";
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
@@ -114,6 +115,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             >
               <Aboutme />
               <TypeAnalysis />
+              <WorkingMethod />
             </BackgroundWrapper>
 
             <Projects />

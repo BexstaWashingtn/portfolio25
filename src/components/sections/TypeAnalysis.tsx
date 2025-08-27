@@ -1,13 +1,13 @@
 import Image from "next/image";
 import styles from "./typeAnalysis.module.css";
-import Inner from "../utils/Inner";
+import Inner from "@components/utils/Inner";
 
 export default function TypeAnalysis() {
   return (
     <section className={styles.typeAnalysis} id='type-analysis'>
       <div className={styles.background}>
         <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
-          <h2 className={styles.h2}>Tyanalyse</h2>
+          <h2 className={styles.h2}>Typanalyse</h2>
 
           <div className={styles.content}>
             <div className={styles.per}>

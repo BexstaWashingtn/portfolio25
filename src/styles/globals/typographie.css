@@ -54,8 +54,10 @@ h2,
   color: rgb(var(--heading-color));
 }
 h3,
-.h3 {
-  font-family: var(--font-inter);
+.h3,
+h4,
+.h4 {
+  font-family: var(--font-oswald);
   color: rgb(var(--heading-secondary-color));
 }
 
@@ -73,6 +75,11 @@ h2,
 
 h3,
 .h3 {
+  font-size: 36px;
+  font-weight: normal;
+}
+h4,
+.h4 {
   font-size: 28px;
   font-weight: normal;
 }
