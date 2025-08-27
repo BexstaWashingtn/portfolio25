@@ -2,6 +2,7 @@ header.header {
   position: fixed;
   width: 100%;
   z-index: 1;
+  box-shadow: var(--shadow-md);
 
   .headerInner {
     padding: 0.5rem 1rem;

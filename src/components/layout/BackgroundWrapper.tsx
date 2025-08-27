@@ -22,8 +22,8 @@ type GradientProps = {
 
 type Props = {
   children: React.ReactNode;
-  image?: ImageProps; // ❗ jetzt optional
-  gradient?: GradientProps; // ❗ jetzt optional
+  image?: ImageProps;
+  gradient?: GradientProps;
   blur?: number;
 };
 
@@ -33,7 +33,6 @@ export const BackgroundWrapper = ({
   image,
   blur = 16,
 }: Props) => {
-  // 👉 Dynamisches Hintergrundbild (wenn vorhanden)
   const backgroundImageStyle = image
     ? {
         backgroundImage: `url("${image.src}")`,
@@ -43,7 +42,6 @@ export const BackgroundWrapper = ({
       }
     : {};
 
-  // 👉 Dynamischer Gradient (wenn vorhanden)
   const gradientCss =
     gradient && gradient.colorStops.length > 0
       ? `radial-gradient(${gradient.type || "circle"} at ${
@@ -53,8 +51,10 @@ export const BackgroundWrapper = ({
           .join(", ")})`
       : undefined;
 
-  return (
-    <div className={styles.backgroundImageWrapper} style={backgroundImageStyle}>
+  let content = <>{children}</>;
+
+  if (gradientCss || blur !== undefined) {
+    content = (
       <div
         className={styles.backgroundGradientWrapper}
         style={{
@@ -67,8 +67,21 @@ export const BackgroundWrapper = ({
             : {}),
         }}
       >
-        {children}
+        {content}
       </div>
-    </div>
-  );
+    );
+
+    if (image) {
+      content = (
+        <div
+          className={styles.backgroundImageWrapper}
+          style={backgroundImageStyle}
+        >
+          {content}
+        </div>
+      );
+    }
+
+    return content;
+  }
 };
