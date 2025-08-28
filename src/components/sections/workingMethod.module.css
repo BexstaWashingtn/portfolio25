@@ -24,3 +24,13 @@
     }
   }
 }
+
+.swiperPagination {
+  display: flex;
+  justify-content: center;
+
+  .swiper-pagination-bullet {
+    background: var(--peach);
+    opacity: 0.5;
+  }
+}
