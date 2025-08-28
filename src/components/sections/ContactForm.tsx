@@ -13,6 +13,8 @@ import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import styles from "./contactForm.module.css";
 
+// TODO: Form sendable machen
+
 export default function SectionContactForm() {
   return (
     <section className={styles.contact} id='contact'>

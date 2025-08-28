@@ -4,7 +4,8 @@ import styles from "./heroGate.module.css";
 
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
-import { BackgroundWrapper } from "./BackgroundWrapper";
+import { BackgroundGradientWrapper } from "./BackgroundGradientWrapper";
+import { BackgroundImageWrapper } from "./BackgroundImageWrapper";
 import Aboutme from "@/components/sections/Aboutme";
 import TypeAnalysis from "@components//sections/TypeAnalysis";
 import Projects from "@/components/sections/Projects";
@@ -84,39 +85,44 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
           <Header onClick={() => setShowFullPage(false)} />
 
           <main className={styles.main}>
-            <BackgroundWrapper
+            <BackgroundImageWrapper
               image={{
                 src: "/img/aboutme/backgroundImage.jpg",
-                size: "auto",
-                position: "center",
-                repeat: "no-repeat",
+                width: 1440,
+                height: 1440,
+                alt: "Neurologische Strukturen mit Knotenpunkten",
+                title: "Neurologische Strukturen mit Knotenpunkten",
+                style: { opacity: 0.1 },
               }}
-              gradient={{
-                type: "circle",
-                startX: "75%",
-                startY: "0%",
-                colorStops: [
-                  {
-                    color: "rgba(113,21,33, 0.75)",
-                    position: "0%",
-                  },
-
-                  {
-                    color: "rgba(0,0,0, 0.75)",
-                    position: "67%",
-                  },
-                  {
-                    color: "rgba(75, 47, 38, 0.75)",
-                    position: "100%",
-                  },
-                ],
-              }}
-              blur={0}
             >
-              <Aboutme />
-              <TypeAnalysis />
-              <WorkingMethod />
-            </BackgroundWrapper>
+              <BackgroundGradientWrapper
+                gradient={{
+                  type: "circle",
+                  startX: "75%",
+                  startY: "0%",
+                  colorStops: [
+                    {
+                      color: "rgba(113,21,33, 0.75)",
+                      position: "0%",
+                    },
+
+                    {
+                      color: "rgba(20,20,20, 0.75)",
+                      position: "67%",
+                    },
+                    {
+                      color: "rgba(75, 47, 38, 0.75)",
+                      position: "100%",
+                    },
+                  ],
+                }}
+                blur={0}
+              >
+                <Aboutme />
+                <TypeAnalysis />
+                <WorkingMethod />
+              </BackgroundGradientWrapper>
+            </BackgroundImageWrapper>
 
             <Projects />
             {/*<SectionMusic />*/}
