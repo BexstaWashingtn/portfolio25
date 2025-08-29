@@ -25,6 +25,10 @@
   }
 }
 
+.swiperTest {
+  padding-bottom: 8rem;
+}
+
 .swiperPagination {
   display: flex;
   justify-content: center;

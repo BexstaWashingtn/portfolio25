@@ -1,26 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import styles from "./WorkingMethod.module.css";
 import Inner from "../utils/Inner";
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkSize = () => setIsMobile(window.innerWidth <= 768);
-    checkSize();
-    window.addEventListener("resize", checkSize);
-    return () => window.removeEventListener("resize", checkSize);
-  }, []);
-
-  return isMobile;
-};
+import { useRef } from "react";
+import useIsMobile from "@hooks/useIsMobile";
 
 export default function WorkingMethod() {
   const isMobile = useIsMobile();
+  const paginationRef = useRef<HTMLDivElement | null>(null);
 
   const items = [
     {
@@ -58,8 +47,8 @@ export default function WorkingMethod() {
               slidesPerGroup={2}
               spaceBetween={16}
               modules={[Pagination]}
-              pagination={{ clickable: true }}
-              className={styles.workMethodList}
+              pagination={{ clickable: true, el: "#test" }}
+              className={`${styles.workMethodList} ${styles.swiperTest}`}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -85,6 +74,11 @@ export default function WorkingMethod() {
                   </li>
                 </SwiperSlide>
               ))}
+              <div
+                id='test'
+                ref={paginationRef}
+                className='swiper-pagination'
+              />
             </Swiper>
           </>
         ) : (
