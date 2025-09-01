@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
-import CustomSwiper from "@/components/ui/CustomSwiper";
+import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import styles from "./WorkingMethod.module.css";
+import "@components/ui/customSwiper/swiper.default.css";
 import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
@@ -44,7 +45,18 @@ export default function WorkingMethod() {
           {isMobile ? (
             // only render Swiper on < 768 phone devices
 
-            <CustomSwiper items={items} />
+            <CustomSwiper
+              items={items}
+              swiperConfig={{
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 16,
+                breakpoints: {
+                  0: { slidesPerView: 1, slidesPerGroup: 1 },
+                  680: { slidesPerView: 2, slidesPerGroup: 2 },
+                },
+              }}
+            />
           ) : (
             // render list on tablet and desktop
             <ul className={styles.workMethodList}>

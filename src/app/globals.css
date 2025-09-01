@@ -68,7 +68,7 @@ li {
   cursor: pointer;
 }
 
-main .swiper-horizontal {
+/* main .swiper-horizontal {
   > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     text-align: center;
@@ -99,3 +99,4 @@ main .swiper-horizontal {
     opacity: 1;
   }
 }
+ */
