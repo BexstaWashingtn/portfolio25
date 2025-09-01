@@ -14,7 +14,7 @@ import LegalNotice from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import WorkingMethod from "../sections/WorkingMethod";
+import WorkingMethod from "../sections/workingMethods/WorkingMethod";
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);

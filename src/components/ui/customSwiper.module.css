@@ -1,0 +1,12 @@
+.defaultSwiper {
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+
+  .defaultSwiperPagination {
+    bottom: 0;
+  }
+}
+
+.workMethodList {
+  position: relative;
+}

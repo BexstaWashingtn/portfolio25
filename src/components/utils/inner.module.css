@@ -1,7 +1,10 @@
 .inner {
   margin-inline: auto;
-  padding-inline: 1rem;
   width: 100%;
+}
+
+.padding-inline {
+  padding-inline: 1rem;
 
   @media (max-width: 1024px) {
     padding-inline: 2rem;

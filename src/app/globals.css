@@ -81,6 +81,7 @@ main .swiper-horizontal {
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
+    position: absolute;
   }
 
   > .swiper-pagination-bullets .swiper-pagination-bullet,
