@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./WorkingMethodItem.module.css";
+import styles from "./workingMethodItem.module.css";
 
 type Props = {
   item: { icon: string; title: string; text: string };
