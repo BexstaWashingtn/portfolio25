@@ -1,6 +1,8 @@
+export type Rating = number;
+
 export type Entry = {
   name: string;
-  level?: 1 | 2 | 3 | 4 | 5;
+  level?: Rating;
 };
 
 export type Subcategory = {

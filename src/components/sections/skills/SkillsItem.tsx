@@ -8,10 +8,10 @@ export default function SkillsItem({ name, level }: Entry) {
   return (
     <li className={styles.item}>
       <span>
-        {!level && listSince}
+        {!level == null && listSince}
         {name}
       </span>
-      {level && <Rating rate={level} />}
+      {level != null ? <Rating rate={level} /> : null}
     </li>
   );
 }

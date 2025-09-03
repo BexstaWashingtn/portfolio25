@@ -1,12 +1,13 @@
 import styles from "./rating.module.css";
+import type { Rating } from "@/types/skills";
 
 type Props = {
-  rate: 1 | 2 | 3 | 4 | 5;
-  max?: number; // optional, falls du später 10 Punkte willst
+  rate: Rating;
+  max?: number;
 };
 
 export default function Rating({ rate, max = 5 }: Props) {
-  // zur Sicherheit clampen
+  if (rate == null) return null;
   const value = Math.max(0, Math.min(rate, max));
 
   return (
@@ -21,7 +22,7 @@ export default function Rating({ rate, max = 5 }: Props) {
           key={i}
           className={`${i < value ? styles.bulletActive : ""} ${styles.bullet}`}
           aria-hidden
-        />
+        ></span>
       ))}
     </div>
   );
