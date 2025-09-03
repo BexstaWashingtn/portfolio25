@@ -6,10 +6,14 @@ type Props = { datas: Category[] };
 
 export default function SkillsList({ datas }: Props) {
   return (
-    <ul className={styles.catList}>
+    <ul className={styles.catList} role='list'>
       {datas.map((category) => {
         return (
-          <li key={category.name} className={styles.catListItem}>
+          <li
+            key={category.name}
+            className={styles.catListItem}
+            role='listitem'
+          >
             <h3>{category.name}</h3>
 
             {/* Root-Abschnitt der Kategorie */}

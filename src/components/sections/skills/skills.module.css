@@ -8,12 +8,5 @@ section.skills {
   }
 
   main.main {
-    .listCats {
-      list-style: none;
-
-      .categoryHeadline {
-        text-transform: capitalize;
-      }
-    }
   }
 }

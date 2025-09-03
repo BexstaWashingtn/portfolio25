@@ -1,3 +1,21 @@
-ul.catsList {
+ul.catList {
   list-style: none;
+  columns: 2;
+  gap: 4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .catListItem {
+    margin-bottom: 2rem;
+  }
+}
+
+.subSection {
+  .h4 {
+  }
+
+  .ItemList {
+    list-style: none;
+  }
 }

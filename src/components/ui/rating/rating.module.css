@@ -1,0 +1,15 @@
+.rating {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 8px;
+
+  .bullet {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: rgba(var(--clay-500), 0.5);
+  }
+  .bulletActive {
+    background-color: rgb(var(--peach));
+  }
+}

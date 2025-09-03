@@ -19,7 +19,11 @@ export default function SkillsSection({
 
   return (
     <Wrapper className={styles.subSection}>
-      {title && <h4 id={id}>{title}</h4>}
+      {title && (
+        <h4 id={id} className={styles.h4}>
+          {title}
+        </h4>
+      )}
       <ul className={styles.ItemList} aria-label={id}>
         <SkillsEntries entries={entries} keyPrefix={keyPrefix} />
       </ul>
