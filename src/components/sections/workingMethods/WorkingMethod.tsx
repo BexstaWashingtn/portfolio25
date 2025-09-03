@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
-import styles from "./WorkingMethod.module.css";
+import styles from "./workingMethod.module.css";
 import "@components/ui/customSwiper/swiper.default.css";
 import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
