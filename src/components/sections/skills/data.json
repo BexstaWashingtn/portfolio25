@@ -23,7 +23,7 @@
         "entries": [
           { "name": "HTML5", "level": 4 },
           { "name": "SCSS/LESS", "level": 3 },
-          { "name": "jQuery Legacy", "level": 2 },
+          { "name": "jQuery Legacy", "level": 3 },
           { "name": "JavaScript (ES6+)", "level": 3 },
           { "name": "React.js", "level": 3 }
         ]
@@ -32,13 +32,13 @@
         "name": "Backend",
         "entries": [
           { "name": "PHP OOP", "level": 2 },
-          { "name": "TypeScript", "level": 2 },
+          { "name": "TypeScript", "level": 3 },
           { "name": "next.js", "level": 2 },
-          { "name": "CSS Modules (next.js)", "level": 3 },
+          { "name": "CSS Modules (next.js)", "level": 4 },
           { "name": "REST API / Fetch / Axios", "level": 3 },
-          { "name": "Prisma Studio", "level": 2 },
+          { "name": "Prisma Studio", "level": 3 },
           { "name": "Node.js", "level": 1 },
-          { "name": "relationale Datenbanken", "level": 2 }
+          { "name": "SQL", "level": 4 }
         ]
       }
     ]
@@ -46,7 +46,7 @@
   {
     "name": "Sprachen",
     "entries": [
-      { "name": "deutsch", "level": 5 },
+      { "name": "deutsch", "level": 4 },
       { "name": "englisch", "level": 3 }
     ]
   },
@@ -54,23 +54,23 @@
     "name": "Grafik",
     "entries": [
       { "name": "Logoentwicklung", "level": 4 },
-      { "name": "Vektor Illustration", "level": 4 },
-      { "name": "UI Design", "level": 4 },
+      { "name": "Vektor Illustration", "level": 3 },
+      { "name": "UI Design", "level": 3 },
       { "name": "Styleguides & Designsysteme", "level": 3 },
       { "name": "Typografie & Layout", "level": 4 },
       { "name": "UX Research & Barrierefreiheit", "level": 3 },
-      { "name": "Contentdesign", "level": 3 },
+      { "name": "Contentdesign", "level": 4 },
       { "name": "Wireframing", "level": 3 }
     ]
   },
   {
     "name": "Software",
     "entries": [
-      { "name": "Adobe Cloud (Ps, Ai, Id)", "level": 5 },
+      { "name": "Adobe Cloud (Ps, Ai, Id)", "level": 4 },
       { "name": "Figma", "level": 4 },
-      { "name": "CMS (WP, Concrete5)", "level": 4 },
-      { "name": "Jira / Confluence", "level": 4 },
-      { "name": "AI-Tools", "level": 3 },
+      { "name": "CMS (WP, Concrete5)", "level": 3 },
+      { "name": "Jira / Confluence", "level": 3 },
+      { "name": "AI-Tools (ChatGPT, Copilot)", "level": 3 },
       { "name": "VS Code", "level": 3 },
       { "name": "Terminal / CLI", "level": 3 },
       { "name": "NPM", "level": 3 },
