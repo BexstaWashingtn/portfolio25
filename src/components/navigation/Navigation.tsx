@@ -41,6 +41,28 @@ export default function Navigation({
         <li className={styles.navListItem}>
           <Link
             className={`${styles.navLink} ${
+              activeSection === "type-analysis" ? styles.active : ""
+            }`}
+            href='#type-analysis'
+            onClick={(e) => handleNavClick(e, "type-analysis")}
+          >
+            Typ Analyse
+          </Link>
+        </li>
+        <li className={styles.navListItem}>
+          <Link
+            className={`${styles.navLink} ${
+              activeSection === "working-method" ? styles.active : ""
+            }`}
+            href='#working-method'
+            onClick={(e) => handleNavClick(e, "working-method")}
+          >
+            Arbeitsweise
+          </Link>
+        </li>
+        <li className={styles.navListItem}>
+          <Link
+            className={`${styles.navLink} ${
               activeSection === "projects" ? styles.active : ""
             }`}
             href='#projects'
@@ -49,7 +71,7 @@ export default function Navigation({
             Projekte
           </Link>
         </li>
-        <li className={styles.navListItem}>
+        {/*         <li className={styles.navListItem}>
           <Link
             className={`${styles.navLink} ${
               activeSection === "music" ? styles.active : ""
@@ -59,7 +81,7 @@ export default function Navigation({
           >
             Musik
           </Link>
-        </li>
+        </li> */}
         <li className={styles.navListItem}>
           <Link
             className={`${styles.navLink} ${

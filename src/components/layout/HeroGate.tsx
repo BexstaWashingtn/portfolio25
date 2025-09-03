@@ -15,6 +15,7 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import WorkingMethod from "../sections/workingMethods/WorkingMethod";
+import Skills from "../sections/skills/Skills";
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
@@ -123,7 +124,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
                 <WorkingMethod />
               </BackgroundGradientWrapper>
             </BackgroundImageWrapper>
-
+            <Skills />
             <Projects />
             {/*<SectionMusic />*/}
             <ContactForm />

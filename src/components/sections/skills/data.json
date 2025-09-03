@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Erfahrungen",
+    "entries": [
+      { "name": "Druckvorstufe", "level": 4 },
+      { "name": "Screen- & UI Design", "level": 4 },
+      { "name": "UX-Research", "level": 3 },
+      { "name": "Konzeption & Informationsarchitektur", "level": 3 },
+      { "name": "Wireframing / Prototyping", "level": 3 },
+      { "name": "Barrierefreie Frontend-Entwicklung", "level": 3 },
+      { "name": "Responsive Design", "level": 3 },
+      { "name": "SEO On- & Offpage", "level": 3 },
+      { "name": "Customer Service", "level": 4 },
+      { "name": "Projektmanagement", "level": 3 }
+    ]
+  },
+  {
+    "name": "Grafik",
+    "entries": [
+      { "name": "Logoentwicklung", "level": 4 },
+      { "name": "Vektor Illustration", "level": 4 },
+      { "name": "UI Design", "level": 4 },
+      { "name": "Styleguides & Designsysteme", "level": 3 },
+      { "name": "Typografie & Layout", "level": 4 },
+      { "name": "UX Research & Barrierefreiheit", "level": 3 },
+      { "name": "Contentdesign", "level": 3 },
+      { "name": "Wireframing", "level": 3 }
+    ]
+  },
+  {
+    "name": "Technologien",
+    "subcategory": [
+      {
+        "name": "Frontend",
+        "entries": [
+          { "name": "HTML5", "level": 3 },
+          { "name": "SCSS/LESS", "level": 3 },
+          { "name": "jQuery Legacy", "level": 2 },
+          { "name": "JavaScript (ES6+)", "level": 3 },
+          { "name": "React.js", "level": 3 }
+        ]
+      },
+      {
+        "name": "Backend",
+        "entries": [
+          { "name": "PHP OOP", "level": 2 },
+          { "name": "TypeScript", "level": 2 },
+          { "name": "next.js", "level": 2 },
+          { "name": "CSS Modules (next.js)", "level": 3 },
+          { "name": "REST API / Fetch / Axios", "level": 3 },
+          { "name": "Prisma Studio", "level": 2 },
+          { "name": "Node.js", "level": 1 },
+          { "name": "relationale Datenbanken", "level": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Software",
+    "entries": [
+      { "name": "Adobe Cloud (Ps, Ai, Id)", "level": 5 },
+      { "name": "Figma", "level": 4 },
+      { "name": "CMS (WP, Concrete5)", "level": 4 },
+      { "name": "Jira / Confluence", "level": 4 },
+      { "name": "AI-Tools", "level": 3 },
+      { "name": "VS Code", "level": 3 },
+      { "name": "Terminal / CLI", "level": 3 },
+      { "name": "NPM", "level": 3 },
+      { "name": "Git/GitHub", "level": 3 },
+      { "name": "Deployment / Hosting", "level": 3 }
+    ],
+    "subcategory": [
+      {
+        "name": "OS",
+        "entries": [
+          { "name": "Windows", "level": 4 },
+          { "name": "macOS", "level": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sprachen",
+    "entries": [
+      { "name": "deutsch", "level": 5 },
+      { "name": "englisch", "level": 3 }
+    ]
+  }
+]

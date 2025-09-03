@@ -58,7 +58,6 @@ h3,
 h4,
 .h4 {
   font-family: var(--font-oswald);
-  color: rgb(var(--heading-secondary-color));
 }
 
 h1,

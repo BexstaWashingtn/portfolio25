@@ -1,0 +1,19 @@
+section.skills {
+  header.header {
+    /*     display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center; */
+  }
+
+  main.main {
+    .listCats {
+      list-style: none;
+
+      .categoryHeadline {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
