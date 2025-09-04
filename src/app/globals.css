@@ -20,6 +20,11 @@ html {
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 html,
 body {
@@ -67,36 +72,3 @@ li {
 .pointer {
   cursor: pointer;
 }
-
-/* main .swiper-horizontal {
-  > .swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal {
-    text-align: center;
-    width: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    border-radius: 50px;
-    border: 2px solid rgb(var(--peach));
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    position: absolute;
-  }
-
-  > .swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet {
-    background: rgba(var(--beige), 0.75);
-    height: 10px;
-    width: 10px;
-  }
-
-  > .swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-    .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: rgba(var(--peach), 1);
-    opacity: 1;
-  }
-}
- */

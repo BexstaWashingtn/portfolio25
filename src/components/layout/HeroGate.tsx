@@ -85,7 +85,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
         >
           <Header onClick={() => setShowFullPage(false)} />
 
-          <main className={styles.main}>
+          <main id='main' className={styles.main}>
             <BackgroundImageWrapper
               image={{
                 src: "/img/aboutme/backgroundImage.jpg",

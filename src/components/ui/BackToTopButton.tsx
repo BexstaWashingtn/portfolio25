@@ -11,9 +11,9 @@ export default function BackToTopButton() {
   // isVisible state determines if the button should be displayed or not.
 
   useEffect(() => {
-    const hero = document.getElementById("hero");
+    const about = document.getElementById("about");
 
-    if (!hero) return;
+    if (!about) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -25,7 +25,7 @@ export default function BackToTopButton() {
       }
     );
 
-    observer.observe(hero);
+    observer.observe(about);
 
     return () => observer.disconnect();
   }, []);
@@ -34,15 +34,20 @@ export default function BackToTopButton() {
 
   return (
     <div className={styles.backToTopSection}>
-      <button
-        aria-label='Zurück nach oben'
+      <a
+        href='#main'
+        aria-label='Nach oben'
         type='button'
         className={styles.backToTopButton}
         role='button'
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <FaArrowCircleUp className={styles.icon} />
-      </button>
+        <FaArrowCircleUp
+          aria-hidden='true'
+          focusable='false'
+          className={styles.icon}
+        />
+      </a>
     </div>
   );
 }
