@@ -3,3 +3,8 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.name[data-has-rating="true"]::before {
+  content: "•";
+  margin-right: 3px;
+}

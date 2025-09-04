@@ -18,42 +18,42 @@ import styles from "./contactForm.module.css";
 export default function SectionContactForm() {
   return (
     <section className={styles.contact} id='contact'>
-      <div className={styles.contactBackground}>
+      <div className={styles.backgroundWrapper}>
         <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
           <Stack gap='lg'>
-            <header className={styles.contactHeader}>
-              <h2 className={styles.contactHeadline}>Kontakt</h2>
-              <p className={styles.contactText}>
+            <header className={styles.header}>
+              <h2 className={styles.headline}>Kontakt</h2>
+              <p className={styles.text}>
                 Lust auf ein gemeinsames Projekt, eine Rückmeldung oder einfach
                 ein Austausch? Hier ist Raum für Ideen, Anfragen und erste
                 Impulse. Jede Nachricht wird gelesen und beantwortet.
               </p>
             </header>
-            <main className={styles.contactMain}>
-              <div className={styles.contactMainText}>
-                <p className={styles.contactMainTextAdress}>
+            <div className={styles.bodyWrapper}>
+              <ul className={styles.contactDataWrapper}>
+                <li className={styles.adress}>
                   Thomas Badrow
                   <br />
                   Musterstraße XY
                   <br />
                   12345 Berlin
-                </p>
-                <div className={styles.contactMainTextContactGroup}>
-                  <p className={styles.contactMainTextContact}>
+                </li>
+                <li className={styles.contactDataGroup}>
+                  <p className={styles.contactDataGroupItem}>
                     <FaWhatsapp />
                     <a href='tel:+49 123 456789'>+49 123 456789</a>
                   </p>
-                  <p className={styles.contactMainTextContact}>
+                  <p className={styles.contactDataGroupItem}>
                     <FaTelegramPlane />
                     <a href='mailto:muster.mann@email.com'>
                       muster.mann@email.com
                     </a>
                   </p>
-                </div>
+                </li>
 
-                <div className={styles.contactMainTextContactGroup}>
-                  <p className={styles.contactMainTextContact}>Socialmedia:</p>
-                  <ul className={styles.contactMainTextSMIcons}>
+                <div className={styles.contactDataGroup}>
+                  <p className={styles.contactDataGroupLabel}>Socialmedia:</p>
+                  <ul className={styles.contactDataGroupIcons}>
                     <li>
                       <Link href='/'>
                         <FaXing /> <SrOnly>Xing Profil</SrOnly>
@@ -81,16 +81,16 @@ export default function SectionContactForm() {
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className={styles.contactMainForm}>
-                <form action=''>
-                  <fieldset className={styles.contactFormFieldset}>
+              </ul>
+              <div className={styles.form}>
+                <form action='' aria-describedby='privacy-note'>
+                  <div className={styles.wrapper}>
                     <SrOnly>
                       <legend>Kontaktformular</legend>
                     </SrOnly>
 
-                    <div className={styles.contactFormField}>
-                      <label htmlFor='name' className={styles.contactFormLabel}>
+                    <div className={styles.field}>
+                      <label htmlFor='name' className={styles.label}>
                         Vor- und Zuname
                       </label>
                       <input
@@ -99,15 +99,12 @@ export default function SectionContactForm() {
                         name='name'
                         placeholder='Name'
                         required
-                        className={styles.contactFormInput}
+                        className={styles.input}
                       />
                     </div>
 
-                    <div className={styles.contactFormField}>
-                      <label
-                        htmlFor='email'
-                        className={styles.contactFormLabel}
-                      >
+                    <div className={styles.field}>
+                      <label htmlFor='email' className={styles.label}>
                         E-Mail
                       </label>
                       <input
@@ -116,15 +113,12 @@ export default function SectionContactForm() {
                         name='email'
                         placeholder='E-Mail'
                         required
-                        className={styles.contactFormInput}
+                        className={styles.input}
                       />
                     </div>
 
-                    <div className={styles.contactFormField}>
-                      <label
-                        htmlFor='message'
-                        className={styles.contactFormLabel}
-                      >
+                    <div className={styles.field}>
+                      <label htmlFor='message' className={styles.label}>
                         Deine Nachricht
                       </label>
                       <textarea
@@ -133,24 +127,24 @@ export default function SectionContactForm() {
                         placeholder='Nachricht'
                         rows={8}
                         required
-                        className={styles.contactFormTextarea}
+                        className={styles.textarea}
                       ></textarea>
                     </div>
 
-                    <p className={styles.contactMainFormText}>
+                    <p id='privacy-note' className={styles.privacyNote}>
                       Hinweis zum Datenschutz: Die im Formular eingegebenen
                       Daten werden ausschließlich zur Bearbeitung deiner Anfrage
                       verwendet. Weitere Informationen findest du in der{" "}
                       <Link href='/'>Datenschutzerklärung</Link>.
                     </p>
 
-                    <div className={styles.contactMainFormButtonCon}>
+                    <div className={styles.actions}>
                       <Button type='submit'>Absenden</Button>
                     </div>
-                  </fieldset>
+                  </div>
                 </form>
               </div>
-            </main>
+            </div>
           </Stack>
         </Inner>
       </div>

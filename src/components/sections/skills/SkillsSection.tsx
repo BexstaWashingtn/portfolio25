@@ -15,16 +15,11 @@ export default function SkillsSection({
   if (!entries || entries.length === 0) return null;
 
   const Wrapper: React.ElementType = title ? "section" : "div";
-  const id = keyPrefix ? `${keyPrefix}__title` : undefined;
 
   return (
     <Wrapper className={styles.subSection}>
-      {title && (
-        <h4 id={id} className={styles.h4}>
-          {title}
-        </h4>
-      )}
-      <ul className={styles.ItemList} aria-label={id}>
+      {title && <h4 className={styles.h4}>{title}</h4>}
+      <ul className={styles.ItemList}>
         <SkillsEntries entries={entries} keyPrefix={keyPrefix} />
       </ul>
     </Wrapper>

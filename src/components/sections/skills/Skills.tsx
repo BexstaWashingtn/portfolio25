@@ -29,9 +29,9 @@ export default function Skills() {
               </div>
             </Stack>
           </header>
-          <main className={styles.main}>
+          <div className={styles.main}>
             <SkillsList datas={skillDatas} />
-          </main>
+          </div>
         </Stack>
       </Inner>
     </section>

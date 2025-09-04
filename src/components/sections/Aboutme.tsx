@@ -15,8 +15,8 @@ export default function SectionAboutme({}) {
     <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
         <Stack gap='lg'>
-          <header className={styles.aboutHeader}>
-            <div className={styles.aboutImageCon}>
+          <div className={styles.Wrapper}>
+            <div className={styles.imageWrapper}>
               {/*TODO: make actual photo */}
               <Image
                 src='/img/aboutme/tb_smile.png'
@@ -25,14 +25,14 @@ export default function SectionAboutme({}) {
                 width={286}
                 height={382}
                 priority
-                className={styles.aboutImage}
+                className={styles.image}
               />
             </div>
-            <div className={styles.aboutContent}>
-              <h2 className={styles.aboutHeadline}>
+            <div className={styles.content}>
+              <h2 className={styles.headline}>
                 Über <span className='highlight-peach'>mich</span>
               </h2>
-              <p className={styles.aboutText}>
+              <p className={styles.text}>
                 Hi, ich bin Thomas, {age} Jahre, aus Brandenburg.
                 <br />
                 Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
@@ -42,7 +42,7 @@ export default function SectionAboutme({}) {
                 React und Next.js.
               </p>
             </div>
-          </header>
+          </div>
         </Stack>
       </Inner>
     </section>

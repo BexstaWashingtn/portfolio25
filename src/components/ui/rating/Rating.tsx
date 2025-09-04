@@ -8,12 +8,16 @@ type Props = {
 
 export default function Rating({ rate, max = 5 }: Props) {
   if (rate == null) return null;
-  const value = Math.max(0, Math.min(rate, max));
+  const min = 1;
+  const value = Math.max(min, Math.min(rate, max));
 
   return (
     <div
       className={styles.rating}
-      role='img'
+      role='meter'
+      aria-valuenow={rate}
+      aria-valuemin={min}
+      aria-valuemax={max}
       aria-label={`${value} von ${max} Punkten`}
       title={`${value} / ${max}`}
     >

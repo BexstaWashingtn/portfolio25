@@ -22,13 +22,13 @@ export default function SectionProjects() {
             </header>
           </Stack>
         </Inner>
-        <main className={styles.projectsMain}>
+        <div className={styles.projectsMain}>
           <Inner variant='swiper' paddingTop='lg' paddingBottom='xxl'>
             <Stack gap='sm' direction='row'>
               <ProjectsCardSlider />
             </Stack>
           </Inner>
-        </main>
+        </div>
       </div>
     </section>
   );

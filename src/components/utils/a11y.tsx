@@ -14,7 +14,7 @@ export function SkipToContent() {
   );
 }
 
-// 2. Nur für Screenreader sichtbarer Text
+// 2. Nur für Screenreader sichtbarer Text - Not Focusable
 export function SrOnly({ children }: { children: ReactNode }) {
   return <span className={styles.visuallyHidden}>{children}</span>;
 }

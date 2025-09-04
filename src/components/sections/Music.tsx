@@ -37,7 +37,7 @@ export default function SectionMusic() {
                 </div>
               </div>
             </header>
-            <main className={styles.musicMain}>
+            <div className={styles.musicMain}>
               <div className={styles.musicMainText}>
                 <h3 className={styles.musicMainHeadline}>
                   Musik ist mein Raum ohne Grenzen!
@@ -57,7 +57,7 @@ export default function SectionMusic() {
                   className={styles.musicPlayerImage}
                 />
               </div>
-            </main>
+            </div>
             <footer className={styles.musicFooter}>
               <ul className={styles.musicFooterList}>
                 <li className={styles.musicFooterListItem}>

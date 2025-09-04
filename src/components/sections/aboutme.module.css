@@ -5,7 +5,7 @@ section.about {
     rgba(var(--black), 1) 100%
   ); */
 
-  .aboutHeader {
+  .Wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,17 +16,17 @@ section.about {
       gap: 2rem;
     }
 
-    .aboutText {
+    .text {
       max-width: 550px;
-      .aboutHeadline {
+      .headline {
         color: rgb(var(--heading-secondary-color));
       }
-      .aboutTextContent {
+      .content {
         margin-top: 1rem;
         color: rgb(var(--text-color));
       }
     }
-    .aboutImageCon {
+    .imageWrapper {
       border-radius: 500px;
       overflow: hidden;
       width: 248px;
@@ -50,7 +50,7 @@ section.about {
         align-self: flex-start;
       }
 
-      .aboutImage {
+      .image {
         margin: 0 auto;
       }
     }
