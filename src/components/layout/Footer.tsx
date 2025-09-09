@@ -48,16 +48,12 @@ export default function Footer() {
                 <p className={styles.message}>
                   Barrierefrei & semantisch entwickelt
                 </p>
-                {process.env.NEXT_PUBLIC_BUILT_AT ? (
+                {process.env.NEXT_PUBLIC_BUILT_AT && (
                   <p className={styles.lastbuilt}>
                     last build:{" "}
                     {new Date(process.env.NEXT_PUBLIC_BUILT_AT).toLocaleString(
                       "de-DE"
                     )}
-                  </p>
-                ) : (
-                  <p className={styles.lastbuilt}>
-                    last build update: 9.9.2025, 17:44:44
                   </p>
                 )}
               </div>
