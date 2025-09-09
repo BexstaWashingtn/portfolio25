@@ -14,36 +14,34 @@ export default function SectionAboutme({}) {
   return (
     <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <Stack gap='lg'>
-          <div className={styles.Wrapper}>
-            <div className={styles.imageWrapper}>
-              {/*TODO: make actual photo */}
-              <Image
-                src='/img/aboutme/tb_smile.png'
-                alt='Foto von Thomas mit einem Lächeln'
-                title='Foto von Thomas mit einem Lächeln'
-                width={286}
-                height={382}
-                priority
-                className={styles.image}
-              />
-            </div>
-            <div className={styles.content}>
-              <h2 className={styles.headline}>
-                Über <span className='highlight-peach'>mich</span>
-              </h2>
-              <p className={styles.text}>
-                Hi, ich bin Thomas, {age} Jahre, aus Brandenburg.
-                <br />
-                Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
-                Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
-                meiner Ausbildung zum Mediengestalter (2001) entwickle ich
-                digitale Produkte – heute vor allem moderne Webanwendungen mit
-                React und Next.js.
-              </p>
-            </div>
+        <div className={styles.Wrapper}>
+          <div className={styles.imageWrapper}>
+            {/*TODO: make actual photo */}
+            <Image
+              src='/img/aboutme/tb_smile.png'
+              alt='Foto von Thomas mit einem Lächeln'
+              title='Foto von Thomas mit einem Lächeln'
+              width={286}
+              height={382}
+              priority
+              className={styles.image}
+            />
           </div>
-        </Stack>
+          <div className={styles.content}>
+            <h2 className={styles.headline}>
+              Über <span className='highlight-peach'>mich</span>
+            </h2>
+            <p className={styles.text}>
+              Hi, ich bin Thomas, {age} Jahre, aus Brandenburg.
+              <br />
+              Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
+              Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
+              meiner Ausbildung zum Mediengestalter (2001) entwickle ich
+              digitale Produkte – heute vor allem moderne Webanwendungen mit
+              React und Next.js.
+            </p>
+          </div>
+        </div>
       </Inner>
     </section>
   );
