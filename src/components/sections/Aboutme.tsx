@@ -1,7 +1,5 @@
 import Inner from "../utils/Inner";
-import Stack from "../utils/Stack";
 import styles from "./aboutme.module.css";
-
 import Image from "next/image";
 
 export default function SectionAboutme({}) {
@@ -10,13 +8,13 @@ export default function SectionAboutme({}) {
   const age = currentYear - birthYear;
 
   // TOOO: add background Components for Gradient and Image - as one???
+  // TODO: make actual photo
 
   return (
     <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <div className={styles.Wrapper}>
+        <header className={styles.Wrapper}>
           <div className={styles.imageWrapper}>
-            {/*TODO: make actual photo */}
             <Image
               src='/img/aboutme/tb_smile.png'
               alt='Foto von Thomas mit einem Lächeln'
@@ -32,7 +30,7 @@ export default function SectionAboutme({}) {
               Über <span className='highlight-peach'>mich</span>
             </h2>
             <p className={styles.text}>
-              Hi, ich bin Thomas, {age} Jahre, aus Brandenburg.
+              Ich bin Thomas, {age} Jahre, aus Brandenburg.
               <br />
               Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
               Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
@@ -41,7 +39,7 @@ export default function SectionAboutme({}) {
               React und Next.js.
             </p>
           </div>
-        </div>
+        </header>
       </Inner>
     </section>
   );

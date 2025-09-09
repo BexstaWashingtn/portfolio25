@@ -6,6 +6,7 @@ import skillDatas from "./data.json";
 import SkillsList from "./SkillsList";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
+import SectionHeader from "../SectionHeader";
 
 export default function Skills() {
   return (
@@ -24,7 +25,7 @@ export default function Skills() {
           startY: "0%",
           colorStops: [
             {
-              color: "rgba(70, 45, 37, 0.8)",
+              color: "rgba(75, 47, 38, 0.8)",
               position: "0%",
             },
 
@@ -42,26 +43,20 @@ export default function Skills() {
         <section id='skills' className={styles.skills}>
           <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
             <Stack direction='column' gap='xl'>
-              <header className={styles.header}>
-                <Stack direction='row' gap='lg'>
-                  <img
-                    src='/img/skills/icon_skills.svg'
-                    alt='ein Kreis aufgeschnitten mit unterschiedlich großen Stücken'
-                    title='Symbol für Fähigkeiten und Kenntnisse'
-                    className={styles.headerIcon}
-                  />
-
-                  <div className={styles.contentWrapper}>
-                    <h2 className={styles.headerHeadline}>Skills</h2>
-                    <p className={styles.headerText}>
-                      Die Fähigkeiten basieren auf Erfahrungen aus realen
+              <SectionHeader
+                image={{
+                  src: "/img/skills/icon_skills.svg",
+                  alt: "Symbol für Fähigkeiten und Kenntnisse",
+                  width: 180,
+                  height: 224,
+                }}
+                headline={"Skills"}
+                text={`Die Fähigkeiten basieren auf Erfahrungen aus realen
                       Projekten – gesammelt seit meiner Ausbildung,
                       weiterentwickelt im Berufsalltag und vertieft durch
-                      gezielte Weiterbildung.
-                    </p>
-                  </div>
-                </Stack>
-              </header>
+                      gezielte Weiterbildung.`}
+              />
+
               <div className={styles.main}>
                 <SkillsList datas={skillDatas} />
               </div>

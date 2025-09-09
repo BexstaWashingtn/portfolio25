@@ -31,7 +31,7 @@
       {
         "name": "Backend",
         "entries": [
-          { "name": "PHP OOP", "level": 2 },
+          { "name": "PHP OOP", "level": 3 },
           { "name": "TypeScript", "level": 3 },
           { "name": "next.js", "level": 2 },
           { "name": "CSS Modules (next.js)", "level": 4 },

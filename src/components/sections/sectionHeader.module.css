@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .wrapper {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .headline {
+      color: rgb(var(--heading-secondary-color));
+      padding: 0;
+    }
+    .text {
+      color: rgb(var(--text-color));
+    }
+  }
+  .imageWrapper {
+    .image {
+      margin: 0 auto;
+    }
+  }
+}

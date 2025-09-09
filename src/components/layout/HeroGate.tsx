@@ -2,7 +2,7 @@
 
 import styles from "./heroGate.module.css";
 
-import Header from "@/components/layout/Header";
+import PageHeader from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import { BackgroundGradientWrapper } from "./BackgroundGradientWrapper";
 import { BackgroundImageWrapper } from "./BackgroundImageWrapper";
@@ -83,7 +83,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Header onClick={() => setShowFullPage(false)} />
+          <PageHeader onClick={() => setShowFullPage(false)} />
 
           <main id='main' className={styles.main}>
             <BackgroundImageWrapper

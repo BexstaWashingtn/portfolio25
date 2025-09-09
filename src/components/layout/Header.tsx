@@ -12,7 +12,7 @@ type Props = {
   // This function is called when the logo is clicked, typically to scroll to the top of the page
 };
 
-export default function SectionHeader({ onClick }: Props) {
+export default function Header({ onClick }: Props) {
   // State to manage the mobile menu open/close state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Function to toggle the mobile menu
