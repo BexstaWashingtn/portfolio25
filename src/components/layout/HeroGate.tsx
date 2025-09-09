@@ -21,7 +21,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
 
   useEffect(() => {
-    if (!hasFreeEntry && showFullPage) return;
+    if (!hasFreeEntry || showFullPage) return;
 
     const unlock = () => setShowFullPage(true);
 

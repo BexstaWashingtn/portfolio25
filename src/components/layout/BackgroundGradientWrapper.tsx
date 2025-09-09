@@ -22,7 +22,6 @@ type Props = {
 export const BackgroundGradientWrapper = ({
   children,
   gradient,
-
   blur = 16,
 }: Props) => {
   const gradientCss =

@@ -2,9 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.name[data-has-rating="true"]::before {
-  content: "•";
-  margin-right: 3px;
+.item[data-has-rating="true"]::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  bottom: 0;
+}
+
+.item[data-has-rating="false"] {
+  .name::before {
+    content: "•";
+    margin-right: 3px;
+  }
 }

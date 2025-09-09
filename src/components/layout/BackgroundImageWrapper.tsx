@@ -43,7 +43,7 @@ export const BackgroundImageWrapper = ({
           src={image.src}
           alt={image.alt}
           title={image.title}
-          {...(image.width || image.height
+          {...(image.width && image.height
             ? { width: image.width, height: image.height }
             : { fill: true })}
           style={{

@@ -21,7 +21,7 @@ export default function BackToTopButton() {
       },
       {
         root: null,
-        threshold: 0.1,
+        threshold: 0.2,
       }
     );
 
@@ -33,7 +33,7 @@ export default function BackToTopButton() {
   if (!isVisible) return null;
 
   return (
-    <div className={styles.backToTopSection}>
+    <div className={`${styles.backToTopSection}`}>
       <a
         href='#main'
         aria-label='Nach oben'

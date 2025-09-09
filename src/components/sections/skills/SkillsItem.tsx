@@ -4,13 +4,8 @@ import styles from "./skillsItem.module.css";
 
 export default function SkillsItem({ name, level }: Entry) {
   return (
-    <li className={styles.item}>
-      <span
-        data-has-rating={level == null ? true : false}
-        className={styles.name}
-      >
-        {name}
-      </span>
+    <li data-has-rating={level != null ? true : false} className={styles.item}>
+      <span className={styles.name}>{name}</span>
       {level != null ? <Rating rate={level} /> : null}
     </li>
   );
