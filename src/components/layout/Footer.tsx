@@ -10,17 +10,28 @@ export default function SectionFooter() {
           © 2025 Thomas Badrow. Alle Rechte vorbehalten.
         </p>
 
-        <nav
-          className={styles.footerTextNavigation}
-          aria-label='Footernavigation'
-        >
-          <Link href='/' className={styles.footerTextContentLink}>
-            Impressum
-          </Link>
-          <Link href='/' className={styles.footerTextContentLink}>
-            Datenschutz
-          </Link>
-        </nav>
+        <div>
+          <nav
+            className={styles.footerTextNavigation}
+            aria-label='Footernavigation'
+          >
+            <Link href='/' className={styles.footerTextContentLink}>
+              Impressum
+            </Link>
+            <Link href='/' className={styles.footerTextContentLink}>
+              Datenschutz
+            </Link>
+          </nav>
+
+          {process.env.NEXT_PUBLIC_BUILT_AT && (
+            <p>
+              last build update:{" "}
+              {new Date(process.env.NEXT_PUBLIC_BUILT_AT).toLocaleString(
+                "de-DE"
+              )}
+            </p>
+          )}
+        </div>
       </div>
     </Inner>
   );
