@@ -17,11 +17,7 @@ type Props = {
   blur?: number;
 };
 
-export const BackgroundImageWrapper = ({
-  children,
-  image,
-  blur = 16,
-}: Props) => {
+export const BackgroundImageWrapper = ({ children, image, blur }: Props) => {
   if (!image) return <>{children}</>;
 
   let content = <>{children}</>;
