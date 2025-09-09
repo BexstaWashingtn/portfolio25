@@ -10,12 +10,12 @@ import Aboutme from "@/components/sections/Aboutme";
 import TypeAnalysis from "@components//sections/TypeAnalysis";
 import Projects from "@/components/sections/Projects";
 import ContactForm from "@/components/sections/ContactForm";
-import LegalNotice from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import WorkingMethod from "../sections/workingMethods/WorkingMethod";
 import Skills from "../sections/skills/Skills";
+import Footer from "@/components/layout/Footer";
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
@@ -129,9 +129,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             <BackToTopButton />
           </main>
 
-          <footer className={styles.footer}>
-            <LegalNotice />
-          </footer>
+          <Footer />
         </motion.div>
       )}
     </AnimatePresence>
