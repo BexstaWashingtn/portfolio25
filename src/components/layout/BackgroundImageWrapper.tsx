@@ -25,32 +25,34 @@ export const BackgroundImageWrapper = ({
   if (!image) return <>{children}</>;
 
   let content = <>{children}</>;
+  const hasFixedSize = Boolean(image?.width && image?.height);
 
   if (image) {
     content = (
-      <div
-        className={styles.backgroundImageWrapper}
-        style={{
-          ...(typeof blur === "number"
-            ? {
-                WebkitBackdropFilter: `blur(${blur}px)`,
-                backdropFilter: `blur(${blur}px)`,
-              }
-            : {}),
-        }}
-      >
+      <div className={styles.backgroundImageWrapper}>
         <Image
           src={image.src}
           alt={image.alt}
           title={image.title}
-          {...(image.width && image.height
+          {...(hasFixedSize
             ? { width: image.width, height: image.height }
             : { fill: true })}
           style={{
             ...image.style,
+            ...(!hasFixedSize ? { objectFit: "cover" } : null),
           }}
           className={styles.backgroundImage}
         />
+
+        {typeof blur === "number" && (
+          <div
+            className={styles.backgroundImageOverlayEffect}
+            style={{
+              WebkitBackdropFilter: `blur(${blur}px)`,
+              backdropFilter: `blur(${blur}px)`,
+            }}
+          ></div>
+        )}
 
         {content}
       </div>

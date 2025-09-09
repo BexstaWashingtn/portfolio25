@@ -117,7 +117,6 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
                     },
                   ],
                 }}
-                blur={0}
               >
                 <Aboutme />
                 <TypeAnalysis />

@@ -14,9 +14,8 @@ export default function Skills() {
         src: "/img/skills/background.jpg",
         title: "Skills Background Image",
         alt: "jemand arbeitet Nachts unter dem Schein der Tischlampen am Schreibtisch",
-        width: 550,
       }}
-      blur={0}
+      blur={64}
     >
       <BackgroundGradientWrapper
         gradient={{
@@ -39,7 +38,6 @@ export default function Skills() {
             },
           ],
         }}
-        blur={64}
       >
         <section id='skills' className={styles.skills}>
           <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>

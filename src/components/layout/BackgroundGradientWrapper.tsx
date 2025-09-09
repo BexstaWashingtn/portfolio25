@@ -16,14 +16,9 @@ type GradientProps = {
 type Props = {
   children: React.ReactNode;
   gradient?: GradientProps;
-  blur?: number;
 };
 
-export const BackgroundGradientWrapper = ({
-  children,
-  gradient,
-  blur = 16,
-}: Props) => {
+export const BackgroundGradientWrapper = ({ children, gradient }: Props) => {
   const gradientCss =
     gradient && gradient.colorStops.length > 0
       ? `radial-gradient(${gradient.type || "circle"} at ${
@@ -38,12 +33,6 @@ export const BackgroundGradientWrapper = ({
       className={styles.backgroundGradientWrapper}
       style={{
         ...(gradientCss ? { background: gradientCss } : {}),
-        ...(typeof blur === "number"
-          ? {
-              WebkitBackdropFilter: `blur(${blur}px)`,
-              backdropFilter: `blur(${blur}px)`,
-            }
-          : {}),
       }}
     >
       {children}
