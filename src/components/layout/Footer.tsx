@@ -25,7 +25,7 @@ export default function SectionFooter() {
 
           {process.env.NEXT_PUBLIC_BUILT_AT && (
             <p>
-              last build update:{" "}
+              last build:{" "}
               {new Date(process.env.NEXT_PUBLIC_BUILT_AT).toLocaleString(
                 "de-DE"
               )}
