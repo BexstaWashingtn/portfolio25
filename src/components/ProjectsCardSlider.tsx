@@ -43,7 +43,7 @@ export default function ProjectsCardSlider() {
 
       <Swiper
         modules={[Navigation, Pagination]}
-        spaceBetween={20}
+        spaceBetween={32}
         slidesPerView={2}
         pagination={{
           el: ".customPagination",
