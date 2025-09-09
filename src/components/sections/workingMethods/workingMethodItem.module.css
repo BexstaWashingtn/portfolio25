@@ -7,5 +7,6 @@
 
   .headline {
     padding: 0;
+    color: rgb(var(--peach));
   }
 }

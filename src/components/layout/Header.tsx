@@ -32,6 +32,7 @@ export default function SectionHeader({ onClick }: Props) {
   // It also cleans up the observer when the component unmounts
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntries = entries
@@ -44,7 +45,7 @@ export default function SectionHeader({ onClick }: Props) {
       },
       {
         root: null,
-        threshold: 0.6,
+        threshold: 0.1,
       }
     );
 

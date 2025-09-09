@@ -7,6 +7,33 @@ type Props = {
   activeSection: string | null; // The currently active section for highlighting
 };
 
+const navDatas = [
+  {
+    text: "Uber mich",
+    slug: "about",
+  },
+  {
+    text: "Typanalyse",
+    slug: "type-analysis",
+  },
+  {
+    text: "Arbeitsweise",
+    slug: "working-method",
+  },
+  {
+    text: "Skills",
+    slug: "skills",
+  },
+  {
+    text: "Projekte",
+    slug: "projects",
+  },
+  {
+    text: "Kontakt",
+    slug: "contact",
+  },
+];
+
 export default function Navigation({
   setIsMobileMenuOpen,
   isMobileMenuOpen,
@@ -27,72 +54,19 @@ export default function Navigation({
       data-open={isMobileMenuOpen}
     >
       <ul className={styles.navList}>
-        <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "about" ? styles.active : ""
-            }`}
-            href='#about'
-            onClick={(e) => handleNavClick(e, "about")}
-          >
-            Uber mich
-          </Link>
-        </li>
-        <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "type-analysis" ? styles.active : ""
-            }`}
-            href='#type-analysis'
-            onClick={(e) => handleNavClick(e, "type-analysis")}
-          >
-            Typ Analyse
-          </Link>
-        </li>
-        <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "working-method" ? styles.active : ""
-            }`}
-            href='#working-method'
-            onClick={(e) => handleNavClick(e, "working-method")}
-          >
-            Arbeitsweise
-          </Link>
-        </li>
-        <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "projects" ? styles.active : ""
-            }`}
-            href='#projects'
-            onClick={(e) => handleNavClick(e, "projects")}
-          >
-            Projekte
-          </Link>
-        </li>
-        {/*         <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "music" ? styles.active : ""
-            }`}
-            href='#music'
-            onClick={(e) => handleNavClick(e, "music")}
-          >
-            Musik
-          </Link>
-        </li> */}
-        <li className={styles.navListItem}>
-          <Link
-            className={`${styles.navLink} ${
-              activeSection === "contact" ? styles.active : ""
-            }`}
-            href='#contact'
-            onClick={(e) => handleNavClick(e, "contact")}
-          >
-            Kontakt
-          </Link>
-        </li>
+        {navDatas.map(({ text, slug }) => (
+          <li key={slug} className={styles.navListItem}>
+            <Link
+              className={`${styles.navLink} ${
+                activeSection === slug ? styles.active : ""
+              }`}
+              href={`#${slug}`}
+              onClick={(e) => handleNavClick(e, slug)}
+            >
+              {text}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

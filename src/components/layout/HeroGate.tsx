@@ -89,12 +89,11 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             <BackgroundImageWrapper
               image={{
                 src: "/img/aboutme/backgroundImage.jpg",
-                width: 1440,
-                height: 1440,
                 alt: "Neurologische Strukturen mit Knotenpunkten",
                 title: "Neurologische Strukturen mit Knotenpunkten",
-                style: { opacity: 0.1 },
+                style: { opacity: 1 },
               }}
+              blur={32}
             >
               <BackgroundGradientWrapper
                 gradient={{
