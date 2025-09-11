@@ -7,7 +7,7 @@ import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
 
-export default function WorkingMethod() {
+export default function SectionWorkingMethod() {
   const isMobile = useIsMobile();
 
   const items = [

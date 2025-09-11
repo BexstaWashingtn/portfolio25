@@ -14,7 +14,7 @@ export default function SectionProjects() {
         image={{
           src: "/img/projects/background.jpg",
           alt: "CoWorking Place Außenansicht bei Nacht",
-          style: { opacity: 0.8 },
+          style: { opacity: 0.6 },
         }}
         blur={16}
       >

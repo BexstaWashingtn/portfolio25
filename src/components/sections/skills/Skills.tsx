@@ -8,13 +8,16 @@ import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapp
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import SectionHeader from "../SectionHeader";
 
-export default function Skills() {
+// TODO: responsivable implementation
+
+export default function SectionSkills() {
   return (
     <BackgroundImageWrapper
       image={{
         src: "/img/skills/background.jpg",
         title: "Skills Background Image",
         alt: "jemand arbeitet Nachts unter dem Schein der Tischlampen am Schreibtisch",
+        style: { opacity: 0.5 },
       }}
       blur={64}
     >

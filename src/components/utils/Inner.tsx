@@ -10,6 +10,8 @@ type Props = {
   className?: string;
 };
 
+// padding Vars try to use from Stack Comp Tokens
+
 export default function Inner({
   children,
   variant = "default",

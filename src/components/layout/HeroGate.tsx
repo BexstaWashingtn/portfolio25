@@ -9,13 +9,15 @@ import { BackgroundImageWrapper } from "./BackgroundImageWrapper";
 import Aboutme from "@/components/sections/Aboutme";
 import TypeAnalysis from "@components//sections/TypeAnalysis";
 import Projects from "@/components/sections/Projects";
-import ContactForm from "@/components/sections/ContactForm";
+import Contact from "@/components/sections/Contact";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import WorkingMethod from "../sections/workingMethods/WorkingMethod";
 import Skills from "../sections/skills/Skills";
 import Footer from "@/components/layout/Footer";
+
+// add body max-width:1920px (inner comp???) and background for > 1920px
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
   const [showFullPage, setShowFullPage] = useState(false);
@@ -125,7 +127,7 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             <Skills />
             <Projects />
             {/*<SectionMusic />*/}
-            <ContactForm />
+            <Contact />
             <BackToTopButton />
           </main>
 

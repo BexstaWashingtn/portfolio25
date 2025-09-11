@@ -1,32 +1,38 @@
 import styles from "./backgroundGradientWrapper.module.css";
 import React from "react";
 
+type Percentage = `${number}%`;
+
 type GradientColorStop = {
   color: string;
-  position: string;
+  position: Percentage;
 };
+
+type AtLeastTwo<T> = readonly [T, T, ...T[]];
 
 type GradientProps = {
   type?: "circle" | "ellipse";
   startX?: string;
   startY?: string;
-  colorStops: GradientColorStop[];
+  colorStops: AtLeastTwo<GradientColorStop>;
 };
 
 type Props = {
   children: React.ReactNode;
-  gradient?: GradientProps;
+  gradient: GradientProps;
 };
 
 export const BackgroundGradientWrapper = ({ children, gradient }: Props) => {
-  const gradientCss =
-    gradient && gradient.colorStops.length > 0
-      ? `radial-gradient(${gradient.type || "circle"} at ${
-          gradient.startX || "50%"
-        } ${gradient.startY || "50%"}, ${gradient.colorStops
-          .map(({ color, position }) => `${color} ${position}`)
-          .join(", ")})`
-      : undefined;
+  const {
+    type = "circle",
+    startX = "50%",
+    startY = "50%",
+    colorStops,
+  } = gradient;
+
+  const gradientCss = `radial-gradient(${type} at ${startX} ${startY}, ${colorStops
+    .map(({ color, position }) => `${color} ${position}`)
+    .join(", ")})`;
 
   return (
     <div

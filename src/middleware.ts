@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// TODO: remove param after freeentry, set Session freeentry for other Links
+
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const hasFreeEntry = url.searchParams.has("freeentry");
