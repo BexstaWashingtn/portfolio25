@@ -47,7 +47,7 @@ export default function SectionContact() {
             ],
           }}
         >
-          <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
+          <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
             <Stack gap='lg'>
               <header className={styles.header}>
                 <h2 className={styles.headline}>Kontakt</h2>
