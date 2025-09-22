@@ -36,7 +36,7 @@ export default function SectionProjects() {
             ],
           }}
         >
-          <Inner variant='narrow' paddingTop='xl'>
+          <Inner variant='narrow' paddingTop='xxl'>
             <SectionHeader
               headline={"Projekte"}
               text={
@@ -44,13 +44,12 @@ export default function SectionProjects() {
               }
             />
           </Inner>
-          <div className={styles.projectsMain}>
-            <Inner variant='swiper' paddingTop='lg' paddingBottom='xl'>
-              <Stack gap='sm' direction='row'>
-                <ProjectsCardSlider />
-              </Stack>
-            </Inner>
-          </div>
+
+          <Inner variant='swiper' paddingTop='lg' paddingBottom='xxl'>
+            <Stack gap='sm' direction='row'>
+              <ProjectsCardSlider />
+            </Stack>
+          </Inner>
         </BackgroundGradientWrapper>
       </BackgroundImageWrapper>
       {/* </div> */}

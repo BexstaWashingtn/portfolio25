@@ -49,7 +49,7 @@ export default function TypeAnalysis() {
   return (
     <section className={styles.typeAnalysis} id='type-analysis'>
       <div className={styles.background}>
-        <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
+        <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
           <h2 className={styles.h2}>Typanalyse</h2>
 
           <div className={styles.content}>

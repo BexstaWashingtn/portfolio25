@@ -1,19 +1,2 @@
 section.projects {
-  .projectsHeader {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @media (max-width: 768px) {
-      max-width: 550px;
-    }
-
-    .projectsHeadline {
-      padding: 0;
-    }
-    .projectsText {
-      margin: 0;
-      column-width: 300px;
-    }
-  }
 }

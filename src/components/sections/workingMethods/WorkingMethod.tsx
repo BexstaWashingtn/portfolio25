@@ -39,9 +39,9 @@ export default function SectionWorkingMethod() {
 
   return (
     <section className={styles.workingMethod} id='working-method'>
-      <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
+      <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
         <h2 className={styles.h2}>Arbeitsweise</h2>
-        <Inner paddingBottom='xl' paddingTop='md' paddingInline={false}>
+        <Inner paddingTop='md' paddingInline={false}>
           {isMobile ? (
             // only render Swiper on < 768 phone devices
 

@@ -68,19 +68,14 @@ export default function Footer() {
                 © 2025 Thomas Badrow. Alle Rechte vorbehalten.
               </p>
 
-              <div>
-                <nav
-                  className={styles.navigation}
-                  aria-label='Footernavigation'
-                >
-                  <Link href='/' className={styles.navigationLink}>
-                    Impressum
-                  </Link>
-                  <Link href='/' className={styles.navigationLink}>
-                    Datenschutz
-                  </Link>
-                </nav>
-              </div>
+              <nav className={styles.navigation} aria-label='Footernavigation'>
+                <Link href='/' className={styles.navigationLink}>
+                  Impressum
+                </Link>
+                <Link href='/' className={styles.navigationLink}>
+                  Datenschutz
+                </Link>
+              </nav>
             </div>
           </Inner>
         </div>

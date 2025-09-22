@@ -45,7 +45,7 @@ export default function SectionSkills() {
         }}
       >
         <section id='skills' className={styles.skills}>
-          <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
+          <Inner paddingBottom='xxl' paddingTop='xxl' variant='narrow'>
             <Stack direction='column' gap='xl'>
               <SectionHeader
                 image={{
