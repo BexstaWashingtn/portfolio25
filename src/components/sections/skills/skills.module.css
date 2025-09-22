@@ -5,6 +5,7 @@ section.skills {
 
     @media (max-width: 768px) {
       columns: 1;
+      width: 100%;
     }
   }
 }

@@ -41,6 +41,8 @@ section.typeAnalysis {
           .perTextListItem {
             @media (max-width: 768px) {
               margin-block: 1rem;
+              width: 100%;
+              max-width: 260px;
             }
           }
         }
@@ -50,6 +52,7 @@ section.typeAnalysis {
           padding-right: 2rem;
           @media (max-width: 768px) {
             padding-right: 1rem;
+            align-items: flex-end;
           }
         }
 

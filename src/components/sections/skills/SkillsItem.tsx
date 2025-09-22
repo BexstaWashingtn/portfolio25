@@ -6,7 +6,11 @@ export default function SkillsItem({ name, level }: Entry) {
   return (
     <li data-has-rating={level != null ? true : false} className={styles.item}>
       <span className={styles.name}>{name}</span>
-      {level != null ? <Rating rate={level} /> : null}
+      {level != null ? (
+        <div className={styles.ratingWrapper}>
+          <Rating rate={level} />
+        </div>
+      ) : null}
     </li>
   );
 }

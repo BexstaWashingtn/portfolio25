@@ -4,6 +4,10 @@
   align-items: stretch;
   gap: 2rem;
   position: relative;
+
+  .ratingWrapper {
+    padding-block: 0.5rem;
+  }
 }
 
 .item[data-has-rating="true"]::before {
