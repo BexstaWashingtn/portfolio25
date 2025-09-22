@@ -2,6 +2,49 @@ import Image from "next/image";
 import styles from "./typeAnalysis.module.css";
 import Inner from "@components/utils/Inner";
 
+const typeAnalysisData = {
+  pro: [
+    {
+      entry: "kreativ & gestaltungssicher",
+    },
+    {
+      entry: "experimentierfreudig & begeisterungsfähig",
+    },
+    {
+      entry: "eigenständig & lösungsorientiert",
+    },
+    {
+      entry: "visuell denkend",
+    },
+    {
+      entry: "empathisch & reflektiert",
+    },
+    {
+      entry: "Naturverbunden & sinnorientiert",
+    },
+  ],
+  contra: [
+    {
+      entry: "braucht klare Prioritäten bei komplexen Aufgaben",
+    },
+    {
+      entry: "braucht klare Prioritäten bei komplexen Aufgaben",
+    },
+    {
+      entry: "reagiert sensibel auf Einschränkungen",
+    },
+    {
+      entry: "tut sich schwer mit rein Abstraktem",
+    },
+    {
+      entry: "emotional sensibel",
+    },
+    {
+      entry: "erschöpft in rein digitalen Kontexten",
+    },
+  ],
+};
+
 export default function TypeAnalysis() {
   return (
     <section className={styles.typeAnalysis} id='type-analysis'>
@@ -12,22 +55,14 @@ export default function TypeAnalysis() {
           <div className={styles.content}>
             <div className={styles.per}>
               <ul className={styles.perTextList}>
-                <li className={styles.perTextListItem}>
-                  kreativ & gestaltungssicher
-                </li>
-                <li className={styles.perTextListItem}>
-                  experimentierfreudig & begeisterungsfähig
-                </li>
-                <li className={styles.perTextListItem}>
-                  eigenständig & lösungsorientiert
-                </li>
-                <li className={styles.perTextListItem}>visuell denkend</li>
-                <li className={styles.perTextListItem}>
-                  empathisch & reflektiert
-                </li>
-                <li className={styles.perTextListItem}>
-                  Naturverbunden & sinnorientiert
-                </li>
+                {typeAnalysisData.pro.map((item, index) => (
+                  <li
+                    key={`${index}:${item}`}
+                    className={styles.perTextListItem}
+                  >
+                    {item.entry}
+                  </li>
+                ))}
               </ul>
               <div className={styles.perImageContainer}>
                 <Image
@@ -52,24 +87,14 @@ export default function TypeAnalysis() {
                 />
               </div>
               <ul className={styles.contraTextList}>
-                <li className={styles.contraTextListItem}>
-                  braucht klare Prioritäten bei komplexen Aufgaben
-                </li>
-                <li className={styles.contraTextListItem}>
-                  frustriert bei sinnlosen oder monotonen Aufgabe
-                </li>
-                <li className={styles.contraTextListItem}>
-                  reagiert sensibel auf Einschränkungen
-                </li>
-                <li className={styles.contraTextListItem}>
-                  tut sich schwer mit rein Abstraktem
-                </li>
-                <li className={styles.contraTextListItem}>
-                  emotional sensibel
-                </li>
-                <li className={styles.contraTextListItem}>
-                  erschöpft in rein digitalen Kontexten
-                </li>
+                {typeAnalysisData.contra.map((item, index) => (
+                  <li
+                    key={`${index}:${item}`}
+                    className={styles.contraTextListItem}
+                  >
+                    {item.entry}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
