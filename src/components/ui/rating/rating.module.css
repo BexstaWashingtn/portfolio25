@@ -1,6 +1,7 @@
 .rating {
   display: flex;
   column-gap: 8px;
+  padding-block: 0.5rem;
 
   .bullet {
     height: 14px;

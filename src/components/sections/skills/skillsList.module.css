@@ -1,12 +1,12 @@
 ul.catList {
   list-style: none;
-  columns: 2;
-  gap: 4rem;
-  list-style: none;
   padding: 0;
   margin: 0;
 
+  margin-bottom: 4rem;
+
   .catListItem {
+    break-inside: avoid;
     margin-bottom: 2rem;
   }
 }

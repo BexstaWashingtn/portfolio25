@@ -1,9 +1,10 @@
 section.skills {
-  header.header {
-    /*     display: flex;
-    flex-direction: row;
+  .main {
+    columns: 2;
     gap: 4rem;
-    justify-content: center;
-    align-items: center; */
+
+    @media (max-width: 768px) {
+      columns: 1;
+    }
   }
 }

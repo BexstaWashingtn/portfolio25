@@ -7,6 +7,7 @@ import SkillsList from "./SkillsList";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import SectionHeader from "../SectionHeader";
+import SkillsLegend from "./SkillsLegend";
 
 // TODO: responsivable implementation
 
@@ -62,6 +63,7 @@ export default function SectionSkills() {
 
               <div className={styles.main}>
                 <SkillsList datas={skillDatas} />
+                <SkillsLegend />
               </div>
             </Stack>
           </Inner>
