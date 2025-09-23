@@ -1,9 +1,5 @@
 .stack {
   display: flex;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
 }
 
 .column {

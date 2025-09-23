@@ -56,7 +56,7 @@ export default function TypeAnalysis() {
           paddingBottom='xxl'
           paddingInline={{ base: true, lg: true, md: false, sm: false }}
         >
-          <Stack gap='lg'>
+          <Stack className='align-stretch-md' gap='lg'>
             <h2 className={styles.h2}>Typanalyse</h2>
             <div className={styles.content}>
               <div className={styles.per}>

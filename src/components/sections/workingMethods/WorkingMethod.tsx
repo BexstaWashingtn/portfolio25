@@ -6,6 +6,7 @@ import "@components/ui/customSwiper/swiper.default.css";
 import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
+import Stack from "@/components/utils/Stack";
 
 export default function SectionWorkingMethod() {
   const isMobile = useIsMobile();
@@ -40,32 +41,34 @@ export default function SectionWorkingMethod() {
   return (
     <section className={styles.workingMethod} id='working-method'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <h2 className={styles.h2}>Arbeitsweise</h2>
-        <Inner paddingTop='md' paddingInline={false}>
-          {isMobile ? (
-            // only render Swiper on < 768 phone devices
+        <Stack gap='lg'>
+          <h2 className={styles.h2}>Arbeitsweise</h2>
+          <Inner paddingTop='md' paddingInline={false}>
+            {isMobile ? (
+              // only render Swiper on < 768 phone devices
 
-            <CustomSwiper
-              items={items}
-              swiperConfig={{
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 16,
-                breakpoints: {
-                  0: { slidesPerView: 1, slidesPerGroup: 1 },
-                  680: { slidesPerView: 2, slidesPerGroup: 2 },
-                },
-              }}
-            />
-          ) : (
-            // render list on tablet and desktop
-            <ul className={styles.workMethodList}>
-              {items.map((item) => (
-                <WorkingMethodItem key={item.id} item={item} />
-              ))}
-            </ul>
-          )}
-        </Inner>
+              <CustomSwiper
+                items={items}
+                swiperConfig={{
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                  spaceBetween: 16,
+                  breakpoints: {
+                    0: { slidesPerView: 1, slidesPerGroup: 1 },
+                    680: { slidesPerView: 2, slidesPerGroup: 2 },
+                  },
+                }}
+              />
+            ) : (
+              // render list on tablet and desktop
+              <ul className={styles.workMethodList}>
+                {items.map((item) => (
+                  <WorkingMethodItem key={item.id} item={item} />
+                ))}
+              </ul>
+            )}
+          </Inner>
+        </Stack>
       </Inner>
     </section>
   );

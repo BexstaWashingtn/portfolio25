@@ -1,6 +1,8 @@
 @import "normalize";
 @import "globals/fonts";
 @import "globals/colors";
-@import "globals/typographie";
 @import "globals/tokens";
+@import "globals/typographie";
+@import "globals/utils";
 @import "globals/form";
+@import "components/button";

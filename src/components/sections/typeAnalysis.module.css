@@ -59,43 +59,12 @@ section.typeAnalysis {
         .contraTextList {
           padding-left: 2rem;
         }
-        @media (max-width: 768px) {
-          padding-left: 1rem;
-        }
       }
 
-      .per {
-        @media (max-width: 768px) {
-          padding-bottom: 1rem;
-          padding-right: 0;
-        }
-
-        .perImageContainer {
-          .perImage {
-            @media (max-width: 768px) {
-              margin-right: -2rem;
-            }
-            @media (max-width: 480px) {
-              margin-right: -1.25rem;
-            }
-          }
-        }
-      }
+      .per,
       .contra {
         @media (max-width: 768px) {
-          padding-top: 1rem;
-          padding-left: 0;
-        }
-
-        .contraImageContainer {
-          .contraImage {
-            @media (max-width: 768px) {
-              margin-left: -2rem;
-            }
-            @media (max-width: 480px) {
-              margin-left: -1.25rem;
-            }
-          }
+          padding-inline: 0;
         }
       }
     }

@@ -1,0 +1,5 @@
+:root {
+  --btn-padding: var(--gap-xs) var(--gap-md);
+  --btn-radius: var(--radius-lg);
+  --btn-font-weight: var(--font-weight-medium);
+}

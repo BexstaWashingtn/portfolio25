@@ -1,15 +1,22 @@
 :root {
   /* Section Pedding */
 
+  /* font weight */
+
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
   /* Border-Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-
-  /* Buttons */
-  --btn-padding: 0.5rem 2rem;
-  --btn-radius: var(--radius-lg);
-  --btn-font-weight: 600;
 
   /* Spacing */
   --gap-xs: 0.5rem;

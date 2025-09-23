@@ -1,0 +1,20 @@
+/* Standard Align Items */
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+
+/* Breakpoint-spezifisch */
+@media (min-width: 768px) {
+  .align-stretch-md {
+    align-items: stretch;
+  }
+  .align-items-md {
+    align-items: center;
+  }
+}
