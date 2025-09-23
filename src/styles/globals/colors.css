@@ -48,6 +48,15 @@
   --nav-link-color: var(--beige);
   --nav-active-link-color: var(--clay-500);
   --nav-focus-link-color: var(--clay-500);
+
+  /* Headline Highlights */
+  .highlight-peach {
+    color: rgb(var(--peach));
+  }
+  .highlight-peach-300 {
+    color: rgb(var(--peach-300));
+  }
+
   --header-background: linear-gradient(
     135deg,
     rgba(var(--black), 1) 0%,

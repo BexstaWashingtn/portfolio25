@@ -4,6 +4,8 @@
 }
 
 .padding-inline {
+  padding-inline: 2rem;
+
   @media (max-width: 1024px) {
     padding-inline: 2rem;
   }
@@ -38,19 +40,19 @@
 }
 
 .narrow {
-  max-width: 848px;
+  max-width: 912px;
 }
 
 .swiper {
-  max-width: 992px;
+  max-width: 1056px;
 }
 
 .default {
-  max-width: 1024px;
+  max-width: 1088px;
 }
 
 .wide {
-  max-width: 1440px;
+  max-width: 1504px;
 }
 
 .full {
