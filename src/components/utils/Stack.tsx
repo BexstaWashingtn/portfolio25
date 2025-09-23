@@ -3,9 +3,16 @@ import styles from "./stack.module.css";
 
 type Props = {
   children: React.ReactNode;
-  gap?: "sm" | "md" | "lg" | "xl" | "xxl";
+  gap?: "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
   direction?: "row" | "column";
   wrap?: boolean;
+  justifyContent?:
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
   className?: string;
 };
 
@@ -16,6 +23,7 @@ export default function Stack({
   gap = "xl",
   direction = "column",
   wrap = false,
+  justifyContent,
   className,
 }: Props) {
   return (
@@ -24,6 +32,7 @@ export default function Stack({
         styles.stack,
         styles[direction],
         wrap && styles.wrap,
+        justifyContent && styles[`justify-${justifyContent}`],
         styles[`gap-${gap}`],
         className
       )}

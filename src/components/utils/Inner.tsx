@@ -4,8 +4,8 @@ import styles from "./inner.module.css";
 type Props = {
   children: React.ReactNode;
   variant?: "default" | "narrow" | "wide" | "full" | "swiper";
-  paddingTop?: "sm" | "md" | "lg" | "xl" | "xxl";
-  paddingBottom?: "sm" | "md" | "lg" | "xl" | "xxl";
+  paddingTop?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+  paddingBottom?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
   paddingInline?: boolean;
   className?: string;
 };

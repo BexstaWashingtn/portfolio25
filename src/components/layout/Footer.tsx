@@ -16,7 +16,7 @@ export default function Footer() {
     >
       <footer className={styles.footer}>
         <header className={styles.header}>
-          <Inner variant='wide' paddingTop='md' paddingBottom='md'>
+          <Inner variant='wide' paddingTop='lg' paddingBottom='lg'>
             <Stack direction='column' gap='md'>
               <div className={styles.buildLogos}>
                 <span className={styles.label}>App is build with:</span>
@@ -43,7 +43,6 @@ export default function Footer() {
                   />
                 </div>
               </div>
-
               <div className={styles.messages}>
                 <p className={styles.message}>
                   Barrierefrei & semantisch entwickelt

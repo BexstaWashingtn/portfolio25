@@ -25,7 +25,8 @@
   --gap-md: 2rem;
   --gap-lg: 4rem;
   --gap-xl: 8rem;
-  --gap-xxl: 16rem;
+  --gap-xxl: 12rem;
+  --gap-xxxl: 16rem;
 
   /* Shadows */
   --shadow-sm: 0 0 4px rgba(var(--black), 0.6);

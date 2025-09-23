@@ -36,3 +36,25 @@
 .gap-xxl {
   gap: var(--gap-xxl);
 }
+.gap-xxl {
+  gap: var(--gap-xxxl);
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+.justify-flex-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-space-around {
+  justify-content: space-around;
+}
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
