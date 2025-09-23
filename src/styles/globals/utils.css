@@ -10,11 +10,22 @@
 }
 
 /* Breakpoint-spezifisch */
-@media (min-width: 768px) {
+
+/* breakpoint max 1024 lg  */
+
+@media (max-width: 1024px) {
+  .align-center-lg {
+    align-items: center;
+  }
+}
+
+/* breakpoint max tablet md  */
+
+@media (max-width: 768px) {
   .align-stretch-md {
     align-items: stretch;
   }
-  .align-items-md {
+  .align-center-md {
     align-items: center;
   }
 }

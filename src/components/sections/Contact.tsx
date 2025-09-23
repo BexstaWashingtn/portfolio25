@@ -14,6 +14,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import styles from "./contact.module.css";
 import { BackgroundImageWrapper } from "../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../layout/BackgroundGradientWrapper";
+import SectionHeader from "./SectionHeader";
 
 // TODO: Form sendable machen
 // TODO: add CSS boxshadow
@@ -48,15 +49,22 @@ export default function SectionContact() {
           }}
         >
           <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-            <Stack gap='xl'>
-              <header className={styles.header}>
+            <Stack gap='xl' className='align-center'>
+              <SectionHeader
+                headline='Kontakt'
+                text='Lust auf ein gemeinsames Projekt, eine Rückmeldung oder
+                  einfach ein Austausch? Hier ist Raum für Ideen, Anfragen und
+                  erste Impulse. Jede Nachricht wird gelesen und beantwortet.'
+              />
+
+              {/*               <header className={styles.header}>
                 <h2 className={styles.headline}>Kontakt</h2>
                 <p className={styles.text}>
                   Lust auf ein gemeinsames Projekt, eine Rückmeldung oder
                   einfach ein Austausch? Hier ist Raum für Ideen, Anfragen und
                   erste Impulse. Jede Nachricht wird gelesen und beantwortet.
                 </p>
-              </header>
+              </header> */}
               <div className={styles.bodyWrapper}>
                 <ul className={styles.contactDataWrapper}>
                   <li className={styles.adress}>

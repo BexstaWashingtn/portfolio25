@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import clsx from "clsx";
 import styles from "./sectionHeader.module.css";
 import Image from "next/image";
 
@@ -8,17 +9,24 @@ type imageProps = {
   title?: string;
   width: number;
   height: number;
+  className?: string;
 };
 
 type Props = {
   image?: imageProps;
   headline: ReactNode;
   text: ReactNode;
+  className?: string;
 };
 
-export default function SectionHeader({ image, headline, text }: Props) {
+export default function SectionHeader({
+  image,
+  headline,
+  text,
+  className,
+}: Props) {
   return (
-    <header className={styles.header}>
+    <header className={clsx(className, styles.header)}>
       {image && (
         <div className={styles.imageWrapper}>
           {/*TODO: make actual photo */}
@@ -30,7 +38,7 @@ export default function SectionHeader({ image, headline, text }: Props) {
             width={image.width}
             height={image.height}
             priority
-            className={styles.image}
+            className={clsx(className, styles.image)}
           />
         </div>
       )}
