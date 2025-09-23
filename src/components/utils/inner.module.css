@@ -4,13 +4,36 @@
 }
 
 .padding-inline {
-  padding-inline: 1rem;
-
   @media (max-width: 1024px) {
     padding-inline: 2rem;
   }
+  @media (max-width: 768px) {
+    padding-inline: 1.5rem;
+  }
   @media (max-width: 480px) {
     padding-inline: 1rem;
+  }
+}
+
+.no-inline-padding {
+  padding-inline: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .no-inline-lg {
+    padding-inline: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .no-inline-md {
+    padding-inline: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-inline-sm {
+    padding-inline: 0 !important;
   }
 }
 
@@ -32,7 +55,6 @@
 
 .full {
   width: 100%;
-  padding-inline: 0;
 }
 
 /* Padding Top */

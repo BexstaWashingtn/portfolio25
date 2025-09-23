@@ -6,7 +6,9 @@ type Props = {
   variant?: "default" | "narrow" | "wide" | "full" | "swiper";
   paddingTop?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
   paddingBottom?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
-  paddingInline?: boolean;
+  paddingInline?:
+    | boolean
+    | { base?: boolean; lg?: boolean; md?: boolean; sm?: boolean };
   className?: string;
 };
 
@@ -27,7 +29,14 @@ export default function Inner({
         styles[variant],
         paddingTop && styles[`pt-${paddingTop}`],
         paddingBottom && styles[`pb-${paddingBottom}`],
-        paddingInline && styles[`padding-inline`],
+        typeof paddingInline === "boolean"
+          ? paddingInline && styles["padding-inline"]
+          : [
+              (paddingInline.base ?? true) && styles["padding-inline"],
+              paddingInline.sm === false && styles["no-inline-sm"],
+              paddingInline.md === false && styles["no-inline-md"],
+              paddingInline.lg === false && styles["no-inline-lg"],
+            ],
         className
       )}
     >
