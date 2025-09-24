@@ -18,7 +18,7 @@
     row-gap: 1rem;
 
     .headline {
-      color: rgb(var(--heading-secondary-color));
+      color: rgb(var(--heading-color));
       padding: 0;
     }
     .text {

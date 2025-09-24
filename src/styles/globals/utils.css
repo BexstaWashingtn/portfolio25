@@ -1,3 +1,17 @@
+/* Text Colors */
+
+/* Headline Highlights */
+.highlight-beige {
+  color: rgb(var(--beige));
+}
+
+.highlight-peach {
+  color: rgb(var(--peach));
+}
+.highlight-peach-300 {
+  color: rgb(var(--peach-300));
+}
+
 /* Standard Align Items */
 .align-center {
   align-items: center;

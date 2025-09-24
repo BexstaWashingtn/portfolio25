@@ -1,9 +1,4 @@
 .legend {
-  padding: 1rem 2rem;
-  background: var(--box-background-gradient);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
   .legendList {
     .legendItem {
       display: flex;

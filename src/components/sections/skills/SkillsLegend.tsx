@@ -1,4 +1,5 @@
 import Rating from "@/components/ui/rating/Rating";
+import clsx from "clsx";
 import styles from "./skillslegend.module.css";
 
 const legendData = [
@@ -26,7 +27,10 @@ const legendData = [
 
 export default function SkillsLegend({}) {
   return (
-    <aside aria-label='Legende Skill-Level' className={styles.legend}>
+    <aside
+      aria-label='Legende Skill-Level'
+      className={clsx(styles.legend, "infoCard")}
+    >
       <dl className={styles.legendList}>
         {legendData.map(({ name, level }) => (
           <div key={name} className={styles.legendItem}>
