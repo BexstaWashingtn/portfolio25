@@ -49,6 +49,9 @@ export default function SectionWorkingMethod() {
 
               <CustomSwiper
                 items={items}
+                renderItem={(item) => (
+                  <WorkingMethodItem key={item.id} item={item} />
+                )}
                 swiperConfig={{
                   slidesPerView: 2,
                   slidesPerGroup: 2,

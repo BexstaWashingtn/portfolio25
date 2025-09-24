@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "src": "/img/projects/logo_bird.svg",
+      "alt": "Project Logo Bird",
+      "width": 151,
+      "height": 160
+    },
+    "title": "Projektname / Titel",
+    "description": "Rezeptbuch-App mit Fokus auf UX-Barrierefreiheit. Von der Nutzerforschung bis zur finalen Umsetzung – konzipiert, gestaltet und umgesetzt mit Next.js & Tailwind.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/img/projects/logo_violet.svg",
+      "alt": "Project Logo Violet photographes",
+      "width": 266,
+      "height": 120
+    },
+    "title": "Projektname / Titel",
+    "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/img/projects/logo_m.svg",
+      "alt": "Project Logo M",
+      "width": 160,
+      "height": 160
+    },
+    "title": "Projektname / Titel",
+    "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/img/projects/logo_pen.svg",
+      "alt": "Project Pen Dev - Draw your World",
+      "width": 160,
+      "height": 160
+    },
+    "title": "Projektname / Titel",
+    "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
+  },
+  {
+    "id": 5,
+    "image": {
+      "src": "/img/projects/logo_heavenFlow.png",
+      "alt": "Project Logo HeavenFlow",
+      "width": 160,
+      "height": 160
+    },
+    "title": "Projektname / Titel",
+    "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
+  }
+]

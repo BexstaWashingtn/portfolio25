@@ -2,13 +2,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
-import WorkingMethodItem from "@components/sections/workingMethods/WorkingMethodItem";
+import { ReactNode, Key } from "react";
 
-type Props = {
-  items: { id: number; icon: string; title: string; text: string }[];
+export default function CustomSwiperr<T extends { id: Key }>({
+  items,
+  renderItem,
+  swiperConfig,
+}: {
+  items: T[];
+  renderItem: (item: T, index: number) => ReactNode;
   swiperConfig?: SwiperOptions;
-};
-export default function CustomSwiper({ items, swiperConfig }: Props) {
+}) {
   return (
     <Swiper
       {...swiperConfig}
@@ -16,10 +20,8 @@ export default function CustomSwiper({ items, swiperConfig }: Props) {
       className={`swiperCustomCSS`}
       pagination={{ clickable: true, el: ".swiperCustomPagination" }}
     >
-      {items.map((item) => (
-        <SwiperSlide key={item.id}>
-          <WorkingMethodItem item={item} />
-        </SwiperSlide>
+      {items.map((item, index) => (
+        <SwiperSlide key={item.id}>{renderItem(item, index)}</SwiperSlide>
       ))}
       <div className='swiperCustomPagination' />
     </Swiper>
