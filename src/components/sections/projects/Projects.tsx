@@ -50,7 +50,10 @@ export default function SectionProjects() {
                 renderItem={(item) => <ProjectCard key={item.id} item={item} />}
                 swiperConfig={{
                   slidesPerView: 2,
-                  spaceBetween: 64,
+                  spaceBetween: 32,
+                  breakpoints: {
+                    768: { spaceBetween: 64 },
+                  },
                 }}
               />
             </Stack>

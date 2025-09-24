@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Button from "@/components/ui/Button";
+import Stack from "@/components/utils/Stack";
 
 type Project = {
   id: number;
@@ -22,31 +23,35 @@ type ProjectCardProps = {
 export default function ProjectCard({ item }: ProjectCardProps) {
   return (
     <div className={styles.projectCard}>
-      <div className={styles.projectCardImageCon}>
-        <Image
-          src={item.image.src}
-          alt={item.image.alt}
-          width={item.image.width}
-          height={item.image.height}
-          priority
-          className={styles.projectCardImage}
-        />
-      </div>
-      <div className={styles.projectCardText}>
-        <h3 className={styles.projectCardHeadline}>{item.title}</h3>
-        <p className={styles.projectCardTextContent}>{item.description}</p>
-      </div>
-      <div className={styles.projectCardTags}>
-        {item.tags &&
-          item.tags.map((tag, index) => (
-            <span key={index} className={styles.projectCardTag}>
-              {tag}
-            </span>
-          ))}
-      </div>
-      <div className={styles.projectCardCtaContainer}>
-        <Button>mehr erfahren</Button>
-      </div>
+      <Stack gap='lg' justifyContent='center'>
+        <Stack gap='md'>
+          <div className={styles.projectCardImageCon}>
+            <Image
+              src={item.image.src}
+              alt={item.image.alt}
+              width={item.image.width}
+              height={item.image.height}
+              priority
+              className={styles.projectCardImage}
+            />
+          </div>
+          <div className={styles.projectCardText}>
+            <h3 className={styles.projectCardHeadline}>{item.title}</h3>
+            <p className={styles.projectCardTextContent}>{item.description}</p>
+          </div>
+          <div className={styles.projectCardTags}>
+            {item.tags &&
+              item.tags.map((tag, index) => (
+                <span key={index} className={styles.projectCardTag}>
+                  {tag}
+                </span>
+              ))}
+          </div>
+        </Stack>
+        <div className={styles.projectCardCtaContainer}>
+          <Button>mehr erfahren</Button>
+        </div>
+      </Stack>
     </div>
   );
 }

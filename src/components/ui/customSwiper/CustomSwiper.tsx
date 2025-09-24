@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
+import styles from "./customSwiper.module.css";
 import { ReactNode, Key } from "react";
 
 export default function CustomSwiperr<T extends { id: Key }>({
@@ -14,16 +15,18 @@ export default function CustomSwiperr<T extends { id: Key }>({
   swiperConfig?: SwiperOptions;
 }) {
   return (
-    <Swiper
-      {...swiperConfig}
-      modules={[Pagination]}
-      className={`swiperCustomCSS`}
-      pagination={{ clickable: true, el: ".swiperCustomPagination" }}
-    >
-      {items.map((item, index) => (
-        <SwiperSlide key={item.id}>{renderItem(item, index)}</SwiperSlide>
-      ))}
-      <div className='swiperCustomPagination' />
-    </Swiper>
+    <div className={styles.swiperContainer}>
+      <Swiper
+        {...swiperConfig}
+        modules={[Pagination]}
+        className={`swiperCustomCSS`}
+        pagination={{ clickable: true, el: ".swiperCustomPagination" }}
+      >
+        {items.map((item, index) => (
+          <SwiperSlide key={item.id}>{renderItem(item, index)}</SwiperSlide>
+        ))}
+        <div className='swiperCustomPagination' />
+      </Swiper>
+    </div>
   );
 }
