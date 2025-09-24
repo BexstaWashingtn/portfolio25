@@ -29,8 +29,6 @@ export default function SectionHeader({
     <header className={clsx(className, styles.header)}>
       {image && (
         <div className={styles.imageWrapper}>
-          {/*TODO: make actual photo */}
-
           <Image
             src={image.src}
             alt={image.alt}

@@ -1,6 +1,6 @@
 import Inner from "../utils/Inner";
 import styles from "./aboutme.module.css";
-import Image from "next/image";
+import SectionHeader from "./SectionHeader";
 
 export default function SectionAboutme({}) {
   const birthYear = 1982;
@@ -13,7 +13,34 @@ export default function SectionAboutme({}) {
   return (
     <section className={styles.about} id='about'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <header className={styles.Wrapper}>
+        <SectionHeader
+          image={{
+            src: "/img/aboutme/tb_smile.png",
+            alt: "Foto von Thomas mit einem Lächeln",
+            width: 286,
+            height: 382,
+            className: "",
+          }}
+          headline={
+            <>
+              Über <span className='highlight-peach'>mich</span>
+            </>
+          }
+          text={
+            <>
+              Ich bin Thomas, {age} Jahre, aus Brandenburg.
+              <br />
+              Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
+              Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
+              meiner Ausbildung zum Mediengestalter (2001) entwickle ich
+              digitale Produkte – heute vor allem moderne Webanwendungen mit
+              React und Next.js.
+            </>
+          }
+          className='borderImage'
+        />
+
+        {/* <header className={styles.Wrapper}>
           <div className={styles.imageWrapper}>
             <Image
               src='/img/aboutme/tb_smile.png'
@@ -39,7 +66,7 @@ export default function SectionAboutme({}) {
               React und Next.js.
             </p>
           </div>
-        </header>
+        </header> */}
       </Inner>
     </section>
   );
