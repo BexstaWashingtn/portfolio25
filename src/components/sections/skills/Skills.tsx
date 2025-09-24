@@ -46,7 +46,7 @@ export default function SectionSkills() {
       >
         <section id='skills' className={styles.skills}>
           <Inner paddingBottom='xxl' paddingTop='xxl' variant='narrow'>
-            <Stack direction='column' gap='xl'>
+            <Stack direction='column' gap={{ base: "xl", md: "lg" }}>
               <SectionHeader
                 image={{
                   src: "/img/skills/icon_skills.svg",

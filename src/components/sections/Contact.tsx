@@ -57,14 +57,6 @@ export default function SectionContact() {
                   erste Impulse. Jede Nachricht wird gelesen und beantwortet.'
               />
 
-              {/*               <header className={styles.header}>
-                <h2 className={styles.headline}>Kontakt</h2>
-                <p className={styles.text}>
-                  Lust auf ein gemeinsames Projekt, eine Rückmeldung oder
-                  einfach ein Austausch? Hier ist Raum für Ideen, Anfragen und
-                  erste Impulse. Jede Nachricht wird gelesen und beantwortet.
-                </p>
-              </header> */}
               <div className={styles.bodyWrapper}>
                 <ul className={styles.contactDataWrapper}>
                   <li className={styles.adress}>

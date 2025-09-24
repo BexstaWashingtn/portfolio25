@@ -41,7 +41,7 @@ export default function SectionWorkingMethod() {
   return (
     <section className={styles.workingMethod} id='working-method'>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <Stack gap='lg'>
+        <Stack gap={{ base: "lg", md: "md", sm: "sm" }}>
           <h2 className={styles.h2}>Arbeitsweise</h2>
           <Inner paddingTop='md' paddingInline={false}>
             {isMobile ? (
