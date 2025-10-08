@@ -90,12 +90,6 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-export const config = {
-  matcher: [
-    "/((?!_next|api|favicon.ico|locked|.*\\.(?:jpg|jpeg|png|gif|webp|svg|ico|txt|xml|json)).*)",
-  ],
-};
-
 const b64url = (bytes: ArrayBuffer | Uint8Array) => {
   const bin = String.fromCharCode(...new Uint8Array(bytes as ArrayBuffer));
   return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
