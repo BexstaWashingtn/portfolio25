@@ -8,14 +8,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/locked", request.url));
   }
 
-  // Free Pages und Sources -------------------------------->
-  // ------------------------------------------------------->
-
   const { pathname } = request.nextUrl;
+
   // Framework-Assets & Optimizer freigeben
   if (pathname.startsWith("/_next/")) {
     return NextResponse.next();
   }
+
   // Statische Dateien/Fonts freigeben
   if (
     /\.(?:jpg|jpeg|png|gif|webp|svg|ico|css|js|map|json|txt|xml|woff2?|ttf|otf)$/.test(
@@ -24,13 +23,11 @@ export async function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
+
   // Deine offene Seite freigeben
   if (pathname.startsWith("/locked")) {
     return NextResponse.next();
   }
-
-  // ------------------------------------------------------->
-  // ------------------------------------------------------->
 
   const secretBytes = Uint8Array.from(atob(secret), (c) => c.charCodeAt(0));
   const hmacKey = await crypto.subtle.importKey(
@@ -49,6 +46,7 @@ export async function middleware(request: NextRequest) {
   };
 
   // 3) check url Param "freeentry"
+  const url = request.nextUrl;
   if (url.searchParams.has("freeentry")) {
     const isHttps = url.protocol === "https:";
     const cookieOptions = {
