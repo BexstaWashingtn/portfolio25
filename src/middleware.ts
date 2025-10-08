@@ -9,7 +9,10 @@ export async function middleware(request: NextRequest) {
   }
 
   const url = request.nextUrl;
-  if (url.pathname.startsWith("/locked")) {
+  if (
+    url.pathname.startsWith("/locked") ||
+    url.pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/)
+  ) {
     return NextResponse.next();
   }
 
@@ -88,7 +91,9 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon.ico|locked).*)"],
+  matcher: [
+    "/((?!_next|api|favicon.ico|locked|.*\\.(?:jpg|jpeg|png|gif|webp|svg|ico|txt|xml|json)).*)",
+  ],
 };
 
 const b64url = (bytes: ArrayBuffer | Uint8Array) => {
