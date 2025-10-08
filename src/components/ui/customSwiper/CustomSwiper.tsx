@@ -5,6 +5,8 @@ import "swiper/css";
 import styles from "./customSwiper.module.css";
 import { ReactNode, Key } from "react";
 
+// TODO: add Swiper Arrows
+
 export default function CustomSwiperr<T extends { id: Key }>({
   items,
   renderItem,
