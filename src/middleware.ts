@@ -9,10 +9,7 @@ export async function middleware(request: NextRequest) {
   }
 
   const url = request.nextUrl;
-  if (
-    url.pathname.startsWith("/locked") ||
-    url.pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/)
-  ) {
+  if (url.pathname.startsWith("/locked")) {
     return NextResponse.next();
   }
 
