@@ -54,7 +54,7 @@ export default function SectionHero({
                 >
                   <>
                     <ImBlocked className={styles.lockIcon} />
-                    <p>Die Seite ist für unautorisiert Zufriffe gesperrt.</p>
+                    <p>Die Seite ist für unautorisierte Zugriffe gesperrt.</p>
                   </>
                 </motion.div>
               )}

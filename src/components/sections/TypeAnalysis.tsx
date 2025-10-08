@@ -29,7 +29,7 @@ const typeAnalysisData = {
       entry: "braucht klare Prioritäten bei komplexen Aufgaben",
     },
     {
-      entry: "braucht klare Prioritäten bei komplexen Aufgaben",
+      entry: "frustriert bei sinnlosen oder monotonen Aufgabe",
     },
     {
       entry: "reagiert sensibel auf Einschränkungen",

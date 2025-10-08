@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./navigation.module.css";
+import { useEffect } from "react";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state
@@ -45,6 +46,12 @@ export default function Navigation({
     const section = document.getElementById(sectionId);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  useEffect(() => {
+    const htmlEl = document.documentElement;
+    htmlEl.classList.toggle("overflow-hidden", isMobileMenuOpen);
+    return () => htmlEl.classList.remove("overflow-hidden");
+  }, [isMobileMenuOpen]);
 
   return (
     <nav

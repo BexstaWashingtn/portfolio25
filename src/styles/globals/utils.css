@@ -12,6 +12,10 @@
   color: rgb(var(--peach-300));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 /* Standard Align Items */
 .align-center {
   align-items: center;

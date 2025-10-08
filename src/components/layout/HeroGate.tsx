@@ -17,7 +17,7 @@ import WorkingMethod from "../sections/workingMethods/WorkingMethod";
 import Skills from "../sections/skills/Skills";
 import Footer from "@/components/layout/Footer";
 
-// TODO: Mobile Scrolling dont close HeroGateS
+// TODO: Mobile Scrolling dont close HeroGate
 // TODO: add body max-width:1920px (inner comp???) and background for > 1920px
 
 export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
