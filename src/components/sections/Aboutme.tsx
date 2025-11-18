@@ -9,6 +9,7 @@ export default function SectionAboutme({}) {
 
   // TOOO: add background Components for Gradient and Image - as one???
   // TODO: make actual photo
+  // TODO: add a Section Component for all Sections with id,
 
   return (
     <section className={styles.about} id='about'>
@@ -39,34 +40,6 @@ export default function SectionAboutme({}) {
           }
           className='borderImage'
         />
-
-        {/* <header className={styles.Wrapper}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src='/img/aboutme/tb_smile.png'
-              alt='Foto von Thomas mit einem Lächeln'
-              title='Foto von Thomas mit einem Lächeln'
-              width={286}
-              height={382}
-              priority
-              className={styles.image}
-            />
-          </div>
-          <div className={styles.content}>
-            <h2 className={styles.headline}>
-              Über <span className='highlight-peach'>mich</span>
-            </h2>
-            <p className={styles.text}>
-              Ich bin Thomas, {age} Jahre, aus Brandenburg.
-              <br />
-              Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
-              Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
-              meiner Ausbildung zum Mediengestalter (2001) entwickle ich
-              digitale Produkte – heute vor allem moderne Webanwendungen mit
-              React und Next.js.
-            </p>
-          </div>
-        </header> */}
       </Inner>
     </section>
   );

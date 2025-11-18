@@ -16,25 +16,25 @@ export default function SectionWorkingMethod() {
       id: 1,
       icon: "/img/workMethod/icon_analytically.svg",
       title: "Analytisch",
-      text: "Ich plane strukturiert, denke in Nutzer-Flows und arbeite gern mit Skizzen & Wireframes.",
+      text: "Plant strukturiert, denkt in Nutzer-Flows und arbeite gern mit Skizzen & Wireframes.",
     },
     {
       id: 2,
       icon: "/img/workMethod/icon_cooperation.svg",
       title: "Kooperativ",
-      text: "Ich bin lösungsorientiert, offen für Feedback und arbeite gern auf Augenhöhe – leise, aber präsent.",
+      text: "Lösungsorientiert, offen für Feedback und arbeitet gern auf Augenhöhe – leise, aber präsent.",
     },
     {
       id: 3,
       icon: "/img/workMethod/icon_usercentric.svg",
       title: "Nutzerzentriert",
-      text: "Ich verbinde Barrierefreiheit mit Gestaltungslust – verständlich, zugänglich, individuell.",
+      text: "Verbindet Barrierefreiheit mit Gestaltungslust – verständlich, zugänglich, individuell.",
     },
     {
       id: 4,
       icon: "/img/workMethod/icon_technically.svg",
       title: "Technisch",
-      text: "Ich schreibe modularen, sprechenden Code – lieber einfach & robust als überladen & trendy.",
+      text: "Schreibt modularen, sprechenden Code – lieber einfach & robust als überladen & trendy.",
     },
   ];
 
