@@ -77,12 +77,36 @@ section.contact {
             outline: var(--focus-ring);
           }
         }
+
+        .error {
+          font-size: 0.85rem;
+          color: rgb(var(--peach));
+          padding-top: 0.25rem;
+        }
+
+        .serverError {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          color: rgb(var(--peach));
+
+          .icon {
+            font-size: 2.5rem;
+          }
+          .message {
+            font-size: 0.85rem;
+            margin: 0;
+            line-height: 1.25;
+          }
+        }
       }
 
       .privacyNote {
         font-size: 0.75rem;
         line-height: 1;
         margin: 0;
+        font-weight: 200;
       }
 
       .actions {

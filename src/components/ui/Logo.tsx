@@ -18,7 +18,7 @@ export default function Logo({
     return (
       <Image
         src='/img/logo/logo_beige_shadow.png'
-        alt='Logo - Eine Mann sitzt in einem Fensterrahmen und schaut in den Himmel'
+        alt='Logo - Eine Mann sitzt nachdenklich in einem Fensterrahmen und schaut in den Himmel'
         title='Logo Thomas Badrow'
         width={width}
         height={height}

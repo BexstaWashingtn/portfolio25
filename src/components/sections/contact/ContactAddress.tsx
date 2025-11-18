@@ -1,5 +1,6 @@
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import styles from "./contact.module.css";
+import Logo from "@/components/ui/Logo";
 
 type ContactData = {
   name: string;
@@ -24,6 +25,10 @@ export default function ContactAddress({ contactData }: ContactProps) {
 
   return (
     <ul className={styles.contactDataWrapper}>
+      <li>
+        <Logo width={68} height={100} linkDisabled={true} />
+      </li>
+
       <li className={styles.adress}>
         {name}
         <br />

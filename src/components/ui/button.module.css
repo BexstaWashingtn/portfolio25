@@ -9,6 +9,7 @@
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-md);
   align-self: flex-start;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
 
   &:hover {
     background: rgb(var(--peach));
