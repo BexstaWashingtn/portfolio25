@@ -21,9 +21,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const { name, email, message, hpot } = result.data;
+    const { hpot } = result.data;
 
     if (hpot && hpot.trim() !== "") {
+      console.log("kommt");
+
       return NextResponse.json(
         {
           success: true,
