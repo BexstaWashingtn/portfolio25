@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Inner from "@/components/utils/Inner";
 import styles from "./skills.module.css";
 import Stack from "@/components/utils/Stack";
