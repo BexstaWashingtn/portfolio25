@@ -141,6 +141,17 @@ export default function ContactForm() {
             )}
           </div>
 
+          <div className={styles.field}>
+            <input
+              type='text'
+              tabIndex={-1}
+              aria-hidden='true'
+              autoComplete='off'
+              style={{ display: "none" }}
+              {...register("hpot")}
+            />
+          </div>
+
           <p id='privacy-note' className={styles.privacyNote}>
             Hinweis zum Datenschutz: Die im Formular eingegebenen Daten werden
             ausschließlich zur Bearbeitung deiner Anfrage verwendet. Weitere
