@@ -13,7 +13,6 @@ import {
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RiErrorWarningLine } from "react-icons/ri";
-import { useState } from "react";
 
 export default function ContactForm() {
   const {
@@ -37,16 +36,8 @@ export default function ContactForm() {
   const messageLength = messageValue.length;
   const charsToMin = Math.max(MESSAGE_MIN_LENGTH - messageLength, 0);
   const hasReachedMin = charsToMin === 0;
-  const [generalMessage, setGeneralMessage] = useState<string | null>(null);
-  const [generalType, setGeneralType] = useState<"success" | "error" | null>(
-    null
-  );
 
   const onSubmit = async (data: ContactFormData) => {
-    setGeneralMessage(null);
-    setGeneralType(null);
-    clearErrors("root");
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -68,24 +59,24 @@ export default function ContactForm() {
           });
         }
 
-        setGeneralMessage(result.message ?? "Fehler beim Senden.");
-        setGeneralType("error");
+        setError("root.server", {
+          type: "server",
+          message: result.message ?? "Fehler beim Senden.",
+        });
         return;
       }
 
       // Erfolgreich
-      setGeneralMessage(result.message ?? "Nachricht erfolgreich gesendet!");
-      setGeneralType("success");
+      clearErrors();
       reset();
-
-      // evtl. Success-Message setzen
     } catch (err) {
       console.log("Unerwarteter Fehler: ", err);
       // Unerwarteter Fehler
-      setGeneralMessage(
-        "Unerwarteter Serverfehler. Bitte später erneut versuchen."
-      );
-      setGeneralType("error");
+      setError("root.server", {
+        type: "server",
+        message:
+          "Unerwarteter Server Fehler. Bitte später erneut versuchen oder über kontakt@tomasbee.de",
+      });
     }
   };
 
@@ -212,7 +203,7 @@ export default function ContactForm() {
             </Button>
           </div>
 
-          {isSubmitSuccessful && (
+          {isSubmitSuccessful && !errors.root && (
             <p className={styles.success} aria-live='polite'>
               Formular wurde erfolgreich abgeschickt.
             </p>

@@ -85,10 +85,11 @@ section.contact {
           }
         }
 
-        .error {
+        .error,
+        .success {
           font-size: 0.85rem;
-          color: rgb(var(--peach));
           padding-top: 0.25rem;
+          color: rgb(var(--peach));
         }
 
         .serverError {
