@@ -60,7 +60,14 @@ section.contact {
         flex-direction: column;
         gap: 1rem;
 
-        .label {
+        .fieldheader {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .label,
+        .headerMessage {
           font-size: 0.8rem;
         }
 

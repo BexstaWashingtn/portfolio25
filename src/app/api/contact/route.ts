@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message: "serverfehler. Bitte später erneut versuchen.",
+        message: "Serverfehler. Bitte später erneut versuchen.",
       },
       { status: 500 }
     );

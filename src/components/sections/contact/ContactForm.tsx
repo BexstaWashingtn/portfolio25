@@ -7,18 +7,22 @@ import styles from "./contact.module.css";
 import {
   contactFormSchema,
   type ContactFormData,
+  MESSAGE_MIN_LENGTH,
+  MESSAGE_MAX_LENGTH,
 } from "@/lib/validation/contact";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RiErrorWarningLine } from "react-icons/ri";
+import { useState } from "react";
 
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
     setError,
+    control,
     clearErrors,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -29,36 +33,59 @@ export default function ContactForm() {
     },
   });
 
+  const messageValue = useWatch({ control, name: "message" }) ?? "";
+  const messageLength = messageValue.length;
+  const charsToMin = Math.max(MESSAGE_MIN_LENGTH - messageLength, 0);
+  const hasReachedMin = charsToMin === 0;
+  const [generalMessage, setGeneralMessage] = useState<string | null>(null);
+  const [generalType, setGeneralType] = useState<"success" | "error" | null>(
+    null
+  );
+
   const onSubmit = async (data: ContactFormData) => {
+    setGeneralMessage(null);
+    setGeneralType(null);
     clearErrors("root");
 
     try {
-      const res = await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) {
-        setError("root.server", {
-          type: "server",
-          message:
-            "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
-        });
+      const result = await response.json();
+
+      // Validierungsfehler von der API
+      if (!response.ok) {
+        if (result.errors) {
+          // result.errors ist ein Objekt: { name: [], email: [], message: [] }
+          Object.entries(result.errors).forEach(([field, messages]) => {
+            setError(field as keyof ContactFormData, {
+              type: "server",
+              message: (messages as string[]).join(" "),
+            });
+          });
+        }
+
+        setGeneralMessage(result.message ?? "Fehler beim Senden.");
+        setGeneralType("error");
         return;
       }
 
+      // Erfolgreich
+      setGeneralMessage(result.message ?? "Nachricht erfolgreich gesendet!");
+      setGeneralType("success");
       reset();
 
       // evtl. Success-Message setzen
-    } catch (error) {
-      setError("root.server", {
-        type: "server",
-        message:
-          error instanceof TypeError
-            ? "Der Server ist nicht erreichbar."
-            : "Es ist ein unbekannter Fehler aufgetreten.",
-      });
+    } catch (err) {
+      console.log("Unerwarteter Fehler: ", err);
+      // Unerwarteter Fehler
+      setGeneralMessage(
+        "Unerwarteter Serverfehler. Bitte später erneut versuchen."
+      );
+      setGeneralType("error");
     }
   };
 
@@ -120,9 +147,18 @@ export default function ContactForm() {
           </div>
 
           <div className={styles.field}>
-            <label htmlFor='message' className={styles.label}>
-              Deine Nachricht
-            </label>
+            <div className={styles.fieldheader}>
+              <label htmlFor='message' className={styles.label}>
+                Nachricht
+              </label>
+              <span className={styles.headerMessage} aria-live='polite'>
+                {!messageValue
+                  ? ""
+                  : !hasReachedMin
+                  ? `${messageLength} / min. ${MESSAGE_MIN_LENGTH} Zeichen`
+                  : `${messageValue.length} / max. ${MESSAGE_MAX_LENGTH} Zeichen`}
+              </span>
+            </div>
 
             <textarea
               id='message'
@@ -175,6 +211,12 @@ export default function ContactForm() {
               {isSubmitting ? "sendet .." : "Absenden"}
             </Button>
           </div>
+
+          {isSubmitSuccessful && (
+            <p className={styles.success} aria-live='polite'>
+              Formular wurde erfolgreich abgeschickt.
+            </p>
+          )}
         </div>
       </form>
     </div>

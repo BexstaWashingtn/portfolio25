@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+export const MESSAGE_MIN_LENGTH = 20;
+export const MESSAGE_MAX_LENGTH = 2000;
+
 export const contactFormSchema = z.object({
   name: z
     .string()
@@ -24,9 +27,14 @@ export const contactFormSchema = z.object({
 
   message: z
     .string()
-    .min(20, { message: "Die Nachricht muss mindestens 20 Zeichen enthalten" })
-    .max(2000, { message: "Die Nachricht darf maximal 2000 Zeichen enthalten" })
-    .trim(),
+    .min(
+      MESSAGE_MIN_LENGTH,
+      `Deine Nachricht sollte mindestens ${MESSAGE_MIN_LENGTH} Zeichen enthalten.`
+    )
+    .max(
+      MESSAGE_MAX_LENGTH,
+      `Die Nachricht darf maximal ${MESSAGE_MAX_LENGTH} Zeichen lang sein.`
+    ),
   hpot: z
     .string()
     .optional()
