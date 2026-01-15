@@ -46,38 +46,6 @@ export default function ContactAddress({ contactData }: ContactProps) {
           <a href={`mailto:${email}`}>{email}</a>
         </p>
       </li>
-
-      {/*
-      <div className={styles.contactDataGroup}>
-        <p className={styles.contactDataGroupLabel}>Socialmedia:</p>
-        <ul className={styles.contactDataGroupIcons}>
-          <li>
-            <Link href='/'>
-              <FaXing /> <SrOnly>Xing Profil</SrOnly>
-            </Link>
-          </li>
-          <li>
-            <Link href='/'>
-              <FaLinkedinIn /> <SrOnly>LinkedIn Profil</SrOnly>
-            </Link>
-          </li>
-          <li>
-            <Link href='/'>
-              <RiInstagramFill /> <SrOnly>Instagram Profil</SrOnly>
-            </Link>
-          </li>
-          <li>
-            <Link href='/'>
-              <FaXTwitter /> <SrOnly>X (Twitter) Profil</SrOnly>
-            </Link>
-          </li>
-          <li>
-            <Link href='/'>
-              <FaFacebook /> <SrOnly>Facebook Profil</SrOnly>
-            </Link>
-          </li>
-        </ul>
-      </div> */}
     </ul>
   );
 }

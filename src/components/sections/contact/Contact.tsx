@@ -22,8 +22,8 @@ export default function SectionContact() {
     },
 
     phone: {
-      display: "+49 179 12 88",
-      value: "+491791288", // für tel:-Link
+      display: "+49 173 179 12 88",
+      value: "+491731791288", // für tel:-Link
     },
 
     email: "kontakt@tomasbee.de",
