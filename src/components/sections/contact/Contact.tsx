@@ -12,21 +12,22 @@ import ContactForm from "./ContactForm";
 // TODO: add CSS boxshadow
 
 export default function SectionContact() {
+  const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
+
   const contactData = {
-    name: "Thomas Badrow",
+    name: process.env.NEXT_PUBLIC_CONTACT_NAME ?? "Frontend Developer",
 
     address: {
-      street: "Hafenstr. 3c",
-      postalCode: "15537",
-      city: "Erkner",
+      street: process.env.NEXT_PUBLIC_CONTACT_STREET ?? "Dev Street 36",
+      state: process.env.NEXT_PUBLIC_CONTACT_STATE ?? "Dev World",
     },
 
     phone: {
-      display: "+49 173 179 12 88",
-      value: "+491731791288", // für tel:-Link
+      display: phone,
+      value: phone.replace(/\s+/g, ""),
     },
 
-    email: "kontakt@tomasbee.de",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@example.com",
   };
 
   return (

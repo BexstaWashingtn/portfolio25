@@ -6,8 +6,7 @@ type ContactData = {
   name: string;
   address: {
     street: string;
-    postalCode: string;
-    city: string;
+    state: string;
   };
   phone: {
     display: string;
@@ -34,7 +33,7 @@ export default function ContactAddress({ contactData }: ContactProps) {
         <br />
         {address.street}
         <br />
-        {address.postalCode} {address.city}
+        {address.state}
       </li>
       <li className={styles.contactDataGroup}>
         <p className={styles.contactDataGroupItem}>
