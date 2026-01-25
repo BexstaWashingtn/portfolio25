@@ -32,6 +32,7 @@ export default function ContactForm() {
     },
   });
 
+  //
   const messageValue = useWatch({ control, name: "message" }) ?? "";
   const messageLength = messageValue.length;
   const charsToMin = Math.max(MESSAGE_MIN_LENGTH - messageLength, 0);
@@ -146,8 +147,8 @@ export default function ContactForm() {
                 {!messageValue
                   ? ""
                   : !hasReachedMin
-                  ? `${messageLength} / min. ${MESSAGE_MIN_LENGTH} Zeichen`
-                  : `${messageValue.length} / max. ${MESSAGE_MAX_LENGTH} Zeichen`}
+                    ? `${messageLength} / min. ${MESSAGE_MIN_LENGTH} Zeichen`
+                    : `${messageValue.length} / max. ${MESSAGE_MAX_LENGTH} Zeichen`}
               </span>
             </div>
 

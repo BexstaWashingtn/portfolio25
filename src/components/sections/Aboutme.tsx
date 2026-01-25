@@ -1,3 +1,4 @@
+import { getProfileData } from "@/lib/profile/getProfileData";
 import Inner from "../utils/Inner";
 import styles from "./aboutme.module.css";
 import SectionHeader from "./SectionHeader";
@@ -6,6 +7,7 @@ export default function SectionAboutme({}) {
   const birthYear = 1982;
   const currentYear = new Date().getFullYear();
   const age = currentYear - birthYear;
+  const profile = getProfileData();
 
   // TOOO: add background Components for Gradient and Image - as one???
   // TODO: make actual photo
@@ -17,7 +19,7 @@ export default function SectionAboutme({}) {
         <SectionHeader
           image={{
             src: "/img/aboutme/tb_smile.png",
-            alt: "Foto von Thomas mit einem Lächeln",
+            alt: `Foto von ${profile.firstname}`,
             width: 286,
             height: 382,
             className: "",
@@ -29,7 +31,7 @@ export default function SectionAboutme({}) {
           }
           text={
             <>
-              Ich bin Thomas, {age} Jahre, aus Brandenburg.
+              Ich bin {profile.firstname}, {age} Jahre, aus Brandenburg.
               <br />
               Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
               Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit

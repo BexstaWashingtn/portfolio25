@@ -5,29 +5,30 @@ import styles from "./contact.module.css";
 import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import SectionHeader from "../SectionHeader";
-import ContactAddress from "./ContactAddress";
+import ContactInfos from "./ContactInfos";
 import ContactForm from "./ContactForm";
+import { getProfileData } from "@/lib/profile/getProfileData";
 
 // TODO: Form sendable machen
 // TODO: add CSS boxshadow
 
 export default function SectionContact() {
-  const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
+  const profile = getProfileData();
 
   const contactData = {
-    name: process.env.NEXT_PUBLIC_CONTACT_NAME ?? "Frontend Developer",
+    name: `${profile.firstname} ${profile.lastname}`,
 
     address: {
-      street: process.env.NEXT_PUBLIC_CONTACT_STREET ?? "Dev Street 36",
-      state: process.env.NEXT_PUBLIC_CONTACT_STATE ?? "Dev World",
+      street: profile.street,
+      state: profile.state,
     },
 
     phone: {
-      display: phone,
-      value: phone.replace(/\s+/g, ""),
+      display: profile.phone,
+      value: profile.phone.replace(/\s+/g, ""),
     },
 
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@example.com",
+    email: profile.email,
   };
 
   return (
@@ -68,7 +69,7 @@ export default function SectionContact() {
               />
 
               <div className={styles.bodyWrapper}>
-                <ContactAddress contactData={contactData} />
+                <ContactInfos contactData={contactData} />
                 <ContactForm />
               </div>
             </Stack>

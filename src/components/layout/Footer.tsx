@@ -4,8 +4,11 @@ import Inner from "../utils/Inner";
 import styles from "./footer.module.css";
 import Stack from "../utils/Stack";
 import { BackgroundImageWrapper } from "./BackgroundImageWrapper";
+import { getProfileFullName } from "@/lib/profile/getFullName";
 
 export default function Footer() {
+  const profileFullName = getProfileFullName();
+
   return (
     <BackgroundImageWrapper
       image={{
@@ -51,7 +54,7 @@ export default function Footer() {
                   <p className={styles.lastbuilt}>
                     last build:{" "}
                     {new Date(process.env.NEXT_PUBLIC_BUILT_AT).toLocaleString(
-                      "de-DE"
+                      "de-DE",
                     )}
                   </p>
                 )}
@@ -64,7 +67,7 @@ export default function Footer() {
           <Inner variant='wide'>
             <div className={styles.inner}>
               <p className={styles.copyright}>
-                © 2025 Thomas Badrow. Alle Rechte vorbehalten.
+                {`© 2025 ${profileFullName}. Alle Rechte vorbehalten.`}
               </p>
 
               <nav className={styles.navigation} aria-label='Footernavigation'>
