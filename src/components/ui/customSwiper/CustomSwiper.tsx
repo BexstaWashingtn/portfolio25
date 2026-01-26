@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { SwiperOptions } from "swiper/types";
-import { Navigation, Pagination } from "swiper/modules";
+import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import styles from "./customSwiper.module.css";
 import { ReactNode, Key, useRef, useEffect } from "react";
@@ -23,7 +23,9 @@ export default function CustomSwiper<T extends { id: Key }>({
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const modules = showNavigation ? [Pagination, Navigation] : [Pagination];
+  const modules = showNavigation
+    ? [Keyboard, Pagination, Navigation]
+    : [Pagination];
 
   useEffect(() => {
     if (!showNavigation) {
@@ -60,6 +62,7 @@ export default function CustomSwiper<T extends { id: Key }>({
           {...swiperConfig}
           modules={modules}
           className={`swiperCustomCSS`}
+          keyboard={{ enabled: true, onlyInViewport: true }}
           pagination={{ clickable: true, el: ".swiperCustomPagination" }}
           onSwiper={(swiper) => {
             if (showNavigation) {

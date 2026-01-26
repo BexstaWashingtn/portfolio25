@@ -67,7 +67,12 @@ export default function SectionHero({
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <RiArrowDownSLine className={styles.lockIcon} />
+                  <button
+                    className={styles.buttonStart}
+                    aria-label='Start Website'
+                  >
+                    <RiArrowDownSLine className={styles.lockIcon} />
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>

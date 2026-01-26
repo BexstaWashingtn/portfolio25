@@ -96,11 +96,16 @@ section.hero {
         padding: 1rem;
         background-color: rgba(0, 0, 0, 0.7);
         border-radius: var(--radius-md);
+        width: 100%;
 
         .lockIcon {
           font-size: 1.5rem;
           margin-right: 0.5rem;
           color: var(--peach-brown);
+        }
+
+        .buttonStart {
+          background-color: transparent;
         }
       }
     }

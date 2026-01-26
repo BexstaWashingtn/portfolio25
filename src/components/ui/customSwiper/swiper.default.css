@@ -1,31 +1,33 @@
-.swiperCustomCSS {
-  padding-bottom: 8rem;
+div[class*="customSwiper_swiperContainer"] {
+  .swiperCustomCSS {
+    padding-bottom: 8rem;
 
-  .swiperCustomPagination {
-    text-align: center;
-    width: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    border-radius: 50px;
-    border: 2px solid rgb(var(--peach));
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    position: absolute;
+    .swiperCustomPagination {
+      text-align: center;
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      border-radius: 50px;
+      border: 2px solid rgb(var(--peach));
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      position: absolute;
 
-    .swiper-pagination-bullet {
-      background: rgba(var(--beige), 1);
-      height: 10px;
-      width: 10px;
-      border-radius: var(--radius-md);
+      .swiper-pagination-bullet {
+        background: rgba(var(--beige), 1);
+        height: 10px;
+        width: 10px;
+        border-radius: var(--radius-md);
+      }
     }
   }
-}
 
-.swiper-button-disabled {
-  opacity: 0.4;
-  &:hover {
-    background-color: transparent;
+  .swiper-button-disabled {
+    opacity: 0.4;
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
