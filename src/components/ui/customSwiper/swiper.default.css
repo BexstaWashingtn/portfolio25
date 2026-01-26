@@ -22,3 +22,10 @@
     }
   }
 }
+
+.swiper-button-disabled {
+  opacity: 0.4;
+  &:hover {
+    background-color: transparent;
+  }
+}

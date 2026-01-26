@@ -1,0 +1,6 @@
+.left {
+  transform: rotate(0deg);
+}
+.right {
+  transform: rotate(180deg);
+}

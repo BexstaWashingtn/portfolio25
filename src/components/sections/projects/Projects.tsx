@@ -37,14 +37,16 @@ export default function SectionProjects() {
             ],
           }}
         >
-          <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-            <Stack>
+          <Stack>
+            <Inner variant='narrow' paddingTop='xxl'>
               <SectionHeader
                 headline={"Projekte"}
                 text={
                   "Die Projekte entstanden im Rahmen meiner Weiterbildung 2024/25 oder eigenständig – mit Fokus auf UX, Barrierefreiheit und moderner Frontend-Entwicklung."
                 }
               />
+            </Inner>
+            <Inner variant='swiper' paddingBottom='xxl'>
               <CustomSwiper
                 items={projectData}
                 renderItem={(item) => <ProjectCard key={item.id} item={item} />}
@@ -56,8 +58,8 @@ export default function SectionProjects() {
                   },
                 }}
               />
-            </Stack>
-          </Inner>
+            </Inner>
+          </Stack>
         </BackgroundGradientWrapper>
       </BackgroundImageWrapper>
     </section>

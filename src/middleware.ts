@@ -18,7 +18,7 @@ export async function middleware(request: NextRequest) {
   // Statische Dateien/Fonts freigeben
   if (
     /\.(?:jpg|jpeg|png|gif|webp|svg|ico|css|js|map|json|txt|xml|woff2?|ttf|otf)$/.test(
-      pathname
+      pathname,
     )
   ) {
     return NextResponse.next();
@@ -35,7 +35,7 @@ export async function middleware(request: NextRequest) {
     secretBytes,
     { name: "HMAC", hash: "SHA-256" },
     false,
-    ["sign", "verify"]
+    ["sign", "verify"],
   );
 
   const redirectLocked = () => {
@@ -45,7 +45,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(toLocked);
   };
 
-  // 3) check url Param "freeentry"
+  // check url Param "freeentry"
   const url = request.nextUrl;
   if (url.searchParams.has("freeentry")) {
     const isHttps = url.protocol === "https:";
@@ -63,7 +63,7 @@ export async function middleware(request: NextRequest) {
         iat: now,
         exp: now + 60 * 60 * 24 * 30,
         g: 1,
-      })
+      }),
     );
     const sig = await crypto.subtle.sign("HMAC", hmacKey, payloadBytes);
     const token = `${b64url(payloadBytes)}.${b64url(sig)}`;
@@ -89,7 +89,7 @@ export async function middleware(request: NextRequest) {
     "HMAC",
     hmacKey,
     sigBytes,
-    payloadBytes2
+    payloadBytes2,
   );
   if (!ok) return redirectLocked();
 
