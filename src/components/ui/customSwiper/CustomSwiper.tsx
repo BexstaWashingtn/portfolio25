@@ -8,22 +8,28 @@ import { ReactNode, Key, useRef, useEffect } from "react";
 import CarouselNavButton from "./CarouselNavButton";
 import Stack from "@/components/utils/Stack";
 
-// TODO: add Swiper Arrows
-
-export default function CustomSwiperr<T extends { id: Key }>({
+export default function CustomSwiper<T extends { id: Key }>({
   items,
   renderItem,
   swiperConfig,
+  showNavigation = false,
 }: {
   items: T[];
   renderItem: (item: T, index: number) => ReactNode;
   swiperConfig?: SwiperOptions;
+  showNavigation?: boolean;
 }) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
 
+  const modules = showNavigation ? [Pagination, Navigation] : [Pagination];
+
   useEffect(() => {
+    if (!showNavigation) {
+      return;
+    }
+
     const swiper = swiperRef.current;
     if (!swiper) return;
     if (!prevRef.current || !nextRef.current) return;
@@ -42,19 +48,23 @@ export default function CustomSwiperr<T extends { id: Key }>({
   return (
     <div className={styles.swiperContainer}>
       <Stack direction='row' gap='md'>
-        <CarouselNavButton
-          buttonRef={prevRef}
-          direction='left'
-          label='Vorheriges Projekt'
-        />
+        {showNavigation && (
+          <CarouselNavButton
+            buttonRef={prevRef}
+            direction='left'
+            label='Vorheriges Projekt'
+          />
+        )}
 
         <Swiper
           {...swiperConfig}
-          modules={[Pagination, Navigation]}
+          modules={modules}
           className={`swiperCustomCSS`}
           pagination={{ clickable: true, el: ".swiperCustomPagination" }}
           onSwiper={(swiper) => {
-            swiperRef.current = swiper;
+            if (showNavigation) {
+              swiperRef.current = swiper;
+            }
           }}
         >
           {items.map((item, index) => (
@@ -64,11 +74,13 @@ export default function CustomSwiperr<T extends { id: Key }>({
           <div className='swiperCustomPagination' />
         </Swiper>
 
-        <CarouselNavButton
-          buttonRef={nextRef}
-          direction='right'
-          label='Nächstes Projekt'
-        />
+        {showNavigation && (
+          <CarouselNavButton
+            buttonRef={nextRef}
+            direction='right'
+            label='Nächstes Projekt'
+          />
+        )}
       </Stack>
     </div>
   );

@@ -7,8 +7,12 @@ import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrappe
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import projectData from "./data.json";
 import ProjectCard from "./ProjectCard";
+import useIsMobile from "@/lib/hooks/useIsMobile";
 
 export default function SectionProjects() {
+  const isDesktop = !useIsMobile({ breakpoint: 848 });
+  const showNavigationSwiper = isDesktop;
+
   return (
     <section className={styles.projects} id='projects'>
       <BackgroundImageWrapper
@@ -51,12 +55,13 @@ export default function SectionProjects() {
                 items={projectData}
                 renderItem={(item) => <ProjectCard key={item.id} item={item} />}
                 swiperConfig={{
-                  slidesPerView: 2,
+                  slidesPerView: 1.2,
                   spaceBetween: 32,
                   breakpoints: {
-                    768: { spaceBetween: 64 },
+                    848: { slidesPerView: 2, spaceBetween: 64 },
                   },
                 }}
+                showNavigation={showNavigationSwiper}
               />
             </Inner>
           </Stack>
