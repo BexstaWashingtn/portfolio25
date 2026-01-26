@@ -58,7 +58,8 @@ export default function SectionProjects() {
                   slidesPerView: 1.2,
                   spaceBetween: 32,
                   breakpoints: {
-                    848: { slidesPerView: 2, spaceBetween: 64 },
+                    848: { slidesPerView: 2 },
+                    1024: { spaceBetween: 64 },
                   },
                 }}
                 showNavigation={showNavigationSwiper}

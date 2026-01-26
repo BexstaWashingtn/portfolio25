@@ -55,8 +55,12 @@ export default function SectionWorkingMethod() {
                   slidesPerGroup: 2,
                   spaceBetween: 16,
                   breakpoints: {
-                    0: { slidesPerView: 1, slidesPerGroup: 1 },
-                    680: { slidesPerView: 2, slidesPerGroup: 2 },
+                    0: {
+                      slidesPerView: 1.5,
+                      slidesPerGroup: 1,
+                      spaceBetween: 48,
+                    },
+                    786: { slidesPerView: 2, slidesPerGroup: 2 },
                   },
                 }}
               />

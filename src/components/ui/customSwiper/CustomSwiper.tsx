@@ -45,7 +45,7 @@ export default function CustomSwiper<T extends { id: Key }>({
 
     swiper.navigation.init();
     swiper.navigation.update();
-  }, []);
+  }, [showNavigation]);
 
   return (
     <div className={styles.swiperContainer}>
