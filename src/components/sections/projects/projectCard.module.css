@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 2rem;
   .projectCardImageCon {
-    max-width: 400px;
     width: 100%;
     height: 210px;
     display: flex;

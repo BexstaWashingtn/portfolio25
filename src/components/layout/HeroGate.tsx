@@ -76,7 +76,6 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
       )}
 
       {/* TODO: maybe add mouse wheel motion from section to section only for PC and Tablet */}
-      {/* TODO: add section navigation on left site, only for PC and Tablet */}
 
       {showFullPage && (
         <motion.div

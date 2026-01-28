@@ -5,4 +5,5 @@ export const fallbackProfile = {
   state: "NY City",
   phone: "0123 456 7890",
   email: "mail@example.com",
+  bday: "12.12.2008",
 } as const;

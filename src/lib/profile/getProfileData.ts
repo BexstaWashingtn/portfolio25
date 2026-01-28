@@ -10,5 +10,6 @@ export function getProfileData() {
     state: process.env.NEXT_PUBLIC_CONTACT_STATE ?? fallbackProfile.state,
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? fallbackProfile.phone,
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? fallbackProfile.email,
+    bday: process.env.NEXT_PUBLIC_CONTACT_BDAY ?? fallbackProfile.bday,
   };
 }

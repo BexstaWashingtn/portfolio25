@@ -2,14 +2,12 @@ import { getProfileData } from "@/lib/profile/getProfileData";
 import Inner from "../utils/Inner";
 import styles from "./aboutme.module.css";
 import SectionHeader from "./SectionHeader";
+import { calculateAgeFromString } from "@/lib/profile/calculateAge";
 
 export default function SectionAboutme({}) {
-  const birthYear = 1982;
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - birthYear;
   const profile = getProfileData();
+  const age = calculateAgeFromString(profile.bday);
 
-  // TOOO: add background Components for Gradient and Image - as one???
   // TODO: make actual photo
   // TODO: add a Section Component for all Sections with id,
 
