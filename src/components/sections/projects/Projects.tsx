@@ -50,16 +50,19 @@ export default function SectionProjects() {
                 }
               />
             </Inner>
-            <Inner variant='swiper' paddingBottom='xxl'>
+            <Inner variant='full' paddingBottom='xxl'>
               <CustomSwiper
                 items={projectData}
                 renderItem={(item) => <ProjectCard key={item.id} item={item} />}
                 swiperConfig={{
-                  slidesPerView: 1.2,
                   spaceBetween: 32,
                   breakpoints: {
+                    0: { slidesPerView: 1.2 },
                     848: { slidesPerView: 2 },
                     1024: { spaceBetween: 64 },
+                    1280: { slidesPerView: 3 },
+                    1920: { slidesPerView: 4 },
+                    2440: { slidesPerView: 5 },
                   },
                 }}
                 showNavigation={showNavigationSwiper}
