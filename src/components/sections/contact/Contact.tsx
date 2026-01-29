@@ -21,6 +21,7 @@ export default function SectionContact() {
     address: {
       street: profile.street,
       state: profile.state,
+      postalcode: profile.postalcode,
     },
 
     phone: {
