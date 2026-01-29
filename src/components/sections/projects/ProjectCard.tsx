@@ -5,8 +5,10 @@ import styles from "./projectCard.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Button from "@/components/ui/Button";
 import Stack from "@/components/utils/Stack";
+import { createSlug } from "@/lib/slugify";
+import control from "@ui/primitives/controls/control.module.css";
+import clsx from "clsx";
 
 type Project = {
   id: number;
@@ -21,6 +23,8 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ item }: ProjectCardProps) {
+  const slug = createSlug(item.title);
+
   return (
     <div className={styles.projectCard}>
       <Stack gap='lg' justifyContent='center'>
@@ -49,7 +53,12 @@ export default function ProjectCard({ item }: ProjectCardProps) {
           </div>
         </Stack>
         <div className={styles.projectCardCtaContainer}>
-          <Button>mehr erfahren</Button>
+          <a
+            href={`/projects/${slug}`}
+            className={clsx(control.control, control.primary)}
+          >
+            mehr erfahren
+          </a>
         </div>
       </Stack>
     </div>

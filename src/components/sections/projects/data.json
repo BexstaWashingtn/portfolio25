@@ -7,7 +7,7 @@
       "width": 151,
       "height": 160
     },
-    "title": "Projektname / Titel",
+    "title": "Projektname / Titel 1",
     "description": "Rezeptbuch-App mit Fokus auf UX-Barrierefreiheit. Von der Nutzerforschung bis zur finalen Umsetzung – konzipiert, gestaltet und umgesetzt mit Next.js & Tailwind.",
     "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
   },
@@ -19,7 +19,7 @@
       "width": 266,
       "height": 120
     },
-    "title": "Projektname / Titel",
+    "title": "Projektname / Titel 2",
     "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
     "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
   },
@@ -31,7 +31,7 @@
       "width": 160,
       "height": 160
     },
-    "title": "Projektname / Titel",
+    "title": "Projektname / Titel 3",
     "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
     "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
   },
@@ -43,7 +43,7 @@
       "width": 160,
       "height": 160
     },
-    "title": "Projektname / Titel",
+    "title": "Projektname / Titel 4",
     "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
     "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
   },
@@ -55,7 +55,7 @@
       "width": 160,
       "height": 160
     },
-    "title": "Projektname / Titel",
+    "title": "Projektname / Titel 5",
     "description": "Lorem ipsum dolor sit amet consectetur. Quisque proin pretium quam porttitor risus amet dis. Amet consequat consectetur orci adipiscing. Proin scelerisque integer ut molestie ultricies dis.",
     "tags": ["UX Research", "Wireframing", "Prototyping", "Development"]
   }

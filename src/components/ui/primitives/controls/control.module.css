@@ -1,14 +1,17 @@
-.button {
+.control {
+}
+
+.primary {
   border-radius: var(--btn-radius);
-  border: 2px solid rgb(var(--peach));
   padding: var(--btn-padding);
-  background: rgba(var(--beige), 0.15);
-  color: rgb(var(--beige));
   font-size: 1rem;
   font-weight: var(--btn-font-weight);
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-md);
   align-self: flex-start;
+  background: rgba(var(--beige), 0.15);
+  border: 2px solid rgb(var(--peach));
+  color: rgb(var(--beige));
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
 
   &:hover {

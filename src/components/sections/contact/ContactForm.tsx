@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/form/Button";
 import { SrOnly } from "@/components/utils/a11y";
 import Link from "next/link";
 import styles from "./contact.module.css";

@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import Button from "../ui/form/Button";
 import Inner from "../utils/Inner";
 import Stack from "../utils/Stack";
 import Image from "next/image";
