@@ -29,7 +29,7 @@ export default function SectionAboutme({}) {
           }
           text={
             <>
-              Ich bin {profile.firstname}, {age} Jahre, aus Brandenburg.
+              Ich bin {profile.firstname}, {age} Jahre, aus {profile.state}.
               <br />
               Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
               Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
