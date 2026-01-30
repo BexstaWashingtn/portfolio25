@@ -82,7 +82,7 @@
   color: var(--btn-icon-primary-color-hover);
   border-color: rgb(var(--btn-icon-primary-border-color-hover));
   background-color: rgb(var(--btn-icon-primary-background-color-hover));
-  box-shadow: var(--btn-icon-secondary-box-shadow-hover);
+  box-shadow: var(--btn-icon-primary-box-shadow-hover);
 }
 
 /* ========== Variant: Icon Secondary ========== */
