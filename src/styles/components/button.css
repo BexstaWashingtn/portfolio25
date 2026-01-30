@@ -2,4 +2,28 @@
   --btn-padding: var(--gap-xs) var(--gap-md);
   --btn-radius: var(--radius-lg);
   --btn-font-weight: var(--font-weight-medium);
+
+  /* Icon Primary*/
+  --btn-icon-primary-color: var(--beige);
+  --btn-icon-primary-border-color: var(--peach);
+  --btn-icon-primary-padding: var(--gap-sm);
+  --btn-icon-primary-background-color: transparent;
+
+  /* Icon Primary Hover*/
+  --btn-icon-primary-color-hover: var(--white);
+  --btn-icon-primary-border-color-hover: var(--beige);
+  --btn-icon-primary-background-color-hover: var(--peach);
+  --btn-icon-primary-box-shadow-hover: var(--shadow-inset-sm);
+
+  /* Icon Secondary */
+  --btn-icon-secondary-color: var(--black);
+  --btn-icon-secondary-border-color: var(--peach-700);
+  --btn-icon-secondary-padding: var(--gap-sm);
+  --btn-icon-secondary-background-color: var(--peach-700);
+
+  /* Icon Secondary Hover*/
+  --btn-icon-secondary-color-hover: var(--beige);
+  --btn-icon-secondary-border-color-hover: var(--peach);
+  --btn-icon-secondary-background-color-hover: transparent;
+  --btn-icon-secondary-box-shadow-hover: var(--shadow-inset-sm);
 }

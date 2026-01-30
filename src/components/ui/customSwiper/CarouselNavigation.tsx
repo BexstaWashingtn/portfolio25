@@ -1,30 +1,31 @@
 import Stack from "@/components/utils/Stack";
-import styles from "./carouselNavButton.module.css";
+import control from "@ui/primitives/controls/control.module.css";
+import styles from "./carouselNavigation.module.css";
 import ArrowIcon from "../ArrowIcon";
 import type { Ref } from "react";
 import Button from "../form/Button";
 
 type Props = {
   buttonRef?: Ref<HTMLButtonElement>;
-  direction: "left" | "right";
+  direction: "back" | "forward";
   label: string;
 };
-export default function CarouselNavButton({
+export default function CarouselNavigation({
   buttonRef,
   direction,
   label,
 }: Props) {
   return (
-    <div className={styles.CarouselNavButton}>
+    <div className={styles.CarouselNavigation}>
       <Stack direction='column' justifyContent='center'>
         <Button
           type='button'
           ref={buttonRef}
-          variant='ghost'
-          className={styles.navButton}
+          variant='icon-primary'
+          className={control.iconButton}
           aria-label={label}
         >
-          <ArrowIcon direction={direction} />
+          <ArrowIcon direction={direction} className={control.icon} />
         </Button>
       </Stack>
     </div>

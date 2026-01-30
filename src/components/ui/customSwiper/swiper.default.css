@@ -23,11 +23,4 @@ div[class*="customSwiper_swiperContainer"] {
       }
     }
   }
-
-  .swiper-button-disabled {
-    opacity: 0.4;
-    &:hover {
-      background-color: transparent;
-    }
-  }
 }

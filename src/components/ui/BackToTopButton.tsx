@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import styles from "./backToTopButton.module.css";
-import { FaArrowCircleUp } from "react-icons/fa";
+import control from "@ui/primitives/controls/control.module.css";
+import Button from "./form/Button";
+import ArrowIcon from "./ArrowIcon";
 
 export default function BackToTopButton() {
   // This component renders a button that scrolls the page back to the top when clicked.
@@ -22,7 +24,7 @@ export default function BackToTopButton() {
       {
         root: null,
         threshold: 0.2,
-      }
+      },
     );
 
     observer.observe(about);
@@ -33,21 +35,17 @@ export default function BackToTopButton() {
   if (!isVisible) return null;
 
   return (
-    <div className={`${styles.backToTopSection}`}>
-      <a
-        href='#main'
+    <div className={`${styles.backToTopWrapper}`}>
+      <Button
         aria-label='Nach oben'
         type='button'
-        className={styles.backToTopButton}
+        className={control.iconButton}
         role='button'
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        variant='icon-secondary'
       >
-        <FaArrowCircleUp
-          aria-hidden='true'
-          focusable='false'
-          className={styles.icon}
-        />
-      </a>
+        <ArrowIcon direction='up' className={control.icon} />
+      </Button>
     </div>
   );
 }

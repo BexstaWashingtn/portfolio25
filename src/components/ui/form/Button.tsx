@@ -4,7 +4,12 @@ import { forwardRef, ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import control from "@ui/primitives/controls/control.module.css";
 
-type Variant = "primary" | "ghost";
+type Variant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "icon-primary"
+  | "icon-secondary";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;
@@ -12,7 +17,15 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const Button = forwardRef<HTMLButtonElement, Props>(
   ({ children, variant = "primary", className, ...rest }, ref) => {
-    const variantClass = variant === "ghost" ? control.ghost : control.primary;
+    const variantClassMap: Record<Variant, string> = {
+      primary: control.primary,
+      secondary: control.secondary,
+      ghost: control.ghost,
+      "icon-primary": control.iconPrimary,
+      "icon-secondary": control.iconSecondary,
+    };
+
+    const variantClass = variantClassMap[variant];
 
     return (
       <button

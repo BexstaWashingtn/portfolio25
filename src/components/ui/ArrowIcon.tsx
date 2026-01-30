@@ -1,15 +1,28 @@
-import styles from "./arrowIcon.module.css";
+import { JSX } from "react";
+import {
+  MdArrowBack,
+  MdArrowDownward,
+  MdArrowForward,
+  MdArrowUpward,
+} from "react-icons/md";
+
+type Direction = "back" | "forward" | "up" | "down";
 
 type Props = {
-  direction: "left" | "right";
+  direction: Direction;
+  className: string;
 };
-export default function ArrowIcon({ direction = "left" }: Props) {
+export default function ArrowIcon({ direction = "back", className }: Props) {
+  const icons: Record<Direction, JSX.Element> = {
+    forward: <MdArrowForward />,
+    back: <MdArrowBack />,
+    up: <MdArrowUpward />,
+    down: <MdArrowDownward />,
+  } satisfies Record<NonNullable<Props["direction"]>, JSX.Element>;
+
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      className={styles[direction]}
-      src={`img/icons/icon_arrow_left_circle.svg`}
-      alt=''
-    />
+    <span className={className} aria-hidden='true'>
+      {icons[direction]}
+    </span>
   );
 }

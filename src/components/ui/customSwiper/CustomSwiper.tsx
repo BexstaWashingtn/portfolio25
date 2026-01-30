@@ -5,7 +5,7 @@ import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import styles from "./customSwiper.module.css";
 import { ReactNode, Key, useRef, useEffect } from "react";
-import CarouselNavButton from "./CarouselNavButton";
+import CarouselNavigation from "./CarouselNavigation";
 import Stack from "@/components/utils/Stack";
 
 export default function CustomSwiper<T extends { id: Key }>({
@@ -51,9 +51,9 @@ export default function CustomSwiper<T extends { id: Key }>({
     <div className={styles.swiperContainer}>
       <Stack direction='row' gap='md'>
         {showNavigation && (
-          <CarouselNavButton
+          <CarouselNavigation
             buttonRef={prevRef}
-            direction='left'
+            direction='back'
             label='Vorheriges Projekt'
           />
         )}
@@ -78,9 +78,9 @@ export default function CustomSwiper<T extends { id: Key }>({
         </Swiper>
 
         {showNavigation && (
-          <CarouselNavButton
+          <CarouselNavigation
             buttonRef={nextRef}
-            direction='right'
+            direction='forward'
             label='Nächstes Projekt'
           />
         )}
