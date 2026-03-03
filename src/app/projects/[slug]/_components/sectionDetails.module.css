@@ -1,0 +1,31 @@
+.projectDetails {
+  .detailsHeader {
+    .hl {
+      padding-block: 0;
+    }
+    .imgWrapper {
+      padding-block: 2rem;
+    }
+  }
+  .main {
+    .detailsList {
+      list-style: none;
+      max-width: 600px;
+      width: 100%;
+      .detailsItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+
+        .itemIcon {
+          font-size: 30px;
+        }
+        .itemText {
+          padding-block: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

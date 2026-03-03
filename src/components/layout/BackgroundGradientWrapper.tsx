@@ -53,9 +53,7 @@ export const BackgroundGradientWrapper = ({ children, gradient }: Props) => {
   return (
     <div
       className={styles.backgroundGradientWrapper}
-      style={{
-        ...(gradientCss ? { background: gradientCss } : {}),
-      }}
+      style={{ background: gradientCss }}
     >
       {children}
     </div>
