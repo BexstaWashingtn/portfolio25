@@ -1,6 +1,5 @@
-type Props = {
-  test: string;
-};
-export default function ProjectView({ test }: Props) {
-  return <div>Project View Page {test}</div>;
+import SectionDetails from "./_components/SectionDetails";
+
+export default function ProjectView() {
+  return <SectionDetails />;
 }

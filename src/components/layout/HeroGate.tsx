@@ -99,7 +99,8 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             >
               <BackgroundGradientWrapper
                 gradient={{
-                  type: "circle",
+                  type: "radial",
+                  shape: "circle",
                   startX: "75%",
                   startY: "0%",
                   colorStops: [

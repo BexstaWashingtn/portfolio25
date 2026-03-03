@@ -25,7 +25,8 @@ export default function SectionProjects() {
       >
         <BackgroundGradientWrapper
           gradient={{
-            type: "circle",
+            type: "radial",
+            shape: "circle",
             startX: "50%",
             startY: "-25%",
             colorStops: [
