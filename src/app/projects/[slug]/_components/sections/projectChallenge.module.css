@@ -1,0 +1,15 @@
+section.projectChallenge {
+  .content {
+    max-width: 600px;
+    width: 100%;
+    .contentItem {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-block: 2rem;
+      .subheadline {
+        color: rgb(var(--peach));
+      }
+    }
+  }
+}

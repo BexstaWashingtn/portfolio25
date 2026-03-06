@@ -1,4 +1,4 @@
-import styles from "./sectionDetails.module.css";
+import styles from "./projectHero.module.css";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
 import Inner from "@/components/utils/Inner";
@@ -7,9 +7,9 @@ import { IoIosPerson } from "react-icons/io";
 import { IoCalendarClear } from "react-icons/io5";
 import { PiToolboxFill } from "react-icons/pi";
 
-export default function SectionDetails() {
+export default function ProjectHero() {
   return (
-    <section className={styles.projectDetails}>
+    <section className={styles.projectHero}>
       <BackgroundImageWrapper
         image={{
           src: "/img/background/particel-waves_mono_1920x1280.jpg",

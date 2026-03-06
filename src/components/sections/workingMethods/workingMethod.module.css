@@ -8,7 +8,11 @@ section.workingMethod {
     padding-inline: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 4rem;
+
+    @media (max-width: 1280px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

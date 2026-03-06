@@ -1,0 +1,59 @@
+.projectTimeline {
+  padding-block: 2rem;
+
+  .timelineContent {
+    list-style: none;
+    padding-block: 2rem;
+
+    .timelineItem {
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      padding-left: 4rem;
+      padding-bottom: 1rem;
+
+      &::before {
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background-color: rgb(var(--peach));
+        display: block;
+        position: absolute;
+        left: 1rem;
+        top: 0.75rem;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        height: 100%;
+        width: 0.25rem;
+        background-color: rgb(var(--beige));
+        display: block;
+        position: absolute;
+        left: 1.375rem;
+        top: 0.75rem;
+        z-index: 1;
+      }
+
+      &:last-of-type {
+        &::after {
+          width: 0;
+          height: 0;
+          background-color: transparent;
+        }
+      }
+
+      .headline {
+        padding-block: 0 0.35rem;
+        font-family: var(--font-inter);
+        font-size: 1.75rem;
+        color: rgb(var(--peach));
+      }
+      .description {
+        font-size: 1rem;
+      }
+    }
+  }
+}
