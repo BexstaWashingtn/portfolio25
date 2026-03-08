@@ -1,6 +1,5 @@
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import styles from "./workingMethod.module.css";
-import "@components/ui/customSwiper/swiper.default.css";
 import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";

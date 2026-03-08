@@ -1,9 +1,9 @@
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
-import styles from "./projectTechStack.module.css";
+import styles from "./techStack.module.css";
 import Inner from "@/components/utils/Inner";
 import Stack from "@/components/utils/Stack";
 
-export default function ProjectTechStack() {
+export default function techStack() {
   const data = [
     {
       title: "Frontend",
@@ -36,9 +36,9 @@ export default function ProjectTechStack() {
   return (
     <section className={styles.techStack}>
       <Inner
+        variant='full'
         paddingBottom='md'
         paddingTop='md'
-        variant='full'
         paddingInline={{ base: false, lg: false, md: false, sm: false }}
       >
         <BackgroundGradientWrapper
@@ -51,19 +51,17 @@ export default function ProjectTechStack() {
                 position: "0%",
               },
               {
-                color: "rgba(248, 141, 127, 0.125)",
+                color: "rgba(248, 141, 127, 0.0)",
                 position: "65%",
               },
               {
-                color: "rgba(248, 141, 127, 0.25)",
+                color: "rgba(248, 141, 127, 0.0)",
                 position: "100%",
               },
             ],
           }}
         >
           <Inner
-            paddingBottom='md'
-            paddingTop='xl'
             variant='narrow'
             paddingInline={{ base: true, lg: true, md: true, sm: true }}
           >
@@ -71,8 +69,8 @@ export default function ProjectTechStack() {
           </Inner>
 
           <Inner
-            paddingBottom='xl'
             paddingTop='md'
+            paddingBottom='md'
             variant='wide'
             paddingInline={{ base: true, lg: true, md: true, sm: true }}
           >

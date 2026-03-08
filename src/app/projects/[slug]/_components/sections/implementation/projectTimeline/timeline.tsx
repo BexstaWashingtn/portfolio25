@@ -1,4 +1,4 @@
-import styles from "./projectTimeline.module.css";
+import styles from "./timeline.module.css";
 
 export default function ProjectTimeline() {
   const data = [
@@ -45,7 +45,7 @@ export default function ProjectTimeline() {
   ];
 
   return (
-    <div className={styles.projectTimeline}>
+    <section className={styles.projectTimeline}>
       <h3>Ablauf</h3>
 
       <ul className={styles.timelineContent}>
@@ -66,6 +66,6 @@ export default function ProjectTimeline() {
           </p>
         </li>
       </ul>
-    </div>
+    </section>
   );
 }

@@ -2,9 +2,6 @@
 
 import Image from "next/image";
 import styles from "./projectCard.module.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Stack from "@/components/utils/Stack";
 import { createSlug } from "@/lib/slugify";
 import control from "@ui/primitives/controls/control.module.css";

@@ -1,17 +1,15 @@
 import Inner from "../../utils/Inner";
 import Stack from "../../utils/Stack";
-import styles from "./projects.module.css";
+import styles from "./sectionProjects.module.css";
 import SectionHeader from "../SectionHeader";
 import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
-import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
+import ProjectCardSlider from "./ProjectCardSlider";
 import projectData from "./data.json";
-import ProjectCard from "./ProjectCard";
-import useIsMobile from "@/lib/hooks/useIsMobile";
+import type { Project } from "./types";
 
 export default function SectionProjects() {
-  const isDesktop = !useIsMobile({ breakpoint: 848 });
-  const showNavigationSwiper = isDesktop;
+  const projects: Project[] = projectData;
 
   return (
     <section className={styles.projects} id='projects'>
@@ -52,22 +50,7 @@ export default function SectionProjects() {
               />
             </Inner>
             <Inner variant='full' paddingBottom='xxl'>
-              <CustomSwiper
-                items={projectData}
-                renderItem={(item) => <ProjectCard key={item.id} item={item} />}
-                swiperConfig={{
-                  spaceBetween: 32,
-                  breakpoints: {
-                    0: { slidesPerView: 1.2 },
-                    848: { slidesPerView: 2 },
-                    1024: { spaceBetween: 64 },
-                    1280: { slidesPerView: 3 },
-                    1920: { slidesPerView: 4 },
-                    2440: { slidesPerView: 5 },
-                  },
-                }}
-                showNavigation={showNavigationSwiper}
-              />
+              <ProjectCardSlider items={projects} />
             </Inner>
           </Stack>
         </BackgroundGradientWrapper>
