@@ -3,30 +3,33 @@
 import Image from "next/image";
 import styles from "./projectCard.module.css";
 import Stack from "@/components/utils/Stack";
-import { createSlug } from "@/lib/slugify";
 import control from "@ui/primitives/controls/control.module.css";
 import clsx from "clsx";
-
-type Project = {
-  id: number;
-  image: { src: string; alt: string; width: number; height: number };
-  title: string;
-  description: string;
-  tags: string[];
-};
+import { Project } from "./types";
+import { IoEyeSharp } from "react-icons/io5";
 
 type ProjectCardProps = {
   item: Project;
+  viewed: boolean;
 };
 
-export default function ProjectCard({ item }: ProjectCardProps) {
-  const slug = createSlug(item.title);
+export default function ProjectCard({ item, viewed }: ProjectCardProps) {
+  const slug = item.slug;
 
   return (
-    <div className={styles.projectCard}>
+    <div className={`${styles.projectCard} ${viewed ? styles.viewed : ""}`}>
       <Stack gap='lg' justifyContent='center'>
         <Stack gap='md'>
           <div className={styles.projectCardImageCon}>
+            {viewed && (
+              <div
+                className={styles.viewedBadge}
+                title='Projekt bereits gesehen'
+                aria-label='Projekt bereits gesehen'
+              >
+                <IoEyeSharp />
+              </div>
+            )}
             <Image
               src={item.image.src}
               alt={item.image.alt}

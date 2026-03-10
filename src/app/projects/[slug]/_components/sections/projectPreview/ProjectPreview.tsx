@@ -6,14 +6,12 @@ import SectionHeader from "../../sectionHeader/SectionHeader";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 
 type Props = {
-  currentSlug: string;
+  slug: string;
 };
 
-export default function ProjectPreview({ currentSlug }: Props) {
+export default function ProjectPreview({ slug }: Props) {
   const projects: Project[] = projectData;
-  const filteredProjects = projects.filter(
-    (project) => project.slug !== currentSlug,
-  );
+  const filteredProjects = projects.filter((project) => project.slug !== slug);
 
   return (
     <section>

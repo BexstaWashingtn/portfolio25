@@ -8,6 +8,7 @@ import control from "@ui/primitives/controls/control.module.css";
 import clsx from "clsx";
 import Link from "@/components/ui/link/Link";
 import Inner from "@/components/utils/Inner";
+import ViewedTracker from "./_components/ViewedTracker";
 
 type Props = {
   params: {
@@ -16,7 +17,7 @@ type Props = {
 };
 
 export default async function ProjectView({ params }: Props) {
-  const { slug: currentSlug } = await params;
+  const { slug: slug } = await params;
 
   return (
     <>
@@ -25,7 +26,7 @@ export default async function ProjectView({ params }: Props) {
       <ProjectImplementation />
       <ProjectVisuals />
       <ProjectLearnings />
-      <ProjectPreview currentSlug={currentSlug} />
+      <ProjectPreview slug={slug} />
 
       <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
         <Link
@@ -35,6 +36,8 @@ export default async function ProjectView({ params }: Props) {
           zurück zur Startseite
         </Link>
       </Inner>
+
+      <ViewedTracker slug={slug} />
     </>
   );
 }

@@ -4,6 +4,8 @@ import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectCard from "./ProjectCard";
 import useIsMobile from "@/lib/hooks/useIsMobile";
 import type { Project } from "./types";
+import { getViewedProjects } from "@/lib/utils/viewedProjects";
+import { useEffect, useState } from "react";
 
 type Props = {
   items: Project[];
@@ -12,11 +14,19 @@ type Props = {
 export default function ProjectCardSlider({ items }: Props) {
   const isDesktop = !useIsMobile({ breakpoint: 848 });
   const showNavigationSwiper = isDesktop;
+  const [viewedProjects, setViewedProjects] = useState<string[]>([]);
+
+  useEffect(() => {
+    setViewedProjects(getViewedProjects());
+  }, []);
 
   return (
     <CustomSwiper
       items={items}
-      renderItem={(item) => <ProjectCard key={item.id} item={item} />}
+      renderItem={(item) => {
+        const viewed = viewedProjects.includes(item.slug);
+        return <ProjectCard key={item.id} item={item} viewed={viewed} />;
+      }}
       swiperConfig={{
         spaceBetween: 32,
         breakpoints: {
