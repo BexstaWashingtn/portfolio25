@@ -9,6 +9,7 @@ import clsx from "clsx";
 import Link from "@/components/ui/link/Link";
 import Inner from "@/components/utils/Inner";
 import ViewedTracker from "./_components/ViewedTracker";
+import { IoMdClose } from "react-icons/io";
 
 type Props = {
   params: {
@@ -21,6 +22,10 @@ export default async function ProjectView({ params }: Props) {
 
   return (
     <>
+      <Link href={"/"} className={clsx(control.control, control.primary)}>
+        <IoMdClose />
+      </Link>
+
       <ProjectHero />
       <ProjectChallenge />
       <ProjectImplementation />
