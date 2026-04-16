@@ -54,6 +54,7 @@ type Props = {
     | "space-between"
     | "space-around"
     | "space-evenly";
+  alignItems?: "start" | "center" | "end";
   className?: string;
 };
 
@@ -63,6 +64,7 @@ export default function Stack({
   direction = "column",
   wrap = false,
   justifyContent,
+  alignItems,
   className,
 }: Props) {
   return (
@@ -72,6 +74,7 @@ export default function Stack({
         styles[direction],
         wrap && styles.wrap,
         justifyContent && styles[`justify-${justifyContent}`],
+        alignItems && styles[`align-${alignItems}`],
         typeof gap === "string"
           ? styles[`gap-${gap}`]
           : [
@@ -80,7 +83,7 @@ export default function Stack({
               gap.md && styles[`gap-md-${gap.md}`],
               gap.lg && styles[`gap-lg-${gap.lg}`],
             ],
-        className
+        className,
       )}
     >
       {children}

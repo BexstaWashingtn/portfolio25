@@ -8,7 +8,7 @@ import Chellange from "./chellange";
 export default function ProjectImplementation() {
   return (
     <section className={styles.projectImplementation}>
-      <Inner paddingTop='xl' paddingBottom='xl' variant='full'>
+      <Inner paddingTop='xl' variant='full'>
         <Inner variant='narrow'>
           <SectionHeader
             icon={{
@@ -20,8 +20,9 @@ export default function ProjectImplementation() {
 
           <Timeline />
         </Inner>
-        <TechStack />
-
+      </Inner>
+      <TechStack />
+      <Inner paddingBottom='xl' variant='full'>
         <Inner variant='narrow' paddingTop='md' paddingBottom='md'>
           <Chellange />
         </Inner>

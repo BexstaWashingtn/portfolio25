@@ -72,7 +72,7 @@ export default function Inner({
               paddingInline.md === false && styles["no-inline-md"],
               paddingInline.lg === false && styles["no-inline-lg"],
             ],
-        className
+        className,
       )}
     >
       {children}

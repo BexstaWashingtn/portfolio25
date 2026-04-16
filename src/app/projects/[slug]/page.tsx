@@ -37,6 +37,7 @@ export default async function ProjectView({ params }: Props) {
         </Link>
       </Inner>
 
+      {/* Speichert das gesehene Projekt im LocalStorage*/}
       <ViewedTracker slug={slug} />
     </>
   );

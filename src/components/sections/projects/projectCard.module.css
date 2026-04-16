@@ -70,7 +70,7 @@
 }
 
 .viewed {
-  filter: grayscale(60%);
+  filter: grayscale(100%);
   opacity: 0.85;
-  transition: filter 0.2s ease;
+  transition: all 0.2s ease;
 }

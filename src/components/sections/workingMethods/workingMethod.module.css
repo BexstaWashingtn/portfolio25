@@ -15,4 +15,9 @@ section.workingMethod {
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  .fourPointLimit {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
 }
