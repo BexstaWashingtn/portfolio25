@@ -1,42 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
-import styles from "./techStack.module.css";
+import styles from "./projectTechStack.module.css";
 import Inner from "@/components/utils/Inner";
 import Stack from "@/components/utils/Stack";
+import { ProjectTechstackData } from "../../../types/projectData";
 
-export default function techStack() {
-  const data = [
-    {
-      title: "Frontend",
-      icon: "frontend",
-      items: [
-        "HTML, CSS, JavaScript (ES6+)",
-        "React / Next.js",
-        "CSS Modules / SCSS / NanoCSS",
-        "TypeScript",
-        "UI Libraries (Framer Motion)",
-      ],
-    },
-    {
-      title: "Backend",
-      icon: "backend",
-      items: [
-        "Node.js, ExpressMongoDB, Firebase, SupabaseREST API / GraphQLAuth (z. B. NextAuth.js)",
-      ],
-    },
-    {
-      title: "Tools",
-      icon: "tools",
-      items: [
-        "Git / GitHub",
-        "Vercel, Netlify",
-        "NPM / PNPM",
-        "Figma (für UI-Design)",
-        "Postman (für API-Tests)",
-      ],
-    },
-  ];
+const iconMap = {
+  frontend: "/img/projects/icons/icon_frontend.svg",
+  backend: "/img/projects/icons/icon_backend.svg",
+  tools: "/img/projects/icons/icon_tools.svg",
+};
 
+type Props = {
+  techstack: ProjectTechstackData[];
+};
+
+export default function ProjectTechStack({ techstack }: Props) {
   return (
     <section className={styles.techStack}>
       <Inner
@@ -85,22 +64,23 @@ export default function techStack() {
                 gap='lg'
                 className={styles.content}
               >
-                {data.map((list, listIndex) => {
+                {techstack.map((cat, listIndex) => {
                   return (
                     <ul key={listIndex} className={styles.techStackList}>
                       <li className={styles.techStackItems}>
                         <Stack gap='sm' direction='row' alignItems='center'>
                           <img
-                            src={`/img/projects/icons/icon_${list.icon}.svg`}
-                            alt={`Headline Icon ${list.icon}`}
+                            src={iconMap[cat.icon]}
+                            alt=''
                             height='35'
                             width='35'
+                            aria-hidden='true'
                           />
-                          <h4 className={styles.headline}>{list.title}</h4>
+                          <h4 className={styles.headline}>{cat.title}</h4>
                         </Stack>
 
                         <ul className={styles.itemsList}>
-                          {list.items.map((item, itemIndex) => (
+                          {cat.items?.map((item, itemIndex) => (
                             <li key={itemIndex} className={styles.itemItem}>
                               {item}
                             </li>

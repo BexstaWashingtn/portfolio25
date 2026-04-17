@@ -5,14 +5,13 @@ import styles from "./projectVisuals.module.css";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectVisualsItem from "./ProjectVisualsItem";
+import { ProjectVisualsData } from "./../../../types/projectData";
 
-export default function ProjectVisuals() {
-  const items = [
-    { id: 1, src: "/img/projects/p1/visuals/test1.jpg", alt: "Mockup" },
-    { id: 2, src: "/img/projects/p1/visuals/test1.jpg", alt: "Screenshot" },
-    { id: 3, src: "/img/projects/p1/visuals/test1.jpg", alt: "MockUp 2" },
-  ];
+type Props = {
+  visuals: ProjectVisualsData[];
+};
 
+export default function ProjectVisuals({ visuals }: Props) {
   return (
     <section className={styles.visuals}>
       <Inner paddingTop='md' paddingBottom='md' variant='narrow'>
@@ -26,7 +25,7 @@ export default function ProjectVisuals() {
       </Inner>
       <Inner paddingTop='md' paddingBottom='md' variant='swiper'>
         <CustomSwiper
-          items={items}
+          items={visuals}
           renderItem={(item) => <ProjectVisualsItem item={item} />}
           swiperConfig={{
             slidesPerView: 1,

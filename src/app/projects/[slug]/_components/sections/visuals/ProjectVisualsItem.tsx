@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { ProjectVisualsData } from "../../../types/projectData";
 
 type Props = {
-  item: {
-    src: string;
-    alt: string;
-    title?: string;
-  };
+  item: ProjectVisualsData;
 };
 export default function ProjectVisualsItem({ item }: Props) {
   return (

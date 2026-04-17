@@ -1,15 +1,11 @@
 import ProjectChallenge from "./_components/sections/ProjectChallenge";
-import ProjectHero from "./_components/sections/ProjectHero";
+import ProjectHeader from "./_components/sections/ProjectHeader";
 import ProjectImplementation from "./_components/sections/implementation/ProjectImplementation";
 import ProjectVisuals from "./_components/sections/visuals/ProjectVisuals";
 import ProjectLearnings from "./_components/sections/ProjectLearnings";
 import ProjectPreview from "./_components/sections/projectPreview/ProjectPreview";
-import control from "@ui/primitives/controls/control.module.css";
-import clsx from "clsx";
-import Link from "@/components/ui/link/Link";
-import Inner from "@/components/utils/Inner";
 import ViewedTracker from "./_components/ViewedTracker";
-import { IoMdClose } from "react-icons/io";
+import projectData from "./data/data";
 
 type Props = {
   params: {
@@ -18,32 +14,30 @@ type Props = {
 };
 
 export default async function ProjectView({ params }: Props) {
-  const { slug: slug } = await params;
+  const { slug } = await params;
 
   return (
     <>
-      <Link href={"/"} className={clsx(control.control, control.primary)}>
-        <IoMdClose />
-      </Link>
+      <header>
+        <ProjectHeader details={projectData.details} />
+      </header>
 
-      <ProjectHero />
-      <ProjectChallenge />
-      <ProjectImplementation />
-      <ProjectVisuals />
-      <ProjectLearnings />
-      <ProjectPreview slug={slug} />
+      <main>
+        {projectData.goals && <ProjectChallenge goals={projectData.goals} />}
+        {projectData.implementation && (
+          <ProjectImplementation implementation={projectData.implementation} />
+        )}
+        {projectData.visuals && (
+          <ProjectVisuals visuals={projectData.visuals} />
+        )}
+        {projectData.learnings && (
+          <ProjectLearnings learnings={projectData.learnings} />
+        )}
 
-      <Inner variant='narrow' paddingTop='xl' paddingBottom='xl'>
-        <Link
-          href={`/#projects`}
-          className={clsx(control.control, control.primary)}
-        >
-          zurück zur Startseite
-        </Link>
-      </Inner>
-
+        {slug && <ProjectPreview slug={slug} />}
+      </main>
       {/* Speichert das gesehene Projekt im LocalStorage*/}
-      <ViewedTracker slug={slug} />
+      {slug && <ViewedTracker slug={slug} />}
     </>
   );
 }

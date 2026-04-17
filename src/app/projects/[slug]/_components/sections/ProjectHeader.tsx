@@ -1,9 +1,13 @@
-import styles from "./projectHero.module.css";
+import styles from "./projectHeader.module.css";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
 import Inner from "@/components/utils/Inner";
 import Image from "next/image";
-
+import {
+  ProjectDetails,
+  ProjectInformationIcon,
+} from "./../../types/projectData";
+import { IconType } from "react-icons";
 import {
   FaCalendar,
   FaBrain,
@@ -12,7 +16,7 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
-const iconMap = {
+const iconMap: Record<ProjectInformationIcon, IconType> = {
   calendar: FaCalendar,
   brain: FaBrain,
   toolbox: FaToolbox,
@@ -20,55 +24,17 @@ const iconMap = {
   github: FaGithub,
 };
 
-type IconKey = keyof typeof iconMap;
-
-type DataItem = {
-  id: number;
-  icon: IconKey;
-  description: string;
-  href?: string;
+type Props = {
+  details: ProjectDetails;
 };
 
-const datas: DataItem[] = [
-  {
-    id: 1,
-    icon: "calendar",
-    description: "Mai – Juli 2025",
-  },
-  {
-    id: 2,
-    icon: "brain",
-    description:
-      "Konzeption, UX Research, UI Design, Content, Front- & Backend, Barrierefreiheit",
-  },
-  {
-    id: 3,
-    icon: "toolbox",
-    description:
-      "Figma, VS Code, Next.js, CSS Modules, TypeScript, Sanity CMS, Prisma Studio, GitHub, Vercel",
-  },
-  {
-    id: 4,
-    icon: "link",
-    description: "Live Demo",
-    href: "https://test.de",
-  },
-  {
-    id: 5,
-    icon: "github",
-    description: "GitHub",
-    href: "https://test.de",
-  },
-];
-
-export default function ProjectHero() {
+export default function ProjectHeader({ details }: Props) {
   return (
     <section className={styles.projectHero}>
       <BackgroundImageWrapper
         image={{
-          src: "/img/background/particel-waves_mono_1920x1280.jpg",
-          alt: "Projekt 1 Background",
-          title: "Projekt 1 Background",
+          src: details.backgroundImageSrc,
+          alt: `Hero Background ${details.title}`,
           style: { opacity: 0.5 },
         }}
       >
@@ -77,7 +43,7 @@ export default function ProjectHero() {
             type: "linear",
             colorStops: [
               {
-                color: "rgba(248, 141, 127, 0.75)",
+                color: `rgba(${details.mainColorRGB}, 0.75)`,
                 position: "0%",
               },
               {
@@ -90,23 +56,22 @@ export default function ProjectHero() {
           <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
             <header className={styles.header}>
               <div className={styles.headerDescription}>
-                <h1 className={styles.hl}>Portfolio 2025</h1>
-                <p>Design trifft Code - mit Fokus auf Nutzer & Klarheit.</p>
+                <h1 className={styles.hl}>{details.title}</h1>
+                <p>{details.subtitle}</p>
               </div>
 
               <div className={styles.imgWrapper}>
                 <Image
-                  src='/img/projects/p1/header_image.jpg'
-                  alt='P1 Projekt Image'
-                  title='P1 Projekt Image'
+                  src={details.src}
+                  alt={`HereoImage ${details.title}`}
                   width='848'
                   height='459'
                 />
               </div>
             </header>
-            <main className={styles.main}>
+            <div className={styles.content}>
               <ul className={styles.detailsList}>
-                {datas.map((item) => {
+                {details.projectInformations.map((item) => {
                   const Icon = iconMap[item.icon];
 
                   const content = (
@@ -138,7 +103,7 @@ export default function ProjectHero() {
                   );
                 })}
               </ul>
-            </main>
+            </div>
           </Inner>
         </BackgroundGradientWrapper>
       </BackgroundImageWrapper>
