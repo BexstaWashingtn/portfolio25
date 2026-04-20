@@ -12,6 +12,8 @@ type Props = {
 };
 
 export default function ProjectVisuals({ visuals }: Props) {
+  const cleanVisualsData = cleanVisuals(visuals);
+
   return (
     <section className={styles.visuals}>
       <Inner paddingTop='md' paddingBottom='md' variant='narrow'>
@@ -25,14 +27,31 @@ export default function ProjectVisuals({ visuals }: Props) {
       </Inner>
       <Inner paddingTop='md' paddingBottom='md' variant='swiper'>
         <CustomSwiper
-          items={visuals}
+          items={cleanVisualsData}
           renderItem={(item) => <ProjectVisualsItem item={item} />}
           swiperConfig={{
             slidesPerView: 1,
           }}
-          showNavigation={true}
+          showNavigation
         />
       </Inner>
     </section>
   );
+}
+
+function cleanVisuals(visuals: ProjectVisualsData[]) {
+  if (!Array.isArray(visuals)) return [];
+
+  const trimmedVisuals = visuals.map(({ id, src, alt }) => {
+    const srcString = typeof src === "string" ? src : "";
+    const altString = typeof alt === "string" ? alt : "Projektbild";
+
+    return { id, src: srcString.trim(), alt: altString.trim() };
+  });
+
+  const cleanedVisuals = trimmedVisuals.filter(({ src }) => {
+    return src !== "";
+  });
+
+  return cleanedVisuals;
 }

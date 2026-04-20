@@ -5,6 +5,7 @@ import ProjectProcess from "./ProjectProcess";
 import ProjectTechStack from "./ProjectTechStack";
 import ProjectChallenge from "./ProjectChallenge";
 import { ProjectImplementationData } from "./../../../types/projectData";
+import { cleanStringArray } from "@/lib/utils/cleanStringArray";
 
 type Props = {
   implementation: ProjectImplementationData;
@@ -13,9 +14,17 @@ type Props = {
 export default function ProjectImplementation({ implementation }: Props) {
   const hasProcess = !!implementation?.process?.length;
   const hasTechstack = !!implementation?.techstack?.length;
+
+  const cleanChallenge = {
+    problem: cleanStringArray(implementation?.challenge?.problem),
+    approach: cleanStringArray(implementation?.challenge?.approach),
+    learnings: cleanStringArray(implementation?.challenge?.learnings),
+  };
+
   const hasChallenge =
-    !!implementation?.challenge &&
-    Object.keys(implementation.challenge).length > 0;
+    !!cleanChallenge.problem.length ||
+    !!cleanChallenge.approach.length ||
+    !!cleanChallenge.learnings.length;
 
   if (!hasProcess && !hasTechstack && !hasChallenge) return null;
 
@@ -42,7 +51,7 @@ export default function ProjectImplementation({ implementation }: Props) {
       {hasChallenge && (
         <Inner paddingBottom='xl' variant='full'>
           <Inner variant='narrow' paddingTop='md' paddingBottom='md'>
-            <ProjectChallenge challenge={implementation.challenge} />
+            <ProjectChallenge challenge={cleanChallenge} />
           </Inner>
         </Inner>
       )}

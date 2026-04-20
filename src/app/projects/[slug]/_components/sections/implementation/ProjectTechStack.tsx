@@ -49,7 +49,7 @@ export default function ProjectTechStack({ techstack }: Props) {
               variant='narrow'
               paddingInline={{ base: true, lg: true, md: true, sm: true }}
             >
-              <h3>TechSteck</h3>
+              <h3>Technologien</h3>
             </Inner>
 
             <Inner
@@ -65,8 +65,13 @@ export default function ProjectTechStack({ techstack }: Props) {
                 className={styles.content}
               >
                 {techstack.map((cat, listIndex) => {
+                  if (!cat?.items?.length) return null;
+
                   return (
-                    <ul key={listIndex} className={styles.techStackList}>
+                    <ul
+                      key={`${listIndex}-${cat.title}`}
+                      className={styles.techStackList}
+                    >
                       <li className={styles.techStackItems}>
                         <Stack gap='sm' direction='row' alignItems='center'>
                           <img
@@ -80,11 +85,16 @@ export default function ProjectTechStack({ techstack }: Props) {
                         </Stack>
 
                         <ul className={styles.itemsList}>
-                          {cat.items?.map((item, itemIndex) => (
-                            <li key={itemIndex} className={styles.itemItem}>
-                              {item}
-                            </li>
-                          ))}
+                          {cat.items?.filter(Boolean).map((item, itemIndex) => {
+                            return (
+                              <li
+                                key={`${itemIndex}-${item}`}
+                                className={styles.itemItem}
+                              >
+                                {item}
+                              </li>
+                            );
+                          })}
                         </ul>
                       </li>
                     </ul>

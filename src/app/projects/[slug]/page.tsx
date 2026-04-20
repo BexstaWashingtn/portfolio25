@@ -6,6 +6,7 @@ import ProjectLearnings from "./_components/sections/ProjectLearnings";
 import ProjectPreview from "./_components/sections/projectPreview/ProjectPreview";
 import ViewedTracker from "./_components/ViewedTracker";
 import projectData from "./data/data";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -15,6 +16,13 @@ type Props = {
 
 export default async function ProjectView({ params }: Props) {
   const { slug } = await params;
+
+  if (
+    !projectData?.details?.title?.trim() ||
+    !projectData?.details?.src?.trim()
+  ) {
+    notFound();
+  }
 
   return (
     <>
@@ -27,7 +35,7 @@ export default async function ProjectView({ params }: Props) {
         {projectData.implementation && (
           <ProjectImplementation implementation={projectData.implementation} />
         )}
-        {projectData.visuals && (
+        {!!projectData?.visuals?.length && (
           <ProjectVisuals visuals={projectData.visuals} />
         )}
         {projectData.learnings && (

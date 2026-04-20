@@ -1,14 +1,14 @@
 section.implementationChallenge {
-  .implChellangeList {
+  .implChallengeList {
     list-style: none;
 
-    .chellangeListHeader {
+    .challengeListHeader {
       padding-bottom: 1rem;
 
-      .chellangeListHeadline {
+      .challengeListHeadline {
         padding-bottom: 0;
       }
-      .chellangeListSubHeadline {
+      .challengeListSubHeadline {
       }
     }
 

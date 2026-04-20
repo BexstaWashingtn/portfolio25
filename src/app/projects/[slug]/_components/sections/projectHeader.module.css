@@ -63,7 +63,7 @@ section.projectHero {
 
       .detailsItem:has(.itemLink):hover {
         background-color: rgba(0, 0, 0, 0.3);
-        transition: background-color 0.2s easy;
+        transition: background-color 0.2s ease;
       }
     }
   }

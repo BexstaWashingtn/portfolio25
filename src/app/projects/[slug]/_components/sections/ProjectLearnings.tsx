@@ -2,13 +2,16 @@ import Inner from "@/components/utils/Inner";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import styles from "./projectLearnings.module.css";
 import { ProjectLearningsData } from "./../../types/projectData";
+import { cleanStringArray } from "@/lib/utils/cleanStringArray";
 
 type Props = {
   learnings: ProjectLearningsData;
 };
 
 export default function ProjectLearnings({ learnings }: Props) {
-  /* TODO: ITEM VIEW OPTIMIEREN - DRZEIT NUR RUDIMENTÄR */
+  const cleanedLearnings = cleanStringArray(learnings.learnings);
+  const cleanedImprovements = cleanStringArray(learnings.improvements);
+  const cleanedFeedback = cleanStringArray(learnings.feedback);
 
   return (
     <section className={styles.learnings}>
@@ -22,32 +25,44 @@ export default function ProjectLearnings({ learnings }: Props) {
         />
       </Inner>
       <Inner variant='narrow' paddingBottom='xl' paddingTop='md'>
-        <h3>Was hast du gelernt?</h3>
-        <ul className={styles.learningsList}>
-          {learnings.learnings.map((item, index) => (
-            <li key={index} className={styles.learningsItem}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        {cleanedLearnings.length && (
+          <>
+            <h3>Was hast du gelernt?</h3>
+            <ul className={styles.learningsList}>
+              {cleanedLearnings.map((item, index) => (
+                <li key={index} className={styles.learningsItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h3>Was würdest du anders machen?</h3>
-        <ul className={styles.learningsList}>
-          {learnings.improvements.map((item, index) => (
-            <li key={index} className={styles.learningsItem}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        {cleanedImprovements.length && (
+          <>
+            <h3>Was würdest du anders machen?</h3>
+            <ul className={styles.learningsList}>
+              {cleanedImprovements.map((item, index) => (
+                <li key={index} className={styles.learningsItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h3>Feedack vom Kunden (wenn vorhanden)</h3>
-        <ul className={styles.learningsList}>
-          {learnings.feedback.map((item, index) => (
-            <li key={index} className={styles.learningsItem}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        {cleanedFeedback.length && (
+          <>
+            <h3>Feedack vom Kunden (wenn vorhanden)</h3>
+            <ul className={styles.learningsList}>
+              {cleanedFeedback.filter(Boolean).map((item, index) => (
+                <li key={index} className={styles.learningsItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </Inner>
     </section>
   );

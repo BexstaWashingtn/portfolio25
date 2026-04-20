@@ -4,7 +4,7 @@ import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapp
 import Inner from "@/components/utils/Inner";
 import Image from "next/image";
 import {
-  ProjectDetails,
+  ProjectDetailsData,
   ProjectInformationIcon,
 } from "./../../types/projectData";
 import { IconType } from "react-icons";
@@ -25,7 +25,7 @@ const iconMap: Record<ProjectInformationIcon, IconType> = {
 };
 
 type Props = {
-  details: ProjectDetails;
+  details: ProjectDetailsData;
 };
 
 export default function ProjectHeader({ details }: Props) {
@@ -64,8 +64,8 @@ export default function ProjectHeader({ details }: Props) {
                 <Image
                   src={details.src}
                   alt={`HereoImage ${details.title}`}
-                  width='848'
-                  height='459'
+                  width={848}
+                  height={459}
                 />
               </div>
             </header>
