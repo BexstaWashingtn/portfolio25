@@ -9,9 +9,9 @@ import projectData from "./data/data";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export default async function ProjectView({ params }: Props) {
