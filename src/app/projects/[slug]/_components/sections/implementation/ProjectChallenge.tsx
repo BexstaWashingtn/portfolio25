@@ -19,7 +19,7 @@ export default function ProjectChallenge({ challenge }: Props) {
               </h4>
             </div>
             <ul className={styles.itemList}>
-              {challenge.problem.filter(Boolean).map((item, index) => (
+              {challenge.problem.map((item, index) => (
                 <li key={index} className={styles.listItem}>
                   {item}
                 </li>
@@ -32,7 +32,7 @@ export default function ProjectChallenge({ challenge }: Props) {
           <li className={styles.challengeItem}>
             <h4>Wie bist du vorgegangen?</h4>
             <ul className={styles.itemList}>
-              {challenge.approach.filter(Boolean).map((item, index) => (
+              {challenge.approach.map((item, index) => (
                 <li key={index} className={styles.listItem}>
                   {item}
                 </li>
@@ -45,7 +45,7 @@ export default function ProjectChallenge({ challenge }: Props) {
           <li className={styles.challengeItem}>
             <h4>Was hast du daraus mitgenommen?</h4>
             <ul className={styles.itemList}>
-              {challenge.learnings.filter(Boolean).map((item, index) => (
+              {challenge.learnings.map((item, index) => (
                 <li key={index} className={styles.listItem}>
                   {item}
                 </li>

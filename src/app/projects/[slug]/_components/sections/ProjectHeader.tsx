@@ -55,7 +55,7 @@ export default function ProjectHeader({ details }: Props) {
         >
           <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
             <header className={styles.header}>
-              <div className={styles.headerDescription}>
+              <div className={styles.headerContent}>
                 <h1 className={styles.hl}>{details.title}</h1>
                 <p>{details.subtitle}</p>
               </div>
@@ -63,7 +63,7 @@ export default function ProjectHeader({ details }: Props) {
               <div className={styles.imgWrapper}>
                 <Image
                   src={details.src}
-                  alt={`HereoImage ${details.title}`}
+                  alt={`HeroImage ${details.title}`}
                   width={848}
                   height={459}
                 />

@@ -65,8 +65,6 @@ export default function ProjectTechStack({ techstack }: Props) {
                 className={styles.content}
               >
                 {techstack.map((cat, listIndex) => {
-                  if (!cat?.items?.length) return null;
-
                   return (
                     <ul
                       key={`${listIndex}-${cat.title}`}
@@ -85,7 +83,7 @@ export default function ProjectTechStack({ techstack }: Props) {
                         </Stack>
 
                         <ul className={styles.itemsList}>
-                          {cat.items?.filter(Boolean).map((item, itemIndex) => {
+                          {cat.items?.map((item, itemIndex) => {
                             return (
                               <li
                                 key={`${itemIndex}-${item}`}

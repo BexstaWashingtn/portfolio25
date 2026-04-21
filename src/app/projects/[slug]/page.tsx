@@ -38,7 +38,7 @@ export default async function ProjectView({ params }: Props) {
         {!!projectData?.visuals?.length && (
           <ProjectVisuals visuals={projectData.visuals} />
         )}
-        {projectData.learnings && (
+        {!!projectData.learnings && (
           <ProjectLearnings learnings={projectData.learnings} />
         )}
 

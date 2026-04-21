@@ -2,7 +2,7 @@ import Inner from "@/components/utils/Inner";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import styles from "./projectLearnings.module.css";
 import { ProjectLearningsData } from "./../../types/projectData";
-import { cleanStringArray } from "@/lib/utils/cleanStringArray";
+import { cleanStringArray } from "@/lib/utils/data/cleanStringArray";
 
 type Props = {
   learnings: ProjectLearningsData;
@@ -25,11 +25,11 @@ export default function ProjectLearnings({ learnings }: Props) {
         />
       </Inner>
       <Inner variant='narrow' paddingBottom='xl' paddingTop='md'>
-        {cleanedLearnings.length && (
+        {!!cleanedLearnings.length && (
           <>
             <h3>Was hast du gelernt?</h3>
             <ul className={styles.learningsList}>
-              {cleanedLearnings.map((item, index) => (
+              {cleanedLearnings.filter(Boolean).map((item, index) => (
                 <li key={index} className={styles.learningsItem}>
                   {item}
                 </li>
@@ -38,11 +38,11 @@ export default function ProjectLearnings({ learnings }: Props) {
           </>
         )}
 
-        {cleanedImprovements.length && (
+        {!!cleanedImprovements.length && (
           <>
             <h3>Was würdest du anders machen?</h3>
             <ul className={styles.learningsList}>
-              {cleanedImprovements.map((item, index) => (
+              {cleanedImprovements.filter(Boolean).map((item, index) => (
                 <li key={index} className={styles.learningsItem}>
                   {item}
                 </li>
@@ -51,9 +51,9 @@ export default function ProjectLearnings({ learnings }: Props) {
           </>
         )}
 
-        {cleanedFeedback.length && (
+        {!!cleanedFeedback.length && (
           <>
-            <h3>Feedack vom Kunden (wenn vorhanden)</h3>
+            <h3>Feedback vom Kunden (wenn vorhanden)</h3>
             <ul className={styles.learningsList}>
               {cleanedFeedback.filter(Boolean).map((item, index) => (
                 <li key={index} className={styles.learningsItem}>

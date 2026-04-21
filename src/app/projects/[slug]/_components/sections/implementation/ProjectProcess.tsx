@@ -12,8 +12,6 @@ export default function ProjectProcess({ process }: Props) {
 
       <ul className={styles.timelineContent}>
         {process.map(({ title, description }, index) => {
-          if (!title && !description) return null;
-
           return (
             <li key={index} className={styles.timelineItem}>
               {title && <h4 className={styles.headline}>{title}</h4>}
