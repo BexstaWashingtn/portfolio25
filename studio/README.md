@@ -1,9 +1,21 @@
-# Sanity Clean Content Studio
+# Sanity Studio – Portfolio v1
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+Dieses Verzeichnis enthält das **Sanity Studio** für das Portfolio-Projekt.  
+Hier werden alle Inhalte gepflegt, die später im Frontend (Next.js) angezeigt werden.
 
-Now you can do the following things:
+## Zweck
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the Sanity community](https://www.sanity.io/community/join?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+Das Studio dient als **Headless CMS**, um Projektdaten zentral zu verwalten, ohne den Code im Frontend anfassen zu müssen.
+
+Typische Inhalte:
+
+- Projekte (Titel, Beschreibung, Techstack, Bilder, etc.)
+- Strukturierte Daten für die Portfolio-Seiten
+
+## Tech Stack
+
+- Sanity Studio
+- TypeScript
+- Schema-basierte Content-Struktur
+
+## Projektstruktur
