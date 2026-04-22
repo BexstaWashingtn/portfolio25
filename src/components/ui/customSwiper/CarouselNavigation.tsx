@@ -5,6 +5,8 @@ import ArrowIcon from "../ArrowIcon";
 import type { Ref } from "react";
 import Button from "../form/Button";
 
+// Carousel Navigation Button - ONCE
+
 type Props = {
   buttonRef?: Ref<HTMLButtonElement>;
   direction: "back" | "forward";

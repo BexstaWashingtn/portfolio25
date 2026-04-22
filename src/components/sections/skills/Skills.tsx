@@ -23,7 +23,8 @@ export default function SectionSkills() {
     >
       <BackgroundGradientWrapper
         gradient={{
-          type: "circle",
+          type: "radial",
+          shape: "circle",
           startX: "20%",
           startY: "0%",
           colorStops: [

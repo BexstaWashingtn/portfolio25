@@ -22,5 +22,9 @@ div[class*="customSwiper_swiperContainer"] {
         border-radius: var(--radius-md);
       }
     }
+
+    .swiperCustomPagination.swiper-pagination-lock {
+      display: none;
+    }
   }
 }

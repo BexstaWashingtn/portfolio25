@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "projektname-titel-1",
     "image": {
       "src": "/img/projects/logo_bird.svg",
       "alt": "Project Logo Bird",
@@ -13,6 +14,7 @@
   },
   {
     "id": 2,
+    "slug": "projektname-titel-2",
     "image": {
       "src": "/img/projects/logo_violet.svg",
       "alt": "Project Logo Violet photographes",
@@ -25,6 +27,7 @@
   },
   {
     "id": 3,
+    "slug": "projektname-titel-3",
     "image": {
       "src": "/img/projects/logo_m.svg",
       "alt": "Project Logo M",
@@ -37,6 +40,7 @@
   },
   {
     "id": 4,
+    "slug": "projektname-titel-4",
     "image": {
       "src": "/img/projects/logo_pen.svg",
       "alt": "Project Pen Dev - Draw your World",
@@ -49,6 +53,7 @@
   },
   {
     "id": 5,
+    "slug": "projektname-titel-5",
     "image": {
       "src": "/img/projects/logo_heavenFlow.png",
       "alt": "Project Logo HeavenFlow",

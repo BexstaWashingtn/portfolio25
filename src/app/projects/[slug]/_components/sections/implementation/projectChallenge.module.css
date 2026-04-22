@@ -1,0 +1,19 @@
+section.implementationChallenge {
+  .implChallengeList {
+    list-style: none;
+
+    .challengeListHeader {
+      padding-bottom: 1rem;
+
+      .challengeListHeadline {
+        padding-bottom: 0;
+      }
+      .challengeListSubHeadline {
+      }
+    }
+
+    .itemList {
+      margin-left: 1.25rem;
+    }
+  }
+}

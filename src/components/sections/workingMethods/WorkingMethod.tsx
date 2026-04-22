@@ -1,6 +1,5 @@
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import styles from "./workingMethod.module.css";
-import "@components/ui/customSwiper/swiper.default.css";
 import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
@@ -38,10 +37,15 @@ export default function SectionWorkingMethod() {
 
   return (
     <section className={styles.workingMethod} id='working-method'>
-      <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
+      <Inner
+        variant='full'
+        paddingTop='xxl'
+        paddingBottom='xxl'
+        className={styles.fourPointLimit}
+      >
         <Stack gap={{ base: "lg", md: "md", sm: "sm" }}>
           <h2 className={styles.h2}>Arbeitsweise</h2>
-          <Inner paddingTop='md' paddingInline={false}>
+          <Inner variant='full' paddingTop='md' paddingInline={false}>
             {isMobile ? (
               // only render Swiper on < 768 phone devices
 

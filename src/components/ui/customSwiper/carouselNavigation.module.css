@@ -1,15 +1,4 @@
 .CarouselNavigation {
   display: flex;
   align-items: center;
-
-  /*   .navButton {
-    width: 44px;
-    height: 44px;
-    background-color: transparent;
-    border-radius: 50%;
-
-    &:hover {
-      background-color: rgba(var(--peach-700));
-    }
-  } */
 }

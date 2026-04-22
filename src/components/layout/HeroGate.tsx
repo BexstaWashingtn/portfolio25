@@ -8,7 +8,7 @@ import { BackgroundGradientWrapper } from "./BackgroundGradientWrapper";
 import { BackgroundImageWrapper } from "./BackgroundImageWrapper";
 import Aboutme from "@/components/sections/Aboutme";
 import TypeAnalysis from "@components//sections/TypeAnalysis";
-import Projects from "@/components/sections/projects/Projects";
+import Projects from "@/components/sections/projects/SectionProjects";
 import Contact from "@/components/sections/contact/Contact";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import { useEffect, useState } from "react";
@@ -99,7 +99,8 @@ export default function HeroGate({ hasFreeEntry }: { hasFreeEntry?: boolean }) {
             >
               <BackgroundGradientWrapper
                 gradient={{
-                  type: "circle",
+                  type: "radial",
+                  shape: "circle",
                   startX: "75%",
                   startY: "0%",
                   colorStops: [

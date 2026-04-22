@@ -1,0 +1,20 @@
+section.techStack {
+  .content {
+    padding-inline: 2rem;
+
+    .techStackList,
+    .itemsList {
+      list-style: none;
+    }
+
+    .techStackList {
+      flex: 1;
+
+      .techStackItems {
+        .headline {
+          color: rgb(var(--peach));
+        }
+      }
+    }
+  }
+}

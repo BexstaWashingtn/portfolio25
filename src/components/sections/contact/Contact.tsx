@@ -44,7 +44,8 @@ export default function SectionContact() {
       >
         <BackgroundGradientWrapper
           gradient={{
-            type: "circle",
+            type: "radial",
+            shape: "circle",
             startX: "25%",
             startY: "0",
             colorStops: [

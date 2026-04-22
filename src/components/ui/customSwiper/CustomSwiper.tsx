@@ -1,8 +1,12 @@
+"use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { SwiperOptions } from "swiper/types";
 import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
+import "@components/ui/customSwiper/swiper.default.css";
 import styles from "./customSwiper.module.css";
 import { ReactNode, Key, useRef, useEffect } from "react";
 import CarouselNavigation from "./CarouselNavigation";

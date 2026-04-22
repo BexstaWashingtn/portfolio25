@@ -2,9 +2,17 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: filter 0.2s ease;
+  }
+
   .projectCardImageCon {
     width: 100%;
     height: 210px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +28,16 @@
         width: 60%;
         max-width: 120px;
       }
+    }
+
+    .viewedBadge {
+      position: absolute;
+      display: inline-block;
+      bottom: 0.25rem;
+      right: 0.5rem;
+      font-size: 2rem;
+      line-height: 1rem;
+      color: rgba(255, 255, 255, 0.6);
     }
   }
   .projectCardText {
@@ -49,4 +67,10 @@
     display: flex;
     justify-content: center;
   }
+}
+
+.viewed {
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: all 0.2s ease;
 }

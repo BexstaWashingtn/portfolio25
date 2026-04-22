@@ -10,6 +10,7 @@ export default function SectionAboutme({}) {
 
   // TODO: make actual photo
   // TODO: add a Section Component for all Sections with id,
+  // TODO: clear old css code (header, timeline etc.)
 
   return (
     <section className={styles.about} id='about'>
