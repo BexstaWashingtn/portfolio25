@@ -2,8 +2,6 @@
 
 # dependencies
 /node_modules
-/web/node_modules
-/studio/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -17,12 +15,7 @@
 
 # next.js
 /.next/
-/web/.next/
 /out/
-
-# sanity
-/studio/.sanity/
-/studio/dist/
 
 # production
 /build
