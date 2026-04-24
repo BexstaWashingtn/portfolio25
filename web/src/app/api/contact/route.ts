@@ -20,7 +20,7 @@ export async function POST(request: Request) {
           errors: flattened.fieldErrors,
           message: "Validierungsfehler",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         },
         {
           status: 200,
-        }
+        },
       );
     }
 
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
           message:
             "Mailversand ist aktuell nicht verfügbar (Konfigurationsfehler).",
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -79,7 +79,7 @@ ${result.data.message}
         success: false,
         message: "Serverfehler. Bitte später erneut versuchen.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

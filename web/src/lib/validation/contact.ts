@@ -17,7 +17,7 @@ export const contactFormSchema = z.object({
           .every((word) => word.length >= 2), // jedes Wort >= 2 Zeichen
       {
         message: "Jeder Name muss mindestens 2 Buchstaben enthalten.",
-      }
+      },
     ),
 
   email: z
@@ -29,18 +29,13 @@ export const contactFormSchema = z.object({
     .string()
     .min(
       MESSAGE_MIN_LENGTH,
-      `Deine Nachricht sollte mindestens ${MESSAGE_MIN_LENGTH} Zeichen enthalten.`
+      `Deine Nachricht sollte mindestens ${MESSAGE_MIN_LENGTH} Zeichen enthalten.`,
     )
     .max(
       MESSAGE_MAX_LENGTH,
-      `Die Nachricht darf maximal ${MESSAGE_MAX_LENGTH} Zeichen lang sein.`
+      `Die Nachricht darf maximal ${MESSAGE_MAX_LENGTH} Zeichen lang sein.`,
     ),
-  hpot: z
-    .string()
-    .optional()
-    .refine((val) => val === "" || val === undefined, {
-      message: "Bot detected",
-    }),
+  hpot: z.string().optional(),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
