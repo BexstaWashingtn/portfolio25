@@ -43,10 +43,10 @@ export const projectType = defineType({
     },
     {
       name: 'previewImage',
-      title: 'Previewbild*',
+      title: 'Projekt Logo*',
       type: 'image',
       group: 'details',
-      description: 'max. 266px x 160px',
+      description: 'max. 266px x 160px, Format SVG',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -54,7 +54,7 @@ export const projectType = defineType({
       title: 'Projektbild*',
       type: 'image',
       group: 'details',
-      description: 'max. 816px x 459px',
+      description: '816px x 459px, Format JPEG',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -89,12 +89,12 @@ export const projectType = defineType({
     },
     {
       name: 'projectInformations',
-      title: 'Projekt Informationen',
+      title: 'Projekt Informationen*',
       type: 'object',
       fields: [
         {
           name: 'developmentTime',
-          title: 'Entwicklungszeit',
+          title: 'Entwicklungszeit*',
           type: 'object',
           validation: (Rule) => Rule.required(),
           fields: [
