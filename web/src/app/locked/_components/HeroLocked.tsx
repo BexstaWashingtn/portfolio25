@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
 import { ImBlocked } from "react-icons/im";
-import { AnimatePresence, motion } from "framer-motion";
 import Logo from "@/components/ui/Logo";
 
 export default function SectionHero() {
@@ -36,20 +35,10 @@ export default function SectionHero() {
 
         <div className={styles.lockOverlay}>
           <div className={styles.lockText}>
-            <AnimatePresence mode='wait'>
-              <motion.div
-                key='locked'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <>
-                  <ImBlocked className={styles.lockIcon} />
-                  <p>Die Seite ist für unautorisierte Zugriffe gesperrt.</p>
-                </>
-              </motion.div>
-            </AnimatePresence>
+            <>
+              <ImBlocked className={styles.lockIcon} />
+              <p>Die Seite ist für unautorisierte Zugriffe gesperrt.</p>
+            </>
           </div>
         </div>
       </div>
