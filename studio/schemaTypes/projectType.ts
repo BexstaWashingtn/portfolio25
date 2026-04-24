@@ -13,50 +13,55 @@ export const projectType = defineType({
   fields: [
     {
       name: 'title',
-      title: 'Titel',
+      title: 'Titel*',
       type: 'string',
       group: 'details',
       validation: (Rule) => Rule.min(3).max(32).required(),
     },
     {
       name: 'subtitle',
-      title: 'Subtitle',
+      title: 'Subtitle*',
       type: 'string',
       group: 'details',
+      description: 'min.5 max.64 Zeichen',
       validation: (Rule) => Rule.min(5).max(64).required(),
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Slug*',
       type: 'slug',
       group: 'details',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
-      title: 'Kurzbeschreibung',
+      title: 'Kurzbeschreibung*',
       type: 'text',
       group: 'details',
+      description: 'min.20 max.160 Zeichen',
       validation: (Rule) => Rule.min(20).max(160).required(),
     },
     {
       name: 'previewImage',
-      title: 'Previewbild',
+      title: 'Previewbild*',
       type: 'image',
       group: 'details',
+      description: 'max. 266px x 160px',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'projectImage',
-      title: 'Projektbild',
+      title: 'Projektbild*',
       type: 'image',
       group: 'details',
+      description: 'max. 816px x 459px',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'projectMainColor',
-      title: 'Projektfarbe (RGB)',
+      title: 'Projektfarbe (RGB)*',
       type: 'object',
+      description: 'Hauptfarbe für von dem Projekt',
       validation: (Rule) => Rule.required(),
       options: {
         columns: 3,
@@ -91,37 +96,40 @@ export const projectType = defineType({
           name: 'developmentTime',
           title: 'Entwicklungszeit',
           type: 'object',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               name: 'description',
-              title: 'Zeitraum oder Gesamtzeit',
+              title: 'Zeitraum oder Gesamtzeit*',
               type: 'string',
             },
           ],
         },
         {
           name: 'methods',
-          title: 'angewandte Methoden',
+          title: 'angewandte Methoden*',
           type: 'array',
           of: [
             {
               type: 'string',
             },
           ],
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'tools',
-          title: 'verwendete Tools',
+          title: 'verwendete Tools*',
           type: 'array',
           of: [
             {
               type: 'string',
             },
           ],
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'liveDemo',
-          title: 'Live Demo',
+          title: 'Live Demo*',
           type: 'object',
           fields: [
             {
@@ -130,10 +138,11 @@ export const projectType = defineType({
               type: 'url',
             },
           ],
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'github',
-          title: 'GitHub Link',
+          title: 'GitHub Link*',
           type: 'object',
           fields: [
             {
@@ -142,6 +151,7 @@ export const projectType = defineType({
               type: 'url',
             },
           ],
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
