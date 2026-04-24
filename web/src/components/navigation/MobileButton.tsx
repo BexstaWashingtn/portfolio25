@@ -1,3 +1,5 @@
+"use client";
+
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import styles from "./mobileButton.module.css";
 

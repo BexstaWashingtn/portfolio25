@@ -1,3 +1,5 @@
+"use client";
+
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import styles from "./workingMethod.module.css";
 import WorkingMethodItem from "./WorkingMethodItem";

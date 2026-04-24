@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "@ui/link/Link";
 import styles from "./navigation.module.css";
 import { useEffect } from "react";

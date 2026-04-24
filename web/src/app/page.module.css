@@ -1,0 +1,7 @@
+main.main {
+  position: relative;
+}
+footer.footer {
+  padding-inline: 1rem;
+  background-color: rgb(var(--footer-background));
+}

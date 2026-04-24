@@ -1,12 +1,13 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
-import { RiArrowDownSLine } from "react-icons/ri";
-import Logo from "../ui/Logo";
+import { ImBlocked } from "react-icons/im";
+import { AnimatePresence, motion } from "framer-motion";
+import Logo from "@/components/ui/Logo";
 
 export default function SectionHero() {
   return (
     <section className={styles.hero} id='hero'>
-      <div className={`${styles.heroInner} ${"pointer"}`}>
+      <div className={styles.heroInner}>
         <div className={styles.logoImageOverlay}>
           <Logo width={180} height={263} linkDisabled={true} />
         </div>
@@ -22,7 +23,7 @@ export default function SectionHero() {
         </div>
         <div className={styles.heroTextOverlay}>
           <div className={styles.heroTextInner}>
-            <h1 className={`${styles.heroHeadline} ${"pointer"}`}>
+            <h1 className={styles.heroHeadline}>
               „<span className='highlight-peach'>Code</span> ist mein{" "}
               <span className='highlight-peach'>Werkzeug</span>
               ,<br />
@@ -35,9 +36,20 @@ export default function SectionHero() {
 
         <div className={styles.lockOverlay}>
           <div className={styles.lockText}>
-            <button className={styles.buttonStart} aria-label='Start Website'>
-              <RiArrowDownSLine className={styles.lockIcon} />
-            </button>
+            <AnimatePresence mode='wait'>
+              <motion.div
+                key='locked'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <>
+                  <ImBlocked className={styles.lockIcon} />
+                  <p>Die Seite ist für unautorisierte Zugriffe gesperrt.</p>
+                </>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

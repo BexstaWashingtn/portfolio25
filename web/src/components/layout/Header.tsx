@@ -7,7 +7,7 @@ import Navigation from "../navigation/Navigation";
 import MobileButton from "../navigation/MobileButton";
 
 type Props = {
-  onClick: () => void; // Function to handle logo click
+  onClick?: () => void; // Function to handle logo click
   // This function is called when the logo is clicked, typically to scroll to the top of the page
 };
 
@@ -45,7 +45,7 @@ export default function Header({ onClick }: Props) {
       {
         root: null,
         threshold: 0.1,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));

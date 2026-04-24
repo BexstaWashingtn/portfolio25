@@ -1,5 +1,5 @@
-import HeroGate from "@/components/layout/HeroGate";
+import HeroLocked from "./_components/HeroLocked";
 
 export default function Locked() {
-  return <HeroGate hasFreeEntry={false} />;
+  return <HeroLocked />;
 }
