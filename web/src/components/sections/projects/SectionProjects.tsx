@@ -8,7 +8,9 @@ import ProjectCardSlider from "./ProjectCardSlider";
 import projectData from "./data.json";
 import type { Project } from "./types";
 
-export default function SectionProjects() {
+export default async function SectionProjects() {
+  //const projectsSanity = await getProjectPreviews();
+
   const projects: Project[] = projectData;
 
   return (
