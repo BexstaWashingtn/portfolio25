@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
 
-import PageHeader from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
@@ -11,12 +10,10 @@ import WorkingMethod from "@/components/sections/workingMethods/WorkingMethod";
 import Skills from "@/components/sections/skills/Skills";
 import Contact from "@/components/sections/contact/Contact";
 import BackToTopButton from "@/components/ui/BackToTopButton";
-import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <>
-      <PageHeader />
       <Hero />
 
       <main id='main' className={styles.main}>
@@ -63,8 +60,6 @@ export default function Home() {
         <Contact />
         <BackToTopButton />
       </main>
-
-      <Footer />
     </>
   );
 }

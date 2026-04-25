@@ -2,14 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 type Props = {
-  onClick?: () => void;
   linkDisabled?: boolean;
   width?: number;
   height?: number;
 };
 
 export default function Logo({
-  onClick,
   linkDisabled = false,
   width = 50,
   height = 50,
@@ -27,22 +25,7 @@ export default function Logo({
   }
 
   return (
-    <Link
-      href='/'
-      aria-current='page'
-      onClick={(e) => {
-        // Prevent default link behavior
-        e.preventDefault();
-
-        onClick?.();
-
-        // Scroll to the top of the page smoothly
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }}
-    >
+    <Link href='/#hero' aria-current='page'>
       <Image
         src='/img/logo/logo_beige_shadow.png'
         alt='Logo - Eine Mann sitzt in einem Fensterrahmen und schaut in den Himmel'

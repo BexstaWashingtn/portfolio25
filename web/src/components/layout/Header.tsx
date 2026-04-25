@@ -6,12 +6,7 @@ import Logo from "../ui/Logo";
 import Navigation from "../navigation/Navigation";
 import MobileButton from "../navigation/MobileButton";
 
-type Props = {
-  onClick?: () => void; // Function to handle logo click
-  // This function is called when the logo is clicked, typically to scroll to the top of the page
-};
-
-export default function Header({ onClick }: Props) {
+export default function Header() {
   // State to manage the mobile menu open/close state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Function to toggle the mobile menu
@@ -59,7 +54,7 @@ export default function Header({ onClick }: Props) {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.logoImageOverlay}>
-          <Logo width={50} height={73} onClick={onClick} />
+          <Logo width={50} height={73} />
         </div>
 
         <Navigation

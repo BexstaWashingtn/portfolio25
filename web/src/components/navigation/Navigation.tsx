@@ -3,6 +3,7 @@
 import Link from "@ui/link/Link";
 import styles from "./navigation.module.css";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state
@@ -42,11 +43,13 @@ export default function Navigation({
   isMobileMenuOpen,
   activeSection,
 }: Props) {
+  const router = useRouter();
+
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
-    const section = document.getElementById(sectionId);
-    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    router.push(`/#${sectionId}`);
   };
 
   useEffect(() => {
