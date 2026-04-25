@@ -13,9 +13,9 @@ export default function BackToTopButton() {
   // isVisible state determines if the button should be displayed or not.
 
   useEffect(() => {
-    const about = document.getElementById("about");
+    const firstSectionWithId = document.querySelector("section[id]");
 
-    if (!about) return;
+    if (!firstSectionWithId) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,7 +27,7 @@ export default function BackToTopButton() {
       },
     );
 
-    observer.observe(about);
+    observer.observe(firstSectionWithId);
 
     return () => observer.disconnect();
   }, []);

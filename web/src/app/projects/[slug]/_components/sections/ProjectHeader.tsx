@@ -30,7 +30,7 @@ type Props = {
 
 export default function ProjectHeader({ details }: Props) {
   return (
-    <section className={styles.projectHero}>
+    <section className={styles.projectHero} id='ProjectHeader'>
       <BackgroundImageWrapper
         image={{
           src: details.backgroundImageSrc,

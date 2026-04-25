@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HashScroll from "./components/HashScroll";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 
 //import { Analytics } from "@vercel/analytics/next";
 // TODO: is Website ready acivate Vercel Analytics
@@ -31,6 +32,9 @@ export default function RootLayout({
 
         {/* HashScroll makes Navigation clicks Scrollable */}
         <HashScroll />
+
+        {/* Scroll to Top 0px */}
+        <BackToTopButton />
       </body>
     </html>
   );

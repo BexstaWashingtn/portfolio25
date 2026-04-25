@@ -9,7 +9,6 @@ import Projects from "@/components/sections/projects/SectionProjects";
 import WorkingMethod from "@/components/sections/workingMethods/WorkingMethod";
 import Skills from "@/components/sections/skills/Skills";
 import Contact from "@/components/sections/contact/Contact";
-import BackToTopButton from "@/components/ui/BackToTopButton";
 
 export default function Home() {
   return (
@@ -58,7 +57,6 @@ export default function Home() {
         <Projects />
         {/*<SectionMusic />*/}
         <Contact />
-        <BackToTopButton />
       </main>
     </>
   );
