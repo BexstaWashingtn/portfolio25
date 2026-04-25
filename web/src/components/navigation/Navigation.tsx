@@ -48,7 +48,6 @@ export default function Navigation({
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
-
     router.push(`/#${sectionId}`);
   };
 
@@ -72,7 +71,7 @@ export default function Navigation({
               className={`${styles.navLink} ${
                 activeSection === slug ? styles.active : ""
               }`}
-              href={`#${slug}`}
+              href={`/#${slug}`}
               onClick={(e) => handleNavClick(e, slug)}
             >
               {text}
