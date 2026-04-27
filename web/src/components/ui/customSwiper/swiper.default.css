@@ -1,6 +1,7 @@
 div[class*="customSwiper_swiperContainer"] {
   .swiperCustomCSS {
     padding-bottom: 8rem;
+    width: 100%;
 
     .swiperCustomPagination {
       text-align: center;
