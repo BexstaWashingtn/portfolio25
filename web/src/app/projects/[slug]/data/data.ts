@@ -4,40 +4,44 @@ const projectData: ProjectData = {
   details: {
     title: "Portfolio 2025",
     subtitle: "Design trifft Code - mit Fokus auf Nutzer & Klarheit.",
-    src: "/img/projects/p1/header_image.jpg",
-    backgroundImageSrc: "/img/background/particel-waves_mono_1920x1280.jpg",
+    projectImage: {
+      src: "/img/projects/p1/header_image.jpg",
+      width: 848,
+      height: 459,
+      alt: "Portfolio 2025",
+    },
     mainColorRGB: "248, 141, 127",
-    projectInformations: [
-      {
-        id: 1,
-        icon: "calendar",
-        description: "Mai – Juli 2025",
+    projectInformations: {
+      developmentTime: {
+        description: "~300 Stunden",
       },
-      {
-        id: 2,
-        icon: "brain",
-        description:
-          "Konzeption, UX Research, UI Design, Content, Front- & Backend, Barrierefreiheit",
+      github: {
+        href: "https://github.com/BexstaWashingtn/portfolio25",
       },
-      {
-        id: 3,
-        icon: "toolbox",
-        description:
-          "Figma, VS Code, Next.js, CSS Modules, TypeScript, Sanity CMS, Prisma Studio, GitHub, Vercel",
+      liveDemo: {
+        href: "https://portfolio.tomasbee.de/?freeentry",
       },
-      {
-        id: 4,
-        icon: "link",
-        description: "Live Demo",
-        href: "https://test.de",
-      },
-      {
-        id: 5,
-        icon: "github",
-        description: "GitHub",
-        href: "https://test.de",
-      },
-    ],
+      methods: [
+        "Zielgruppenanalyse",
+        "Card Sorting",
+        "Wireframes",
+        "UX/UI Design",
+        "Barrierefreies Design",
+        "Komponentenbasierte Entwicklung (React)",
+        "Testing & Optimierung",
+        "CMS-Integration (Sanity)",
+      ],
+      tools: [
+        "VS Code",
+        "Figma",
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Sanity CMS",
+        "GitHub",
+        "Vercel",
+      ],
+    },
   },
   goals: {
     initial:
