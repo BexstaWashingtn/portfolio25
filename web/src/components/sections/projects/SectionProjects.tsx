@@ -7,21 +7,23 @@ import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrappe
 import ProjectCardSlider from "./ProjectCardSlider";
 import type { Project } from "./types";
 import { getProjectPreviews } from "@/sanity/fetchProjects";
-import { buildSrc } from "@sanity-image/url-builder";
-import { getSanityData } from "@/sanity/getSanityData";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview ";
+import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
+import { notFound } from "next/navigation";
 
 export default async function SectionProjects() {
   const projectsSanity: SanityProjectPreview[] = await getProjectPreviews();
-  const { projectId, dataset } = getSanityData();
+
+  if (!projectsSanity) {
+    notFound();
+  }
 
   const sliderItems: Project[] = projectsSanity.map(
     (project: SanityProjectPreview) => {
-      const { src, width, height } = buildSrc({
-        id: project.previewImage.asset._ref,
-        width: 266,
-        baseUrl: `https://cdn.sanity.io/images/${projectId}/${dataset}/`,
-      });
+      const { src, width, height } = buildSanitySrc(
+        project.previewImage.asset._ref,
+        260,
+      );
 
       const image = {
         src,
@@ -36,7 +38,7 @@ export default async function SectionProjects() {
         description: project.description,
         slug: project.slug,
         tags: project.methods?.slice(0, 5),
-        image: image,
+        image,
       };
     },
   );

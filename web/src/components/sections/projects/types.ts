@@ -1,9 +1,4 @@
-type Image = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-};
+import { Image } from "@/types/image";
 
 type Project = {
   id: number;

@@ -1,25 +1,34 @@
+import { Image } from "@/types/image";
+
 export type ProjectData = {
   details: ProjectDetailsData;
-  goals: ProjectGoalsData;
-  implementation: ProjectImplementationData;
-  visuals: ProjectVisualsData[];
-  learnings: ProjectLearningsData;
+  goals?: ProjectGoalsData;
+  implementation?: ProjectImplementationData;
+  visuals?: ProjectVisualsData[];
+  learnings?: ProjectLearningsData;
 };
 
 export type ProjectDetailsData = {
   title: string;
   subtitle: string;
-  src: string;
-  backgroundImageSrc: string;
+  projectImage: Image;
+  backgroundImage?: Image;
   mainColorRGB: string;
-  projectInformations: ProjectInformationData[];
+  projectInformations: ProjectInformationsData;
 };
 
-export type ProjectInformationData = {
-  id: number;
-  icon: ProjectInformationIcon;
-  description: string;
-  href?: string;
+export type ProjectInformationsData = {
+  developmentTime?: {
+    description?: string;
+  };
+  methods?: string[];
+  tools?: string[];
+  liveDemo?: {
+    href?: string;
+  };
+  github?: {
+    href?: string;
+  };
 };
 
 export type ProjectInformationIcon =
