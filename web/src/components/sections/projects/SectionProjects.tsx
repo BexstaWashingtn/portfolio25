@@ -5,13 +5,43 @@ import SectionHeader from "../SectionHeader";
 import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import ProjectCardSlider from "./ProjectCardSlider";
-import projectData from "./data.json";
 import type { Project } from "./types";
+import { getProjectPreviews } from "@/sanity/fetchProjects";
+import { buildSrc } from "@sanity-image/url-builder";
+import { getSanityData } from "@/sanity/getSanityData";
+import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview ";
 
 export default async function SectionProjects() {
-  //const projectsSanity = await getProjectPreviews();
+  const projectsSanity: SanityProjectPreview[] = await getProjectPreviews();
+  const { projectId, dataset } = getSanityData();
 
-  const projects: Project[] = projectData;
+  const sliderItems: Project[] = projectsSanity.map(
+    (project: SanityProjectPreview) => {
+      const { src, width, height } = buildSrc({
+        id: project.previewImage.asset._ref,
+        width: 266,
+        baseUrl: `https://cdn.sanity.io/images/${projectId}/${dataset}/`,
+      });
+
+      const image = {
+        src,
+        width,
+        height,
+        alt: project.title,
+      };
+
+      return {
+        id: project._id,
+        title: project.title,
+        description: project.description,
+        slug: project.slug,
+        tags: project.methods?.slice(0, 5),
+        image: image,
+      };
+    },
+  );
+
+  console.log("sliderItems: ", sliderItems);
 
   return (
     <section className={styles.projects} id='projects'>
@@ -52,7 +82,7 @@ export default async function SectionProjects() {
               />
             </Inner>
             <Inner variant='full' paddingBottom='xxl'>
-              <ProjectCardSlider items={projects} />
+              <ProjectCardSlider items={sliderItems} />
             </Inner>
           </Stack>
         </BackgroundGradientWrapper>

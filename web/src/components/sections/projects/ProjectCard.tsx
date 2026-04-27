@@ -46,7 +46,7 @@ export default function ProjectCard({ item, viewed }: ProjectCardProps) {
           <div className={styles.projectCardTags}>
             {item.tags &&
               item.tags.map((tag, index) => (
-                <span key={index} className={styles.projectCardTag}>
+                <span key={`${index}-${tag}`} className={styles.projectCardTag}>
                   {tag}
                 </span>
               ))}
