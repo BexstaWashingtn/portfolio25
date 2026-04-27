@@ -62,7 +62,6 @@ export const projectType = defineType({
       title: 'Projektfarbe (RGB)*',
       type: 'object',
       description: 'Hauptfarbe für von dem Projekt',
-      validation: (Rule) => Rule.required(),
       options: {
         columns: 3,
       },
@@ -151,7 +150,6 @@ export const projectType = defineType({
               type: 'url',
             },
           ],
-          validation: (Rule) => Rule.required(),
         },
       ],
     },
