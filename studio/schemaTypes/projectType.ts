@@ -59,7 +59,7 @@ export const projectType = defineType({
     },
     {
       name: 'projectMainColor',
-      title: 'Projektfarbe (RGB)*',
+      title: 'Projektfarbe (RGB)',
       type: 'object',
       description: 'Hauptfarbe für von dem Projekt',
       options: {
@@ -141,7 +141,7 @@ export const projectType = defineType({
         },
         {
           name: 'github',
-          title: 'GitHub Link*',
+          title: 'GitHub Link',
           type: 'object',
           fields: [
             {
