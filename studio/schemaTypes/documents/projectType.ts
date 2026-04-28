@@ -1,4 +1,6 @@
 import {defineType} from 'sanity'
+import {createMainColorField} from '../fields/mainColorField'
+import {createImageField} from '../fields/imageField'
 
 export const projectType = defineType({
   name: 'project',
@@ -41,51 +43,33 @@ export const projectType = defineType({
       description: 'min.20 max.160 Zeichen',
       validation: (Rule) => Rule.min(20).max(160).required(),
     },
-    {
+    createImageField({
       name: 'previewImage',
       title: 'Projekt Logo*',
-      type: 'image',
       group: 'details',
       description: 'max. 266px x 160px, Format SVG',
-      validation: (Rule) => Rule.required(),
-    },
-    {
+      required: true,
+    }),
+    createImageField({
       name: 'projectImage',
       title: 'Projektbild*',
-      type: 'image',
       group: 'details',
       description: '816px x 459px, Format JPEG',
-      validation: (Rule) => Rule.required(),
-    },
-    {
+      required: true,
+    }),
+    createImageField({
+      name: 'backgroundImage',
+      title: 'Projekt Hintergrundbild',
+      group: 'details',
+      description: '1920 x 1080px, Format JPEG',
+      required: false,
+    }),
+    createMainColorField({
       name: 'projectMainColor',
-      title: 'Projektfarbe (RGB)',
-      type: 'object',
-      description: 'Hauptfarbe für von dem Projekt',
-      options: {
-        columns: 3,
-      },
-      fields: [
-        {
-          name: 'r',
-          title: 'Rot (R)',
-          type: 'number',
-          validation: (Rule) => Rule.min(0).max(255),
-        },
-        {
-          name: 'g',
-          title: 'Grün (G)',
-          type: 'number',
-          validation: (Rule) => Rule.min(0).max(255),
-        },
-        {
-          name: 'b',
-          title: 'Blau (B)',
-          type: 'number',
-          validation: (Rule) => Rule.min(0).max(255),
-        },
-      ],
-    },
+      title: 'Projekt-Hauptfarbe (RGB)',
+      required: false,
+      description: 'MainColor für Projekthintergrund',
+    }),
     {
       name: 'projectInformations',
       title: 'Projekt Informationen*',
