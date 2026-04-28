@@ -9,8 +9,8 @@ import ArrowIcon from "./ArrowIcon";
 export default function BackToTopButton() {
   // This component renders a button that scrolls the page back to the top when clicked.
 
-  const [isVisible, setIsVisible] = useState(false);
   // isVisible state determines if the button should be displayed or not.
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const firstSectionWithId = document.querySelector("section[id]");

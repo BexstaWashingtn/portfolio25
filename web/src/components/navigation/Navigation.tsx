@@ -45,12 +45,14 @@ export default function Navigation({
 }: Props) {
   const router = useRouter();
 
+  // scroll to Startpage Section
   const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     router.push(`/#${sectionId}`);
   };
 
+  // Prevents background scrolling when the mobile menu is open
   useEffect(() => {
     const htmlEl = document.documentElement;
     htmlEl.classList.toggle("overflow-hidden", isMobileMenuOpen);
