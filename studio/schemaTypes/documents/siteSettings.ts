@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {createMainColorField} from '../fields/mainColorField'
+import {createImageField} from '../fields/imageField'
 
 export const siteSettings = defineType({
   name: 'siteSettings',
@@ -10,24 +11,13 @@ export const siteSettings = defineType({
     {name: 'navigation', title: 'Navigation'},
   ],
   fields: [
-    {
+    createImageField({
       name: 'siteLogo',
       title: 'Logo',
-      type: 'image',
+      required: true,
       group: 'general',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-
+      description: 'Seitenlogo, Format SVG',
+    }),
     createMainColorField({
       name: 'siteMainColor',
       title: 'Seiten-Hauptfarbe* (RGB)',
