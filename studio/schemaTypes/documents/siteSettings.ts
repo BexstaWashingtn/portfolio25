@@ -6,6 +6,13 @@ export const siteSettings = defineType({
   name: 'siteSettings',
   title: 'SiteSettings',
   type: 'document',
+  preview: {
+    prepare() {
+      return {
+        title: 'Site Settings',
+      }
+    },
+  },
   groups: [
     {name: 'general', title: 'General'},
     {name: 'navigation', title: 'Navigation'},
