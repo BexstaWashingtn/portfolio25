@@ -7,8 +7,13 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('Site Settings')
         .id('siteSettings')
-        .schemaType('siteSettings')
-        .child(S.editor().id('siteSettings').schemaType('siteSettings').documentId('siteSettings')),
+        .child(
+          S.editor()
+            .id('siteSettingsEditor')
+            .title('Site Settings')
+            .schemaType('siteSettings')
+            .documentId('siteSettings'),
+        ),
 
       ...S.documentTypeListItems().filter((listItem) => listItem.getId() !== 'siteSettings'),
     ])
