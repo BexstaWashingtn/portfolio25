@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BackgroundGradientWrapper } from "../BackgroundGradientWrapper";
 import HeaderLogo from "./HeaderLogo";
 import NavigationClient from "./navigation/NavigationClient";
+import { usePathname } from "next/navigation";
 
 type Props = {
   styles: Record<string, string>;
@@ -18,6 +19,7 @@ export default function HeaderClient({ styles }: Props) {
   const g = Math.round(21 * scrollProgress);
   const b = Math.round(33 * scrollProgress);
   const rubyColor = `rgba(${r}, ${g}, ${b}, 1)`;
+  const pathname = usePathname();
 
   useEffect(() => {
     const heroSection = document.querySelector<HTMLElement>("section#hero");
@@ -55,7 +57,7 @@ export default function HeaderClient({ styles }: Props) {
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <BackgroundGradientWrapper
