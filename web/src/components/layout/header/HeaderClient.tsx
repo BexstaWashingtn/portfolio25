@@ -24,6 +24,7 @@ export default function HeaderClient({ styles }: Props) {
 
     if (!heroSection) {
       setIsHeroVisible(false);
+      setScrollProgress(1);
       return;
     }
 
