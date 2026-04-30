@@ -28,13 +28,15 @@ export function createImageField({
     fields: [
       defineField({
         name: 'alt',
-        title: 'Alt Text',
+        title: 'Alt Text*',
+        description: 'required',
         type: 'string',
         validation: (Rule) => Rule.required(),
       }),
       defineField({
         name: 'title',
         title: 'Title',
+        description: 'optional (for SEO important)',
         type: 'string',
       }),
     ],
