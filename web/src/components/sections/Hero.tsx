@@ -6,7 +6,7 @@ import Logo from "../ui/Logo";
 export default function SectionHero() {
   return (
     <section className={styles.hero} id='hero'>
-      <div className={`${styles.heroInner} ${"pointer"}`}>
+      <div className={styles.heroInner}>
         <div className={styles.logoImageOverlay}>
           <Logo width={180} height={263} linkDisabled={true} />
         </div>
@@ -22,7 +22,7 @@ export default function SectionHero() {
         </div>
         <div className={styles.heroTextOverlay}>
           <div className={styles.heroTextInner}>
-            <h1 className={`${styles.heroHeadline} ${"pointer"}`}>
+            <h1 className={styles.heroHeadline}>
               „<span className='highlight-peach'>Code</span> ist mein{" "}
               <span className='highlight-peach'>Werkzeug</span>
               ,<br />

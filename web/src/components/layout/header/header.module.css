@@ -4,12 +4,12 @@ header.header {
   z-index: 10;
   box-shadow: var(--shadow-md);
 
-  .headerInner {
+  .inner {
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--header-background);
+    //background: var(--header-background);
     min-height: 64px;
     position: relative;
 

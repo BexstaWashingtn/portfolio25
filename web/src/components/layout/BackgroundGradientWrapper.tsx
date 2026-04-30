@@ -1,3 +1,29 @@
+/**
+ * BackgroundGradientWrapper
+ *
+ * Zweck:
+ * Wrapper-Komponente zur Darstellung eines dynamischen CSS-Gradient-Hintergrunds
+ * (linear oder radial) um beliebige Inhalte.
+ *
+ * Anwendung:
+ * Übergibt ein `gradient`-Objekt mit Typ und mindestens zwei Farb-Stopps.
+ * Die Komponente erzeugt daraus automatisch den passenden CSS-Gradient.
+ *
+ * Beispiel:
+ * <BackgroundGradientWrapper
+ *   gradient={{
+ *     type: "linear",
+ *     deg: "135deg",
+ *     colorStops: [
+ *       { color: "#000", position: "0%" },
+ *       { color: "#fff", position: "100%" }
+ *     ]
+ *   }}
+ * >
+ *   <Content />
+ * </BackgroundGradientWrapper>
+ */
+
 import styles from "./backgroundGradientWrapper.module.css";
 import React from "react";
 

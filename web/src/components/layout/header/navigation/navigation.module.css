@@ -8,7 +8,7 @@ nav.nav {
   @media (max-width: 768px) {
     backdrop-filter: blur(4px);
     position: absolute;
-    top: 0;
+    top: 35px;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -16,7 +16,10 @@ nav.nav {
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease,
+      visibility 0.4s;
     display: flex;
     justify-content: center;
     align-items: center;

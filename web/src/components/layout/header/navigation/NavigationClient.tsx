@@ -4,9 +4,17 @@ import { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import MobileButton from "./MobileButton";
 
-export default function NavigationClient() {
+type Props = {
+  isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function NavigationClient({
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
+}: Props) {
   // State to manage the mobile menu open/close state
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Function to toggle the mobile menu
   // This function toggles the state of the mobile menu
   const handleMenuToggle = () => {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "../styles/styles.css";
-import Header from "@/components/layout/Header";
+import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 import HashScroll from "./components/HashScroll";
 import BackToTopButton from "@/components/ui/BackToTopButton";
