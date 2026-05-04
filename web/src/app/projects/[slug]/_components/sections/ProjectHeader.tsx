@@ -151,8 +151,11 @@ export default function ProjectHeader({ details }: Props) {
         <BackgroundImageWrapper
           image={{
             src: details.backgroundImage.src,
-            alt: `Hero Background ${details.title}`,
-            style: { opacity: 0.5 },
+            width: details.backgroundImage.width,
+            height: details.backgroundImage.height,
+            alt: details.backgroundImage.alt,
+            title: details.backgroundImage.title,
+            style: { opacity: 1 },
           }}
         >
           {content}

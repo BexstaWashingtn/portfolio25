@@ -7,10 +7,9 @@ import ProjectPreview from "./_components/sections/projectPreview/ProjectPreview
 import ViewedTracker from "./_components/ViewedTracker";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
-import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
-import { Image } from "@/types/image";
 import { ProjectData } from "./types/projectData";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
+import { mapSanityImage } from "@/lib/mapers/porject/mapProjectImage";
 
 type Props = {
   params: Promise<{
@@ -35,17 +34,20 @@ export default async function ProjectView({ params }: Props) {
     sanityProjectData.projectMainColor,
   );
 
-  const { src, width, height } = buildSanitySrc(
-    sanityProjectData.projectImage.asset._ref,
-    816,
-  );
+  const projectImage = mapSanityImage({
+    image: sanityProjectData.projectImage,
+    width: 816,
+    alt: sanityProjectData.projectImage.alt,
+    title: sanityProjectData.title,
+  });
 
-  const projectImage: Image = {
-    src,
-    width,
-    height,
+  const backgroundImage = mapSanityImage({
+    image: sanityProjectData.backgroundImage,
+    width: 1920,
+    height: 1280,
     alt: sanityProjectData.title,
-  };
+    title: sanityProjectData.title,
+  });
 
   const projectData: ProjectData = {
     details: {
@@ -54,6 +56,7 @@ export default async function ProjectView({ params }: Props) {
       mainColorRGB,
       projectInformations: sanityProjectData.projectInformations,
       projectImage,
+      backgroundImage,
     },
     goals: sanityProjectData.goals,
     implementation: sanityProjectData.implementation,

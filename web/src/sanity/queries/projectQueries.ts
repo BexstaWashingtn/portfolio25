@@ -27,6 +27,7 @@ export const PROJECT_BYSLUG_QUERY = `
     subtitle,
     projectImage,
     projectMainColor,
+    backgroundImage,
     projectInformations,
     goals,
     implementation
