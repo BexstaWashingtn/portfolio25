@@ -15,9 +15,13 @@ import { ProjectTechstackRaw } from "@/types/sanity/SanityProjectData";
 
 type Props = {
   implementation: ProjectImplementationData;
+  mainColorRGB: string;
 };
 
-export default function ProjectImplementation({ implementation }: Props) {
+export default function ProjectImplementation({
+  implementation,
+  mainColorRGB,
+}: Props) {
   const cleanedProcess = cleanProcess(implementation?.process);
   const hasProcess = !!cleanedProcess.length;
 
@@ -56,7 +60,12 @@ export default function ProjectImplementation({ implementation }: Props) {
         </Inner>
       </Inner>
 
-      {<ProjectTechStack techstack={formatedTechStack} />}
+      {
+        <ProjectTechStack
+          techstack={formatedTechStack}
+          mainColorRGB={mainColorRGB}
+        />
+      }
 
       {hasChallenge && (
         <Inner paddingBottom='xl' variant='full'>

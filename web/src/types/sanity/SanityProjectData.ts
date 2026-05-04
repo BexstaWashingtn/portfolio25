@@ -3,3 +3,9 @@ export type ProjectTechstackRaw = {
   backend?: string[];
   tools?: string[];
 };
+
+export type SanityProjectMainColor = {
+  r: number;
+  g: number;
+  b: number;
+};

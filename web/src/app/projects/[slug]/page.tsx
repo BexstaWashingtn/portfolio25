@@ -10,6 +10,7 @@ import { getProjectBySlug } from "@/sanity/fetchProjects";
 import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
 import { Image } from "@/types/image";
 import { ProjectData } from "./types/projectData";
+import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
 
 type Props = {
   params: Promise<{
@@ -30,11 +31,13 @@ export default async function ProjectView({ params }: Props) {
 
   console.log("sanityProjectData", sanityProjectData);
 
-  const mainColorRGB = `${sanityProjectData.projectMainColor.r},${sanityProjectData.projectMainColor.g},${sanityProjectData.projectMainColor.b}`;
+  const mainColorRGB = await getProjectMainColorRGB(
+    sanityProjectData.projectMainColor,
+  );
 
   const { src, width, height } = buildSanitySrc(
     sanityProjectData.projectImage.asset._ref,
-    816
+    816,
   );
 
   const projectImage: Image = {
@@ -74,7 +77,10 @@ export default async function ProjectView({ params }: Props) {
       <main>
         {projectData.goals && <ProjectChallenge goals={projectData.goals} />}
         {projectData.implementation && (
-          <ProjectImplementation implementation={projectData.implementation} />
+          <ProjectImplementation
+            implementation={projectData.implementation}
+            mainColorRGB={mainColorRGB}
+          />
         )}
         {!!projectData?.visuals?.length && (
           <ProjectVisuals visuals={projectData.visuals} />

@@ -13,9 +13,10 @@ const iconMap = {
 
 type Props = {
   techstack: ProjectTechstackData[];
+  mainColorRGB: string;
 };
 
-export default function ProjectTechStack({ techstack }: Props) {
+export default function ProjectTechStack({ techstack, mainColorRGB }: Props) {
   return (
     <section className={styles.techStack}>
       <Inner
@@ -30,15 +31,15 @@ export default function ProjectTechStack({ techstack }: Props) {
             deg: "90deg",
             colorStops: [
               {
-                color: "rgba(255,255,255, 0)",
+                color: `rgba(${mainColorRGB}, 0.15)`,
                 position: "0%",
               },
               {
-                color: "rgba(255, 255, 255, 0.05)",
+                color: `rgba(${mainColorRGB},  0.15)`,
                 position: "65%",
               },
               {
-                color: "rgba(255, 255, 255, 0.1)",
+                color: `rgba(${mainColorRGB},  0.15)`,
                 position: "100%",
               },
             ],
