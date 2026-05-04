@@ -22,7 +22,7 @@ export default function ProjectImplementation({ implementation }: Props) {
   const hasProcess = !!cleanedProcess.length;
 
   const formatedTechStack: ProjectTechstackData[] = Object.entries(
-    implementation.techstack as ProjectTechstackRaw
+    implementation.techstack as ProjectTechstackRaw,
   ).map(([key, value]) => ({
     title: key.charAt(0).toUpperCase() + key.slice(1),
     icon: key as ProjectTechstackData["icon"],
@@ -83,7 +83,7 @@ function cleanProcess(dataArray: ProjectProcessData[]) {
   });
 
   const cleanData = trimmedData.filter(
-    ({ title, description }) => title !== "" || description !== ""
+    ({ title, description }) => title !== "" || description !== "",
   );
 
   return cleanData;

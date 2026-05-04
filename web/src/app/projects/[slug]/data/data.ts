@@ -124,23 +124,9 @@ const projectData: ProjectData = {
       },
     ],
     challenge: {
-      problem: [
-        "Technisch?",
-        "UX/UI-bezogen?",
-        "Projektmanagement?",
-        "Kommunikation",
-      ],
-      approach: [
-        "Recherche?",
-        "Ausprobieren?",
-        "Feedbackschleifen?",
-        "Refactoring?",
-      ],
-      learnings: [
-        "Lösung erfolgreich?",
-        "Neue Tools/Skills gelernt?",
-        "Etwas fürs nächste Mal mitgenommen?",
-      ],
+      problem: "Technisch?",
+      approach: "Recherche?",
+      learnings: "Lösung erfolgreich?",
     },
   },
   visuals: [
