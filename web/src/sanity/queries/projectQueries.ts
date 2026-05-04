@@ -28,5 +28,6 @@ export const PROJECT_BYSLUG_QUERY = `
     projectImage,
     projectMainColor,
     projectInformations,
+    goals,
   }
 `;

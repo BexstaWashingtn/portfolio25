@@ -11,6 +11,22 @@ export const projectType = defineType({
       name: 'details',
       title: 'Details',
     },
+    {
+      name: 'goals',
+      title: 'Ziele',
+    },
+    {
+      name: 'implementation',
+      title: 'Umsetzung',
+    },
+    {
+      name: 'visuals',
+      title: 'Visuals',
+    },
+    {
+      name: 'learnings',
+      title: 'Learnings',
+    },
   ],
   fields: [
     {
@@ -134,6 +150,28 @@ export const projectType = defineType({
               type: 'url',
             },
           ],
+        },
+      ],
+    },
+    {
+      name: 'goals',
+      title: 'Projekt Ziele*',
+      group: 'goals',
+      type: 'object',
+      fields: [
+        {
+          name: 'initial',
+          title: 'Ausgangssituation*',
+          type: 'text',
+          description: 'Beschreibe die Ausgangssituation vor Projektbeginn.',
+          validation: (Rule) => Rule.min(20).max(500).required(),
+        },
+        {
+          name: 'reason',
+          title: 'Grund für die Projektumsetzung*',
+          type: 'text',
+          description: 'Warum wurde das Projekt umgesetzt? Was war die Motivation dahinter?',
+          validation: (Rule) => Rule.min(20).max(500).required(),
         },
       ],
     },

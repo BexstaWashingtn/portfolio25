@@ -34,7 +34,7 @@ export default async function ProjectView({ params }: Props) {
 
   const { src, width, height } = buildSanitySrc(
     sanityProjectData.projectImage.asset._ref,
-    816,
+    816
   );
 
   const projectImage: Image = {
@@ -52,6 +52,7 @@ export default async function ProjectView({ params }: Props) {
       projectInformations: sanityProjectData.projectInformations,
       projectImage,
     },
+    goals: sanityProjectData.goals,
   };
 
   console.log("projectData", projectData);
