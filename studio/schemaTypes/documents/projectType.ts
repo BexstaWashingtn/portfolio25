@@ -175,5 +175,97 @@ export const projectType = defineType({
         },
       ],
     },
+    {
+      name: 'implementation',
+      title: 'Projekt Umsetzung*',
+      group: 'implementation',
+      type: 'object',
+      fields: [
+        {
+          name: 'process',
+          title: 'Projekt Prozess',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  title: 'Prozessschritt Titel*',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'description',
+                  title: 'Prozessschritt Beschreibung*',
+                  type: 'text',
+                  validation: (Rule) => Rule.min(20).max(500).required(),
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'techstack',
+          title: 'Tech Stack',
+          type: 'object',
+          fields: [
+            {
+              name: 'frontend',
+              title: 'Frontend',
+              type: 'array',
+              of: [{type: 'string'}],
+              validation: (Rule) => Rule.min(1),
+            },
+            {
+              name: 'backend',
+              title: 'Backend',
+              type: 'array',
+              of: [{type: 'string'}],
+              validation: (Rule) => Rule.min(1),
+            },
+            {
+              name: 'tools',
+              title: 'Tools',
+              type: 'array',
+              of: [{type: 'string'}],
+              validation: (Rule) => Rule.min(1),
+            },
+          ],
+        },
+        {
+          name: 'challenge',
+          title: 'Projekt Herausforderungen',
+          type: 'object',
+          fields: [
+            {
+              name: 'problem',
+              title: 'Herausforderungen und Lösungsansätze',
+              type: 'text',
+              description:
+                'Beschreibe die größten Herausforderungen im Projekt und wie du sie gelöst hast.',
+              validation: (Rule) => Rule.min(20).max(1000),
+            },
+            {
+              name: 'approach',
+              title: 'Vorgehensweise',
+              type: 'text',
+              description:
+                'Wie bist du bei der Projektumsetzung vorgegangen? Gab es einen bestimmten Prozess oder eine Methodik, die du angewendet hast?',
+              validation: (Rule) => Rule.min(20).max(1000),
+            },
+            {
+              name: 'learnings',
+              title: 'Learnings aus der Projektumsetzung',
+              type: 'text',
+              description:
+                'Was hast du aus der Projektumsetzung gelernt? Welche Erkenntnisse nimmst du mit für zukünftige Projekte?',
+              validation: (Rule) => Rule.min(20).max(1000),
+            },
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required(),
+    },
   ],
 })

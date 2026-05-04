@@ -63,9 +63,9 @@ export type ProjectTechstackData = {
 type TechStackIcon = "frontend" | "backend" | "tools";
 
 export type ProjectChallengeData = {
-  problem: string[];
-  approach: string[];
-  learnings: string[];
+  problem: string;
+  approach: string;
+  learnings: string;
 };
 export type ProjectVisualsData = {
   id: number;

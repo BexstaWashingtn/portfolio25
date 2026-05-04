@@ -64,12 +64,9 @@ export default function ProjectTechStack({ techstack }: Props) {
                 gap='lg'
                 className={styles.content}
               >
-                {techstack.map((cat, listIndex) => {
+                {techstack.map((cat, _key) => {
                   return (
-                    <ul
-                      key={`${listIndex}-${cat.title}`}
-                      className={styles.techStackList}
-                    >
+                    <ul key={_key} className={styles.techStackList}>
                       <li className={styles.techStackItems}>
                         <Stack gap='sm' direction='row' alignItems='center'>
                           <img

@@ -29,5 +29,6 @@ export const PROJECT_BYSLUG_QUERY = `
     projectMainColor,
     projectInformations,
     goals,
+    implementation
   }
 `;

@@ -53,6 +53,7 @@ export default async function ProjectView({ params }: Props) {
       projectImage,
     },
     goals: sanityProjectData.goals,
+    implementation: sanityProjectData.implementation,
   };
 
   console.log("projectData", projectData);
