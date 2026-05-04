@@ -1,17 +1,19 @@
 import ProjectCardSlider from "@/components/sections/projects/ProjectCardSlider";
 import Inner from "@/components/utils/Inner";
-import projectData from "@components/sections/projects/data.json";
 import type { Project } from "@components/sections/projects/types";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
+import { getProjectsPreviewWithoutSlug } from "@/sanity/fetchProjects";
+import { mapProjectPreviews } from "@/lib/mapers/projects/mapProjectPreviews";
 
 type Props = {
   slug: string;
 };
 
-export default function ProjectPreview({ slug }: Props) {
-  const projects: Project[] = projectData;
-  const filteredProjects = projects.filter((project) => project.slug !== slug);
+export default async function ProjectPreview({ slug }: Props) {
+  const projectsWithoutSlug = await getProjectsPreviewWithoutSlug(slug);
+
+  const filteredProjects: Project[] = mapProjectPreviews(projectsWithoutSlug);
 
   return (
     <section>

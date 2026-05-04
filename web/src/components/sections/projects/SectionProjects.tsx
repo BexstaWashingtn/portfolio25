@@ -6,44 +6,19 @@ import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import ProjectCardSlider from "./ProjectCardSlider";
 import type { Project } from "./types";
-import { getProjectPreviews } from "@/sanity/fetchProjects";
-import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview ";
-import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
+import { getProjectsPreview } from "@/sanity/fetchProjects";
+import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
 import { notFound } from "next/navigation";
+import { mapProjectPreviews } from "@/lib/mapers/projects/mapProjectPreviews";
 
 export default async function SectionProjects() {
-  const projectsSanity: SanityProjectPreview[] = await getProjectPreviews();
+  const projectsSanity: SanityProjectPreview[] = await getProjectsPreview();
 
   if (!projectsSanity) {
     notFound();
   }
 
-  const sliderItems: Project[] = projectsSanity.map(
-    (project: SanityProjectPreview) => {
-      const { src, width, height } = buildSanitySrc(
-        project.previewImage.asset._ref,
-        260,
-      );
-
-      const image = {
-        src,
-        width,
-        height,
-        alt: project.title,
-      };
-
-      return {
-        id: project._id,
-        title: project.title,
-        description: project.description,
-        slug: project.slug,
-        tags: project.methods?.slice(0, 5),
-        image,
-      };
-    },
-  );
-
-  console.log("sliderItems: ", sliderItems);
+  const sliderItems: Project[] = mapProjectPreviews(projectsSanity);
 
   return (
     <section className={styles.projects} id='projects'>
