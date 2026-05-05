@@ -67,11 +67,8 @@ export type ProjectChallengeData = {
   approach: string;
   learnings: string;
 };
-export type ProjectVisualsData = {
+export type ProjectVisualsData = Image & {
   id: number;
-  src: string;
-  alt: string;
-  title?: string;
 };
 
 export type ProjectLearningsData = {

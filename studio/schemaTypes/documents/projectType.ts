@@ -267,5 +267,44 @@ export const projectType = defineType({
       ],
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'visuals',
+      title: 'Projekt Visuals',
+      group: 'visuals',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            createImageField({
+              name: 'image',
+              title: 'Bild*',
+              description: 'Mindestens 300 × 300 px, maximal 900 × 900 px, bevorzugt JPEG.',
+              required: false,
+            }),
+            {
+              name: 'layoutSize',
+              type: 'string',
+              title: 'Darstellungsgröße',
+              initialValue: 'medium',
+              options: {
+                list: [
+                  {title: 'Klein (1 Spalte / 1 Reihe)', value: 'small'},
+                  {title: 'Mittel (2 Spalten / 1 Reihe)', value: 'medium'},
+                  {title: 'Breit (3 Spalten / 1 Reihen)', value: 'wide'},
+                  {title: 'Hoch (1 Spalte / 2 Reihen)', value: 'tall'},
+                  {title: 'Groß (2 Spalten / 2 Reihen)', value: 'large'},
+                ],
+              },
+            },
+            {
+              name: 'caption',
+              title: 'Bildunterschrift',
+              type: 'string',
+            },
+          ],
+        },
+      ],
+    },
   ],
 })

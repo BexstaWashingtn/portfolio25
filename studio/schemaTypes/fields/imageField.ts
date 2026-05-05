@@ -7,6 +7,7 @@ type Options = {
   required?: boolean
   group?: string
   description?: string
+  hotspot?: boolean
 }
 
 export function createImageField({
@@ -15,6 +16,7 @@ export function createImageField({
   required = false,
   group,
   description,
+  hotspot = true,
 }: Options = {}) {
   return defineField({
     name,
@@ -23,7 +25,7 @@ export function createImageField({
     group,
     description,
     options: {
-      hotspot: true,
+      hotspot,
     },
     fields: [
       defineField({
