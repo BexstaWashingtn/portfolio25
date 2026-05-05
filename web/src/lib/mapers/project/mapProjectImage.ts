@@ -16,7 +16,11 @@ export function mapSanityImage({
   height = null,
   alt,
   title,
-}: MapSanityImageProps): Image {
+}: MapSanityImageProps): Image | null {
+  if (!image?.asset?._ref?.trim()) {
+    return null;
+  }
+
   const imageData = buildSanitySrc(image.asset._ref, width, height);
 
   return {

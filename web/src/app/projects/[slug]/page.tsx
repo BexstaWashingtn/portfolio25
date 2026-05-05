@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
 import { ProjectData } from "./types/projectData";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
-import { mapSanityImage } from "@/lib/mapers/porject/mapProjectImage";
+import { mapSanityImage } from "@/lib/mapers/project/mapProjectImage";
 
 type Props = {
   params: Promise<{
@@ -30,22 +30,36 @@ export default async function ProjectView({ params }: Props) {
 
   console.log("sanityProjectData", sanityProjectData);
 
+  if (!sanityProjectData?.title?.trim()) {
+    notFound();
+  }
+
   const mainColorRGB = await getProjectMainColorRGB(
     sanityProjectData.projectMainColor,
   );
+
+  if (!sanityProjectData.projectImage.asset?._ref?.trim()) {
+    notFound();
+  }
 
   const projectImage = mapSanityImage({
     image: sanityProjectData.projectImage,
     width: 816,
     alt: sanityProjectData.projectImage.alt,
-    title: sanityProjectData.title,
+    title: sanityProjectData?.title,
   });
+
+  if (!projectImage) {
+    notFound();
+  }
 
   const backgroundImage = mapSanityImage({
     image: sanityProjectData.backgroundImage,
     width: 1920,
     height: 1280,
-    alt: sanityProjectData.title,
+    alt:
+      sanityProjectData.backgroundImage?.alt ||
+      `${sanityProjectData.title} background image`,
     title: sanityProjectData.title,
   });
 
@@ -56,20 +70,13 @@ export default async function ProjectView({ params }: Props) {
       mainColorRGB,
       projectInformations: sanityProjectData.projectInformations,
       projectImage,
-      backgroundImage,
+      ...(backgroundImage && { backgroundImage }),
     },
     goals: sanityProjectData.goals,
     implementation: sanityProjectData.implementation,
   };
 
   console.log("projectData", projectData);
-
-  if (
-    !projectData?.details?.title?.trim() ||
-    !projectData?.details?.projectImage?.src?.trim()
-  ) {
-    notFound();
-  }
 
   return (
     <>

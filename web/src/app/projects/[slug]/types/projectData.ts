@@ -12,7 +12,7 @@ export type ProjectDetailsData = {
   title: string;
   subtitle: string;
   projectImage: Image;
-  backgroundImage?: Image;
+  backgroundImage?: Image | null;
   mainColorRGB: string;
   projectInformations: ProjectInformationsData;
 };
