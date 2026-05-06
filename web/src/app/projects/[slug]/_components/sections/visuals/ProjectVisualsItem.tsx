@@ -11,11 +11,11 @@ export default function ProjectVisualsItem({ item }: Props) {
   return (
     <figure className={`${styles.item} ${styles[item.layoutSize]}`}>
       <Image
-        src={item.image.src}
-        alt={item.image.alt}
-        title={item.image.title}
-        width={item.image.width}
-        height={item.image.height}
+        src={item.src}
+        alt={item.alt}
+        title={item.title}
+        width={item.width}
+        height={item.height}
       />
     </figure>
   );

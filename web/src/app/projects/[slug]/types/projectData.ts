@@ -70,9 +70,8 @@ export type ProjectChallengeData = {
 
 export type LayoutSize = "small" | "medium" | "large" | "tall" | "wide";
 
-export type ProjectVisualsData = {
+export type ProjectVisualsData = Image & {
   id: string;
-  image: Image;
   caption?: string;
   layoutSize: LayoutSize;
 };

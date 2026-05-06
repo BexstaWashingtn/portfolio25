@@ -9,10 +9,13 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
   return visuals
     .filter((v): v is SanityVisualsData => !!v?.image?.asset?._ref?.trim())
     .map(({ _key, image, caption, layoutSize }) => {
+      const safeLayoutSize = getLayoutSize(layoutSize);
+      const { width, height } = imageSizeByLayout[safeLayoutSize];
+
       const mappedImage = mapSanityImage({
         image,
-        width: 1920,
-        height: 1280,
+        width: width,
+        height: height,
         alt: image.alt || caption || "Projektbild",
         title: image.title || caption || "",
         _type: image._type || "image",
@@ -22,9 +25,9 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
 
       return {
         id: _key,
-        image: mappedImage,
+        ...mappedImage,
         caption: safeString(caption),
-        layoutSize: getLayoutSize(layoutSize),
+        layoutSize: safeLayoutSize,
       };
     })
     .filter(isDefined);
@@ -39,6 +42,15 @@ const allowedLayoutSizes = [
 ] as const;
 
 type LayoutSize = (typeof allowedLayoutSizes)[number];
+
+const imageSizeByLayout: Record<LayoutSize, { width: number; height: number }> =
+  {
+    small: { width: 600, height: 600 },
+    medium: { width: 900, height: 600 },
+    large: { width: 1200, height: 1200 },
+    tall: { width: 600, height: 1200 },
+    wide: { width: 1400, height: 800 },
+  };
 
 function isLayoutSize(value: unknown): value is LayoutSize {
   return allowedLayoutSizes.includes(value as LayoutSize);
