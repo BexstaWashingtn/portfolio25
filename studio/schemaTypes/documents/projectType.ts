@@ -285,7 +285,7 @@ export const projectType = defineType({
             {
               name: 'layoutSize',
               type: 'string',
-              title: 'Darstellungsgröße',
+              title: 'Darstellungsgröße*',
               initialValue: 'medium',
               options: {
                 list: [
@@ -296,11 +296,13 @@ export const projectType = defineType({
                   {title: 'Groß (2 Spalten / 2 Reihen)', value: 'large'},
                 ],
               },
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'caption',
-              title: 'Bildunterschrift',
+              title: 'Bildunterschrift*',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             },
           ],
         },

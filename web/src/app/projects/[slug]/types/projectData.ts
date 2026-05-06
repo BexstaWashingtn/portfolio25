@@ -67,8 +67,14 @@ export type ProjectChallengeData = {
   approach: string;
   learnings: string;
 };
-export type ProjectVisualsData = Image & {
-  id: number;
+
+export type LayoutSize = "small" | "medium" | "large" | "tall" | "wide";
+
+export type ProjectVisualsData = {
+  id: string;
+  image: Image;
+  caption?: string;
+  layoutSize: LayoutSize;
 };
 
 export type ProjectLearningsData = {

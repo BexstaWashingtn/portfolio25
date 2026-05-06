@@ -3,20 +3,16 @@
 import Inner from "@/components/utils/Inner";
 import styles from "./projectVisuals.module.css";
 import SectionHeader from "../../sectionHeader/SectionHeader";
-import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
+import { ProjectVisualsData } from "../../../types/projectData";
 import ProjectVisualsItem from "./ProjectVisualsItem";
-import { ProjectVisualsData } from "./../../../types/projectData";
-import { safeString } from "@/lib/utils/data/safeString";
 
 type Props = {
   visuals: ProjectVisualsData[];
 };
 
 export default function ProjectVisuals({ visuals }: Props) {
-  const cleanVisualsData = cleanVisuals(visuals);
-
   return (
-    !!cleanVisualsData.length && (
+    !!visuals.length && (
       <section className={styles.visuals}>
         <Inner paddingTop='md' paddingBottom='md' variant='narrow'>
           <SectionHeader
@@ -27,33 +23,23 @@ export default function ProjectVisuals({ visuals }: Props) {
             }}
           />
         </Inner>
-        <Inner paddingTop='md' paddingBottom='md' variant='swiper'>
-          <CustomSwiper
+        <Inner paddingTop='md' paddingBottom='md' variant='full'>
+          {/* <CustomSwiper
             items={cleanVisualsData}
             renderItem={(item) => <ProjectVisualsItem item={item} />}
             swiperConfig={{
               slidesPerView: 1,
             }}
             showNavigation
-          />
+          /> */}
+
+          <div className={styles.visuals__grid}>
+            {visuals.map((item: ProjectVisualsData) => (
+              <ProjectVisualsItem key={item.id} item={item} />
+            ))}
+          </div>
         </Inner>
       </section>
     )
   );
-}
-
-function cleanVisuals(visuals: ProjectVisualsData[]) {
-  if (!Array.isArray(visuals)) return [];
-
-  const trimmedVisuals = visuals.map(({ id, src, alt, title }) => {
-    const srcString = safeString(src);
-    const altString = safeString(alt, "Projektbild");
-    const titleString = safeString(title, "");
-
-    return { id, src: srcString, alt: altString, title: titleString };
-  });
-
-  const cleanedVisuals = trimmedVisuals.filter(({ src }) => src !== "");
-
-  return cleanedVisuals;
 }

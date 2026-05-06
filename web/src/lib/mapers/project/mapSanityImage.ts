@@ -8,6 +8,7 @@ type MapSanityImageProps = {
   height?: number | null;
   alt: string;
   title?: string;
+  _type: string;
 };
 
 export function mapSanityImage({
@@ -16,6 +17,7 @@ export function mapSanityImage({
   height = null,
   alt,
   title,
+  _type,
 }: MapSanityImageProps): Image | null {
   if (!image?.asset?._ref?.trim()) {
     return null;
@@ -26,8 +28,9 @@ export function mapSanityImage({
   return {
     src: imageData.src,
     width: imageData.width,
-    height: imageData.height,
+    ...(height ? { height: imageData.height } : {}),
     alt,
+    _type,
     ...(title && { title }),
   };
 }

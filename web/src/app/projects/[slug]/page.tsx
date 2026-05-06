@@ -9,7 +9,8 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
 import { ProjectData } from "./types/projectData";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
-import { mapSanityImage } from "@/lib/mapers/project/mapProjectImage";
+import { mapSanityImage } from "@/lib/mapers/project/mapSanityImage";
+import { mapSanityVisuals } from "@/lib/mapers/project/mapSanityVisuals";
 
 type Props = {
   params: Promise<{
@@ -47,6 +48,7 @@ export default async function ProjectView({ params }: Props) {
     width: 816,
     alt: sanityProjectData.projectImage.alt,
     title: sanityProjectData?.title,
+    _type: sanityProjectData.projectImage._type,
   });
 
   if (!projectImage) {
@@ -61,6 +63,7 @@ export default async function ProjectView({ params }: Props) {
       sanityProjectData.backgroundImage?.alt ||
       `${sanityProjectData.title} background image`,
     title: sanityProjectData.title,
+    _type: sanityProjectData.backgroundImage?._type || "image",
   });
 
   const projectData: ProjectData = {
@@ -74,6 +77,7 @@ export default async function ProjectView({ params }: Props) {
     },
     goals: sanityProjectData.goals,
     implementation: sanityProjectData.implementation,
+    visuals: mapSanityVisuals(sanityProjectData.visuals ?? []),
   };
 
   console.log("projectData", projectData);

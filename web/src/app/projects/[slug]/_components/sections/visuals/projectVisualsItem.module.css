@@ -1,0 +1,29 @@
+.item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.medium {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.wide {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}

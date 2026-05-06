@@ -30,6 +30,7 @@ export const PROJECT_BYSLUG_QUERY = `
     backgroundImage,
     projectInformations,
     goals,
-    implementation
+    implementation,
+    visuals,
   }
 `;

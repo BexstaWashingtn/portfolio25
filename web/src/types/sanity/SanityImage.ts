@@ -4,4 +4,6 @@ export type SanityImage = {
     _type: string;
   };
   _type: string;
+  alt?: string;
+  title?: string;
 };
