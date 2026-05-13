@@ -3,30 +3,32 @@ import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
 
 export function mapProjectPreviews(
-  projects: SanityProjectPreview[]
+  projects: SanityProjectPreview[],
 ): Project[] {
-  return projects
-    .filter((project) => !!project.previewImage?.asset?._ref)
-    .map((project: SanityProjectPreview) => {
-      const { src, width, height } = buildSanitySrc(
-        project.previewImage.asset._ref,
-        260
-      );
+  return projects.flatMap((project) => {
+    const imageRef = project.previewImage?.asset?._ref;
 
-      const image = {
-        src,
-        width,
-        height,
-        alt: project.title,
-      };
+    if (!imageRef) {
+      return [];
+    }
 
-      return {
+    const { src, width, height } = buildSanitySrc(imageRef, 260);
+
+    return [
+      {
         id: project._id,
         title: project.title,
         description: project.description,
         slug: project.slug,
         tags: project.methods?.slice(0, 5),
-        image,
-      };
-    });
+        image: {
+          src,
+          width,
+          height,
+          alt: project.previewImage?.alt ?? project.title,
+          title: project.previewImage?.title,
+        },
+      },
+    ];
+  });
 }

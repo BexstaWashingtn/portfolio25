@@ -16,6 +16,7 @@ export default function ProjectVisualsItem({ item }: Props) {
         title={item.title}
         width={item.width}
         height={item.height}
+        objectFit='crop'
       />
     </figure>
   );
