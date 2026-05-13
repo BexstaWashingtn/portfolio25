@@ -23,16 +23,7 @@ export default function ProjectVisuals({ visuals }: Props) {
             }}
           />
         </Inner>
-        <Inner paddingTop='md' paddingBottom='md' variant='full'>
-          {/* <CustomSwiper
-            items={cleanVisualsData}
-            renderItem={(item) => <ProjectVisualsItem item={item} />}
-            swiperConfig={{
-              slidesPerView: 1,
-            }}
-            showNavigation
-          /> */}
-
+        <Inner paddingTop='md' paddingBottom='md' variant='wide'>
           <div className={styles.visuals__grid}>
             {visuals.map((item: ProjectVisualsData) => (
               <ProjectVisualsItem key={item.id} item={item} />
