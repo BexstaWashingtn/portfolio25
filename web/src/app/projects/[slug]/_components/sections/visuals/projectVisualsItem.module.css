@@ -1,4 +1,5 @@
 .item {
+  position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }
@@ -26,4 +27,9 @@
 .large {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
 }

@@ -12,7 +12,13 @@ export function mapProjectPreviews(
       return [];
     }
 
-    const { src, width, height } = buildSanitySrc(imageRef, 260);
+    const previewImage = buildSanitySrc(project.previewImage, 260);
+
+    if (!previewImage) {
+      return [];
+    }
+
+    const { src, width, height } = previewImage;
 
     return [
       {

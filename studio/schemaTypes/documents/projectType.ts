@@ -280,6 +280,7 @@ export const projectType = defineType({
               name: 'image',
               title: 'Bild*',
               description: 'Mindestens 300 × 300 px, maximal 900 × 900 px, bevorzugt JPEG.',
+              hotspot: true,
               required: false,
             }),
             {

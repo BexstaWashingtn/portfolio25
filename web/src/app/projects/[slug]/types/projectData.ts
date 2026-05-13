@@ -73,7 +73,7 @@ export type LayoutSize = "small" | "medium" | "large" | "tall" | "wide";
 export type ProjectVisualsData = Image & {
   id: string;
   caption?: string;
-  layoutSize: LayoutSize;
+  layoutSize?: LayoutSize;
 };
 
 export type ProjectLearningsData = {

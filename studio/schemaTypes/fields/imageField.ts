@@ -16,7 +16,7 @@ export function createImageField({
   required = false,
   group,
   description,
-  hotspot = true,
+  hotspot = false,
 }: Options = {}) {
   return defineField({
     name,

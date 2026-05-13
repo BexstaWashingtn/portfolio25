@@ -8,17 +8,18 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
 
   return visuals
     .filter((v): v is SanityVisualsData => !!v?.image?.asset?._ref?.trim())
-    .map(({ _key, image, caption, layoutSize }) => {
-      const safeLayoutSize = getLayoutSize(layoutSize);
-      const { width, height } = imageSizeByLayout[safeLayoutSize];
+    .map(({ _key, image, caption }) => {
+      //const safeLayoutSize = getLayoutSize(layoutSize);
+      //const { width, height } = imageSizeByLayout[safeLayoutSize];
 
       const mappedImage = mapSanityImage({
         image,
-        width: width,
-        height: height,
+        width: 900,
+        height: 900,
         alt: image.alt || caption || "Projektbild",
         title: image.title || caption || "",
         _type: image._type || "image",
+        withHotspot: true,
       });
 
       if (!mappedImage) return null;
@@ -27,12 +28,11 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
         id: _key,
         ...mappedImage,
         caption: safeString(caption),
-        layoutSize: safeLayoutSize,
       };
     })
     .filter(isDefined);
 }
-
+/* 
 const allowedLayoutSizes = [
   "small",
   "medium",
@@ -58,4 +58,4 @@ function isLayoutSize(value: unknown): value is LayoutSize {
 
 function getLayoutSize(value: unknown): LayoutSize {
   return isLayoutSize(value) ? value : "small";
-}
+} */

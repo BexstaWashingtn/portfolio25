@@ -9,6 +9,7 @@ type MapSanityImageProps = {
   alt: string;
   title?: string;
   _type: string;
+  withHotspot?: boolean;
 };
 
 export function mapSanityImage({
@@ -18,12 +19,13 @@ export function mapSanityImage({
   alt,
   title,
   _type,
+  withHotspot = false,
 }: MapSanityImageProps): Image | null {
-  if (!image?.asset?._ref?.trim()) {
-    return null;
-  }
+  const imageData = buildSanitySrc(image, width, height, withHotspot);
 
-  const imageData = buildSanitySrc(image.asset._ref, width, height);
+  console.log("imageData", imageData);
+
+  if (!imageData) return null;
 
   return {
     src: imageData.src,

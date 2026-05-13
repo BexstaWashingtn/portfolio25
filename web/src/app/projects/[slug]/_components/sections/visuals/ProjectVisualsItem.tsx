@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProjectVisualsItem({ item }: Props) {
   return (
-    <figure className={`${styles.item} ${styles[item.layoutSize]}`}>
+    <figure className={`${styles.item} `}>
       <Image
         src={item.src}
         alt={item.alt}
@@ -17,6 +17,7 @@ export default function ProjectVisualsItem({ item }: Props) {
         width={item.width}
         height={item.height}
         objectFit='crop'
+        className={styles.image}
       />
     </figure>
   );
