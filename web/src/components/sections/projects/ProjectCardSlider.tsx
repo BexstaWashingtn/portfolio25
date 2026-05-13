@@ -30,10 +30,10 @@ export default function ProjectCardSlider({ items }: Props) {
       swiperConfig={{
         spaceBetween: 32,
         breakpoints: {
-          0: { slidesPerView: 1.2 },
-          848: { slidesPerView: 2 },
-          1024: { spaceBetween: 64 },
-          1280: { slidesPerView: 3 },
+          0: { slidesPerView: 1.2, spaceBetween: 16 },
+          768: { slidesPerView: 2.2, spaceBetween: 16 },
+          1024: { spaceBetween: 24 },
+          1280: { slidesPerView: 3, spaceBetween: 24 },
           1920: { slidesPerView: 4 },
           2440: { slidesPerView: 5 },
         },

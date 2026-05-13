@@ -9,6 +9,7 @@ section.techStack {
 
     .techStackList {
       flex: 1;
+      min-width: 200px;
 
       .techStackItems {
         .headline {

@@ -84,11 +84,9 @@ export default async function ProjectView({ params }: Props) {
 
   return (
     <>
-      <header>
-        <ProjectHeader details={projectData.details} />
-      </header>
-
       <main>
+        <ProjectHeader details={projectData.details} />
+
         {projectData.goals && <ProjectChallenge goals={projectData.goals} />}
         {projectData.implementation && (
           <ProjectImplementation

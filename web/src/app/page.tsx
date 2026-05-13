@@ -13,9 +13,9 @@ import Contact from "@/components/sections/contact/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
-
       <main id='main' className={styles.main}>
+        <Hero />
+
         <BackgroundImageWrapper
           image={{
             src: "/img/aboutme/backgroundImage.jpg",

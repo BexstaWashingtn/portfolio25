@@ -10,6 +10,10 @@ footer.footer {
       align-items: center;
       column-gap: 2rem;
 
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+
       @media (max-width: 480px) {
         flex-direction: column;
       }
@@ -27,6 +31,10 @@ footer.footer {
     .messages {
       text-align: right;
 
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+
       .message {
         font-style: italic;
         font-size: 1.25rem;
@@ -36,6 +44,10 @@ footer.footer {
         font-size: 0.75rem;
         margin-top: 1rem;
         text-align: right;
+
+        @media (max-width: 768px) {
+          text-align: none;
+        }
       }
     }
   }

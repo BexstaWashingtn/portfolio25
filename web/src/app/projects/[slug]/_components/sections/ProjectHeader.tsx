@@ -58,7 +58,7 @@ export default function ProjectHeader({ details }: Props) {
       }}
     >
       <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
-        <header className={styles.header}>
+        <div className={styles.header}>
           <div className={styles.headerContent}>
             <h1 className={styles.hl}>{details.title}</h1>
             <p>{details.subtitle}</p>
@@ -72,7 +72,7 @@ export default function ProjectHeader({ details }: Props) {
               height={459}
             />
           </div>
-        </header>
+        </div>
         <div className={styles.content}>
           <ul className={styles.detailsList}>
             {devTime?.description && (

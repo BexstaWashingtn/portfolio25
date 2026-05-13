@@ -64,6 +64,7 @@ export default function ProjectTechStack({ techstack, mainColorRGB }: Props) {
                 justifyContent='center'
                 gap='lg'
                 className={styles.content}
+                wrap
               >
                 {techstack.map((cat, _key) => {
                   return (

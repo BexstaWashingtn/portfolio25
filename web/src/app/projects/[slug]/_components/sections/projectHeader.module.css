@@ -1,4 +1,4 @@
-section.projectHero {
+.projectHero {
   .header {
     .headerContent {
       padding-bottom: 1rem;
@@ -12,6 +12,8 @@ section.projectHero {
 
       img {
         display: block;
+        width: 100%;
+        height: auto;
       }
     }
   }
