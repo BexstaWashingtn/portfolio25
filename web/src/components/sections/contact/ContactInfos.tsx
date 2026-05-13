@@ -24,19 +24,19 @@ export default function ContactAddress({ contactData }: ContactProps) {
   const { name, address, phone, email } = contactData;
 
   return (
-    <ul className={styles.contactDataWrapper}>
-      <li>
+    <address className={styles.contactDataWrapper}>
+      <div>
         <Logo width={68} height={100} linkDisabled={true} />
-      </li>
+      </div>
 
-      <li className={styles.adress}>
+      <div className={styles.address}>
         {name}
         <br />
         {address.street}
         <br />
         {`${address.postalcode} ${address.state}`}
-      </li>
-      <li className={styles.contactDataGroup}>
+      </div>
+      <div className={styles.contactDataGroup}>
         <p className={styles.contactDataGroupItem}>
           <FaWhatsapp />
           <a href={`tel:${phone.value}`}>{phone.display}</a>
@@ -45,7 +45,7 @@ export default function ContactAddress({ contactData }: ContactProps) {
           <FaTelegramPlane />
           <a href={`mailto:${email}`}>{email}</a>
         </p>
-      </li>
-    </ul>
+      </div>
+    </address>
   );
 }

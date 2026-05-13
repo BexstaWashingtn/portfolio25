@@ -17,9 +17,9 @@ section.contact {
       gap: 1rem;
       flex: 1;
       justify-content: center;
-      list-style: none;
+      font-style: normal;
 
-      .adress {
+      .address {
         font-size: 1.15rem;
         line-height: 1.25;
         margin: 0;
@@ -87,7 +87,9 @@ section.contact {
 
         input:-webkit-autofill,
         input:-webkit-autofill:focus {
-          transition: background-color 0s 600000s, color 0s 600000s !important;
+          transition:
+            background-color 0s 600000s,
+            color 0s 600000s !important;
         }
 
         .error,

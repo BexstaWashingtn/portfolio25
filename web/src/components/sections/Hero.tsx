@@ -13,11 +13,12 @@ export default function SectionHero() {
         <div className={styles.heroImageCon}>
           <Image
             src='/img/background/particel-waves_mono_1920x1280.jpg'
-            alt='Heroe Image - Particel Waves'
+            alt=''
             width={1920}
             height={1280}
             priority
             className={styles.heroImage}
+            aria-hidden='true'
           />
         </div>
         <div className={styles.heroTextOverlay}>

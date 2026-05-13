@@ -14,7 +14,8 @@ export default function SkillsSection({
 }) {
   if (!entries || entries.length === 0) return null;
 
-  const Wrapper: React.ElementType = title ? "section" : "div";
+  const hasTitle = Boolean(title);
+  const Wrapper = hasTitle ? "section" : "div";
 
   return (
     <Wrapper className={styles.subSection}>

@@ -90,7 +90,7 @@ export default function ContactForm() {
       >
         <div className={styles.wrapper}>
           <SrOnly>
-            <legend>Kontaktformular</legend>
+            <h3>Kontaktformular</h3>
           </SrOnly>
 
           <div className={styles.field}>
