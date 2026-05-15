@@ -52,6 +52,15 @@ export const projectType = defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'completedAt',
+      title: 'Projekt Fertigstellung*',
+      description:
+        'dient ausschließlich zur Bestimmung der Reihenfolge der Projekte im Projektpreview',
+      type: 'date',
+      group: 'details',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'description',
       title: 'Kurzbeschreibung*',
       type: 'text',
@@ -70,7 +79,7 @@ export const projectType = defineType({
       name: 'projectImage',
       title: 'Projektbild*',
       group: 'details',
-      description: '816px x 459px, Format JPEG',
+      description: '848px x 477px, Format JPEG',
       required: true,
     }),
     createImageField({
