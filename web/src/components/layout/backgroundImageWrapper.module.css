@@ -1,6 +1,7 @@
 .backgroundImageWrapper {
   width: 100%;
   position: relative;
+  overflow: hidden;
 
   .backgroundImage {
     position: absolute;
