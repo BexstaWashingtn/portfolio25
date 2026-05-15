@@ -1,5 +1,5 @@
 export const PROJECTS_PREVIEW_QUERY = `
-  *[_type == "project"] | order(_createdAt) {
+  *[_type == "project"] | order(completedAt desc) {
     _id,
     title,
     "slug": slug.current,
@@ -10,7 +10,7 @@ export const PROJECTS_PREVIEW_QUERY = `
 `;
 
 export const PROJETCS_PREVIEW_WITHOUTSLUG_QUERY = `
-  *[_type == "project" && slug.current != $slug] | order(_createdAt) {
+  *[_type == "project" && slug.current != $slug] | order(completedAt desc) {
     _id,
     title,
     "slug": slug.current,
