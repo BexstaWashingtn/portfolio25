@@ -49,7 +49,7 @@ type Props = {
 };
 
 export const BackgroundImageWrapper = ({ children, image, blur }: Props) => {
-  if (!image) return <>{children}</>;
+  if (!image?.src) return <>{children}</>;
 
   let content = <>{children}</>;
   const hasFixedSize = Boolean(image?.width && image?.height);

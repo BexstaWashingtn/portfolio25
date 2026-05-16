@@ -58,7 +58,7 @@ export default async function ProjectView({ params }: Props) {
   const backgroundImage = mapSanityImage({
     image: sanityProjectData.backgroundImage,
     width: 1920,
-    height: 1280,
+    height: 1080,
     alt:
       sanityProjectData.backgroundImage?.alt ||
       `${sanityProjectData.title} background image`,
