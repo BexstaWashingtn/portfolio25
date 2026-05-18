@@ -12,6 +12,10 @@ type MapSanityImageProps = {
   withHotspot?: boolean;
 };
 
+export type SanityMappedImage = Image & {
+  _type?: string;
+};
+
 export function mapSanityImage({
   image,
   width,
@@ -20,10 +24,8 @@ export function mapSanityImage({
   title,
   _type,
   withHotspot = false,
-}: MapSanityImageProps): Image | null {
+}: MapSanityImageProps): SanityMappedImage | null {
   const imageData = buildSanitySrc(image, width, height, withHotspot);
-
-  console.log("imageData", imageData);
 
   if (!imageData) return null;
 
