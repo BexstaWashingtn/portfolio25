@@ -54,13 +54,13 @@ export type ProjectProcessData = {
   description: string;
 };
 
+type TechStackIcon = "frontend" | "backend" | "tools";
+
 export type ProjectTechstackData = {
   title: string;
   icon: TechStackIcon;
   items: string[];
 };
-
-type TechStackIcon = "frontend" | "backend" | "tools";
 
 export type ProjectChallengeData = {
   problem: string;
@@ -74,6 +74,9 @@ export type ProjectVisualsData = Image & {
   id: string;
   caption?: string;
   layoutSize?: LayoutSize;
+  hotspot?: object | null;
+  crop?: object | null;
+  _type?: string;
 };
 
 export type ProjectLearningsData = {

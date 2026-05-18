@@ -2,13 +2,9 @@ import { ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./sectionHeader.module.css";
 import Image from "next/image";
+import { Image as ImageData } from "@/types/image";
 
-type imageProps = {
-  src: string;
-  alt: string;
-  title?: string;
-  width: number;
-  height: number;
+type imageProps = ImageData & {
   className?: string;
 };
 

@@ -4,7 +4,4 @@ export type Image = {
   width?: number;
   height?: number;
   title?: string;
-  _type?: string;
-  hotspot?: object | null;
-  crop?: object | null;
 };
