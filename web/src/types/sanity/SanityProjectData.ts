@@ -1,4 +1,3 @@
-import { LayoutSize } from "@/app/projects/[slug]/types/projectData";
 import { SanityImage } from "./SanityImage";
 
 export type ProjectTechstackRaw = {
@@ -16,6 +15,5 @@ export type SanityProjectMainColor = {
 export type SanityVisualsData = {
   caption: string;
   image: SanityImage;
-  layoutSize: LayoutSize;
   _key: string;
 };
