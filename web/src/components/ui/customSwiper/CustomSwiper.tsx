@@ -17,11 +17,15 @@ export default function CustomSwiper<T extends { id: Key }>({
   renderItem,
   swiperConfig,
   showNavigation = false,
+  className,
+  slideClassName,
 }: {
   items: T[];
   renderItem: (item: T, index: number) => ReactNode;
   swiperConfig?: SwiperOptions;
   showNavigation?: boolean;
+  className?: string;
+  slideClassName?: string;
 }) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -65,7 +69,7 @@ export default function CustomSwiper<T extends { id: Key }>({
         <Swiper
           {...swiperConfig}
           modules={modules}
-          className={`swiperCustomCSS`}
+          className={["swiperCustomCSS", className].filter(Boolean).join(" ")}
           keyboard={{ enabled: true, onlyInViewport: true }}
           pagination={{ clickable: true, el: ".swiperCustomPagination" }}
           onSwiper={(swiper) => {
@@ -75,7 +79,9 @@ export default function CustomSwiper<T extends { id: Key }>({
           }}
         >
           {items.map((item, index) => (
-            <SwiperSlide key={item.id}>{renderItem(item, index)}</SwiperSlide>
+            <SwiperSlide className={slideClassName} key={item.id}>
+              {renderItem(item, index)}
+            </SwiperSlide>
           ))}
 
           <div className='swiperCustomPagination' />
