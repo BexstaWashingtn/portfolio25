@@ -4,9 +4,10 @@ import {
   MdArrowDownward,
   MdArrowForward,
   MdArrowUpward,
+  MdClose,
 } from "react-icons/md";
 
-type Direction = "back" | "forward" | "up" | "down";
+type Direction = "back" | "forward" | "up" | "down" | "close";
 
 type Props = {
   direction: Direction;
@@ -18,6 +19,7 @@ export default function ArrowIcon({ direction = "back", className }: Props) {
     back: <MdArrowBack />,
     up: <MdArrowUpward />,
     down: <MdArrowDownward />,
+    close: <MdClose />,
   } satisfies Record<NonNullable<Props["direction"]>, JSX.Element>;
 
   return (

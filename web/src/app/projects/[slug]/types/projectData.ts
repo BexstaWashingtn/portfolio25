@@ -70,13 +70,15 @@ export type ProjectChallengeData = {
 
 export type LayoutSize = "small" | "medium" | "large" | "tall" | "wide";
 
-export type ProjectVisualsData = Image & {
+export type SanityImageData = Image & {
+  _type: "image";
+};
+
+export type ProjectVisualsData = {
   id: string;
+  imagePreview: SanityImageData;
+  imageFull: SanityImageData;
   caption?: string;
-  layoutSize?: LayoutSize;
-  hotspot?: object | null;
-  crop?: object | null;
-  _type?: string;
 };
 
 export type ProjectLearningsData = {

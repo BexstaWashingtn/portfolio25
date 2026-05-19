@@ -9,10 +9,7 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
   return visuals
     .filter((v): v is SanityVisualsData => !!v?.image?.asset?._ref?.trim())
     .map(({ _key, image, caption }) => {
-      //const safeLayoutSize = getLayoutSize(layoutSize);
-      //const { width, height } = imageSizeByLayout[safeLayoutSize];
-
-      const mappedImage = mapSanityImage({
+      const mappedImagePreview = mapSanityImage({
         image,
         width: 900,
         height: 900,
@@ -22,40 +19,24 @@ export function mapSanityVisuals(visuals: SanityVisualsData[]) {
         withHotspot: true,
       });
 
-      if (!mappedImage) return null;
+      const mappedImageFull = mapSanityImage({
+        image,
+        width: 1374,
+        height: null,
+        alt: image.alt || caption || "Projektbild",
+        title: image.title || caption || "",
+        _type: image._type || "image",
+        withHotspot: false,
+      });
+
+      if (!mappedImagePreview || !mappedImageFull) return null;
 
       return {
         id: _key,
-        ...mappedImage,
+        imagePreview: mappedImagePreview,
+        imageFull: mappedImageFull,
         caption: safeString(caption),
       };
     })
     .filter(isDefined);
 }
-/* 
-const allowedLayoutSizes = [
-  "small",
-  "medium",
-  "large",
-  "tall",
-  "wide",
-] as const;
-
-type LayoutSize = (typeof allowedLayoutSizes)[number];
-
-const imageSizeByLayout: Record<LayoutSize, { width: number; height: number }> =
-  {
-    small: { width: 600, height: 600 },
-    medium: { width: 900, height: 600 },
-    large: { width: 1200, height: 1200 },
-    tall: { width: 600, height: 1200 },
-    wide: { width: 1400, height: 800 },
-  };
-
-function isLayoutSize(value: unknown): value is LayoutSize {
-  return allowedLayoutSizes.includes(value as LayoutSize);
-}
-
-function getLayoutSize(value: unknown): LayoutSize {
-  return isLayoutSize(value) ? value : "small";
-} */
