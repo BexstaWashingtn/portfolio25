@@ -68,8 +68,6 @@ export type ProjectChallengeData = {
   learnings: string;
 };
 
-export type LayoutSize = "small" | "medium" | "large" | "tall" | "wide";
-
 export type SanityImageData = Image & {
   _type: "image";
 };
