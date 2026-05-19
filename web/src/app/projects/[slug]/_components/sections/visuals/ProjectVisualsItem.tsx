@@ -1,10 +1,10 @@
 import React from "react";
-import type { Image as ImageData } from "@/types/image";
 import Image from "next/image";
 import styles from "./projectVisualsItem.module.css";
+import { SanityImageData } from "../../../types/projectData";
 
 type Props = {
-  item: ImageData;
+  item: SanityImageData;
   index: number;
   setSelectedImageIndex: React.Dispatch<React.SetStateAction<number | null>>;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
