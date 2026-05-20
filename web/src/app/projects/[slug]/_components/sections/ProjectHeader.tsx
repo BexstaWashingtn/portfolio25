@@ -57,7 +57,11 @@ export default function ProjectHeader({ details }: Props) {
         ],
       }}
     >
-      <Inner paddingTop='xl' paddingBottom='xxl' variant='narrow'>
+      <Inner
+        paddingBottom='xxl'
+        variant='narrow'
+        className={styles.pageTopSpacing}
+      >
         <div className={styles.header}>
           <div className={styles.headerContent}>
             <h1 className={styles.hl}>{details.title}</h1>

@@ -70,3 +70,7 @@
     }
   }
 }
+
+.pageTopSpacing {
+  padding-top: var(--gap-xl);
+}
