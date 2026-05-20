@@ -9,7 +9,7 @@ import type { Project } from "./types";
 import { getProjectsPreview } from "@/sanity/fetchProjects";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
 import { notFound } from "next/navigation";
-import { mapProjectPreviews } from "@/lib/mapers/projects/mapProjectPreviews";
+import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 
 export default async function SectionProjects() {
   const projectsSanity: SanityProjectPreview[] = await getProjectsPreview();

@@ -4,7 +4,7 @@ import type { Project } from "@components/sections/projects/types";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
 import { getProjectsPreviewWithoutSlug } from "@/sanity/fetchProjects";
-import { mapProjectPreviews } from "@/lib/mapers/projects/mapProjectPreviews";
+import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 
 type Props = {
   slug: string;
