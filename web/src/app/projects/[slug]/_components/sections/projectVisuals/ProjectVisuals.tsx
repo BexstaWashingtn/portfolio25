@@ -12,6 +12,8 @@ type Props = {
 };
 
 export default function ProjectVisuals({ visuals }: Props) {
+  const hasGallery = visuals.length > 1;
+
   return (
     <section>
       <Inner paddingBottom='md' variant='narrow'>
@@ -23,7 +25,7 @@ export default function ProjectVisuals({ visuals }: Props) {
           }}
         />
       </Inner>
-      {visuals.length > 1 ? (
+      {hasGallery ? (
         <Inner paddingTop='md' paddingBottom='xxl' variant='wide'>
           <ProjectVisualsGallery visuals={visuals} />
         </Inner>
