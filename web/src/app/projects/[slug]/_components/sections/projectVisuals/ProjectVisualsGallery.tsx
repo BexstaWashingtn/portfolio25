@@ -8,6 +8,7 @@ import Button from "@/components/ui/form/Button";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectVisualsModalItem from "./projectVisualsFullImage";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   visuals: ProjectVisualsData[];
@@ -56,37 +57,45 @@ export default function ProjectVisualsGallery({ visuals }: Props) {
         ))}
       </div>
 
-      {isModalOpen && (
-        <div className={styles.gallerie_modal}>
-          <div className={styles.gallerie_modalNavigation}>
-            <Button
-              aria-label='Close Modal'
-              type='button'
-              className={control.iconButton}
-              onClick={closeModalHandler}
-              variant='icon-primary'
-            >
-              <ArrowIcon direction='close' className={control.icon} />
-            </Button>
-          </div>
-          <CustomSwiper
-            items={visuals}
-            renderItem={(item) => (
-              <ProjectVisualsModalItem
-                key={item.id}
-                item={item.imageFull}
-                caption={item.caption}
-              />
-            )}
-            swiperConfig={{
-              slidesPerView: 1,
-              initialSlide: selectedImageIndex ?? 0,
-            }}
-            showNavigation={isDesktop}
-            slideClassName='swiperSlideCenter'
-          />
-        </div>
-      )}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className={styles.gallerie_modal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className={styles.gallerie_modalNavigation}>
+              <Button
+                aria-label='Close Modal'
+                type='button'
+                className={control.iconButton}
+                onClick={closeModalHandler}
+                variant='icon-primary'
+              >
+                <ArrowIcon direction='close' className={control.icon} />
+              </Button>
+            </div>
+            <CustomSwiper
+              items={visuals}
+              renderItem={(item) => (
+                <ProjectVisualsModalItem
+                  key={item.id}
+                  item={item.imageFull}
+                  caption={item.caption}
+                />
+              )}
+              swiperConfig={{
+                slidesPerView: 1,
+                initialSlide: selectedImageIndex ?? 0,
+              }}
+              showNavigation={isDesktop}
+              slideClassName='swiperSlideCenter'
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
