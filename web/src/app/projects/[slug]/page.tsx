@@ -29,8 +29,6 @@ export default async function ProjectView({ params }: Props) {
     notFound();
   }
 
-  console.log("sanityProjectData", sanityProjectData);
-
   if (!sanityProjectData?.title?.trim()) {
     notFound();
   }
@@ -79,8 +77,6 @@ export default async function ProjectView({ params }: Props) {
     implementation: sanityProjectData.implementation,
     visuals: mapSanityVisuals(sanityProjectData.visuals ?? []),
   };
-
-  console.log("projectData", projectData);
 
   return (
     <>
