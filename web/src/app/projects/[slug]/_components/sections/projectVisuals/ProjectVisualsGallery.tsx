@@ -61,9 +61,9 @@ export default function ProjectVisualsGallery({ visuals }: Props) {
         {isModalOpen && (
           <motion.div
             className={styles.gallerie_modal}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.25 }}
           >
             <div className={styles.gallerie_modalNavigation}>
