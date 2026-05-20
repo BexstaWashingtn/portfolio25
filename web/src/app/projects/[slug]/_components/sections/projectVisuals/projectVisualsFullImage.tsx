@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import { Image as ImageData } from "@/types/image";
-import styles from "./projectVisualsModalItem.module.css";
+import styles from "./projectVisualsFullImage.module.css";
 
 type Props = {
   item: ImageData;
   caption: string | undefined;
 };
-export default function ProjectVisualsModalItem({ item, caption }: Props) {
+export default function projectVisualsFullImage({ item, caption }: Props) {
   return (
     <div className={styles.modalImageContainer}>
-      <div className={styles.modalImageScrollablecontainer}>
+      <div className={styles.modalImageScrollableContent}>
         <img
           src={item.src}
           alt={item.alt}
