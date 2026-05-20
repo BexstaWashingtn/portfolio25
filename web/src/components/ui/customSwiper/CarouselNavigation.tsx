@@ -1,7 +1,7 @@
 import Stack from "@/components/utils/Stack";
 import control from "@ui/primitives/controls/control.module.css";
 import styles from "./carouselNavigation.module.css";
-import ArrowIcon from "../ArrowIcon";
+import Icon from "../Icon";
 import type { Ref } from "react";
 import Button from "../form/Button";
 
@@ -27,7 +27,7 @@ export default function CarouselNavigation({
           className={control.iconButton}
           aria-label={label}
         >
-          <ArrowIcon direction={direction} className={control.icon} />
+          <Icon name={direction} className={control.icon} />
         </Button>
       </Stack>
     </div>

@@ -5,10 +5,10 @@ import { ProjectVisualsData } from "../../../types/projectData";
 import ProjectVisualsItem from "./ProjectVisualsItem";
 import control from "@ui/primitives/controls/control.module.css";
 import Button from "@/components/ui/form/Button";
-import ArrowIcon from "@/components/ui/ArrowIcon";
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectVisualsModalItem from "./projectVisualsFullImage";
 import { AnimatePresence, motion } from "framer-motion";
+import Icon from "@/components/ui/Icon";
 
 type Props = {
   visuals: ProjectVisualsData[];
@@ -74,7 +74,7 @@ export default function ProjectVisualsGallery({ visuals }: Props) {
                 onClick={closeModalHandler}
                 variant='icon-primary'
               >
-                <ArrowIcon direction='close' className={control.icon} />
+                <Icon name='close' className={control.icon} />
               </Button>
             </div>
             <CustomSwiper

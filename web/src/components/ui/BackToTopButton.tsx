@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./backToTopButton.module.css";
 import control from "@ui/primitives/controls/control.module.css";
 import Button from "./form/Button";
-import ArrowIcon from "./ArrowIcon";
+import Icon from "./Icon";
 
 export default function BackToTopButton() {
   // This component renders a button that scrolls the page back to the top when clicked.
@@ -37,14 +37,14 @@ export default function BackToTopButton() {
   return (
     <div className={`${styles.backToTopWrapper}`}>
       <Button
-        aria-label='Nach oben'
+        aria-label='nach oben scrollen'
         type='button'
         className={control.iconButton}
         role='button'
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         variant='icon-secondary'
       >
-        <ArrowIcon direction='up' className={control.icon} />
+        <Icon name='up' className={control.icon} />
       </Button>
     </div>
   );
