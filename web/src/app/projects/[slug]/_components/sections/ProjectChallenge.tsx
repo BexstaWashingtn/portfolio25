@@ -11,7 +11,7 @@ type Props = {
 export default function ProjectChallenge({ goals }: Props) {
   return (
     <section className={styles.projectChallenge}>
-      <Inner paddingBottom='md' paddingTop='md' variant='narrow'>
+      <Inner paddingBottom='xxl' variant='narrow'>
         <SectionHeader
           headline='Herausforderung'
           icon={{

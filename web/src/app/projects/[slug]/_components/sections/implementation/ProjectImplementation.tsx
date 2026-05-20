@@ -46,7 +46,7 @@ export default function ProjectImplementation({
 
   return (
     <section className={styles.projectImplementation}>
-      <Inner paddingTop='xl' variant='full'>
+      <Inner paddingBottom='xl' variant='full'>
         <Inner variant='narrow'>
           <SectionHeader
             icon={{
@@ -68,7 +68,7 @@ export default function ProjectImplementation({
       }
 
       {hasChallenge && (
-        <Inner paddingBottom='xl' variant='full'>
+        <Inner paddingBottom='xxl' variant='full'>
           <Inner variant='narrow' paddingTop='md' paddingBottom='md'>
             <ProjectChallenge challenge={cleanChallenge} />
           </Inner>

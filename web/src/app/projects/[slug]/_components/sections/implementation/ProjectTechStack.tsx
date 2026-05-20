@@ -21,8 +21,7 @@ export default function ProjectTechStack({ techstack, mainColorRGB }: Props) {
     <section className={styles.techStack}>
       <Inner
         variant='full'
-        paddingBottom='md'
-        paddingTop='md'
+        paddingBottom='xl'
         paddingInline={{ base: false, lg: false, md: false, sm: false }}
       >
         <BackgroundGradientWrapper

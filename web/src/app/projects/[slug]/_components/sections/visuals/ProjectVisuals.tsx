@@ -49,7 +49,7 @@ export default function ProjectVisuals({ visuals }: Props) {
   return (
     !!visuals.length && (
       <section className={styles.visuals}>
-        <Inner paddingTop='md' paddingBottom='md' variant='narrow'>
+        <Inner paddingBottom='md' variant='narrow'>
           <SectionHeader
             headline='Visuelle Darstellung'
             icon={{
@@ -58,7 +58,7 @@ export default function ProjectVisuals({ visuals }: Props) {
             }}
           />
         </Inner>
-        <Inner paddingTop='md' paddingBottom='md' variant='wide'>
+        <Inner paddingTop='md' paddingBottom='xxl' variant='wide'>
           <div className={styles.visuals__grid}>
             {visuals.map((item: ProjectVisualsData, index: number) => (
               <ProjectVisualsItem

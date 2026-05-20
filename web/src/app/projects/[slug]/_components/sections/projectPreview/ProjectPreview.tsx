@@ -33,11 +33,18 @@ export default async function ProjectPreview({ slug }: Props) {
           ],
         }}
       >
-        <Inner variant='narrow' paddingTop='xl' paddingBottom='md'>
-          <SectionHeader headline='weitere Projekte' />
-        </Inner>
-        <Inner variant='full' paddingTop='md' paddingBottom='md'>
-          <ProjectCardSlider items={filteredProjects} />
+        <Inner
+          variant='full'
+          paddingTop='xl'
+          paddingBottom='xl'
+          paddingInline={false}
+        >
+          <Inner variant='narrow' paddingBottom='md'>
+            <SectionHeader headline='weitere Projekte' />
+          </Inner>
+          <Inner variant='full' paddingTop='md'>
+            <ProjectCardSlider items={filteredProjects} />
+          </Inner>
         </Inner>
       </BackgroundGradientWrapper>
     </section>

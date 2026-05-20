@@ -57,7 +57,7 @@ export default function ProjectHeader({ details }: Props) {
         ],
       }}
     >
-      <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
+      <Inner paddingTop='xl' paddingBottom='xxl' variant='narrow'>
         <div className={styles.header}>
           <div className={styles.headerContent}>
             <h1 className={styles.hl}>{details.title}</h1>
