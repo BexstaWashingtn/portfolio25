@@ -25,6 +25,10 @@
   backdrop-filter: blur(10px);
   z-index: 10;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   .gallerie_modalNavigation {
     display: flex;
     justify-content: flex-end;

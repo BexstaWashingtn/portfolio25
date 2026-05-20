@@ -1,5 +1,4 @@
 .modalImageContainer {
-  width: 80%;
   margin-inline: auto;
 
   @media (max-width: 1024px) {
@@ -8,9 +7,20 @@
 
   .modalImageScrollablecontainer {
     width: 100%;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.8);
+
+    @media (max-width: 768px) {
+      max-height: 70vh;
+    }
+
+    @media (max-width: 420px) {
+      max-height: 60vh;
+    }
+    @media (max-width: 375px) {
+      max-height: 50vh;
+    }
 
     .modalImage {
       display: block;
