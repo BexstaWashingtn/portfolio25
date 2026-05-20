@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import type { IconType } from "react-icons";
 import {
   MdArrowBack,
   MdArrowDownward,
@@ -13,18 +13,21 @@ type Props = {
   name: Variant;
   className?: string;
 };
+
+const icons = {
+  forward: MdArrowForward,
+  back: MdArrowBack,
+  up: MdArrowUpward,
+  down: MdArrowDownward,
+  close: MdClose,
+} satisfies Record<Variant, IconType>;
+
 export default function Icon({ name, className }: Props) {
-  const icons: Record<Variant, JSX.Element> = {
-    forward: <MdArrowForward />,
-    back: <MdArrowBack />,
-    up: <MdArrowUpward />,
-    down: <MdArrowDownward />,
-    close: <MdClose />,
-  } satisfies Record<NonNullable<Props["name"]>, JSX.Element>;
+  const SelectedIcon = icons[name];
 
   return (
     <span className={className} aria-hidden='true'>
-      {icons[name]}
+      <SelectedIcon />
     </span>
   );
 }
