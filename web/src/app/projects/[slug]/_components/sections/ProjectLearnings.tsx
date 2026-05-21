@@ -10,12 +10,12 @@ type Props = {
 
 export default function ProjectLearnings({ learnings }: Props) {
   const cleanedLearnings = cleanStringArray(learnings.learnings);
-  const cleanedImprovements = cleanStringArray(learnings.improvements);
-  const cleanedFeedback = cleanStringArray(learnings.feedback);
+  const cleanedImprovements = learnings?.improvements?.trim();
+  const cleanedFeedback = learnings?.feedback?.trim();
 
   return (
     <section className={styles.learnings}>
-      <Inner variant='narrow' paddingBottom='md' paddingTop='xl'>
+      <Inner variant='narrow' paddingBottom='md'>
         <SectionHeader
           headline='Ergebnisse / Learnings'
           icon={{
@@ -24,10 +24,10 @@ export default function ProjectLearnings({ learnings }: Props) {
           }}
         />
       </Inner>
-      <Inner variant='narrow' paddingBottom='xl' paddingTop='md'>
+      <Inner variant='narrow' paddingBottom='xxl' paddingTop='md'>
         {!!cleanedLearnings.length && (
           <>
-            <h3>Was hast du gelernt?</h3>
+            <h3>Erkenntnisse & Fortschritte</h3>
             <ul className={styles.learningsList}>
               {cleanedLearnings.filter(Boolean).map((item, index) => (
                 <li key={index} className={styles.learningsItem}>
@@ -38,29 +38,17 @@ export default function ProjectLearnings({ learnings }: Props) {
           </>
         )}
 
-        {!!cleanedImprovements.length && (
+        {cleanedImprovements && (
           <>
-            <h3>Was würdest du anders machen?</h3>
-            <ul className={styles.learningsList}>
-              {cleanedImprovements.filter(Boolean).map((item, index) => (
-                <li key={index} className={styles.learningsItem}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <h3>zukünftige Verbesserungen</h3>
+            <div className={styles.learningsList}>{cleanedImprovements}</div>
           </>
         )}
 
-        {!!cleanedFeedback.length && (
+        {cleanedFeedback && (
           <>
-            <h3>Feedback vom Kunden (wenn vorhanden)</h3>
-            <ul className={styles.learningsList}>
-              {cleanedFeedback.filter(Boolean).map((item, index) => (
-                <li key={index} className={styles.learningsItem}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <h3>Feedback vom Kunden</h3>
+            <div className={styles.learningsList}>{cleanedFeedback}</div>
           </>
         )}
       </Inner>

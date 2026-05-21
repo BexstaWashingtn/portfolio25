@@ -32,5 +32,6 @@ export const PROJECT_BYSLUG_QUERY = `
     goals,
     implementation,
     visuals,
+    learnings,
   }
 `;

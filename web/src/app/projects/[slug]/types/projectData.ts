@@ -81,6 +81,6 @@ export type ProjectVisualsData = {
 
 export type ProjectLearningsData = {
   learnings: string[];
-  improvements: string[];
-  feedback: string[];
+  improvements: string;
+  feedback: string;
 };
