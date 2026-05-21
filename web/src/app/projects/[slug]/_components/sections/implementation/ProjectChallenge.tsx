@@ -6,8 +6,6 @@ type Props = {
 };
 
 export default function ProjectChallenge({ challenge }: Props) {
-  console.log("challenge", challenge);
-
   return (
     <section className={styles.implementationChallenge}>
       <h3>Herausforderung</h3>
