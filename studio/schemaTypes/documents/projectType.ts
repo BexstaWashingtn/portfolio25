@@ -302,5 +302,33 @@ export const projectType = defineType({
         },
       ],
     },
+    {
+      name: 'learnings',
+      title: 'Projekterfahrungen',
+      group: 'learnings',
+      type: 'object',
+      fields: [
+        {
+          name: 'learnings',
+          title: 'Was hast du gelernt?',
+          description: 'Was du gelernt hast / neue Erkenntnisse / technischer Fortschritt',
+          type: 'array',
+          of: [{type: 'string'}],
+        },
+        {
+          name: 'improvements',
+          title: 'Erkenntnisse & Reflexion',
+          type: 'text',
+          description:
+            'Was du heute anders machen würdest, Optimierungen, Architekturentscheidungen',
+        },
+        {
+          name: 'feedback',
+          title: 'Feedback',
+          type: 'text',
+          description: 'Kundenfeedback, Nutzerfeedback oder eigene Bewertung des Ergebnisses',
+        },
+      ],
+    },
   ],
 })
