@@ -14,11 +14,11 @@ section.about {
     .text {
       max-width: 550px;
       .headline {
-        color: rgb(var(--heading-secondary-color));
+        color: var(--heading-secondary-color);
       }
       .content {
         margin-top: 1rem;
-        color: rgb(var(--text-color));
+        color: var(--text-color);
       }
     }
     .imageWrapper {

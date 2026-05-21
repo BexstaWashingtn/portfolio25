@@ -39,16 +39,16 @@
   --clay-500: 204, 157, 143;
 
   /*  Variablennamen zum Beschreiben der Funktion */
-  --background-color: rgba(var(--black), 1);
-  --text-color: var(--beige);
-  --heading-color: var(--beige);
-  --hero-headline-highlighted-color: var(--peach-300);
-  --heading-secondary-color: var(--peach);
-  --link-color: var(--peach-300);
-  --active-link-color: var(--beige);
-  --nav-link-color: var(--beige);
-  --nav-active-link-color: var(--clay-500);
-  --nav-focus-link-color: var(--clay-500);
+  --background-color: rgb(var(--black), 1);
+  --text-color: rgb(var(--beige));
+  --heading-color: rgb(var(--beige));
+  --hero-headline-highlighted-color: rgb(var(--peach-300));
+  --heading-secondary-color: rgb(var(--peach));
+  --link-color: rgb(var(--peach-300));
+  --active-link-color: rgb(var(--beige));
+  --nav-link-color: rgb(var(--beige));
+  --nav-active-link-color: rgb(var(--clay-500));
+  --nav-focus-link-color: rgb(var(--clay-500));
 
   --header-background: linear-gradient(
     135deg,

@@ -18,7 +18,7 @@
 }
 
 body {
-  color: rgb(var(--text-color));
+  color: var(--text-color);
   font-size: 1.25rem;
   font-family: var(--font-inter);
   font-weight: 300;
@@ -52,7 +52,7 @@ h1,
 h2,
 .h2 {
   font-family: var(--font-oswald);
-  color: rgb(var(--heading-color));
+  color: var(--heading-color);
 }
 h3,
 .h3,
@@ -105,12 +105,12 @@ html {
 }
 
 a {
-  color: rgb(var(--link-color));
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   position: relative;
 
   &:hover {
-    color: rgb(var(--active-link-color));
+    color: var(--active-link-color);
   }
 }

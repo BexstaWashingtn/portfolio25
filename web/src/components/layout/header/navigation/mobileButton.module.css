@@ -18,7 +18,7 @@
     transition: color var(--transition-default);
     -webkit-tap-highlight-color: transparent;
     &:hover {
-      color: rgb(var(--nav-active-link-color));
+      color: var(--nav-active-link-color);
     }
 
     .headerMobileMenuicon {

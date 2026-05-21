@@ -53,7 +53,7 @@ section.hero {
           }
 
           .heroHeadlineHighlighted {
-            color: rgb(var(--hero-headline-highlighted-color));
+            color: var(--hero-headline-highlighted-color);
           }
         }
       }
