@@ -167,6 +167,7 @@ export const projectType = defineType({
       title: 'Projekt Ziele*',
       group: 'goals',
       type: 'object',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'initial',
