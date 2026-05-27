@@ -1,10 +1,10 @@
 import {defineType} from 'sanity'
-import {createMainColorField} from '../fields/mainColorField'
-import {createImageField} from '../fields/imageField'
+import {createMainColorField} from '../fields/createMainColorField'
+import {createImageField} from '../fields/createImageField'
 
 export const projectType = defineType({
   name: 'project',
-  title: 'Projekt',
+  title: 'Projekte',
   type: 'document',
   groups: [
     {

@@ -15,5 +15,18 @@ export const structure: StructureResolver = (S) =>
             .documentId('siteSettings'),
         ),
 
-      ...S.documentTypeListItems().filter((listItem) => listItem.getId() !== 'siteSettings'),
+      S.listItem()
+        .title('Startseite')
+        .id('startpage')
+        .child(
+          S.editor()
+            .id('startpageEditor')
+            .title('Startseite')
+            .schemaType('startpage')
+            .documentId('startpage'),
+        ),
+
+      ...S.documentTypeListItems().filter(
+        (listItem) => listItem.getId() !== 'siteSettings' && listItem.getId() !== 'startpage',
+      ),
     ])

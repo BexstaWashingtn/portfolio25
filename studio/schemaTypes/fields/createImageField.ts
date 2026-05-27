@@ -1,5 +1,5 @@
 // schemaTypes/fields/imageField.ts
-import {defineField} from 'sanity'
+import {defineField, type ImageRule} from 'sanity'
 
 type Options = {
   name?: string
@@ -42,8 +42,8 @@ export function createImageField({
         type: 'string',
       }),
     ],
-    validation: (Rule) => {
-      return required ? Rule.required() : Rule
-    },
+    ...(required && {
+      validation: (Rule: ImageRule) => Rule.required(),
+    }),
   })
 }

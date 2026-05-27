@@ -1,15 +1,15 @@
 import {defineType} from 'sanity'
-import {createMainColorField} from '../fields/mainColorField'
-import {createImageField} from '../fields/imageField'
+import {createMainColorField} from '../fields/createMainColorField'
+import {createImageField} from '../fields/createImageField'
 
 export const siteSettings = defineType({
   name: 'siteSettings',
-  title: 'SiteSettings',
+  title: 'Seiten-Einstellungen',
   type: 'document',
   preview: {
     prepare() {
       return {
-        title: 'Site Settings',
+        title: 'Seiten-Einstellungen',
       }
     },
   },
