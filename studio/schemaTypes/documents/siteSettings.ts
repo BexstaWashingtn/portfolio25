@@ -1,4 +1,4 @@
-import {defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
 import {createMainColorField} from '../fields/createMainColorField'
 import {createImageField} from '../fields/createImageField'
 
@@ -6,6 +6,7 @@ export const siteSettings = defineType({
   name: 'siteSettings',
   title: 'Seiten-Einstellungen',
   type: 'document',
+
   preview: {
     prepare() {
       return {
@@ -13,10 +14,12 @@ export const siteSettings = defineType({
       }
     },
   },
+
   groups: [
-    {name: 'general', title: 'General'},
-    {name: 'navigation', title: 'Navigation'},
+    {name: 'general', title: 'Allgemein'},
+    {name: 'contactInformation', title: 'Kontaktinformationen'},
   ],
+
   fields: [
     createImageField({
       name: 'siteLogo',
@@ -25,6 +28,7 @@ export const siteSettings = defineType({
       group: 'general',
       description: 'Seitenlogo, Format SVG',
     }),
+
     createMainColorField({
       name: 'siteMainColor',
       title: 'Seiten-Hauptfarbe* (RGB)',
@@ -33,39 +37,76 @@ export const siteSettings = defineType({
       description: 'Fallback für Projekte ohne MainColor',
     }),
 
-    {
-      name: 'mainNavigation',
-      title: 'Hauptnavigation',
-      group: 'navigation',
-      type: 'array',
-      of: [
-        {
+    defineField({
+      name: 'contactInformation',
+      title: 'Kontaktinformationen',
+      type: 'object',
+      group: 'contactInformation',
+      fields: [
+        defineField({
+          name: 'firstName',
+          title: 'Vorname*',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: 'lastName',
+          title: 'Nachname*',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+          name: 'email',
+          title: 'E-Mail*',
+          type: 'string',
+          validation: (Rule) => Rule.required().email(),
+        }),
+
+        defineField({
+          name: 'phone',
+          title: 'Telefon',
+          type: 'string',
+        }),
+
+        defineField({
+          name: 'address',
+          title: 'Adresse',
           type: 'object',
-          title: 'Navigationspunkt',
           fields: [
-            {
-              name: 'text',
-              title: 'Text',
+            defineField({
+              name: 'street',
+              title: 'Straße',
               type: 'string',
-              validation: (Rule) => Rule.min(3).max(20).required(),
-            },
-            {
-              name: 'slug',
-              title: 'Section-ID',
+            }),
+
+            defineField({
+              name: 'postalCode',
+              title: 'PLZ',
               type: 'string',
-              description:
-                'Muss exakt der id der passenden Section entsprechen, z. B. about oder projects.',
-              validation: (Rule) => Rule.min(3).max(30).required(),
-            },
+            }),
+
+            defineField({
+              name: 'city',
+              title: 'Ort',
+              type: 'string',
+            }),
+
+            defineField({
+              name: 'country',
+              title: 'Land',
+              type: 'string',
+              initialValue: 'Deutschland',
+            }),
           ],
-          preview: {
-            select: {
-              title: 'text',
-              subtitle: 'slug',
-            },
-          },
-        },
+        }),
+
+        defineField({
+          name: 'github',
+          title: 'GitHub',
+          type: 'url',
+        }),
       ],
-    },
+    }),
   ],
 })
