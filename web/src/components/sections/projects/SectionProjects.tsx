@@ -56,6 +56,12 @@ export default async function SectionProjects() {
                 text={
                   "Die Projekte entstanden im Rahmen meiner Weiterbildung 2024/25 oder eigenständig – mit Fokus auf UX, Barrierefreiheit und moderner Frontend-Entwicklung."
                 }
+                image={{
+                  src: "img/projects/icon_projects.svg",
+                  width: 160,
+                  height: 140,
+                  alt: "Projekt-Preview Icon",
+                }}
               />
             </Inner>
             <Inner variant='full' paddingBottom='xxl'>

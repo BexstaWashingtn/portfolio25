@@ -8,7 +8,7 @@ export default function WorkingMedhodItem({ item }: Props) {
   return (
     <li className={styles.workMehtodItem}>
       <img className={styles.icon} src={item.icon} alt='' height={80} />
-      <h3 className={styles.headline}>{item.title}</h3>
+      <h4 className={styles.headline}>{item.title}</h4>
       <p className={styles.text}>{item.text}</p>
     </li>
   );

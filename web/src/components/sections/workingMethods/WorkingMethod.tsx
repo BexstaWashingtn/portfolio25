@@ -46,7 +46,7 @@ export default function SectionWorkingMethod() {
         className={styles.fourPointLimit}
       >
         <Stack gap={{ base: "lg", md: "md", sm: "sm" }}>
-          <h2 className={styles.h2}>Arbeitsweise</h2>
+          <h3 className={styles.h3}>Arbeitsweise</h3>
           <Inner variant='full' paddingTop='md' paddingInline={false}>
             {isMobile ? (
               // only render Swiper on < 768 phone devices

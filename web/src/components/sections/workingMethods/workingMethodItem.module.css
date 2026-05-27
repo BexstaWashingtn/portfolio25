@@ -8,5 +8,6 @@
   .headline {
     padding: 0;
     color: rgb(var(--peach));
+    font-size: 2.25rem;
   }
 }

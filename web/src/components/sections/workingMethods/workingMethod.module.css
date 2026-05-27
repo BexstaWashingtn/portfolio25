@@ -1,6 +1,7 @@
 section.workingMethod {
-  .h2 {
+  .h3 {
     text-align: center;
+    font-size: 3rem;
   }
 
   ul.workMethodList {

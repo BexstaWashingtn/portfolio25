@@ -28,7 +28,7 @@ export default function SectionHeader({
           <Image
             src={image.src}
             alt={image.alt}
-            title={image?.title}
+            {...(image?.title ? { title: image.title } : {})}
             width={image.width}
             height={image.height}
             priority

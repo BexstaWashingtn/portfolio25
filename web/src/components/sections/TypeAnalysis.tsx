@@ -60,7 +60,7 @@ export default function TypeAnalysis() {
             className='align-stretch-md'
             gap={{ base: "lg", md: "md", sm: "sm" }}
           >
-            <h2 className={styles.h2}>Typanalyse</h2>
+            <h3 className={styles.h3}>Typanalyse</h3>
             <div className={styles.content}>
               <div className={styles.per}>
                 <ul className={styles.perTextList}>
