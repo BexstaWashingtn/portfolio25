@@ -1,5 +1,5 @@
 import { SanityVisualsData } from "@/types/sanity/SanityProjectData";
-import { mapSanityImage } from "./mapSanityImage";
+import { mapSanityImage } from "../sanity/mapSanityImage";
 import { safeString } from "@/lib/utils/data/safeString";
 import { isDefined } from "@/lib/utils/data/isDefined";
 

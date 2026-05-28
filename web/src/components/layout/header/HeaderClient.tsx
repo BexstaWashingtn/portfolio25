@@ -5,14 +5,14 @@ import { BackgroundGradientWrapper } from "../BackgroundGradientWrapper";
 import HeaderLogo from "./HeaderLogo";
 import NavigationClient from "./navigation/NavigationClient";
 import { usePathname } from "next/navigation";
-import { MainNavigationItem } from "@/types/navigation";
+import { HeaderDatas } from "@/types/navigation";
 
 type Props = {
   styles: Record<string, string>;
-  mainNavigationDatas: MainNavigationItem[];
+  headerDatas: HeaderDatas;
 };
 
-export default function HeaderClient({ styles, mainNavigationDatas }: Props) {
+export default function HeaderClient({ styles, headerDatas }: Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
   const isLogoVisible = !isHeroVisible || isMobileMenuOpen;
@@ -83,13 +83,14 @@ export default function HeaderClient({ styles, mainNavigationDatas }: Props) {
         <HeaderLogo
           isLogoVisible={isLogoVisible}
           style={styles.logoImageOverlay}
+          logoDatas={headerDatas.logo}
         />
 
-        {!!mainNavigationDatas.length && (
+        {headerDatas.navigation.length > 0 && (
           <NavigationClient
             isMobileMenuOpen={isMobileMenuOpen}
             setIsMobileMenuOpen={setIsMobileMenuOpen}
-            mainNavigationDatas={mainNavigationDatas}
+            mainNavigationDatas={headerDatas.navigation}
           />
         )}
       </div>

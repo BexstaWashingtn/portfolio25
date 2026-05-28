@@ -1,8 +1,25 @@
+import { SanityImage } from "./sanity/SanityImage";
+import { Image } from "./image";
+
 export type MainNavigationItem = {
   id: string;
   label: string;
 };
 
-export type MainNavigationQueryResult = {
-  navigation?: (MainNavigationItem | null)[];
+export type LogoDatas = {
+  image: Image;
+  id: string;
+};
+
+export type HeaderDatas = {
+  navigation: MainNavigationItem[];
+  logo: LogoDatas;
+};
+
+export type HeaderQueryResult = {
+  navigation?: {
+    navigation?: (MainNavigationItem | null)[];
+    heroSectionId: string;
+  };
+  logo?: SanityImage;
 } | null;

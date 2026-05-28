@@ -1,25 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Image as ImageType } from "@/types/image";
 
-type Props = {
+type Props = ImageType & {
   linkDisabled?: boolean;
-  width?: number;
-  height?: number;
+  anchor: string;
 };
 
 export default function Logo({
   linkDisabled = false,
+  src = "/img/logo/logo_beige_shadow.png",
   width = 50,
-  height = 50,
+  height = 73,
+  title,
+  alt = "Logo Portfolio '25",
+  anchor = "hero",
 }: Props) {
   const content = (
-    <Image
-      src='/img/logo/logo_beige_shadow.png'
-      alt='Logo - Eine Mann sitzt nachdenklich in einem Fensterrahmen und schaut in den Himmel'
-      title="Logo Portfolio '25"
-      width={width}
-      height={height}
-    />
+    <Image src={src} alt={alt} title={title} width={width} height={height} />
   );
 
   if (linkDisabled) {
@@ -27,7 +25,7 @@ export default function Logo({
   }
 
   return (
-    <Link href='/#hero' aria-current='page'>
+    <Link href={`/#${anchor}`} aria-current='page'>
       {content}
     </Link>
   );

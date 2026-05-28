@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
 import { ProjectData } from "./types/projectData";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
-import { mapSanityImage } from "@/lib/mappers/project/mapSanityImage";
+import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { mapSanityVisuals } from "@/lib/mappers/project/mapSanityVisuals";
 
 type Props = {
