@@ -7,6 +7,7 @@ type CreateStringArrayFieldProps = {
   itemTitle: string
   description?: string
   required?: boolean
+  group?: string
 }
 
 export function createStringArrayField({
@@ -15,12 +16,14 @@ export function createStringArrayField({
   itemTitle,
   description,
   required = false,
+  group,
 }: CreateStringArrayFieldProps) {
   return defineField({
     name,
     title,
     type: 'array',
     ...(description && {description}),
+    ...(group && {group}),
     of: [
       {
         name: 'item',
