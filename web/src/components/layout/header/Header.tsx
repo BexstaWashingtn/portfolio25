@@ -26,7 +26,5 @@ function isMainNavigationItem(
 function mapMainNavigationDatas(
   data: MainNavigationQueryResult,
 ): MainNavigationItem[] {
-  if (!Array.isArray(data?.navigation)) return [];
-
-  return data?.navigation?.filter(isMainNavigationItem);
+  return data?.navigation?.filter(isMainNavigationItem) ?? [];
 }
