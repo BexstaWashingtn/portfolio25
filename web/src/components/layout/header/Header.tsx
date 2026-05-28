@@ -39,8 +39,8 @@ function mapHeaderDatas(data: HeaderQueryResult): HeaderDatas | null {
   const logoImage = data.logo
     ? mapSanityImage({
         image: data.logo,
-        width: 50,
-        height: 73,
+        width: 53,
+        height: 80,
         alt: data.logo.alt ?? "Logo Portfolio '25",
         title: data.logo.title,
         _type: data.logo._type,

@@ -10,8 +10,8 @@ type Props = ImageType & {
 export default function Logo({
   linkDisabled = false,
   src = "/img/logo/logo_beige_shadow.png",
-  width = 50,
-  height = 73,
+  width = 53,
+  height = 80,
   title,
   alt = "Logo Portfolio '25",
   anchor = "hero",
