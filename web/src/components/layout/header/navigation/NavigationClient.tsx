@@ -3,15 +3,18 @@
 import { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import MobileButton from "./MobileButton";
+import { MainNavigationItem } from "@/types/navigation";
 
 type Props = {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  mainNavigationDatas: MainNavigationItem[];
 };
 
 export default function NavigationClient({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
+  mainNavigationDatas,
 }: Props) {
   // State to manage the mobile menu open/close state
 
@@ -62,6 +65,7 @@ export default function NavigationClient({
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         isMobileMenuOpen={isMobileMenuOpen}
         activeSection={activeSection}
+        mainNavigationDatas={mainNavigationDatas}
       />
 
       <MobileButton

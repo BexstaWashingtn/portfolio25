@@ -29,8 +29,6 @@ export default async function ProjectView({ params }: Props) {
     notFound();
   }
 
-  console.log("sanityProjectData: ", sanityProjectData);
-
   if (!sanityProjectData?.title?.trim()) {
     notFound();
   }

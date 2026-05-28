@@ -4,44 +4,20 @@ import Link from "@ui/link/Link";
 import styles from "./navigation.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { MainNavigationItem } from "@/types/navigation";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state
   isMobileMenuOpen?: boolean; // Optional prop to indicate if the mobile menu is open
   activeSection: string | null; // The currently active section for highlighting
+  mainNavigationDatas: MainNavigationItem[];
 };
-
-const navDatas = [
-  {
-    text: "Uber mich",
-    slug: "about",
-  },
-  {
-    text: "Typanalyse",
-    slug: "type-analysis",
-  },
-  {
-    text: "Arbeitsweise",
-    slug: "working-method",
-  },
-  {
-    text: "Skills",
-    slug: "skills",
-  },
-  {
-    text: "Projekte",
-    slug: "projects",
-  },
-  {
-    text: "Kontakt",
-    slug: "contact",
-  },
-];
 
 export default function Navigation({
   setIsMobileMenuOpen,
   isMobileMenuOpen,
   activeSection,
+  mainNavigationDatas,
 }: Props) {
   const router = useRouter();
 
@@ -67,16 +43,16 @@ export default function Navigation({
       data-open={isMobileMenuOpen}
     >
       <ul className={styles.navList}>
-        {navDatas.map(({ text, slug }) => (
-          <li key={slug} className={styles.navListItem}>
+        {mainNavigationDatas.map(({ id, label }) => (
+          <li key={id} className={styles.navListItem}>
             <Link
               className={`${styles.navLink} ${
-                activeSection === slug ? styles.active : ""
+                activeSection === id ? styles.active : ""
               }`}
-              href={`/#${slug}`}
-              onClick={(e) => handleNavClick(e, slug)}
+              href={`/#${id}`}
+              onClick={(e) => handleNavClick(e, id)}
             >
-              {text}
+              {label}
             </Link>
           </li>
         ))}
