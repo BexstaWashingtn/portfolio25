@@ -7,6 +7,8 @@ import {createSkillField} from '../fields/createSkillField'
 const startpageGroups = [
   {name: 'hero', title: 'Hero'},
   {name: 'aboutme', title: 'Über mich'},
+  {name: 'typeAnalysis', title: 'Typanalyse'},
+  {name: 'workingMethods', title: 'Arbeitsweise'},
   {name: 'skills', title: 'Skills'},
   {name: 'projects', title: 'Projekte'},
   {name: 'contact', title: 'Kontakt'},
@@ -30,7 +32,7 @@ export const startpage = defineType({
   groups: startpageGroups,
   fields: [
     defineField({
-      name: 'hero',
+      name: 'heroSection',
       title: 'Hero',
       type: 'heroSection',
       group: 'hero',
@@ -40,6 +42,18 @@ export const startpage = defineType({
       title: 'Über mich',
       type: 'aboutMeSection',
       group: 'aboutme',
+    }),
+    defineField({
+      name: 'typeAnalysisSection',
+      title: 'Typanalyse',
+      type: 'typeAnalysisSection',
+      group: 'typeAnalysis',
+    }),
+    defineField({
+      name: 'workingMethodsSection',
+      title: 'Arbeitsweise',
+      type: 'workingMethodsSection',
+      group: 'workingMethods',
     }),
     defineField({
       name: 'skillsSection',
@@ -183,78 +197,97 @@ export const aboutMeSection = defineType({
       type: 'startpageSectionHeader',
       group: 'sectionHeader',
     }),
+  ],
+})
+
+export const typeAnalysisSection = defineType({
+  name: 'typeAnalysisSection',
+  title: 'Typanalyse',
+  type: 'object',
+  groups: commonSectionGroups,
+  fields: [
     defineField({
-      name: 'typeAnalysis',
-      title: 'Typanalyse',
-      type: 'object',
-      group: 'typeAnalysis',
-      fields: [
-        createStringField({
-          name: 'headerHeadline',
-          title: 'Überschrift*',
-          min: 4,
-          max: 24,
-          required: true,
-        }),
-        createStringArrayField({
-          name: 'pros',
-          title: 'Pro Argumente*',
-          itemTitle: 'Pro Argument',
-          required: true,
-        }),
-        createStringArrayField({
-          name: 'cons',
-          title: 'Kontra Argumente*',
-          itemTitle: 'Kontra Argument',
-          required: true,
-        }),
-      ],
+      name: 'sectionSettings',
+      title: 'Einstellungen',
+      type: 'sectionSettings',
+      group: 'sectionSettings',
+    }),
+    createStringField({
+      name: 'headerHeadline',
+      title: 'Überschrift*',
+      min: 4,
+      max: 24,
+      required: true,
+      group: 'content',
+    }),
+    createStringArrayField({
+      name: 'pros',
+      title: 'Pro Argumente*',
+      itemTitle: 'Pro Argument',
+      required: true,
+      group: 'content',
+    }),
+    createStringArrayField({
+      name: 'cons',
+      title: 'Kontra Argumente*',
+      itemTitle: 'Kontra Argument',
+      required: true,
+      group: 'content',
+    }),
+  ],
+})
+
+export const workingMethodsSection = defineType({
+  name: 'workingMethodsSection',
+  title: 'Arbeitsweise',
+  type: 'object',
+  groups: commonSectionGroups,
+  fields: [
+    defineField({
+      name: 'sectionSettings',
+      title: 'Einstellungen',
+      type: 'sectionSettings',
+      group: 'sectionSettings',
+    }),
+    createStringField({
+      name: 'headerHeadline',
+      title: 'Überschrift*',
+      min: 4,
+      max: 24,
+      required: true,
+      group: 'content',
     }),
     defineField({
-      name: 'workingMethods',
-      title: 'Arbeitsweise',
-      type: 'object',
-      group: 'workingMethods',
-      fields: [
-        createStringField({
-          name: 'headerHeadline',
-          title: 'Überschrift*',
-          min: 4,
-          max: 24,
-          required: true,
-        }),
+      name: 'items',
+      title: 'Arbeitsweiseaufzählung',
+      type: 'array',
+      group: 'content',
+      of: [
         defineField({
-          name: 'items',
-          title: 'Arbeitsweiseaufzählung',
-          type: 'array',
-          of: [
-            defineField({
-              name: 'workingMethodItem',
-              title: 'Arbeitsweise',
-              type: 'object',
-              fields: [
-                createStringField({
-                  name: 'headline',
-                  title: 'Überschrift*',
-                  min: 4,
-                  max: 24,
-                  required: true,
-                }),
-                createImageField({
-                  name: 'icon',
-                  title: 'Icon*',
-                  description: 'width: ~80px, height: 80px, Format: SVG, JPG, PNG',
-                  required: true,
-                }),
-                createStringField({
-                  name: 'text',
-                  title: 'Text*',
-                  description: 'Beschreibungstext max. 96 Zeichen',
-                  min: 4,
-                  max: 96,
-                  required: true,
-                }),
-              ],
+          name: 'workingMethodItem',
+          title: 'Arbeitsweise',
+          type: 'object',
+          fields: [
+            createStringField({
+              name: 'headline',
+              title: 'Überschrift*',
+              min: 4,
+              max: 24,
+              required: true,
+            }),
+            createImageField({
+              name: 'icon',
+              title: 'Icon*',
+              description: 'width: ~80px, height: 80px, Format: SVG, JPG, PNG',
+              required: true,
+            }),
+            createStringField({
+              name: 'text',
+              title: 'Text*',
+              description: 'Beschreibungstext max. 96 Zeichen',
+              min: 4,
+              max: 96,
+              required: true,
             }),
           ],
         }),
