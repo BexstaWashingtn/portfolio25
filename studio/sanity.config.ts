@@ -23,6 +23,7 @@ export default defineConfig({
   },
 
   document: {
-    newDocumentOptions: (prev) => prev.filter((item) => item.templateId !== 'siteSettings'),
+    newDocumentOptions: (prev) =>
+      prev.filter((item) => item.templateId !== 'siteSettings' && item.templateId !== 'startpage'),
   },
 })
