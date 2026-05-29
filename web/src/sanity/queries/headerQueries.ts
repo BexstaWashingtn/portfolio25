@@ -4,7 +4,7 @@ export const HEADER_QUERY = groq`{
   "navigation": *[_type == "startpage"][0]{
     "heroSectionId": heroSection.sectionSettings.sectionId,
 
-    "navigation": [
+    "navigation": array::compact([
       select(
         heroSection.sectionSettings.showInNavigation => {
           "id": heroSection.sectionSettings.sectionId,
@@ -47,7 +47,7 @@ export const HEADER_QUERY = groq`{
           "label": contactSection.sectionSettings.navigationLabel
         }
       )
-    ]
+    ])
   },
 
   "logo": *[_type == "siteSettings"][0].siteLogo
