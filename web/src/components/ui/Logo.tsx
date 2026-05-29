@@ -4,17 +4,17 @@ import { Image as ImageType } from "@/types/image";
 
 type Props = ImageType & {
   linkDisabled?: boolean;
-  anchor: string;
+  anchor?: string;
 };
 
 export default function Logo({
   linkDisabled = false,
   src = "/img/logo/logo_beige_shadow.png",
-  width = 53,
-  height = 80,
+  width,
+  height,
   title,
   alt = "Logo Portfolio '25",
-  anchor = "hero",
+  anchor,
 }: Props) {
   const content = (
     <Image src={src} alt={alt} title={title} width={width} height={height} />
