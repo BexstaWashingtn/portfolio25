@@ -22,7 +22,7 @@ export default function HeaderLogo({ isLogoVisible, style, logoDatas }: Props) {
           height={height}
           alt={alt}
           title={title}
-          anchor={anchor}
+          link={anchor}
         />
       )}
     </div>

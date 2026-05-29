@@ -3,29 +3,27 @@ import Image from "next/image";
 import { Image as ImageType } from "@/types/image";
 
 type Props = ImageType & {
-  linkDisabled?: boolean;
-  anchor?: string;
+  link?: string;
 };
 
 export default function Logo({
-  linkDisabled = false,
   src = "/img/logo/logo_beige_shadow.png",
   width,
   height,
   title,
   alt = "Logo Portfolio '25",
-  anchor,
+  link,
 }: Props) {
   const content = (
     <Image src={src} alt={alt} title={title} width={width} height={height} />
   );
 
-  if (linkDisabled) {
+  if (!link) {
     return content;
   }
 
   return (
-    <Link href={`/#${anchor}`} aria-current='page'>
+    <Link href={`/#${link}`} aria-current='page'>
       {content}
     </Link>
   );

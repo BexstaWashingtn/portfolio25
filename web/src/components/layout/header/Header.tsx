@@ -7,7 +7,7 @@ import {
   HeaderDatas,
 } from "@/types/navigation";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
-import { notFound } from "next/navigation";
+import { FALLBACK_HEADER_LOGO } from "./constans";
 
 export default async function Header() {
   const sanityHeaderDatas = await getHeader();
@@ -32,10 +32,6 @@ function isMainNavigationItem(
 function mapHeaderDatas(data: HeaderQueryResult): HeaderDatas | null {
   if (!data) return null;
 
-  if (!data.logo) {
-    notFound();
-  }
-
   const logoImage = data.logo
     ? mapSanityImage({
         image: data.logo,
@@ -51,11 +47,11 @@ function mapHeaderDatas(data: HeaderQueryResult): HeaderDatas | null {
     navigation: data.navigation?.navigation?.filter(isMainNavigationItem) ?? [],
     logo: {
       image: {
-        src: logoImage?.src ?? "/img/logo/logo_beige_shadow.png",
-        alt: logoImage?.alt ?? "Logo Portfolio '25",
-        width: logoImage?.width ?? 50,
-        height: logoImage?.height ?? 73,
-        title: logoImage?.title,
+        src: logoImage?.src ?? FALLBACK_HEADER_LOGO.src,
+        alt: logoImage?.alt ?? FALLBACK_HEADER_LOGO.alt,
+        width: logoImage?.width ?? FALLBACK_HEADER_LOGO.width,
+        height: logoImage?.height ?? FALLBACK_HEADER_LOGO.height,
+        title: logoImage?.title ?? FALLBACK_HEADER_LOGO.title,
       },
       id: data.navigation?.heroSectionId ?? "hero",
     },

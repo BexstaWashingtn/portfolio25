@@ -27,6 +27,7 @@ nav.nav {
     &[data-open="true"] {
       opacity: 1;
       visibility: visible;
+      overflow-y: scroll;
     }
   }
 
