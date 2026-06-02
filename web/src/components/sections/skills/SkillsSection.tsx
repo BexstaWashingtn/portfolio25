@@ -1,6 +1,6 @@
 // SkillsSection.tsx
 import SkillsEntries from "./SkillsEntries";
-import type { Entry } from "@/types/skills";
+import type { Entry } from "@/types/SkillCategories";
 import styles from "./skillsList.module.css";
 
 export default function SkillsSection({

@@ -1,5 +1,5 @@
 import styles from "./skillsList.module.css";
-import type { Category, Subcategory } from "@/types/skills";
+import type { Category, Subcategory } from "@/types/SkillCategories";
 import SkillsSection from "./SkillsSection";
 
 type Props = { datas: Category[] };

@@ -1,5 +1,5 @@
 import Rating from "@/components/ui/rating/Rating";
-import type { Entry } from "@/types/skills";
+import type { Entry } from "@/types/SkillCategories";
 import styles from "./skillsItem.module.css";
 
 export default function SkillsItem({ name, level }: Entry) {

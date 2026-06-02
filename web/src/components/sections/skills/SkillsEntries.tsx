@@ -1,4 +1,4 @@
-import type { Entry } from "@/types/skills";
+import type { Entry } from "@/types/SkillCategories";
 import SkillsItem from "./SkillsItem";
 
 type Props = { entries?: Entry[]; keyPrefix?: string };
