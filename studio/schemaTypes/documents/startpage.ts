@@ -128,6 +128,7 @@ export const startpageSectionHeader = defineType({
       name: 'headerImage',
       title: 'Sektion Icon',
       description: 'width max: 160px height max: 140px, Format SVG, JPG, PNG',
+      imageVariant: true,
       required: false,
     }),
     createStringField({

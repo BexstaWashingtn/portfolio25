@@ -27,6 +27,7 @@ export const siteSettings = defineType({
       required: true,
       group: 'general',
       description: 'Seitenlogo, Format SVG',
+      imageVariant: true,
     }),
 
     createMainColorField({
