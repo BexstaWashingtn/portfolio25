@@ -1,5 +1,5 @@
 import styles from "./rating.module.css";
-import type { Rating } from "@/types/skills";
+import type { Rating } from "@/types/SkillCategories";
 
 type Props = {
   rate: Rating;

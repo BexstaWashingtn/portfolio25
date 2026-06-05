@@ -1,6 +1,6 @@
 "use client";
 
-import { LogoDatas } from "@/types/navigation";
+import { LogoDatas } from "@/types/MainNavigation";
 import Logo from "../../ui/Logo";
 
 type Props = {

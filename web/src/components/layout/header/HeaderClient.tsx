@@ -5,7 +5,7 @@ import { BackgroundGradientWrapper } from "../BackgroundGradientWrapper";
 import HeaderLogo from "./HeaderLogo";
 import NavigationClient from "./navigation/NavigationClient";
 import { usePathname } from "next/navigation";
-import { HeaderDatas } from "@/types/navigation";
+import { HeaderDatas } from "@/types/MainNavigation";
 
 type Props = {
   styles: Record<string, string>;

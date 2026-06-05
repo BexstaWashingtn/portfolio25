@@ -5,7 +5,7 @@ import {
   MainNavigationItem,
   HeaderQueryResult,
   HeaderDatas,
-} from "@/types/navigation";
+} from "@/types/MainNavigation";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { FALLBACK_HEADER_LOGO } from "./constans";
 

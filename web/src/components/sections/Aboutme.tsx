@@ -1,46 +1,28 @@
-import { getProfileData } from "@/lib/profile/getProfileData";
 import Inner from "../utils/Inner";
 import styles from "./aboutme.module.css";
-import SectionHeader from "./SectionHeader";
-import { calculateAgeFromString } from "@/lib/profile/calculateAge";
+import SectionHeader from "./Header";
+import { AboutMeSection } from "@/types/StartpageData";
 
-export default function SectionAboutme({}) {
-  const profile = getProfileData();
-  const age = calculateAgeFromString(profile.bday);
+type Props = {
+  data: AboutMeSection;
+};
 
+export default function SectionAboutme({ data }: Props) {
   // TODO: make actual photo
   // TODO: add a Section Component for all Sections with id,
   // TODO: clear old css code (header, timeline etc.)
 
   return (
-    <section className={styles.about} id='about'>
+    <section className={styles.about} id={data.settings.id}>
       <Inner variant='narrow' paddingTop='xxl' paddingBottom='xxl'>
-        <SectionHeader
-          image={{
-            src: "/img/aboutme/tb_smile.png",
-            alt: `Foto von ${profile.firstname}`,
-            width: 286,
-            height: 382,
-            className: "",
-          }}
-          headline={
-            <>
-              Über <span className='highlight-peach'>mich</span>
-            </>
-          }
-          text={
-            <>
-              Ich bin {profile.firstname}, {age} Jahre, aus {profile.state}.
-              <br />
-              Schon früh entdeckte ich meine Leidenschaft für Gestaltung – vom
-              Zeichnen über Graffiti bis hin zur digitalen Medienwelt. Seit
-              meiner Ausbildung zum Mediengestalter (2001) entwickle ich
-              digitale Produkte – heute vor allem moderne Webanwendungen mit
-              React und Next.js.
-            </>
-          }
-          className='borderImage'
-        />
+        {data.header && (
+          <SectionHeader
+            image={data.header.image ?? undefined}
+            headline={data.header.headline}
+            text={data.header.text}
+            className='borderImage'
+          />
+        )}
       </Inner>
     </section>
   );

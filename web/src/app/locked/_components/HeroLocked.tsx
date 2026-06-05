@@ -2,13 +2,18 @@ import Image from "next/image";
 import styles from "./hero.module.css";
 import { ImBlocked } from "react-icons/im";
 import Logo from "@/components/ui/Logo";
+import { getPortfolioLogo } from "@/sanity/fetchPortfolio";
 
-export default function SectionHero() {
+export default async function SectionHero() {
+  const sanityLogoData = await getPortfolioLogo();
+
+  console.log("sanityLogoData: ", sanityLogoData);
+
   return (
     <section className={styles.hero} id='hero'>
       <div className={styles.heroInner}>
         <div className={styles.logoImageOverlay}>
-          <Logo width={180} height={263} linkDisabled={true} />
+          <Logo width={180} height={263} />
         </div>
         <div className={styles.heroImageCon}>
           <Image

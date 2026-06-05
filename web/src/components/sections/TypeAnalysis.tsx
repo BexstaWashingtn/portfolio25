@@ -2,53 +2,15 @@ import Image from "next/image";
 import styles from "./typeAnalysis.module.css";
 import Inner from "@components/utils/Inner";
 import Stack from "../utils/Stack";
+import { TypeAnalysisSection } from "@/types/StartpageData";
 
-const typeAnalysisData = {
-  pro: [
-    {
-      entry: "kreativ & gestaltungssicher",
-    },
-    {
-      entry: "experimentierfreudig & begeisterungsfähig",
-    },
-    {
-      entry: "eigenständig & lösungsorientiert",
-    },
-    {
-      entry: "visuell denkend",
-    },
-    {
-      entry: "empathisch & reflektiert",
-    },
-    {
-      entry: "Naturverbunden & sinnorientiert",
-    },
-  ],
-  contra: [
-    {
-      entry: "braucht klare Prioritäten bei komplexen Aufgaben",
-    },
-    {
-      entry: "frustriert bei sinnlosen oder monotonen Aufgabe",
-    },
-    {
-      entry: "reagiert sensibel auf Einschränkungen",
-    },
-    {
-      entry: "tut sich schwer mit rein Abstraktem",
-    },
-    {
-      entry: "emotional sensibel",
-    },
-    {
-      entry: "erschöpft in rein digitalen Kontexten",
-    },
-  ],
+type Props = {
+  data: TypeAnalysisSection;
 };
 
-export default function TypeAnalysis() {
+export default function SectionTypeAnalysis({ data }: Props) {
   return (
-    <section className={styles.typeAnalysis} id='type-analysis'>
+    <section className={styles.typeAnalysis} id={data.settings.id}>
       <div className={styles.background}>
         <Inner
           variant='narrow'
@@ -60,16 +22,16 @@ export default function TypeAnalysis() {
             className='align-stretch-md'
             gap={{ base: "lg", md: "md", sm: "sm" }}
           >
-            <h3 className={styles.h3}>Typanalyse</h3>
+            <h3 className={styles.h3}>{data.header.headline}</h3>
             <div className={styles.content}>
               <div className={styles.per}>
                 <ul className={styles.perTextList}>
-                  {typeAnalysisData.pro.map((item, index) => (
+                  {data.content.pros.map((item, index) => (
                     <li
                       key={`${index}:${item}`}
                       className={styles.perTextListItem}
                     >
-                      {item.entry}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -96,12 +58,12 @@ export default function TypeAnalysis() {
                   />
                 </div>
                 <ul className={styles.contraTextList}>
-                  {typeAnalysisData.contra.map((item, index) => (
+                  {data.content.cons.map((item, index) => (
                     <li
                       key={`${index}:${item}`}
                       className={styles.contraTextListItem}
                     >
-                      {item.entry}
+                      {item}
                     </li>
                   ))}
                 </ul>

@@ -5,3 +5,5 @@ export const PORTFOLIO_MAIN_COLOR_QUERY = `
     b
   }
 `;
+
+export const PORTFOLIO_LOGO_QUERY = `*[_type == "siteSettings"][0].siteLogo`;

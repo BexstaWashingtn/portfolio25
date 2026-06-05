@@ -6,39 +6,17 @@ import WorkingMethodItem from "./WorkingMethodItem";
 import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
 import Stack from "@/components/utils/Stack";
+import { WorkingMethodSection } from "@/types/StartpageData";
 
-export default function SectionWorkingMethod() {
+type Props = {
+  data: WorkingMethodSection;
+};
+
+export default function SectionWorkingMethod({ data }: Props) {
   const isMobile = useIsMobile();
 
-  const items = [
-    {
-      id: 1,
-      icon: "/img/workMethod/icon_analytically.svg",
-      title: "Analytisch",
-      text: "Plant strukturiert, denkt in Nutzer-Flows und arbeite gern mit Skizzen & Wireframes.",
-    },
-    {
-      id: 2,
-      icon: "/img/workMethod/icon_cooperation.svg",
-      title: "Kooperativ",
-      text: "Lösungsorientiert, offen für Feedback und arbeitet gern auf Augenhöhe – leise, aber präsent.",
-    },
-    {
-      id: 3,
-      icon: "/img/workMethod/icon_usercentric.svg",
-      title: "Nutzerzentriert",
-      text: "Verbindet Barrierefreiheit mit Gestaltungslust – verständlich, zugänglich, individuell.",
-    },
-    {
-      id: 4,
-      icon: "/img/workMethod/icon_technically.svg",
-      title: "Technisch",
-      text: "Schreibt modularen, sprechenden Code – lieber einfach & robust als überladen & trendy.",
-    },
-  ];
-
   return (
-    <section className={styles.workingMethod} id='working-method'>
+    <section className={styles.workingMethod} id={data.settings.id}>
       <Inner
         variant='full'
         paddingTop='xxl'
@@ -46,13 +24,13 @@ export default function SectionWorkingMethod() {
         className={styles.fourPointLimit}
       >
         <Stack gap={{ base: "lg", md: "md", sm: "sm" }}>
-          <h3 className={styles.h3}>Arbeitsweise</h3>
+          <h3 className={styles.h3}>{data.header.headline}</h3>
           <Inner variant='full' paddingTop='md' paddingInline={false}>
             {isMobile ? (
               // only render Swiper on < 768 phone devices
 
               <CustomSwiper
-                items={items}
+                items={data.content.items}
                 renderItem={(item) => (
                   <WorkingMethodItem key={item.id} item={item} />
                 )}
@@ -73,7 +51,7 @@ export default function SectionWorkingMethod() {
             ) : (
               // render list on tablet and desktop
               <ul className={styles.workMethodList}>
-                {items.map((item) => (
+                {data.content.items.map((item) => (
                   <WorkingMethodItem key={item.id} item={item} />
                 ))}
               </ul>

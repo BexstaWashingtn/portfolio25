@@ -4,7 +4,7 @@ import Link from "@ui/link/Link";
 import styles from "./navigation.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { MainNavigationItem } from "@/types/navigation";
+import { MainNavigationItem } from "@/types/MainNavigation";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state

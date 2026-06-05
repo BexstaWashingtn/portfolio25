@@ -1,16 +1,14 @@
 // SkillsSection.tsx
 import SkillsEntries from "./SkillsEntries";
-import type { Entry } from "@/types/SkillCategories";
+import type { SkillEntry } from "@/types/SkillCategories";
 import styles from "./skillsList.module.css";
 
 export default function SkillsSection({
   title,
   entries = [],
-  keyPrefix,
 }: {
   title?: string | null;
-  entries?: Entry[];
-  keyPrefix: string;
+  entries?: SkillEntry[];
 }) {
   if (!entries || entries.length === 0) return null;
 
@@ -21,7 +19,7 @@ export default function SkillsSection({
     <Wrapper className={styles.subSection}>
       {title && <h4 className={styles.h4}>{title}</h4>}
       <ul className={styles.ItemList}>
-        <SkillsEntries entries={entries} keyPrefix={keyPrefix} />
+        <SkillsEntries entries={entries} />
       </ul>
     </Wrapper>
   );

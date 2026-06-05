@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Image as ImageData } from "@/types/image";
+import { Image as ImageData } from "@/types/Image";
 import styles from "./projectVisualsFullImage.module.css";
 
 type Props = {

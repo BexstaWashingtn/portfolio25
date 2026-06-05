@@ -1,13 +1,12 @@
-import type { Entry } from "@/types/SkillCategories";
+import type { SkillEntry } from "@/types/SkillCategories";
 import SkillsItem from "./SkillsItem";
 
-type Props = { entries?: Entry[]; keyPrefix?: string };
+type Props = { entries?: SkillEntry[] };
 
-export default function SkillsEntries({ entries = [], keyPrefix }: Props) {
+export default function SkillsEntries({ entries = [] }: Props) {
   if (!entries.length) return null;
 
   return entries?.map((item) => {
-    const key = keyPrefix ? `${keyPrefix}::${item.name}` : item.name;
-    return <SkillsItem key={key} {...item} />;
+    return <SkillsItem key={item._key} {...item} />;
   });
 }

@@ -1,16 +1,39 @@
 import Inner from "@/components/utils/Inner";
 import styles from "./skills.module.css";
 import Stack from "@/components/utils/Stack";
-import skillDatas from "./data.json";
 import SkillsList from "./SkillsList";
 import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../Header";
 import SkillsLegend from "./SkillsLegend";
+import { SkillsSection } from "@/types/StartpageData";
 
 // TODO: responsivable implementation
 
-export default function SectionSkills() {
+type Props = {
+  data: SkillsSection;
+};
+
+export default function SectionSkills({ data }: Props) {
+  const sectionContent = (
+    <section id={data.settings.id} className={styles.skills}>
+      <Inner paddingBottom='xxl' paddingTop='xxl' variant='narrow'>
+        <Stack direction='column' gap={{ base: "xl", md: "lg" }}>
+          <SectionHeader
+            image={data.header.image ?? undefined}
+            headline={data.header.headline}
+            text={data.header.text}
+          />
+
+          <div className={styles.main}>
+            <SkillsList data={data.content} />
+            <SkillsLegend />
+          </div>
+        </Stack>
+      </Inner>
+    </section>
+  );
+
   return (
     <BackgroundImageWrapper
       image={{
@@ -44,30 +67,7 @@ export default function SectionSkills() {
           ],
         }}
       >
-        <section id='skills' className={styles.skills}>
-          <Inner paddingBottom='xxl' paddingTop='xxl' variant='narrow'>
-            <Stack direction='column' gap={{ base: "xl", md: "lg" }}>
-              <SectionHeader
-                image={{
-                  src: "/img/skills/icon_skills.svg",
-                  alt: "Symbol für Fähigkeiten und Kenntnisse",
-                  width: 180,
-                  height: 224,
-                }}
-                headline={"Skills"}
-                text={`Die Fähigkeiten basieren auf Erfahrungen aus realen
-                      Projekten – gesammelt seit meiner Ausbildung,
-                      weiterentwickelt im Berufsalltag und vertieft durch
-                      gezielte Weiterbildung.`}
-              />
-
-              <div className={styles.main}>
-                <SkillsList datas={skillDatas} />
-                <SkillsLegend />
-              </div>
-            </Stack>
-          </Inner>
-        </section>
+        {sectionContent}
       </BackgroundGradientWrapper>
     </BackgroundImageWrapper>
   );

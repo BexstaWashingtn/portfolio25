@@ -1,7 +1,7 @@
 import Inner from "../../utils/Inner";
 import Stack from "../../utils/Stack";
 import styles from "./sectionProjects.module.css";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../Header";
 import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import ProjectCardSlider from "./ProjectCardSlider";
@@ -10,8 +10,13 @@ import { getProjectsPreview } from "@/sanity/fetchProjects";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
 import { notFound } from "next/navigation";
 import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
+import { ProjectsSection } from "@/types/StartpageData";
 
-export default async function SectionProjects() {
+type Props = {
+  data: ProjectsSection;
+};
+
+export default async function SectionProjects({ data }: Props) {
   const projectsSanity: SanityProjectPreview[] = await getProjectsPreview();
 
   if (!projectsSanity) {
@@ -21,7 +26,7 @@ export default async function SectionProjects() {
   const sliderItems: Project[] = mapProjectPreviews(projectsSanity);
 
   return (
-    <section className={styles.projects} id='projects'>
+    <section className={styles.projects} id={data.settings.id}>
       <BackgroundImageWrapper
         image={{
           src: "/img/projects/background.jpg",
@@ -50,20 +55,15 @@ export default async function SectionProjects() {
           }}
         >
           <Stack>
-            <Inner variant='narrow' paddingTop='xxl'>
-              <SectionHeader
-                headline={"Projekte"}
-                text={
-                  "Die Projekte entstanden im Rahmen meiner Weiterbildung 2024/25 oder eigenständig – mit Fokus auf UX, Barrierefreiheit und moderner Frontend-Entwicklung."
-                }
-                image={{
-                  src: "img/projects/icon_projects.svg",
-                  width: 160,
-                  height: 140,
-                  alt: "Projekt-Preview Icon",
-                }}
-              />
-            </Inner>
+            {data.header && (
+              <Inner variant='narrow' paddingTop='xxl'>
+                <SectionHeader
+                  headline={data.header.headline}
+                  text={data.header.text}
+                  image={data.header.image ?? undefined}
+                />
+              </Inner>
+            )}
             <Inner variant='full' paddingBottom='xxl'>
               <ProjectCardSlider items={sliderItems} />
             </Inner>

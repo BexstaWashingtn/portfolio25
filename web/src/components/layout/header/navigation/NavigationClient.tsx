@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import MobileButton from "./MobileButton";
-import { MainNavigationItem } from "@/types/navigation";
+import { MainNavigationItem } from "@/types/MainNavigation";
 
 type Props = {
   isMobileMenuOpen: boolean;

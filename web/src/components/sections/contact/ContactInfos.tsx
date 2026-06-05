@@ -1,44 +1,40 @@
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import styles from "./contact.module.css";
+import { ContactData } from "@/types/StartpageData";
 
-type ContactData = {
-  name: string;
-  address: {
-    street: string;
-    state: string;
-    postalcode: string;
-  };
-  phone: {
-    display: string;
-    value: string; // für tel:
-  };
-  email: string;
+type Props = {
+  data: ContactData;
 };
 
-type ContactProps = {
-  contactData: ContactData;
-};
-
-export default function ContactAddress({ contactData }: ContactProps) {
-  const { name, address, phone, email } = contactData;
+export default function ContactAddress({ data }: Props) {
+  const { firstName, lastName, address, phone, email, github } = data;
+  const { street, postalCode, city } = address;
 
   return (
     <address className={styles.contactDataWrapper}>
       <div className={styles.address}>
-        {name}
+        {`${firstName} ${lastName}`}
         <br />
-        {address.street}
+        {street}
         <br />
-        {`${address.postalcode} ${address.state}`}
+        {`${postalCode} ${city}`}
       </div>
       <div className={styles.contactDataGroup}>
         <p className={styles.contactDataGroupItem}>
           <FaWhatsapp />
-          <a href={`tel:${phone.value}`}>{phone.display}</a>
+          <a href={`tel:${phone}`}>{phone}</a>
         </p>
         <p className={styles.contactDataGroupItem}>
           <FaTelegramPlane />
           <a href={`mailto:${email}`}>{email}</a>
+        </p>
+      </div>
+      <div className={styles.contactDataGroup}>
+        <p className={styles.contactDataGroupItem}>
+          <FaGithub />
+          <a target='_blank' href={github}>
+            Github
+          </a>
         </p>
       </div>
     </address>

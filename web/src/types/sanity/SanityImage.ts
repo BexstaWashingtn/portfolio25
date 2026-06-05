@@ -4,7 +4,7 @@ export type SanityImage = {
     _ref?: string;
     _type?: "reference";
   };
-  alt?: string;
+  alt: string;
   title?: string;
   crop?: {
     top: number;

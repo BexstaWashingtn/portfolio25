@@ -1,17 +1,21 @@
-export type Rating = number;
+export type SkillLevel = 1 | 2 | 3 | 4 | 5;
 
-export type Entry = {
-  name: string;
-  level?: Rating;
+export type SkillEntry = {
+  _key: string;
+  _type?: "skill";
+  skill: string;
+  level?: SkillLevel;
 };
 
-export type Subcategory = {
-  name: string;
-  entries: Entry[];
+export type SkillSubcategory = {
+  title: string;
+  entries: SkillEntry[];
 };
 
-export type Category = {
-  name: string;
-  entries?: Entry[];
-  subcategory?: Subcategory[];
+export type SkillCategory = {
+  title: string;
+  entries?: SkillEntry[];
+  subcategories?: SkillSubcategory[];
 };
+
+export type SkillsContent = SkillCategory[];

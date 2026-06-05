@@ -1,14 +1,29 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
-import { RiArrowDownSLine } from "react-icons/ri";
-import Logo from "../ui/Logo";
+import Logo from "../../ui/Logo";
+import { HeroSection } from "@/types/StartpageData";
 
-export default function SectionHero() {
+type Props = {
+  children: React.ReactNode;
+  data: HeroSection;
+};
+
+export default function SectionHero({ children, data }: Props) {
+  const logo = data?.header?.image ? data.header.image : null;
+
   return (
     <section className={styles.hero} id='hero'>
       <div className={styles.heroInner}>
         <div className={styles.logoImageOverlay}>
-          <Logo width={180} height={263} linkDisabled={true} />
+          {logo && (
+            <Logo
+              src={logo.src}
+              width={logo.width}
+              {...(logo.height ? { height: logo.height } : {})}
+              alt={logo.alt}
+              title={logo.title}
+            />
+          )}
         </div>
         <div className={styles.heroImageCon}>
           <Image
@@ -33,11 +48,10 @@ export default function SectionHero() {
             </h1>
           </div>
         </div>
-
         <div className={styles.lockOverlay}>
           <div className={styles.lockText}>
             <button className={styles.buttonStart} aria-label='Start Website'>
-              <RiArrowDownSLine className={styles.lockIcon} />
+              {children}
             </button>
           </div>
         </div>

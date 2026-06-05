@@ -31,7 +31,7 @@
 
 import styles from "./backgroundImageWrapper.module.css";
 import Image from "next/image";
-import { Image as ImageData } from "@/types/image";
+import { Image as ImageData } from "@/types/Image";
 import React from "react";
 
 type ImageProps = ImageData & {

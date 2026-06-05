@@ -1,7 +1,12 @@
 // schemaTypes/fields/imageField.ts
 import {defineField, type ImageRule} from 'sanity'
 
-type ImageVariant = 'logo' | 'portrait' | 'icon' | 'background'
+type ImageVariant =
+  | 'heroLogo'
+  | 'headerPortrait'
+  | 'headerIcon'
+  | 'workingMethodsIcon'
+  | 'sectionBackground'
 
 type Options = {
   name?: string
@@ -23,7 +28,7 @@ export function createImageField({
   description,
   hotspot = false,
   imageVariant = false,
-  initialVariant = 'icon',
+  initialVariant = 'headerIcon',
 }: Options = {}) {
   return defineField({
     name,
@@ -62,20 +67,24 @@ export function createImageField({
 
                 list: [
                   {
-                    title: 'Logo',
-                    value: 'logo',
+                    title: 'Hero Logo',
+                    value: 'heroLogo',
                   },
                   {
-                    title: 'Portrait',
-                    value: 'portrait',
+                    title: 'Sectionheader Portrait',
+                    value: 'headerPortrait',
                   },
                   {
-                    title: 'Icon',
-                    value: 'icon',
+                    title: 'Sectionheader Icon',
+                    value: 'headerIcon',
                   },
                   {
-                    title: 'Hintergrund',
-                    value: 'background',
+                    title: 'Working Methods Icon',
+                    value: 'workingMethodsIcon',
+                  },
+                  {
+                    title: 'Section Hintergrund',
+                    value: 'sectionBackground',
                   },
                 ],
               },

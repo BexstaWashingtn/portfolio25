@@ -115,6 +115,8 @@ export const sectionSettings = defineType({
       title: 'Hintergrundbild',
       description: '1920 x 1080px, Format JPEG',
       required: false,
+      imageVariant: true,
+      initialVariant: 'sectionBackground',
     }),
   ],
 })
@@ -280,6 +282,8 @@ export const workingMethodsSection = defineType({
               name: 'icon',
               title: 'Icon*',
               description: 'width: ~80px, height: 80px, Format: SVG, JPG, PNG',
+              imageVariant: true,
+              initialVariant: 'workingMethodsIcon',
               required: true,
             }),
             createStringField({
@@ -345,7 +349,23 @@ export const skillsSection = defineType({
               name: 'items',
               title: 'Erfahrungen',
               type: 'array',
-              of: [{type: 'string'}],
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    {
+                      name: 'skill',
+                      title: 'Erfahrung',
+                      type: 'string',
+                    },
+                  ],
+                  preview: {
+                    select: {
+                      title: 'skill',
+                    },
+                  },
+                },
+              ],
             },
           ],
         },

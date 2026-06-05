@@ -1,14 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
+import { ImageWithVariants } from "@/types/StartpageData";
 import styles from "./workingMethodItem.module.css";
 
 type Props = {
-  item: { icon: string; title: string; text: string };
+  item: { icon: ImageWithVariants; headline: string; text: string };
 };
 export default function WorkingMedhodItem({ item }: Props) {
   return (
     <li className={styles.workMehtodItem}>
-      <img className={styles.icon} src={item.icon} alt='' height={80} />
-      <h4 className={styles.headline}>{item.title}</h4>
+      <img
+        className={styles.icon}
+        src={item.icon.src}
+        alt={item.icon.alt}
+        title={item.icon.title ?? item.icon.alt}
+        width={item.icon.width}
+        height={item.icon.height}
+      />
+      <h4 className={styles.headline}>{item.headline}</h4>
       <p className={styles.text}>{item.text}</p>
     </li>
   );
