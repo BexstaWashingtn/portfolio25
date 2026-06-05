@@ -1,4 +1,4 @@
-import { Category } from "../SkillCategories";
+import { SkillCategory } from "../SkillCategories";
 import { SanityImage } from "./SanityImage";
 import { SanityImageVariant } from "./SanityImageVariant";
 
@@ -117,7 +117,7 @@ export type SkillsSectionQueryResult = {
   _type: "skillsSection";
   settings: SectionSettingsQueryResult;
   header: SectionHeaderQueryResult;
-  content: Category[];
+  content: SkillCategory[];
 };
 
 /* ---------------------------------------------- */

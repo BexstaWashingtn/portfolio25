@@ -1,5 +1,5 @@
 import type { Image } from "./Image";
-import { Category } from "./SkillCategories";
+import { SkillCategory } from "./SkillCategories";
 
 export type StartpageSectionsData = {
   heroSection: HeroSection | null;
@@ -79,7 +79,7 @@ export type WorkingMethodSection = {
 export type SkillsSection = {
   _type: "skillsSection";
   header: SectionHeader;
-  content: Category[];
+  content: SkillCategory[];
   settings: SectionSettings;
 };
 
