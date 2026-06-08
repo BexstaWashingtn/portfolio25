@@ -11,7 +11,7 @@ import { cookies } from "next/headers";
 // TODO: is Website ready acivate Vercel Analytics
 
 export const metadata: Metadata = {
-  title: "Portfolio | Thomas Badrow",
+  title: "Portfolio - Thomas Badrow",
   description: "Herzlich Willkommen auf meinem Portfolio",
   icons: {
     icon: "/favicon.svg",

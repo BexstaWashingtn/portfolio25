@@ -2,9 +2,9 @@
 
 import Link from "@ui/link/Link";
 import styles from "./navigation.module.css";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { MainNavigationItem } from "@/types/MainNavigation";
+import useDocumentScrollLock from "@/lib/hooks/useDocumentScrollLock";
 
 type Props = {
   setIsMobileMenuOpen: (isOpen: boolean) => void; // Function to set the mobile menu open state
@@ -29,11 +29,7 @@ export default function Navigation({
   };
 
   // Prevents background scrolling when the mobile menu is open
-  useEffect(() => {
-    const htmlEl = document.documentElement;
-    htmlEl.classList.toggle("overflow-hidden", isMobileMenuOpen);
-    return () => htmlEl.classList.remove("overflow-hidden");
-  }, [isMobileMenuOpen]);
+  useDocumentScrollLock(!!isMobileMenuOpen);
 
   return (
     <nav

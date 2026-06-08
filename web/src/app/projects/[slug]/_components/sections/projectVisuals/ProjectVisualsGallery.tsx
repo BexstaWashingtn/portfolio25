@@ -9,6 +9,7 @@ import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectVisualsModalItem from "./projectVisualsFullImage";
 import { AnimatePresence, motion } from "framer-motion";
 import Icon from "@/components/ui/Icon";
+import useDocumentScrollLock from "@/lib/hooks/useDocumentScrollLock";
 
 type Props = {
   visuals: ProjectVisualsData[];
@@ -42,6 +43,8 @@ export default function ProjectVisualsGallery({ visuals }: Props) {
   }, [isModalOpen]);
 
   const isDesktop = !useIsMobile();
+
+  useDocumentScrollLock(isModalOpen);
 
   return (
     <>
