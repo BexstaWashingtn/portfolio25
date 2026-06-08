@@ -8,7 +8,7 @@ type Props = {
 
 export default function ContactAddress({ data }: Props) {
   const { firstName, lastName, address, phone, email, github } = data;
-  const { street, postalCode, city } = address;
+  const { street, postalcode, city } = address;
 
   return (
     <address className={styles.contactDataWrapper}>
@@ -17,7 +17,7 @@ export default function ContactAddress({ data }: Props) {
         <br />
         {street}
         <br />
-        {`${postalCode} ${city}`}
+        {`${postalcode} ${city}`}
       </div>
       <div className={styles.contactDataGroup}>
         <p className={styles.contactDataGroupItem}>
