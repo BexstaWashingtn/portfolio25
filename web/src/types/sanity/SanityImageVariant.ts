@@ -1,4 +1,4 @@
-export type SanityImageVarianttypes =
+export type SanityImageVariantTypes =
   | "heroLogo"
   | "headerPortrait"
   | "headerIcon"
@@ -6,5 +6,5 @@ export type SanityImageVarianttypes =
   | "sectionBackground";
 
 export type SanityImageVariant = {
-  imageVariant: SanityImageVarianttypes;
+  imageVariant: SanityImageVariantTypes;
 };

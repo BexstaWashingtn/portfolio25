@@ -20,20 +20,19 @@ export type SectionsData =
   | ProjectsSection
   | ContactSection;
 
-export type ImageWithVariants = Image & {
+export type ImageWithType = Image & {
   _type: "image";
-  imageVariant: string;
 };
 
 export type SectionSettings = {
   id: string;
-  backgroundImage?: ImageWithVariants | null;
+  backgroundImage?: ImageWithType | null;
 };
 
 export type SectionHeader = {
   headline?: string;
   text?: string;
-  image?: ImageWithVariants | null;
+  image?: ImageWithType | null;
 };
 
 export type HeroSection = {
@@ -62,7 +61,7 @@ export type WorkingMethodItem = {
   _key: string;
   _type: "workingMethodItem";
   headline: string;
-  icon: ImageWithVariants;
+  icon: ImageWithType;
   text: string;
   id: string;
 };

@@ -10,9 +10,13 @@ type Props = {
 
 export default function SectionHero({ children, data }: Props) {
   const logo = data?.header?.image ? data.header.image : null;
+  const settings = data?.settings;
+  const bgImage = data?.settings?.backgroundImage?.src
+    ? data?.settings?.backgroundImage
+    : null;
 
   return (
-    <section className={styles.hero} id='hero'>
+    <section className={styles.hero} id={settings.id}>
       <div className={styles.heroInner}>
         <div className={styles.logoImageOverlay}>
           {logo && (
@@ -25,17 +29,20 @@ export default function SectionHero({ children, data }: Props) {
             />
           )}
         </div>
-        <div className={styles.heroImageCon}>
-          <Image
-            src='/img/background/particel-waves_mono_1920x1280.jpg'
-            alt=''
-            width={1920}
-            height={1280}
-            priority
-            className={styles.heroImage}
-            aria-hidden='true'
-          />
-        </div>
+        {bgImage && (
+          <div className={styles.heroImageCon}>
+            <Image
+              src={bgImage.src}
+              alt={bgImage.alt}
+              width={bgImage.width}
+              height={bgImage.height}
+              title={bgImage.title}
+              priority
+              className={styles.heroImage}
+              aria-hidden='true'
+            />
+          </div>
+        )}
         <div className={styles.heroTextOverlay}>
           <div className={styles.heroTextInner}>
             <h1 className={styles.heroHeadline}>

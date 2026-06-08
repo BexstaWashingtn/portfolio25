@@ -35,11 +35,7 @@ export default async function Home() {
     notFound();
   }
 
-  console.log("sanityStartpageData: ", sanityStartpageData);
-
   const StartpageSectionsData = mappedStartpageSections(sanityStartpageData);
-
-  console.log("StartpageSectionsData: ", StartpageSectionsData);
 
   const {
     heroSection,
