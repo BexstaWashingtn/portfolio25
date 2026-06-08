@@ -1,8 +1,8 @@
 import styles from "./rating.module.css";
-import type { Rating } from "@/types/SkillCategories";
+import type { SkillLevel } from "@/types/SkillCategories";
 
 type Props = {
-  rate: Rating;
+  rate: SkillLevel;
   max?: number;
 };
 
