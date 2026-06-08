@@ -3,27 +3,12 @@ import clsx from "clsx";
 import styles from "./skillslegend.module.css";
 
 const legendData = [
-  {
-    name: "Experte",
-    level: 5,
-  },
-  {
-    name: "Sehr gut",
-    level: 4,
-  },
-  {
-    name: "Fortgeschritten",
-    level: 3,
-  },
-  {
-    name: "Basiswissen",
-    level: 2,
-  },
-  {
-    name: "erste Erfahrungen",
-    level: 1,
-  },
-];
+  { name: "Experte", level: 5 },
+  { name: "Sehr gut", level: 4 },
+  { name: "Fortgeschritten", level: 3 },
+  { name: "Basiswissen", level: 2 },
+  { name: "erste Erfahrungen", level: 1 },
+] as const;
 
 export default function SkillsLegend({}) {
   return (
