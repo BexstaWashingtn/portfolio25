@@ -1,5 +1,5 @@
 import styles from "./projectChallenge.module.css";
-import { ProjectChallengeData } from "../../../types/projectData";
+import { ProjectChallengeData } from "../../../types/ProjectData";
 
 type Props = {
   challenge: ProjectChallengeData;

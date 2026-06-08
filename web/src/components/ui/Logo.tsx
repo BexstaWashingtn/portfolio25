@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Image as ImageType } from "@/types/image";
+import { Image as ImageType } from "@/types/Image";
 
 type Props = ImageType & {
   link?: string;

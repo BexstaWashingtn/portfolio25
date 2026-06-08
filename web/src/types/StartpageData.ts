@@ -1,4 +1,4 @@
-import type { Image } from "./image";
+import type { Image } from "./Image";
 import { SkillCategory } from "./SkillCategories";
 
 export type StartpageSectionsData = {

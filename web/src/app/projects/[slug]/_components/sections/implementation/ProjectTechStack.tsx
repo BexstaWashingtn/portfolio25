@@ -3,7 +3,7 @@ import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradien
 import styles from "./projectTechStack.module.css";
 import Inner from "@/components/utils/Inner";
 import Stack from "@/components/utils/Stack";
-import { ProjectTechstackData } from "../../../types/projectData";
+import { ProjectTechstackData } from "../../../types/ProjectData";
 
 const iconMap = {
   frontend: "/img/projects/icons/icon_frontend.svg",

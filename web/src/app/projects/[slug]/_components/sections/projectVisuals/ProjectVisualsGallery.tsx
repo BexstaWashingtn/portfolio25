@@ -1,7 +1,7 @@
 import styles from "./projectVisualsGallery.module.css";
 import useIsMobile from "@/lib/hooks/useIsMobile";
 import { useEffect, useState } from "react";
-import { ProjectVisualsData } from "../../../types/projectData";
+import { ProjectVisualsData } from "../../../types/ProjectData";
 import ProjectVisualsItem from "./ProjectVisualsItem";
 import control from "@ui/primitives/controls/control.module.css";
 import Button from "@/components/ui/form/Button";

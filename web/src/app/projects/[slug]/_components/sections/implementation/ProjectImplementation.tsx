@@ -8,7 +8,7 @@ import {
   ProjectImplementationData,
   ProjectProcessData,
   ProjectTechstackData,
-} from "./../../../types/projectData";
+} from "../../../types/ProjectData";
 import { cleanStringArray } from "@/lib/utils/data/cleanStringArray";
 import { safeString } from "@/lib/utils/data/safeString";
 import { ProjectTechstackRaw } from "@/types/sanity/SanityProjectData";

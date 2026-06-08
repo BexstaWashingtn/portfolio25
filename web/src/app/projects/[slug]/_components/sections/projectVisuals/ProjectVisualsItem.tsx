@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./projectVisualsItem.module.css";
-import { SanityImageData } from "../../../types/projectData";
+import { SanityImageData } from "../../../types/ProjectData";
 
 type Props = {
   item: SanityImageData;

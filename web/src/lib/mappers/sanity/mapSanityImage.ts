@@ -1,6 +1,6 @@
-import { SanityImageData } from "@/app/projects/[slug]/types/projectData";
 import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
 import { SanityImage } from "@/types/sanity/SanityImage";
+import { ImageWithType } from "@/types/StartpageData";
 
 type MapSanityImageProps = {
   image: SanityImage;
@@ -20,7 +20,7 @@ export function mapSanityImage({
   title,
   _type,
   withHotspot = false,
-}: MapSanityImageProps): SanityImageData | null {
+}: MapSanityImageProps): ImageWithType | null {
   const imageData = buildSanitySrc(image, width, height, withHotspot);
 
   if (!imageData) return null;

@@ -1,7 +1,7 @@
 import Inner from "@/components/utils/Inner";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import styles from "./projectLearnings.module.css";
-import { ProjectLearningsData } from "./../../types/projectData";
+import { ProjectLearningsData } from "../../types/ProjectData";
 import { cleanStringArray } from "@/lib/utils/data/cleanStringArray";
 
 type Props = {
