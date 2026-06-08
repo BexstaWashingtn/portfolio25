@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./header.module.css";
 import Image from "next/image";
-import { Image as ImageData } from "@/types/Image";
+import { Image as ImageData } from "@/types/image";
 
 type imageProps = ImageData & {
   className?: string;

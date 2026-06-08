@@ -1,5 +1,5 @@
 import { SanityImage } from "./sanity/SanityImage";
-import { Image } from "./Image";
+import { Image } from "./image";
 
 export type MainNavigationItem = {
   id: string;
