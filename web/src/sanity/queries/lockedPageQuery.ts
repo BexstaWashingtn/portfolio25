@@ -12,7 +12,7 @@ export const LOCKEDPAGE_QUERY = groq`{ "siteSettings": *[_type == "siteSettings"
           "backgroundImage": heroSection.sectionSettings.backgroundImage,
         },
         "header": {
-          "text": heroSection.teaser
+          "headline": heroSection.teaser
         }
       }
     )

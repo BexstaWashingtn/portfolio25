@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { Image as ImageData } from "@/types/Image";
+import { Image as ImageType } from "@/types/Image";
 import styles from "./projectVisualsFullImage.module.css";
 
 type Props = {
-  item: ImageData;
+  item: ImageType;
   caption: string | undefined;
 };
 export default function projectVisualsFullImage({ item, caption }: Props) {
