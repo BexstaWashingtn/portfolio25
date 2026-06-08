@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageWithVariants } from "@/types/StartpageData";
+import { ImageWithType } from "@/types/StartpageData";
 import styles from "./workingMethodItem.module.css";
 
 type Props = {
-  item: { icon: ImageWithVariants; headline: string; text: string };
+  item: { icon: ImageWithType; headline: string; text: string };
 };
 export default function WorkingMedhodItem({ item }: Props) {
   return (
