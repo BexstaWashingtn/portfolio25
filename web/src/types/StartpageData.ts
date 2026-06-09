@@ -94,7 +94,7 @@ export type ContactData = {
   address: {
     city: string;
     country: string;
-    postalcode: string;
+    postalCode: string;
     street: string;
   };
   phone: string;

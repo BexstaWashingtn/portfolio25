@@ -8,6 +8,8 @@ type Props = {
   data: HeroSection;
 };
 
+// TODO: optinion to colored section headlines
+
 export default function SectionHero({ children, data }: Props) {
   const logo = data?.header?.image ? data.header.image : null;
   const settings = data?.settings;

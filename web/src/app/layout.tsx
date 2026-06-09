@@ -7,9 +7,6 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import HashScroll from "@/lib/utils/HashScroll";
 import { cookies } from "next/headers";
 
-//import { Analytics } from "@vercel/analytics/next";
-// TODO: is Website ready acivate Vercel Analytics
-
 export const metadata: Metadata = {
   title: "Portfolio - Thomas Badrow",
   description: "Herzlich Willkommen auf meinem Portfolio",

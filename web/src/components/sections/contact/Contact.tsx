@@ -9,7 +9,6 @@ import ContactInfos from "./ContactInfos";
 import ContactForm from "./ContactForm";
 import { ContactSection } from "@/types/StartpageData";
 
-// TODO: Form sendable machen
 // TODO: add CSS boxshadow
 
 type Props = {
