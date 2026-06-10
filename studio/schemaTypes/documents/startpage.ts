@@ -136,9 +136,9 @@ export const startpageSectionHeader = defineType({
     createStringField({
       name: 'headerHeadline',
       title: 'Überschrift*',
-      description: 'Überschrift der Sektion',
+      description: 'Überschrift der Sektion • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
       min: 4,
-      max: 32,
+      max: 128,
       required: true,
     }),
     defineField({
@@ -169,9 +169,10 @@ export const heroSection = defineType({
     createStringField({
       name: 'teaser',
       title: 'Hero Teaser Slogan*',
-      description: 'Spruch unter dem Logo, min. 12 - max. 62 Zeichen',
+      description:
+        'Spruch unter dem Logo, min. 12 - max. 160 Zeichen • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
       min: 12,
-      max: 62,
+      max: 160,
       required: true,
       group: 'content',
     }),

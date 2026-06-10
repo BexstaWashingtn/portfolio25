@@ -3,6 +3,7 @@ import styles from "./typeAnalysis.module.css";
 import Inner from "@components/utils/Inner";
 import Stack from "../utils/Stack";
 import { TypeAnalysisSection } from "@/types/StartpageData";
+import StyledHeadline from "../ui/StyledHeadline/StyledHeadline";
 
 type Props = {
   data: TypeAnalysisSection;
@@ -22,7 +23,11 @@ export default function SectionTypeAnalysis({ data }: Props) {
             className='align-stretch-md'
             gap={{ base: "lg", md: "md", sm: "sm" }}
           >
-            <h3 className={styles.h3}>{data.header.headline}</h3>
+            {data.header.headline && (
+              <h3 className={styles.h3}>
+                <StyledHeadline text={data.header.headline}></StyledHeadline>
+              </h3>
+            )}
             <div className={styles.content}>
               <div className={styles.per}>
                 <ul className={styles.perTextList}>

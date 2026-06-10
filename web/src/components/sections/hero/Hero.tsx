@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./hero.module.css";
 import Logo from "../../ui/Logo";
 import { HeroSection } from "@/types/StartpageData";
+import StyledHeadline from "@/components/ui/StyledHeadline/StyledHeadline";
 
 type Props = {
   children: React.ReactNode;
@@ -11,11 +12,13 @@ type Props = {
 // TODO: optinion to colored section headlines
 
 export default function SectionHero({ children, data }: Props) {
-  const logo = data?.header?.image ? data.header.image : null;
   const settings = data?.settings;
-  const bgImage = data?.settings?.backgroundImage?.src
-    ? data?.settings?.backgroundImage
-    : null;
+  const bgImage = settings?.backgroundImage ?? null;
+  const header = data?.header ?? null;
+  const logo = header?.image ?? null;
+  const headline = header?.headline ?? null;
+
+  console.log("SectionHero data: ", data);
 
   return (
     <section className={styles.hero} id={settings.id}>
@@ -45,18 +48,18 @@ export default function SectionHero({ children, data }: Props) {
             />
           </div>
         )}
-        <div className={styles.heroTextOverlay}>
-          <div className={styles.heroTextInner}>
-            <h1 className={styles.heroHeadline}>
-              „<span className='highlight-peach'>Code</span> ist mein{" "}
-              <span className='highlight-peach'>Werkzeug</span>
-              ,<br />
-              <span className='highlight-peach'>Gestaltung</span> meine{" "}
-              <span className='highlight-peach'>Sprache</span>
-              .“
-            </h1>
+        {headline && (
+          <div className={styles.heroTextOverlay}>
+            <div className={styles.heroTextInner}>
+              <h1 className={styles.heroHeadline}>
+                <StyledHeadline
+                  text={headline}
+                  accentClassName={"highlight-peach"}
+                />
+              </h1>
+            </div>
           </div>
-        </div>
+        )}
         <div className={styles.lockOverlay}>
           <div className={styles.lockText}>
             <button className={styles.buttonStart} aria-label='Start Website'>

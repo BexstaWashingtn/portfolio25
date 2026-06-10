@@ -7,6 +7,7 @@ import Inner from "@components/utils/Inner";
 import useIsMobile from "@hooks/useIsMobile";
 import Stack from "@/components/utils/Stack";
 import { WorkingMethodSection } from "@/types/StartpageData";
+import StyledHeadline from "@/components/ui/StyledHeadline/StyledHeadline";
 
 type Props = {
   data: WorkingMethodSection;
@@ -24,7 +25,11 @@ export default function SectionWorkingMethod({ data }: Props) {
         className={styles.fourPointLimit}
       >
         <Stack gap={{ base: "lg", md: "md", sm: "sm" }}>
-          <h3 className={styles.h3}>{data.header.headline}</h3>
+          {data.header.headline && (
+            <h3 className={styles.h3}>
+              <StyledHeadline text={data.header.headline}></StyledHeadline>
+            </h3>
+          )}
           <Inner variant='full' paddingTop='md' paddingInline={false}>
             {isMobile ? (
               // only render Swiper on < 768 phone devices

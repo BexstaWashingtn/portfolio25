@@ -1,17 +1,10 @@
-import { ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./header.module.css";
 import Image from "next/image";
-import { Image as ImageData } from "@/types/Image";
+import type { SectionHeader } from "@/types/StartpageData";
+import StyledHeadline from "../ui/StyledHeadline/StyledHeadline";
 
-type imageProps = ImageData & {
-  className?: string;
-};
-
-type Props = {
-  image?: imageProps;
-  headline: ReactNode;
-  text: ReactNode;
+type Props = SectionHeader & {
   className?: string;
 };
 
@@ -37,7 +30,14 @@ export default function SectionHeader({
         </div>
       )}
       <div className={styles.wrapper}>
-        <h2 className={styles.headline}>{headline}</h2>
+        {headline && (
+          <h2 className={styles.headline}>
+            <StyledHeadline
+              text={headline}
+              accentClassName={"highlight-peach"}
+            ></StyledHeadline>
+          </h2>
+        )}
         <p className={styles.text}>{text}</p>
       </div>
     </header>
