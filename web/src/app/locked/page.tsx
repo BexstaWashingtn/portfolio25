@@ -10,14 +10,7 @@ import { notFound } from "next/navigation";
 export default async function Locked() {
   const sanityLockedpageData: LockedpageQueryResult = await getLockedpage();
 
-  console.log("sanityLockedpageData: ", sanityLockedpageData);
-
   const lockedpageData = mappedLockedpageData(sanityLockedpageData);
-
-  console.log(
-    "mappedLockedpageData: ",
-    mappedLockedpageData(sanityLockedpageData),
-  );
 
   if (!lockedpageData) {
     notFound();

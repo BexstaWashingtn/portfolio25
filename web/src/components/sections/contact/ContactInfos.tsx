@@ -10,8 +10,6 @@ export default function ContactAddress({ data }: Props) {
   const { firstName, lastName, address, phone, email, github } = data;
   const { street, postalCode, city } = address;
 
-  console.log("data: ", data);
-
   return (
     <address className={styles.contactDataWrapper}>
       <div className={styles.address}>

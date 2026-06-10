@@ -79,8 +79,6 @@ export default async function ProjectView({ params }: Props) {
     learnings: sanityProjectData.learnings,
   };
 
-  console.log("projectData: ", projectData);
-
   return (
     <>
       <main>
