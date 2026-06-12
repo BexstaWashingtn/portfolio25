@@ -14,14 +14,15 @@ type Props = {
 
 export default function HeaderClient({ styles, headerDatas }: Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isStartpage = pathname === "/";
   const [isHeroVisible, setIsHeroVisible] = useState(false);
-  const isLogoVisible = !isHeroVisible || isMobileMenuOpen;
+  const isLogoVisible = !isHeroVisible || !isStartpage || isMobileMenuOpen;
   const [scrollProgress, setScrollProgress] = useState(0);
   const r = Math.round(113 * scrollProgress);
   const g = Math.round(21 * scrollProgress);
   const b = Math.round(33 * scrollProgress);
   const rubyColor = `rgba(${r}, ${g}, ${b}, 1)`;
-  const pathname = usePathname();
 
   useEffect(() => {
     const heroSection = document.querySelector<HTMLElement>("section#hero");

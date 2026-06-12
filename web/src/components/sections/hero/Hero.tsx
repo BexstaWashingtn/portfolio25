@@ -3,28 +3,40 @@ import styles from "./hero.module.css";
 import Logo from "../../ui/Logo";
 import { HeroSection } from "@/types/StartpageData";
 import StyledHeadline from "@/components/ui/StyledHeadline/StyledHeadline";
+import clsx from "clsx";
+
+type HeaderLayout = "fullscreen" | "compact";
 
 type Props = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   data: HeroSection;
+  layout?: HeaderLayout;
 };
 
-// TODO: optinion to colored section headlines
-
-export default function SectionHero({ children, data }: Props) {
+export default function SectionHero({
+  children,
+  data,
+  layout = "fullscreen",
+}: Props) {
   const settings = data?.settings;
   const bgImage = settings?.backgroundImage ?? null;
   const header = data?.header ?? null;
   const logo = header?.image ?? null;
   const headline = header?.headline ?? null;
+  const text = header?.text ?? null;
 
   console.log("SectionHero data: ", data);
 
   return (
     <section className={styles.hero} id={settings.id}>
-      <div className={styles.heroInner}>
-        <div className={styles.logoImageOverlay}>
-          {logo && (
+      <div
+        className={clsx(
+          styles.heroInner,
+          layout === "fullscreen" ? styles.fullscreen : styles.compact,
+        )}
+      >
+        {logo && (
+          <div className={styles.logoImageOverlay}>
             <Logo
               src={logo.src}
               width={logo.width}
@@ -32,10 +44,10 @@ export default function SectionHero({ children, data }: Props) {
               alt={logo.alt}
               title={logo.title}
             />
-          )}
-        </div>
+          </div>
+        )}
         {bgImage && (
-          <div className={styles.heroImageCon}>
+          <div className={styles.backgroundImage}>
             <Image
               src={bgImage.src}
               alt={bgImage.alt}
@@ -48,25 +60,26 @@ export default function SectionHero({ children, data }: Props) {
             />
           </div>
         )}
-        {headline && (
-          <div className={styles.heroTextOverlay}>
-            <div className={styles.heroTextInner}>
-              <h1 className={styles.heroHeadline}>
-                <StyledHeadline
-                  text={headline}
-                  accentClassName={"highlight-peach"}
-                />
-              </h1>
+        {header && (
+          <div className={styles.textOverlay}>
+            <div className={styles.contentInner}>
+              {headline && (
+                <h1 className={styles.headline}>
+                  <StyledHeadline
+                    text={headline}
+                    accentClassName={"highlight-peach"}
+                  />
+                </h1>
+              )}
+              {text && <span className={styles.subline}>{text}</span>}
             </div>
           </div>
         )}
-        <div className={styles.lockOverlay}>
-          <div className={styles.lockText}>
-            <button className={styles.buttonStart} aria-label='Start Website'>
-              {children}
-            </button>
+        {children && (
+          <div className={styles.lockOverlay}>
+            <div className={styles.lockText}>{children}</div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

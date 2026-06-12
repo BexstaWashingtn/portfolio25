@@ -17,12 +17,14 @@ export default async function Locked() {
   }
 
   return (
-    <Hero data={lockedpageData}>
-      <HeroLockOverlay
-        icon='locked'
-        text='Die Seite ist für unautorisierte Zugriffe gesperrt.'
-      />
-    </Hero>
+    <main>
+      <Hero data={lockedpageData}>
+        <HeroLockOverlay
+          icon='locked'
+          text='Die Seite ist für unautorisierte Zugriffe gesperrt.'
+        />
+      </Hero>
+    </main>
   );
 }
 

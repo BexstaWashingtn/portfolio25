@@ -25,7 +25,7 @@ export default function SectionHeader({
             width={image.width}
             height={image.height}
             priority
-            className={clsx(className, styles.image)}
+            className={styles.image}
           />
         </div>
       )}

@@ -71,10 +71,10 @@ export default function Footer() {
               </p>
 
               <nav className={styles.navigation} aria-label='Footernavigation'>
-                <Link href='/' className={styles.navigationLink}>
+                <Link href='/impressum' className={styles.navigationLink}>
                   Impressum
                 </Link>
-                <Link href='/' className={styles.navigationLink}>
+                <Link href='/datenschutz' className={styles.navigationLink}>
                   Datenschutz
                 </Link>
               </nav>
