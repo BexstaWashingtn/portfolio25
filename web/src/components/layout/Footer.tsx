@@ -8,6 +8,7 @@ import { getProfileFullName } from "@/lib/profile/getFullName";
 
 export default function Footer() {
   const profileFullName = getProfileFullName();
+  const currentYear = new Date().getFullYear();
 
   return (
     <BackgroundImageWrapper
@@ -66,9 +67,9 @@ export default function Footer() {
         <div className={styles.legacyNote}>
           <Inner variant='wide'>
             <div className={styles.inner}>
-              <p className={styles.copyright}>
-                {`© 2025 ${profileFullName}. Alle Rechte vorbehalten.`}
-              </p>
+              <p
+                className={styles.copyright}
+              >{`© ${currentYear} ${profileFullName}.`}</p>
 
               <nav className={styles.navigation} aria-label='Footernavigation'>
                 <Link href='/impressum' className={styles.navigationLink}>
