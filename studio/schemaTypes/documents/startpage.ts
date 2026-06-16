@@ -135,11 +135,11 @@ export const startpageSectionHeader = defineType({
     }),
     createStringField({
       name: 'headerHeadline',
-      title: 'Überschrift*',
+      title: 'Überschrift',
       description: 'Überschrift der Sektion • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
       min: 4,
       max: 128,
-      required: true,
+      required: false,
     }),
     defineField({
       name: 'headerText',
