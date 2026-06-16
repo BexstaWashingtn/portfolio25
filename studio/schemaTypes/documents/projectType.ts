@@ -34,7 +34,7 @@ export const projectType = defineType({
       title: 'Titel*',
       type: 'string',
       group: 'details',
-      validation: (Rule) => Rule.min(3).max(32).required(),
+      validation: (Rule) => Rule.min(3).max(96).required(),
     },
     {
       name: 'subtitle',
