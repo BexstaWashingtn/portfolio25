@@ -6,6 +6,8 @@ type ImageVariant =
   | 'headerPortrait'
   | 'headerIcon'
   | 'workingMethodsIcon'
+  | 'icon60x60'
+  | 'icon50x50'
   | 'sectionBackground'
 
 type Options = {
@@ -45,7 +47,7 @@ export function createImageField({
         title: 'Alternativtext*',
         description: 'required',
         type: 'string',
-        validation: (Rule) => Rule.required(),
+        validation: (Rule) => (required ? Rule.required() : Rule),
       }),
       defineField({
         name: 'title',
@@ -86,10 +88,18 @@ export function createImageField({
                     title: 'Section Hintergrund',
                     value: 'sectionBackground',
                   },
+                  {
+                    title: 'Icon 50x50',
+                    value: 'icon50x50',
+                  },
+                  {
+                    title: 'Icon 60x60',
+                    value: 'icon60x60',
+                  },
                 ],
               },
 
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) => (required ? Rule.required() : Rule),
             }),
           ]
         : []),

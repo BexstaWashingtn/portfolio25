@@ -1,5 +1,7 @@
 import {projectType} from './documents/projectType'
 import {siteSettings} from './documents/siteSettings'
+import {legalPage, pageSettings, pageHero, infoBlock, legalPageContent} from './documents/legalPage'
+
 import {
   startpage,
   startpageSectionHeader,
@@ -17,13 +19,18 @@ export const schemaTypes = [
   projectType,
   siteSettings,
   sectionSettings,
+  heroSection,
   startpage,
   startpageSectionHeader,
-  heroSection,
   aboutMeSection,
   workingMethodsSection,
   typeAnalysisSection,
   skillsSection,
   projectsSection,
   contactSection,
+  pageSettings,
+  pageHero,
+  infoBlock,
+  legalPageContent,
+  legalPage,
 ]

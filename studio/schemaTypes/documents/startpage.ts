@@ -167,8 +167,8 @@ export const heroSection = defineType({
       group: 'sectionSettings',
     }),
     createStringField({
-      name: 'teaser',
-      title: 'Hero Teaser Slogan*',
+      name: 'headline',
+      title: 'Hero Headline*',
       description:
         'Spruch unter dem Logo, min. 12 - max. 160 Zeichen • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
       min: 12,
