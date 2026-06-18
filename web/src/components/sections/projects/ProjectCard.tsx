@@ -45,11 +45,17 @@ export default function ProjectCard({ item, viewed }: ProjectCardProps) {
           </div>
           <div className={styles.projectCardTags}>
             {item.tags &&
-              item.tags.map((tag, index) => (
-                <span key={`${index}-${tag}`} className={styles.projectCardTag}>
-                  {tag}
-                </span>
-              ))}
+              item.tags.map(
+                (tag, index) =>
+                  tag && (
+                    <span
+                      key={`${index}-${tag}`}
+                      className={styles.projectCardTag}
+                    >
+                      {tag}
+                    </span>
+                  ),
+              )}
           </div>
         </Stack>
         <div className={styles.projectCardCtaContainer}>
