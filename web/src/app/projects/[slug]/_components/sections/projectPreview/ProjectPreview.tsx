@@ -13,6 +13,8 @@ type Props = {
 export default async function ProjectPreview({ slug }: Props) {
   const projectsWithoutSlug = await getProjectsPreviewWithoutSlug(slug);
 
+  console.log("projectsWithoutSlug: ", projectsWithoutSlug);
+
   const filteredProjects: Project[] = mapProjectPreviews(projectsWithoutSlug);
 
   return (

@@ -3,7 +3,7 @@ import { SanityImage } from "./SanityImage";
 export type SanityProjectPreview = {
   _id: number;
   description: string;
-  methods: string[];
+  techStack: string[];
   previewImage: SanityImage;
   slug: string;
   title: string;

@@ -5,7 +5,10 @@ export const PROJECTS_PREVIEW_QUERY = `
     "slug": slug.current,
     description,
     previewImage,
-    "methods": projectInformations.methods
+    "techStack": [
+      ...implementation.techstack.frontend[],
+      ...implementation.techstack.backend[],
+    ]
   }
 `;
 
@@ -16,7 +19,10 @@ export const PROJETCS_PREVIEW_WITHOUTSLUG_QUERY = `
     "slug": slug.current,
     description,
     previewImage,
-    "methods": projectInformations.methods
+    "techStack": [
+      ...implementation.techstack.frontend[],
+      ...implementation.techstack.backend[],
+    ]
   }
 `;
 

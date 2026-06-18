@@ -26,7 +26,7 @@ export function mapProjectPreviews(
         title: project.title,
         description: project.description,
         slug: project.slug,
-        tags: project.methods?.slice(0, 5),
+        tags: project.techStack?.slice(0, 5),
         image: {
           src,
           width,
