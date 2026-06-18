@@ -20,7 +20,8 @@ export const STARTPAGE_QUERY = groq`{ "siteSettings": *[_type == "siteSettings"]
           "backgroundImage": heroSection.sectionSettings.backgroundImage,
         },
         "header": {
-          "headline": heroSection.teaser
+          "headline": heroSection.headline,
+          "text": heroSection.text,
         }
       }
     ),
