@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/hero/Hero";
-import { HeroSection } from "@/types/StartpageData";
+import { HeroSection } from "@/components/sections/hero/Hero.types";
 import ContentNotice from "@/components/ui/contentNotice/ContentNotice";
 import type { ContentNotice as ContentNoticeType } from "@components/ui/contentNotice/ContentNotice.type";
 
