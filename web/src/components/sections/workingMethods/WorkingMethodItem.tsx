@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageWithType } from "@/types/StartpageData";
+import { ImageWithType } from "@/types/Image";
 import styles from "./workingMethodItem.module.css";
 
 type Props = {
