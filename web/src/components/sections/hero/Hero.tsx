@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
 import Logo from "../../ui/Logo";
-import { HeroSection } from "@/types/StartpageData";
 import StyledHeadline from "@/components/ui/StyledHeadline/StyledHeadline";
 import clsx from "clsx";
+import { HeroSection } from "./Hero.types";
 
 type HeaderLayout = "fullscreen" | "compact";
 
