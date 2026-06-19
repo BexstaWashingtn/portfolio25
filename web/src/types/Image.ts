@@ -5,3 +5,7 @@ export type Image = {
   height?: number;
   title?: string;
 };
+
+export type ImageWithType = Image & {
+  _type: "image";
+};

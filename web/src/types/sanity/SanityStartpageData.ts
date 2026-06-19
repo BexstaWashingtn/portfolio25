@@ -1,6 +1,11 @@
+import {
+  SectionHeaderQueryResult,
+  SectionSettingsQueryResult,
+} from "@/components/sections/Section.types";
 import { SkillCategory } from "../SkillCategories";
 import { SanityImage } from "./SanityImage";
 import { SanityImageVariant } from "./SanityImageVariant";
+import { HeroSectionQueryResult } from "@/components/sections/hero/Hero.types";
 
 export type StartpageSectionQueryResult = {
   heroSection: HeroSectionQueryResult | null;
@@ -41,23 +46,6 @@ export type StartpageQueryResult = {
     siteLogo: SanityImage & SanityImageVariant;
   };
   startpage: StartpageSectionQueryResult;
-};
-
-export type SectionSettingsQueryResult = {
-  id: string;
-  backgroundImage?: SanityImage & SanityImageVariant;
-};
-
-export type SectionHeaderQueryResult = {
-  image?: SanityImage & SanityImageVariant;
-  headline?: string;
-  text?: string;
-};
-
-export type HeroSectionQueryResult = {
-  _type: "heroSection";
-  settings: SectionSettingsQueryResult;
-  header: SectionHeaderQueryResult;
 };
 
 export type AboutMeSectionQueryResult = {

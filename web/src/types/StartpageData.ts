@@ -1,5 +1,11 @@
-import type { Image } from "./Image";
+import { ContactData } from "./shared/ConstactData";
+import type { ImageWithType } from "./Image";
 import { SkillCategory } from "./SkillCategories";
+import { HeroSection } from "@/components/sections/hero/Hero.types";
+import {
+  SectionHeader,
+  SectionSettings,
+} from "@/components/sections/Section.types";
 
 export type StartpageSectionsData = {
   heroSection: HeroSection | null;
@@ -19,27 +25,6 @@ export type SectionsData =
   | SkillsSection
   | ProjectsSection
   | ContactSection;
-
-export type ImageWithType = Image & {
-  _type: "image";
-};
-
-export type SectionSettings = {
-  id: string;
-  backgroundImage?: ImageWithType | null;
-};
-
-export type SectionHeader = {
-  headline?: string;
-  text?: string;
-  image?: ImageWithType | null;
-};
-
-export type HeroSection = {
-  _type: "heroSection";
-  header: SectionHeader;
-  settings: SectionSettings;
-};
 
 export type AboutMeSection = {
   _type: "aboutmeSection";
@@ -86,20 +71,6 @@ export type ProjectsSection = {
   _type: "projectsSection";
   header: SectionHeader;
   settings: SectionSettings;
-};
-
-export type ContactData = {
-  firstName: string;
-  lastName: string;
-  address: {
-    city: string;
-    country: string;
-    postalCode: string;
-    street: string;
-  };
-  phone: string;
-  email: string;
-  github: string;
 };
 
 export type ContactSection = {

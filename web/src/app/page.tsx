@@ -17,7 +17,6 @@ import {
 import {
   AboutMeSection,
   ContactSection,
-  HeroSection,
   ProjectsSection,
   SkillsSection,
   StartpageSectionsData,
@@ -27,6 +26,7 @@ import {
 import { notFound } from "next/navigation";
 import HeroOverlay from "@/components/sections/hero/HeroOverlay";
 import { mapImagesDeep } from "@/lib/mappers/sanity/mapImagesDeep";
+import { HeroSection } from "@/components/sections/hero/Hero.types";
 
 export default async function Home() {
   const sanityStartpageData: StartpageQueryResult = await getStartpage();

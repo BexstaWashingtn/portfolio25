@@ -1,19 +1,9 @@
-import Hero from "@/components/sections/hero/Hero";
-import ContentNotice from "@/components/ui/contentNotice/ContentNotice";
-import InfoList from "@/components/ui/infoList/InfoList";
-import { InfoList as InfoListType } from "@/components/ui/infoList/InfoList.type";
-import { HeroSection } from "@/types/StartpageData";
-import type { ContentNotice as ContentNoticeType } from "@components/ui/contentNotice/ContentNotice.type";
+import LegalPage from "@/components/pages/legalPages/LegalPage";
+import { LegalPageDataQueryResult } from "@/components/pages/legalPages/LegalPage.types";
+import { fetchLegalPage } from "@/sanity/fetchLegalPage";
 
-type dataType = {
-  heroSection: HeroSection;
-  pageIntro: ContentNoticeType;
-  pageOutro: ContentNoticeType;
-  content: InfoListType[];
-};
-
-export default function Impressum() {
-  const data: dataType = {
+export default async function Impressum() {
+  /* const data: dataType = {
     heroSection: {
       _type: "heroSection",
       header: {
@@ -74,21 +64,20 @@ export default function Impressum() {
         text: "Vorname Nachname[br]Musterstr. 24[br]12335 Stadt[br]Deutschland",
       },
     ],
-  };
+  }; */
 
-  const { heroSection, pageIntro, pageOutro, content } = data;
+  const dataQueryResult: LegalPageDataQueryResult =
+    await fetchLegalPage("imprint");
 
-  return (
-    <>
-      {heroSection && <Hero data={heroSection} layout='compact' />}
-      {pageIntro && <ContentNotice data={pageIntro} />}
-      {content && (
-        <InfoList data={content}>
-          {pageOutro && (
-            <ContentNotice data={pageOutro} background='surfaceBackground' />
-          )}
-        </InfoList>
-      )}
-    </>
-  );
+  console.log("LegalPageQueryResult: ", dataQueryResult);
+
+  const mappedData = mapLegalPageData(dataQueryResult);
+
+  console.log("mappedLegalPage: ", mappedData);
+
+  return <LegalPage data={mappedData} />;
+}
+
+function mapLegalPageData(data: LegalPageDataQueryResult) {
+  return data;
 }

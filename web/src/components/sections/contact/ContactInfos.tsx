@@ -1,6 +1,6 @@
 import { FaGithub, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import styles from "./contact.module.css";
-import { ContactData } from "@/types/StartpageData";
+import { ContactData } from "@/types/shared/ConstactData";
 
 type Props = {
   data: ContactData;
