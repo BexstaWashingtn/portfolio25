@@ -1,6 +1,6 @@
 import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
+import { ImageWithType } from "@/types/Image";
 import { SanityImage } from "@/types/sanity/SanityImage";
-import { ImageWithType } from "@/types/StartpageData";
 
 type MapSanityImageProps = {
   image: SanityImage;
