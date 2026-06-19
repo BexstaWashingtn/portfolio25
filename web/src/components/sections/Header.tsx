@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from "./header.module.css";
 import Image from "next/image";
-import type { SectionHeader } from "@/types/StartpageData";
+import type { SectionHeader } from "./Section.types";
 import StyledHeadline from "../ui/StyledHeadline/StyledHeadline";
 
 type Props = SectionHeader & {
