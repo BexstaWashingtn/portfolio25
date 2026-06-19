@@ -1,11 +1,11 @@
 import HeroLockOverlay from "@/components/sections/hero/HeroOverlay";
 import Hero from "@/components/sections/hero/Hero";
 import { getLockedpage } from "@/sanity/fetchLockedpage";
-import { HeroSection } from "@/types/StartpageData";
 import { LockedpageQueryResult } from "@/types/sanity/SanityLockedpageData";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
 import { notFound } from "next/navigation";
+import { HeroSection } from "@/components/sections/hero/Hero.types";
 
 export default async function Locked() {
   const sanityLockedpageData: LockedpageQueryResult = await getLockedpage();

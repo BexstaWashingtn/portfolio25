@@ -1,6 +1,6 @@
+import { HeroSectionQueryResult } from "@/components/sections/hero/Hero.types";
 import { SanityImage } from "./SanityImage";
 import { SanityImageVariant } from "./SanityImageVariant";
-import { HeroSectionQueryResult } from "./SanityStartpageData";
 
 export type LockedpageQueryResult = {
   siteSettings: {
