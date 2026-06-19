@@ -30,7 +30,19 @@ export const pageSettings = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-
+    defineField({
+      name: 'legalPageType',
+      title: 'Seitentyp',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Datenschutz', value: 'privacy'},
+          {title: 'Impressum', value: 'imprint'},
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'showInFooterNavigation',
       title: 'In Footer Navigation anzeigen',
@@ -214,8 +226,8 @@ export const legalPage = defineType({
       group: 'legalPageContent',
       fields: [
         defineField({
-          name: 'legalPageContent',
-          title: 'Content*',
+          name: 'Items',
+          title: 'Inhalt*',
           type: 'array',
 
           of: [
