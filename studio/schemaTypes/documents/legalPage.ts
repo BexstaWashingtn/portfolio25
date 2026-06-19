@@ -64,10 +64,9 @@ export const pageHero = defineType({
     createStringField({
       name: 'headline',
       title: 'Hero Headline*',
-      description:
-        'Spruch unter dem Logo, min. 12 - max. 160 Zeichen • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
-      min: 12,
-      max: 160,
+      description: 'min. 5 - max. 48 Zeichen • Hervorhebung: [accent]Text[/accent] • Umbruch [br]',
+      min: 4,
+      max: 48,
       required: true,
     }),
     defineField({
@@ -96,7 +95,7 @@ export const infoBlock = defineType({
     createImageField({
       name: 'icon',
       title: 'Icon',
-      description: '60 x 60 px, Format JPEG',
+      description: '60 x 60 px, Format SVG',
       required: false,
       imageVariant: true,
       initialVariant: 'icon60x60',
@@ -118,7 +117,7 @@ export const legalPageContent = defineType({
     createImageField({
       name: 'icon',
       title: 'Icon*',
-      description: '50 x 50 px, Format JPEG',
+      description: '50 x 50 px, Format SVG',
       required: true,
       imageVariant: true,
       initialVariant: 'icon50x50',
@@ -127,21 +126,54 @@ export const legalPageContent = defineType({
       name: 'title',
       title: 'Titel*',
       type: 'string',
-      validation: (Rule) => Rule.min(4).max(48).required(),
+      description: 'min. 4 - max. 240',
+      validation: (Rule) => Rule.min(4).max(240).required(),
+    }),
+    defineField({
+      name: 'contentType',
+      title: 'Inhaltstyp*',
+      type: 'string',
+      initialValue: 'text',
+      options: {
+        list: [
+          {title: 'Freier Text', value: 'text'},
+          {title: 'Owner-Adresse', value: 'ownerAddress'},
+          {title: 'Owner-Kontakt', value: 'ownerContact'},
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text*',
-      type: 'string',
-      validation: (Rule) => Rule.min(4).max(460).required(),
-    }),
-    createImageField({
-      name: 'backgroundImage',
-      title: 'Hintergrundbild',
-      description: '1920 x 1080px, Format JPEG',
-      required: false,
-      imageVariant: true,
-      initialVariant: 'sectionBackground',
+      type: 'text',
+      description: 'min. 4 - max. 460',
+      hidden: ({parent}) => parent?.contentType !== 'text',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as {
+            contentType?: string
+          }
+
+          if (parent?.contentType !== 'text') {
+            return true
+          }
+
+          if (!value) {
+            return 'Text ist erforderlich'
+          }
+
+          if (value.length < 4) {
+            return 'Der Text muss mindestens 4 Zeichen lang sein'
+          }
+
+          if (value.length > 460) {
+            return 'Der Text darf maximal 460 Zeichen lang sein'
+          }
+
+          return true
+        }),
     }),
   ],
 })
@@ -177,15 +209,31 @@ export const legalPage = defineType({
     }),
     defineField({
       name: 'legalPageContent',
-      title: 'Content*',
-      type: 'array',
+      title: 'Content',
+      type: 'object',
       group: 'legalPageContent',
-      of: [
-        {
-          type: 'legalPageContent',
-        },
+      fields: [
+        defineField({
+          name: 'legalPageContent',
+          title: 'Content*',
+          type: 'array',
+
+          of: [
+            {
+              type: 'legalPageContent',
+            },
+          ],
+          validation: (Rule) => Rule.required(),
+        }),
+        createImageField({
+          name: 'backgroundImage',
+          title: 'Content Section Hintergrundbild',
+          description: '1920 x 1080px, Format JPEG',
+          required: false,
+          imageVariant: true,
+          initialVariant: 'sectionBackground',
+        }),
       ],
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'infoBlockBottom',
