@@ -42,11 +42,17 @@ export async function middleware(request: NextRequest) {
     ["sign", "verify"],
   );
 
-  const redirectLocked = () => {
+  const redirectLocked = (clearAccessCookie = false) => {
     const toLocked = request.nextUrl.clone();
     toLocked.pathname = "/locked";
     toLocked.search = "";
-    return NextResponse.redirect(toLocked);
+    const response = NextResponse.redirect(toLocked);
+
+    if (clearAccessCookie) {
+      response.cookies.delete("freeentry");
+    }
+
+    return response;
   };
 
   // check url Param "freeentry"
@@ -83,26 +89,10 @@ export async function middleware(request: NextRequest) {
   const raw = request.cookies.get("freeentry")?.value;
   if (!raw) return redirectLocked();
 
-  const [pB64u, sB64u] = raw.split(".");
-  if (!pB64u || !sB64u) return redirectLocked();
+  const isValidToken = await verifyAccessToken(raw, hmacKey);
 
-  const payloadBytes2 = b64urlToBytes(pB64u);
-  const sigBytes = b64urlToBytes(sB64u);
-
-  const ok = await crypto.subtle.verify(
-    "HMAC",
-    hmacKey,
-    sigBytes,
-    payloadBytes2,
-  );
-  if (!ok) return redirectLocked();
-
-  const payload2 = JSON.parse(new TextDecoder().decode(payloadBytes2));
-  if (
-    typeof payload2.exp !== "number" ||
-    payload2.exp < Math.floor(Date.now() / 1000)
-  ) {
-    return redirectLocked();
+  if (!isValidToken) {
+    return redirectLocked(true);
   }
 
   return NextResponse.next();
@@ -113,10 +103,83 @@ const b64url = (bytes: ArrayBuffer | Uint8Array) => {
   return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 };
 
+const MAX_TOKEN_PART_LENGTH = 2048;
+
 const b64urlToBytes = (b64u: string) => {
+  if (
+    !b64u ||
+    b64u.length > MAX_TOKEN_PART_LENGTH ||
+    !/^[A-Za-z0-9_-]+$/.test(b64u)
+  ) {
+    throw new Error("Invalid base64url value");
+  }
+
   const b64 =
     b64u.replace(/-/g, "+").replace(/_/g, "/") +
-    "==".slice(0, (4 - (b64u.length % 4)) % 4);
+    "=".repeat((4 - (b64u.length % 4)) % 4);
   const bin = atob(b64);
   return Uint8Array.from(bin, (c) => c.charCodeAt(0));
 };
+
+type AccessPayload = {
+  iat: number;
+  exp: number;
+  g: 1;
+};
+
+const isValidAccessPayload = (
+  value: unknown,
+  now: number,
+): value is AccessPayload => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return false;
+  }
+
+  const payload = value as Record<string, unknown>;
+
+  return (
+    typeof payload.iat === "number" &&
+    Number.isFinite(payload.iat) &&
+    typeof payload.exp === "number" &&
+    Number.isFinite(payload.exp) &&
+    payload.g === 1 &&
+    payload.iat <= now &&
+    payload.exp > now
+  );
+};
+
+export async function verifyAccessToken(
+  raw: string,
+  hmacKey: CryptoKey,
+  now = Math.floor(Date.now() / 1000),
+): Promise<boolean> {
+  try {
+    const parts = raw.split(".");
+
+    if (parts.length !== 2) {
+      return false;
+    }
+
+    const [payloadBase64, signatureBase64] = parts;
+    const payloadBytes = b64urlToBytes(payloadBase64);
+    const signatureBytes = b64urlToBytes(signatureBase64);
+    const hasValidSignature = await crypto.subtle.verify(
+      "HMAC",
+      hmacKey,
+      signatureBytes,
+      payloadBytes,
+    );
+
+    if (!hasValidSignature) {
+      return false;
+    }
+
+    const payload: unknown = JSON.parse(
+      new TextDecoder().decode(payloadBytes),
+    );
+
+    return isValidAccessPayload(payload, now);
+  } catch {
+    return false;
+  }
+}
