@@ -17,8 +17,6 @@ export default async function Datenschutz() {
   const dataQueryResult: LegalPageDataQueryResult =
     await fetchLegalPage("privacy");
 
-  console.log("dataQueryResult", dataQueryResult);
-
   if (!dataQueryResult?.legalPage) {
     notFound();
   }
@@ -27,8 +25,6 @@ export default async function Datenschutz() {
     ...dataQueryResult,
     legalPage: mapLegalPageData(dataQueryResult.legalPage),
   };
-
-  console.log("mappedData", mappedData);
 
   return <LegalPage data={mappedData} />;
 }
