@@ -9,8 +9,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
-import { mapSanityVisuals } from "@/lib/mappers/project/mapSanityVisuals";
-import { ProjectData } from "./types/ProjectData";
+import { mapProjectData } from "@/lib/mappers/project/mapProjectData";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import type { Metadata } from "next";
 import { cache } from "react";
@@ -94,47 +93,9 @@ export default async function ProjectView({ params }: Props) {
     sanityProjectData.projectMainColor,
   );
 
-  if (!sanityProjectData.projectImage.asset?._ref?.trim()) {
-    notFound();
-  }
+  const projectData = mapProjectData(sanityProjectData, mainColorRGB);
 
-  const projectImage = mapSanityImage({
-    image: sanityProjectData.projectImage,
-    width: 816,
-    alt: sanityProjectData.projectImage.alt,
-    title: sanityProjectData?.title,
-    _type: sanityProjectData.projectImage._type,
-  });
-
-  if (!projectImage) {
-    notFound();
-  }
-
-  const backgroundImage = mapSanityImage({
-    image: sanityProjectData.backgroundImage,
-    width: 1920,
-    height: 1080,
-    alt:
-      sanityProjectData.backgroundImage?.alt ||
-      `${sanityProjectData.title} background image`,
-    title: sanityProjectData.title,
-    _type: sanityProjectData.backgroundImage?._type || "image",
-  });
-
-  const projectData: ProjectData = {
-    details: {
-      title: sanityProjectData.title,
-      subtitle: sanityProjectData.subtitle,
-      mainColorRGB,
-      projectInformations: sanityProjectData.projectInformations,
-      projectImage,
-      ...(backgroundImage && { backgroundImage }),
-    },
-    goals: sanityProjectData.goals,
-    implementation: sanityProjectData.implementation,
-    visuals: mapSanityVisuals(sanityProjectData.visuals ?? []),
-    learnings: sanityProjectData.learnings,
-  };
+  if (!projectData) notFound();
 
   return (
     <>

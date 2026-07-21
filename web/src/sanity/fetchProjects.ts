@@ -4,6 +4,7 @@ import {
   PROJECTS_PREVIEW_QUERY,
   PROJETCS_PREVIEW_WITHOUTSLUG_QUERY,
 } from "./queries/projectQueries";
+import { SanityProjectQueryResult } from "@/types/sanity/SanityProjectData";
 
 export async function getProjectsPreview() {
   return client.fetch(
@@ -25,8 +26,10 @@ export async function getProjectsPreviewWithoutSlug(slug: string) {
   );
 }
 
-export async function getProjectBySlug(slug: string) {
-  return client.fetch(
+export async function getProjectBySlug(
+  slug: string,
+): Promise<SanityProjectQueryResult | null> {
+  return client.fetch<SanityProjectQueryResult | null>(
     PROJECT_BYSLUG_QUERY,
     { slug },
     {

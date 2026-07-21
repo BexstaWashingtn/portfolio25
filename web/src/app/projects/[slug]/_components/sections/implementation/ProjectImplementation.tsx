@@ -7,11 +7,8 @@ import ProjectChallenge from "./ProjectChallenge";
 import {
   ProjectImplementationData,
   ProjectProcessData,
-  ProjectTechstackData,
 } from "../../../types/ProjectData";
-import { cleanStringArray } from "@/lib/utils/data/cleanStringArray";
 import { safeString } from "@/lib/utils/data/safeString";
-import { ProjectTechstackRaw } from "@/types/sanity/SanityProjectData";
 
 type Props = {
   implementation: ProjectImplementationData;
@@ -24,14 +21,6 @@ export default function ProjectImplementation({
 }: Props) {
   const cleanedProcess = cleanProcess(implementation?.process);
   const hasProcess = !!cleanedProcess.length;
-
-  const formatedTechStack: ProjectTechstackData[] = Object.entries(
-    implementation.techstack as ProjectTechstackRaw,
-  ).map(([key, value]) => ({
-    title: key.charAt(0).toUpperCase() + key.slice(1),
-    icon: key as ProjectTechstackData["icon"],
-    items: cleanStringArray(value),
-  }));
 
   const cleanChallenge = {
     problem: implementation?.challenge?.problem.trim() || "",
@@ -62,7 +51,7 @@ export default function ProjectImplementation({
 
       {
         <ProjectTechStack
-          techstack={formatedTechStack}
+          techstack={implementation.techstack}
           mainColorRGB={mainColorRGB}
         />
       }
