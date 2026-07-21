@@ -24,6 +24,32 @@ export default function NavigationClient({
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return;
+    }
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      const firstNavigationLink =
+        document.querySelector<HTMLAnchorElement>("#main-navigation a");
+
+      firstNavigationLink?.focus();
+    });
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isMobileMenuOpen, setIsMobileMenuOpen]);
+
   // State to manage the active section
   // This state is used to highlight the active section in the navigation
   const [activeSection, setActiveSection] = useState<string | null>(null);

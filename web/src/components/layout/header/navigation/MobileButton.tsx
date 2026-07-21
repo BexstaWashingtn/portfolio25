@@ -16,7 +16,7 @@ export default function MobileButton({
     <div className={styles.headerMobileCon}>
       <button
         onClick={handleMenuToggle}
-        aria-label='Menü öffnen'
+        aria-label={isMobileMenuOpen ? `Menü schließen` : `Menü öffnen`}
         aria-controls='main-navigation'
         aria-expanded={isMobileMenuOpen}
         className={styles.headerMobileMenuBtn}
