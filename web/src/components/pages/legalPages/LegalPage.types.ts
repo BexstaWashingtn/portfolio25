@@ -8,6 +8,7 @@ import {
   InfoListQueryResult,
 } from "@/components/ui/infoList/InfoList.type";
 import { SanityImage } from "@/types/sanity/SanityImage";
+import { SanityImageVariant } from "@/types/sanity/SanityImageVariant";
 import { ImageWithType } from "@/types/Image";
 
 export type HeroSectionCore = {
@@ -45,7 +46,7 @@ export type LegalPageData = {
 
 export type HeroSectionQueryResult = HeroSectionCore & {
   settings: {
-    backgroundImage: SanityImage;
+    backgroundImage: SanityImage & SanityImageVariant;
   };
 };
 

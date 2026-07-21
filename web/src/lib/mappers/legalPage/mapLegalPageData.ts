@@ -1,10 +1,18 @@
 import {
   HeroSection,
+  HeroSectionQueryResult,
   LegalPageSections,
   LegalPageSectionsQueryResult,
 } from "@/components/pages/legalPages/LegalPage.types";
-import { ContentNotice } from "@/components/ui/contentNotice/ContentNotice.type";
-import { mapImagesDeep } from "@/lib/mappers/sanity/mapImagesDeep";
+import {
+  ContentNotice,
+  ContentNoticeTypeQueryResult,
+} from "@/components/ui/contentNotice/ContentNotice.type";
+import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
+import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
+import { ImageWithType } from "@/types/Image";
+import { SanityImage } from "@/types/sanity/SanityImage";
+import { SanityImageVariant } from "@/types/sanity/SanityImageVariant";
 import { ContactData } from "@/types/shared/ContactData";
 import { mapInfoList } from "./mapInfoList";
 
@@ -12,22 +20,63 @@ export function mapLegalPageData(
   data: LegalPageSectionsQueryResult,
   contactData?: ContactData | null,
 ): LegalPageSections {
+  const heroSection = data.heroSection
+    ? mapHeroSection(data.heroSection)
+    : null;
+
   return {
-    ...(data.heroSection && {
-      heroSection: mapImagesDeep(data.heroSection) as HeroSection,
-    }),
+    ...(heroSection && { heroSection }),
     ...(data.contentNoticeTop && {
-      contentNoticeTop: mapImagesDeep(
-        data.contentNoticeTop,
-      ) as ContentNotice,
+      contentNoticeTop: mapContentNotice(data.contentNoticeTop),
     }),
     ...(data.contentNoticeBottom && {
-      contentNoticeBottom: mapImagesDeep(
-        data.contentNoticeBottom,
-      ) as ContentNotice,
+      contentNoticeBottom: mapContentNotice(data.contentNoticeBottom),
     }),
     ...(data.legalPageContent && {
       legalPageContent: mapInfoList(data.legalPageContent, contactData),
     }),
   };
+}
+
+function mapHeroSection(
+  section: HeroSectionQueryResult,
+): HeroSection | null {
+  const backgroundImage = mapImage(section.settings.backgroundImage);
+  if (!backgroundImage) return null;
+
+  return {
+    _type: section._type,
+    header: section.header,
+    settings: {
+      id: section.settings.id,
+      backgroundImage,
+    },
+  };
+}
+
+function mapContentNotice(
+  notice: ContentNoticeTypeQueryResult,
+): ContentNotice {
+  const icon = notice.icon ? mapImage(notice.icon) : null;
+
+  return {
+    _type: notice._type,
+    ...(notice.text && { text: notice.text }),
+    ...(icon && { icon }),
+  };
+}
+
+function mapImage(
+  image: SanityImage & SanityImageVariant,
+): ImageWithType | null {
+  const variant = IMAGE_VARIANTS[image.imageVariant];
+
+  return mapSanityImage({
+    image,
+    width: variant.width,
+    height: variant.height,
+    alt: image.alt ?? "",
+    title: image.title ?? image.alt,
+    _type: image._type,
+  });
 }

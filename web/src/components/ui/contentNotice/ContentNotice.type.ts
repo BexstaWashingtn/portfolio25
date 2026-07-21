@@ -1,5 +1,6 @@
 import { ImageWithType } from "@/types/Image";
 import { SanityImage } from "@/types/sanity/SanityImage";
+import { SanityImageVariant } from "@/types/sanity/SanityImageVariant";
 
 export type ContentNoticeCore = {
   text?: string;
@@ -15,5 +16,5 @@ export type ContentNotice = ContentNoticeCore & {
 /* MAPPED DATA FROM SANITY */
 
 export type ContentNoticeTypeQueryResult = ContentNoticeCore & {
-  icon?: SanityImage;
+  icon?: SanityImage & SanityImageVariant;
 };
