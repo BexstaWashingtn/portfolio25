@@ -184,7 +184,7 @@ export default function ContactForm() {
             Hinweis zum Datenschutz: Die im Formular eingegebenen Daten werden
             ausschließlich zur Bearbeitung deiner Anfrage verwendet. Weitere
             Informationen findest du in der{" "}
-            <Link href='/'>Datenschutzerklärung</Link>.
+            <Link href='/datenschutz'>Datenschutzerklärung</Link>.
           </p>
 
           {/* TODO: connect Link to DSGVO Site */}

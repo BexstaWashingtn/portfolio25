@@ -78,7 +78,7 @@ Content pflegen, ohne den Frontend-Code ändern zu müssen.
 
 ## Live-Version
 
-https://portfolio.tomasbee.de/?freeentry
+https://portfolio.tomasbee.de
 
 Die Live-Version basiert auf dem aktuellen `main`-Branch.
 

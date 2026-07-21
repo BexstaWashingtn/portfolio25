@@ -10,6 +10,16 @@ import { cookies } from "next/headers";
 export const metadata: Metadata = {
   title: "Portfolio - Thomas Badrow",
   description: "Herzlich Willkommen auf meinem Portfolio",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
   icons: {
     icon: "/favicon.svg",
   },

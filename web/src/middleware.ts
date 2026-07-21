@@ -2,13 +2,17 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  /*   if (pathname === "/impressum" || pathname === "/datenschutz") {
+    return NextResponse.next();
+  }
+ */
   const secret = process.env.AUTH_SECRET;
 
   if (!secret) {
     return NextResponse.redirect(new URL("/locked", request.url));
   }
-
-  const { pathname } = request.nextUrl;
 
   // Framework-Assets & Optimizer freigeben
   if (pathname.startsWith("/_next/")) {
