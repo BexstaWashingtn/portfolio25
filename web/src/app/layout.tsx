@@ -7,6 +7,7 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import HashScroll from "@/lib/utils/HashScroll";
 import { cookies } from "next/headers";
 import { getProfileFullName } from "@/lib/profile/getFullName";
+import { SkipToContent } from "@/components/utils/a11y";
 
 const fullName = getProfileFullName();
 
@@ -39,6 +40,7 @@ export default async function RootLayout({
   return (
     <html lang='de'>
       <body>
+        <SkipToContent />
         {hasFreeEntry && <Header />}
         {children}
         {/* <Analytics /> */}

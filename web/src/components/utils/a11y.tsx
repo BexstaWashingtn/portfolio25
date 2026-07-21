@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
 // 1. Skip-to-content-Link
 export function SkipToContent() {
   return (
-    <a href='#main' className='visuallyHidden focusable'>
+    <a href='#main' className={`${styles.visuallyHidden} ${styles.focusable}`}>
       Zum Inhalt springen
     </a>
   );

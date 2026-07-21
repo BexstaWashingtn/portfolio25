@@ -27,14 +27,16 @@ export default async function Locked() {
   }
 
   return (
-    <main>
-      <Hero data={lockedpageData}>
-        <HeroLockOverlay
-          icon='locked'
-          text='Die Seite ist für unautorisierte Zugriffe gesperrt.'
-        />
-      </Hero>
-    </main>
+    <>
+      <main id='main' tabIndex={-1}>
+        <Hero data={lockedpageData}>
+          <HeroLockOverlay
+            icon='locked'
+            text='Die Seite ist für unautorisierte Zugriffe gesperrt.'
+          />
+        </Hero>
+      </main>
+    </>
   );
 }
 

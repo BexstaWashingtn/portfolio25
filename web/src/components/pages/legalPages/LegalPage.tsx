@@ -18,18 +18,20 @@ export default function LegalPage({ data }: Props) {
 
   return (
     <>
-      {heroSection && <Hero data={heroSection} layout='compact' />}
-      {contentNoticeTop && <ContentNotice data={contentNoticeTop} />}
-      {legalPageContent && (
-        <InfoList data={legalPageContent}>
-          {contentNoticeBottom && (
-            <ContentNotice
-              data={contentNoticeBottom}
-              background='surfaceBackground'
-            />
-          )}
-        </InfoList>
-      )}
+      <main id='main' tabIndex={-1}>
+        {heroSection && <Hero data={heroSection} layout='compact' />}
+        {contentNoticeTop && <ContentNotice data={contentNoticeTop} />}
+        {legalPageContent && (
+          <InfoList data={legalPageContent}>
+            {contentNoticeBottom && (
+              <ContentNotice
+                data={contentNoticeBottom}
+                background='surfaceBackground'
+              />
+            )}
+          </InfoList>
+        )}
+      </main>
     </>
   );
 }

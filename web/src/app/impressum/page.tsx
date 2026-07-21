@@ -34,20 +34,19 @@ export default async function Impressum() {
     ),
   };
 
-  return <LegalPage data={mappedData} />;
+  return;
+  <LegalPage data={mappedData} />;
 }
 
-function hasCompleteContactData(
-  data: ContactData | null,
-): data is ContactData {
+function hasCompleteContactData(data: ContactData | null): data is ContactData {
   return Boolean(
     data?.firstName &&
-      data.lastName &&
-      data.phone &&
-      data.email &&
-      data.address?.street &&
-      data.address.postalCode &&
-      data.address.city &&
-      data.address.country,
+    data.lastName &&
+    data.phone &&
+    data.email &&
+    data.address?.street &&
+    data.address.postalCode &&
+    data.address.city &&
+    data.address.country,
   );
 }

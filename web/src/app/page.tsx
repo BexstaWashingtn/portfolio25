@@ -59,7 +59,7 @@ export default async function Home() {
 
   return (
     <>
-      <main id='main' className={styles.main}>
+      <main id='main' tabIndex={-1} className={styles.main}>
         {heroSection && (
           <Hero data={heroSection}>
             {/* Overlay shows locked state of website*/}

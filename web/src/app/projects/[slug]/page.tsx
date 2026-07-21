@@ -138,7 +138,7 @@ export default async function ProjectView({ params }: Props) {
 
   return (
     <>
-      <main>
+      <main id='main' tabIndex={-1}>
         <ProjectHeader details={projectData.details} />
 
         {projectData.goals && <ProjectChallenge goals={projectData.goals} />}
