@@ -1,5 +1,5 @@
 import styles from "./projectProcess.module.css";
-import { ProjectProcessData } from "../../../types/ProjectData";
+import { ProjectProcessData } from "@/types/projects/ProjectData";
 
 type Props = {
   process: ProjectProcessData[];

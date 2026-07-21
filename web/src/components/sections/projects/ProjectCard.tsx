@@ -5,11 +5,11 @@ import styles from "./projectCard.module.css";
 import Stack from "@/components/utils/Stack";
 import control from "@ui/primitives/controls/control.module.css";
 import clsx from "clsx";
-import { Project } from "./types";
+import { ProjectPreviewData } from "@/types/projects/ProjectData";
 import { IoEyeSharp } from "react-icons/io5";
 
 type ProjectCardProps = {
-  item: Project;
+  item: ProjectPreviewData;
   viewed: boolean;
 };
 

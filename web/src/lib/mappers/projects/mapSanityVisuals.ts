@@ -1,13 +1,15 @@
-import { SanityVisualsData } from "@/types/sanity/SanityProjectData";
-import { mapSanityImage } from "../sanity/mapSanityImage";
-import { safeString } from "@/lib/utils/data/safeString";
 import { isDefined } from "@/lib/utils/data/isDefined";
+import { safeString } from "@/lib/utils/data/safeString";
+import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
+import type { SanityVisualsData } from "@/types/sanity/SanityProjectData";
 
 export function mapSanityVisuals(visuals: SanityVisualsData[]) {
   if (!Array.isArray(visuals)) return [];
 
   return visuals
-    .filter((v): v is SanityVisualsData => !!v?.image?.asset?._ref?.trim())
+    .filter((visual): visual is SanityVisualsData =>
+      Boolean(visual?.image?.asset?._ref?.trim()),
+    )
     .map(({ _key, image, caption }) => {
       const mappedImagePreview = mapSanityImage({
         image,

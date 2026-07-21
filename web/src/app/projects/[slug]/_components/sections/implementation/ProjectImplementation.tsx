@@ -7,7 +7,7 @@ import ProjectChallenge from "./ProjectChallenge";
 import {
   ProjectImplementationData,
   ProjectProcessData,
-} from "../../../types/ProjectData";
+} from "@/types/projects/ProjectData";
 import { safeString } from "@/lib/utils/data/safeString";
 
 type Props = {

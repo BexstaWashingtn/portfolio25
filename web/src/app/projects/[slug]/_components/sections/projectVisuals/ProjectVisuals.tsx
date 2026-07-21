@@ -3,7 +3,7 @@
 import Inner from "@/components/utils/Inner";
 
 import SectionHeader from "../../sectionHeader/SectionHeader";
-import { ProjectVisualsData } from "../../../types/ProjectData";
+import { ProjectVisualsData } from "@/types/projects/ProjectData";
 import ProjectVisualsFullImage from "./projectVisualsFullImage";
 import ProjectVisualsGallery from "./ProjectVisualsGallery";
 

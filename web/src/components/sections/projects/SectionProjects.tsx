@@ -5,7 +5,7 @@ import SectionHeader from "../Header";
 import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import ProjectCardSlider from "./ProjectCardSlider";
-import type { Project } from "./types";
+import type { ProjectPreviewData } from "@/types/projects/ProjectData";
 import { getProjectsPreview } from "@/sanity/fetchProjects";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
 import { notFound } from "next/navigation";
@@ -23,7 +23,7 @@ export default async function SectionProjects({ data }: Props) {
     notFound();
   }
 
-  const sliderItems: Project[] = mapProjectPreviews(projectsSanity);
+  const sliderItems: ProjectPreviewData[] = mapProjectPreviews(projectsSanity);
 
   return (
     <section className={styles.projects} id={data.settings.id}>

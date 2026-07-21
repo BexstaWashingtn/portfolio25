@@ -1,22 +1,17 @@
-import { Project } from "@/components/sections/projects/types";
 import buildSanitySrc from "@/sanity/utils/buildSanitySrc";
 import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
+import { ProjectPreviewData } from "@/types/projects/ProjectData";
 
 export function mapProjectPreviews(
   projects: SanityProjectPreview[],
-): Project[] {
+): ProjectPreviewData[] {
   return projects.flatMap((project) => {
     const imageRef = project.previewImage?.asset?._ref;
 
-    if (!imageRef) {
-      return [];
-    }
+    if (!imageRef) return [];
 
     const previewImage = buildSanitySrc(project.previewImage, 260);
-
-    if (!previewImage) {
-      return [];
-    }
+    if (!previewImage) return [];
 
     const { src, width, height } = previewImage;
 
@@ -26,13 +21,13 @@ export function mapProjectPreviews(
         title: project.title,
         description: project.description,
         slug: project.slug,
-        tags: project.techStack?.slice(0, 5),
+        tags: project.techStack?.slice(0, 5) ?? [],
         image: {
           src,
           width,
           height,
-          alt: project.previewImage?.alt ?? project.title,
-          title: project.previewImage?.title,
+          alt: project.previewImage.alt ?? project.title,
+          title: project.previewImage.title,
         },
       },
     ];

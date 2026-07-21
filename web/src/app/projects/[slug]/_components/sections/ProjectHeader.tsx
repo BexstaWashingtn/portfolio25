@@ -6,7 +6,7 @@ import Image from "next/image";
 import {
   ProjectDetailsData,
   ProjectInformationIcon,
-} from "../../types/ProjectData";
+} from "@/types/projects/ProjectData";
 import { IconType } from "react-icons";
 import {
   FaCalendar,

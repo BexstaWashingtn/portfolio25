@@ -1,10 +1,10 @@
+import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
+import { SanityProjectQueryResult } from "@/types/sanity/SanityProjectData";
 import {
   ProjectData,
   ProjectImplementationData,
   ProjectTechstackData,
-} from "@/app/projects/[slug]/types/ProjectData";
-import { SanityProjectQueryResult } from "@/types/sanity/SanityProjectData";
-import { mapSanityImage } from "../sanity/mapSanityImage";
+} from "@/types/projects/ProjectData";
 import { mapSanityVisuals } from "./mapSanityVisuals";
 
 const TECHSTACK_CATEGORIES = ["frontend", "backend", "tools"] as const;

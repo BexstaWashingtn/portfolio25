@@ -3,12 +3,12 @@
 import CustomSwiper from "@/components/ui/customSwiper/CustomSwiper";
 import ProjectCard from "./ProjectCard";
 import useIsMobile from "@/lib/hooks/useIsMobile";
-import type { Project } from "./types";
+import type { ProjectPreviewData } from "@/types/projects/ProjectData";
 import { getViewedProjects } from "@/lib/utils/viewedProjects";
 import { useEffect, useState } from "react";
 
 type Props = {
-  items: Project[];
+  items: ProjectPreviewData[];
 };
 
 export default function ProjectCardSlider({ items }: Props) {

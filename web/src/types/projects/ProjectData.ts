@@ -1,4 +1,13 @@
-import { Image } from "@/types/Image";
+import type { Image } from "@/types/Image";
+
+export type ProjectPreviewData = {
+  id: string;
+  slug: string;
+  image: Image;
+  title: string;
+  description: string;
+  tags: string[];
+};
 
 export type ProjectData = {
   details: ProjectDetailsData;

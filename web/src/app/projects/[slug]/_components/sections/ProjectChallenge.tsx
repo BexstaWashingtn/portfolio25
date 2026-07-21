@@ -2,7 +2,7 @@ import Inner from "@/components/utils/Inner";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import styles from "./projectChallenge.module.css";
 
-import { ProjectGoalsData } from "../../types/ProjectData";
+import { ProjectGoalsData } from "@/types/projects/ProjectData";
 
 type Props = {
   goals: ProjectGoalsData;

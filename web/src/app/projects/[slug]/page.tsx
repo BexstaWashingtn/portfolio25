@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/sanity/fetchProjects";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
-import { mapProjectData } from "@/lib/mappers/project/mapProjectData";
+import { mapProjectData } from "@/lib/mappers/projects/mapProjectData";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import type { Metadata } from "next";
 import { cache } from "react";

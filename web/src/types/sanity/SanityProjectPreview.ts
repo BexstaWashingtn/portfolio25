@@ -1,7 +1,7 @@
 import { SanityImage } from "./SanityImage";
 
 export type SanityProjectPreview = {
-  _id: number;
+  _id: string;
   description: string;
   techStack: string[];
   previewImage: SanityImage;
