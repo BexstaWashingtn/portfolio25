@@ -1,23 +1,32 @@
 import Hero from "@/components/sections/hero/Hero";
 import ContentNotice from "@/components/ui/contentNotice/ContentNotice";
 import InfoList from "@/components/ui/infoList/InfoList";
-import { LegalPageDataQueryResult } from "./LegalPage.types";
+import { LegalPageData } from "./LegalPage.types";
 
 type Props = {
-  data: LegalPageDataQueryResult;
+  data: LegalPageData;
 };
 
 export default function LegalPage({ data }: Props) {
-  const { heroSection, pageIntro, pageOutro, content } = data.legalPage;
+  const { legalPage } = data;
+  const {
+    heroSection,
+    contentNoticeBottom,
+    contentNoticeTop,
+    legalPageContent,
+  } = legalPage;
 
   return (
     <>
       {heroSection && <Hero data={heroSection} layout='compact' />}
-      {pageIntro && <ContentNotice data={pageIntro} />}
-      {content && (
-        <InfoList data={content}>
-          {pageOutro && (
-            <ContentNotice data={pageOutro} background='surfaceBackground' />
+      {contentNoticeTop && <ContentNotice data={contentNoticeTop} />}
+      {legalPageContent && (
+        <InfoList data={legalPageContent}>
+          {contentNoticeBottom && (
+            <ContentNotice
+              data={contentNoticeBottom}
+              background='surfaceBackground'
+            />
           )}
         </InfoList>
       )}

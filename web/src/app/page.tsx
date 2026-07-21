@@ -55,6 +55,8 @@ export default async function Home() {
     </>
   );
 
+  console.log("StartpageSectionsData: ", StartpageSectionsData);
+
   return (
     <>
       <main id='main' className={styles.main}>

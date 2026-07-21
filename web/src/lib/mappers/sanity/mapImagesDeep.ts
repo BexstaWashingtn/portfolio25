@@ -19,9 +19,9 @@ function isCmsImage(
   );
 }
 
-export function mapImagesDeep(value: unknown): unknown {
+export function mapImagesDeep<T>(value: T): T {
   if (Array.isArray(value)) {
-    return value.map(mapImagesDeep);
+    return value.map(mapImagesDeep) as T;
   }
 
   if (isCmsImage(value)) {
@@ -34,13 +34,13 @@ export function mapImagesDeep(value: unknown): unknown {
       alt: value.alt,
       title: value.title ?? value.alt,
       _type: value._type,
-    });
+    }) as T;
   }
 
   if (value && typeof value === "object") {
     return Object.fromEntries(
       Object.entries(value).map(([key, child]) => [key, mapImagesDeep(child)]),
-    );
+    ) as T;
   }
 
   return value;

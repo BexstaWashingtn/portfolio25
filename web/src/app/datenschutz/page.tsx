@@ -1,65 +1,34 @@
-import Hero from "@/components/sections/hero/Hero";
-import { HeroSection } from "@/components/sections/hero/Hero.types";
-import ContentNotice from "@/components/ui/contentNotice/ContentNotice";
-import type { ContentNotice as ContentNoticeType } from "@components/ui/contentNotice/ContentNotice.type";
+import LegalPage from "@/components/pages/legalPages/LegalPage";
+import { LegalPageDataQueryResult } from "@/components/pages/legalPages/LegalPage.types";
+import { mapLegalPageData } from "@/lib/mappers/legalPage/mapLegalPageData";
+import { getProfileFullName } from "@/lib/profile/getFullName";
+import { fetchLegalPage } from "@/sanity/fetchLegalPage";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-type dataType = {
-  heroSection: HeroSection;
-  pageIntro: ContentNoticeType;
-  pageOutro: ContentNoticeType;
+const fullName = getProfileFullName();
+
+export const metadata: Metadata = {
+  title: `Datenschutz | ${fullName}`,
+  description: `Datenschutzerklärung für das Portfolio von ${fullName}.`,
 };
 
-export default function Datenschutz() {
-  const data: dataType = {
-    heroSection: {
-      _type: "heroSection",
-      header: {
-        headline: "Datenschutz",
-        text: "Transparenz drüber, welche Daten auf dieser Website verarbeitet werden.",
-      },
-      settings: {
-        id: "hero",
-        backgroundImage: {
-          src: "/img/background/particel-waves_mono_1920x1280.jpg",
-          width: 1920,
-          height: 1080,
-          alt: "Hero Image",
-          _type: "image",
-          title: "particle waves",
-        },
-      },
-    },
-    pageIntro: {
-      icon: {
-        src: "/img/icons/icon_secure_lock.svg",
-        alt: "Icon Secure",
-        width: 50,
-        height: 50,
-      },
-      text: "Der Schutz deine persönlichen Daten ist mir wichtig. Diese Datenschutzerklärung informiert dich über die Art, den Umfang und den Zweck der Verarbeitung personenbezogener Daten auf dieser Website.",
-    },
-    pageOutro: {
-      icon: {
-        src: "/img/icons/icon_lock.svg",
-        alt: "Icon Lock",
-        width: 50,
-        height: 50,
-      },
-      text: "Wenn du zum Datenschutz hast, kannst du mich jederzeit über das Kontaktformular erreichen.",
-    },
+export default async function Datenschutz() {
+  const dataQueryResult: LegalPageDataQueryResult =
+    await fetchLegalPage("privacy");
+
+  console.log("dataQueryResult", dataQueryResult);
+
+  if (!dataQueryResult?.legalPage) {
+    notFound();
+  }
+
+  const mappedData = {
+    ...dataQueryResult,
+    legalPage: mapLegalPageData(dataQueryResult.legalPage),
   };
 
-  const { heroSection, pageIntro, pageOutro } = data;
-  const hasPageIntro = pageIntro?.text || pageIntro?.icon;
-  const hasPageOutro = pageOutro?.text || pageOutro?.icon;
+  console.log("mappedData", mappedData);
 
-  return (
-    <>
-      <Hero data={heroSection} layout='compact' />
-      {hasPageIntro && <ContentNotice data={pageIntro} />}
-      {hasPageOutro && (
-        <ContentNotice data={pageOutro} background='surfaceBackground' />
-      )}
-    </>
-  );
+  return <LegalPage data={mappedData} />;
 }

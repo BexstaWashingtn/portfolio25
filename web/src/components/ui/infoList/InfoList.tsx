@@ -1,5 +1,5 @@
 import Inner from "@/components/utils/Inner";
-import type { InfoList } from "./InfoList.type";
+import type { InfoList, LegalPageContentItems } from "./InfoList.type";
 import styles from "./infoList.module.css";
 import Image from "next/image";
 import { ReactElement } from "react";
@@ -8,15 +8,42 @@ import { BackgroundImageWrapper } from "@/components/layout/BackgroundImageWrapp
 
 type Props = {
   children?: ReactElement;
-  data: InfoList[];
+  data: InfoList;
 };
 
 export default function InfoList({ children, data }: Props) {
-  if (data) {
-    console.log("InfoList: ", data);
-  }
+  const content = (
+    <>
+      <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
+        {data.Items.map((item, index) => {
+          const { icon, title } = item;
 
-  return (
+          return (
+            <div key={index} className={styles.item}>
+              {icon?.src && (
+                <div className={styles.icon}>
+                  <Image
+                    src={icon.src}
+                    width={icon.width}
+                    height={icon.height}
+                    title={icon.title}
+                    alt={icon.alt}
+                  />
+                </div>
+              )}
+              <div className={styles.content}>
+                {title && <h2 className={styles.headline}>{title}</h2>}
+                {renderContentByType(item)}
+              </div>
+            </div>
+          );
+        })}
+      </Inner>
+      {children}
+    </>
+  );
+
+  return data?.backgroundImage?.src ? (
     <section className={styles.infoList}>
       <BackgroundGradientWrapper
         gradient={{
@@ -25,44 +52,88 @@ export default function InfoList({ children, data }: Props) {
           startX: "35%",
           startY: "100%",
           colorStops: [
-            { color: "#2D1A18", position: "0%" },
-            { color: "#0B0000", position: "100%" },
+            { color: "rgba(45, 26, 24, .9)", position: "0%" },
+            { color: "rgba(11, 0, 0, .9)", position: "100%" },
           ],
         }}
       >
         <BackgroundImageWrapper
           image={{
-            src: "/img/background/night_sillhouette.jpg",
-            width: 1920,
-            alt: "Sillhouette at Night",
+            src: data.backgroundImage.src,
+            width: data.backgroundImage.width,
+            alt: data.backgroundImage.alt,
           }}
           blur={20}
         >
-          <Inner paddingBottom='xl' paddingTop='xl' variant='narrow'>
-            {data.map(({ icon, headline, text }, index) => {
-              return (
-                <div key={index} className={styles.item}>
-                  <div className={styles.icon}>
-                    <Image
-                      src={icon.src}
-                      width={icon.width}
-                      height={icon.height}
-                      title={icon.title}
-                      alt={icon.alt}
-                    />
-                  </div>
-                  <div className={styles.content}>
-                    <h2 className={styles.headline}>{headline}</h2>
-                    <div className={styles.text}>{text}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </Inner>
-
-          {children}
+          {content}
         </BackgroundImageWrapper>
       </BackgroundGradientWrapper>
     </section>
+  ) : (
+    <section className={styles.infoList}>{content}</section>
+  );
+}
+
+function renderContentByType(item: LegalPageContentItems) {
+  switch (item.contentType) {
+    case "text":
+      return <div className={styles.text}>{item.text}</div>;
+
+    case "ownerContact":
+      return (
+        <dl className={styles.dataList}>
+          <ContentRow
+            label='Telefon'
+            value={item.phone}
+            href={
+              item.phone
+                ? `tel:${item.phone.replace(/[^\d+]/g, "")}`
+                : undefined
+            }
+          />
+          <ContentRow
+            label='E-Mail'
+            value={item.email}
+            href={item.email ? `mailto:${item.email}` : undefined}
+          />
+        </dl>
+      );
+
+    case "ownerAddress":
+      return (
+        <dl className={styles.dataList}>
+          <ContentRow label='Name' value={item.name} />
+          <ContentRow label='Straße' value={item.street} />
+          <ContentRow
+            label='Ort'
+            value={[item.postalCode, item.city].filter(Boolean).join(" ")}
+          />
+          <ContentRow label='Land' value={item.country} />
+        </dl>
+      );
+
+    default:
+      return null;
+  }
+}
+
+type ContentRowProps = {
+  label: string;
+  value?: string;
+  href?: string;
+};
+
+function ContentRow({ label, value, href }: ContentRowProps) {
+  if (!value) {
+    return null;
+  }
+
+  return (
+    <div className={styles.dataRow}>
+      <dt className={styles.label}>{label}:</dt>
+      <dd className={styles.text}>
+        {href ? <a href={href}>{value}</a> : value}
+      </dd>
+    </div>
   );
 }

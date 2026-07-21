@@ -14,6 +14,16 @@ export const IMAGE_VARIANTS = {
     width: 180,
     height: 224,
   },
+  icon60x60: {
+    title: "Icon",
+    width: 60,
+    height: 60,
+  },
+  icon50x50: {
+    title: "Icon",
+    width: 50,
+    height: 50,
+  },
   workingMethodsIcon: {
     title: "Icon",
     width: 80,

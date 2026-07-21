@@ -6,8 +6,8 @@ type ImageVariant =
   | 'headerPortrait'
   | 'headerIcon'
   | 'workingMethodsIcon'
-  | 'icon60x60'
   | 'icon50x50'
+  | 'icon60x60'
   | 'sectionBackground'
 
 type Options = {

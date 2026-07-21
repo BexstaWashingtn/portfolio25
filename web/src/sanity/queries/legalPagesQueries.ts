@@ -1,17 +1,23 @@
 import groq from "groq";
 
 export const LEGAL_PAGE_QUERY = groq`{  "legalPage": *[_type == "legalPages" && pageSettings.legalPageType == $legalPageType][0]{
-    pageSettings,
-    pageHero,
-    infoBlockTop,
+    "heroSection": {
+      "settings":{
+        "backgroundImage": pageHero.backgroundImage,
+        "id": "heroSection",
+      },
+      "header":{
+        "headline": pageHero.headline,
+        "text": pageHero.text,
+      },
+      "_type": "heroSection",
+    },
+    "contentNoticeTop":infoBlockTop,
     legalPageContent,
-    infoBlockBottom
+    "contentNoticeBottom":infoBlockBottom,
   },
     "contactData": select(
-    *[
-      _type == "legalPages" 
-      && pageSettings.legalPageType == $legalPageType
-    ][0].pageSettings.legalPageType == "imprint" => *[_type == "siteSettings"][0]{
+    $legalPageType == "imprint" => *[_type == "siteSettings"][0]{
       "firstName": contactInformation.firstName,
       "lastName":contactInformation.lastName,
       "address":contactInformation.address,

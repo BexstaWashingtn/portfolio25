@@ -25,7 +25,7 @@ export default function SectionHero({
   const headline = header?.headline ?? null;
   const text = header?.text ?? null;
 
-  console.log("SectionHero data: ", data);
+  if (!bgImage?.src) return;
 
   return (
     <section className={styles.hero} id={settings.id}>

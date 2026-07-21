@@ -1,4 +1,4 @@
-import { ContactData } from "@/types/shared/ConstactData";
+import { ContactData } from "@/types/shared/ContactData";
 import type {
   ContentNotice as ContentNoticeType,
   ContentNoticeTypeQueryResult,
@@ -7,18 +7,33 @@ import {
   InfoList as InfoListType,
   InfoListQueryResult,
 } from "@/components/ui/infoList/InfoList.type";
-import {
-  HeroSection,
-  HeroSectionQueryResult,
-} from "@/components/sections/hero/Hero.types";
+import { SanityImage } from "@/types/sanity/SanityImage";
+import { ImageWithType } from "@/types/Image";
+
+export type HeroSectionCore = {
+  _type: "heroSection";
+  header: {
+    headline?: string;
+    text?: string;
+  };
+  settings: {
+    id: string;
+  };
+};
 
 /* MAPPED DATA FROM SANITY */
 
+export type HeroSection = HeroSectionCore & {
+  settings: {
+    backgroundImage: ImageWithType;
+  };
+};
+
 export type LegalPageSections = {
-  heroSection: HeroSection;
-  pageIntro: ContentNoticeType;
-  pageOutro: ContentNoticeType;
-  content: InfoListType[];
+  heroSection?: HeroSection;
+  contentNoticeTop?: ContentNoticeType;
+  contentNoticeBottom?: ContentNoticeType;
+  legalPageContent?: InfoListType;
 };
 
 export type LegalPageData = {
@@ -28,14 +43,20 @@ export type LegalPageData = {
 
 /* DATA FROM SANITY */
 
+export type HeroSectionQueryResult = HeroSectionCore & {
+  settings: {
+    backgroundImage: SanityImage;
+  };
+};
+
 export type LegalPageSectionsQueryResult = {
-  heroSection: HeroSectionQueryResult;
-  pageIntro: ContentNoticeTypeQueryResult;
-  pageOutro: ContentNoticeTypeQueryResult;
-  content: InfoListQueryResult[];
+  heroSection?: HeroSectionQueryResult | null;
+  contentNoticeTop?: ContentNoticeTypeQueryResult | null;
+  contentNoticeBottom?: ContentNoticeTypeQueryResult | null;
+  legalPageContent?: InfoListQueryResult | null;
 };
 
 export type LegalPageDataQueryResult = {
   contactData: ContactData | null;
-  legalPage: LegalPageSections;
+  legalPage: LegalPageSectionsQueryResult | null;
 };

@@ -14,7 +14,7 @@ export default function ContentNotice({
   const { icon, text } = data;
 
   return (
-    <section id='pageIntro' className={styles.pageIntro}>
+    <section className={styles.pageIntro}>
       <div className={styles[background]}>
         <div className={styles.inner}>
           {icon && (

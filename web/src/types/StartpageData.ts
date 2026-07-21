@@ -1,4 +1,4 @@
-import { ContactData } from "./shared/ConstactData";
+import { ContactData } from "./shared/ContactData";
 import type { ImageWithType } from "./Image";
 import { SkillCategory } from "./SkillCategories";
 import { HeroSection } from "@/components/sections/hero/Hero.types";
