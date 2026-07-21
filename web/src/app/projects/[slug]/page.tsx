@@ -11,6 +11,9 @@ import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { mapSanityVisuals } from "@/lib/mappers/project/mapSanityVisuals";
 import { ProjectData } from "./types/ProjectData";
+import { getProfileFullName } from "@/lib/profile/getFullName";
+import type { Metadata } from "next";
+import { cache } from "react";
 
 type Props = {
   params: Promise<{
@@ -18,13 +21,67 @@ type Props = {
   }>;
 };
 
+const getCachedProjectBySlug = cache(getProjectBySlug);
+const fullName = getProfileFullName();
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = slug ? await getCachedProjectBySlug(slug) : null;
+
+  if (!project?.title?.trim()) {
+    return {
+      title: `Projekt nicht gefunden | ${fullName}`,
+      description: "Das angeforderte Projekt wurde nicht gefunden.",
+    };
+  }
+
+  const title = `${project.title.trim()} | ${fullName}`;
+  const description =
+    project.subtitle?.trim() ||
+    `Projekt ${project.title.trim()} aus dem Portfolio von ${fullName}.`;
+  const previewImage = project.projectImage?.asset?._ref?.trim()
+    ? mapSanityImage({
+        image: project.projectImage,
+        width: 1200,
+        alt: project.projectImage.alt || project.title,
+        title: project.title,
+        _type: project.projectImage._type,
+      })
+    : null;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      ...(previewImage && {
+        images: [
+          {
+            url: previewImage.src,
+            width: previewImage.width,
+            alt: previewImage.alt,
+          },
+        ],
+      }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(previewImage && { images: [previewImage.src] }),
+    },
+  };
+}
+
 export default async function ProjectView({ params }: Props) {
   const { slug } = await params;
   if (!slug) {
     notFound();
   }
 
-  const sanityProjectData = await getProjectBySlug(slug);
+  const sanityProjectData = await getCachedProjectBySlug(slug);
   if (!sanityProjectData) {
     notFound();
   }

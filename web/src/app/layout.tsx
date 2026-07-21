@@ -6,10 +6,13 @@ import Footer from "@/components/layout/Footer";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import HashScroll from "@/lib/utils/HashScroll";
 import { cookies } from "next/headers";
+import { getProfileFullName } from "@/lib/profile/getFullName";
+
+const fullName = getProfileFullName();
 
 export const metadata: Metadata = {
-  title: "Portfolio - Thomas Badrow",
-  description: "Herzlich Willkommen auf meinem Portfolio",
+  title: `Portfolio | ${fullName}`,
+  description: `Portfolio von ${fullName} mit Projekten aus Webentwicklung, React, Next.js und UX/UI.`,
   robots: {
     index: false,
     follow: false,

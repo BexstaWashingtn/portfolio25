@@ -6,6 +6,16 @@ import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
 import { notFound } from "next/navigation";
 import { HeroSection } from "@/components/sections/hero/Hero.types";
+import { getProfileFullName } from "@/lib/profile/getFullName";
+import type { Metadata } from "next";
+
+const fullName = getProfileFullName();
+
+export const metadata: Metadata = {
+  title: `Geschütztes Portfolio | ${fullName}`,
+  description:
+    "Dieses Portfolio ist nur über einen persönlichen Zugangslink erreichbar.",
+};
 
 export default async function Locked() {
   const sanityLockedpageData: LockedpageQueryResult = await getLockedpage();
