@@ -27,7 +27,7 @@ export type SectionsData =
   | ContactSection;
 
 export type AboutMeSection = {
-  _type: "aboutmeSection";
+  _type: "aboutMeSection";
   header: SectionHeader;
   settings: SectionSettings;
 };

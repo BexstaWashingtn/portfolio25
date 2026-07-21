@@ -32,7 +32,7 @@ export type ContactInformationQueryResult = {
   address: {
     city: string;
     country: string;
-    postalcode: string;
+    postalCode: string;
     street: string;
   };
   phone: string;
@@ -49,7 +49,7 @@ export type StartpageQueryResult = {
 };
 
 export type AboutMeSectionQueryResult = {
-  _type: "aboutmeSection";
+  _type: "aboutMeSection";
   settings: SectionSettingsQueryResult;
   header: SectionHeaderQueryResult;
 };
@@ -74,6 +74,7 @@ export type WorkingMethodItemQueryResult = {
   icon: SanityImage & SanityImageVariant;
   _key: string;
   _type: "workingMethodItem";
+  id: string;
 };
 
 export type WorkingMethodsSectionQueryResult = {
@@ -107,22 +108,3 @@ export type SkillsSectionQueryResult = {
   header: SectionHeaderQueryResult;
   content: SkillCategory[];
 };
-
-/* ---------------------------------------------- */
-/* Prepared Types */
-
-export type HeroSectionWithHeaderQueryResult = HeroSectionQueryResult & {
-  header: SectionHeaderQueryResult;
-};
-export type ContactSectionWithContentQueryResult = ContactSectionQueryResult & {
-  content: ContactInformationQueryResult;
-};
-
-export type PreparedSectionQueryResult =
-  | HeroSectionWithHeaderQueryResult
-  | AboutMeSectionQueryResult
-  | TypeAnalysisSectionQueryResult
-  | WorkingMethodsSectionQueryResult
-  | ProjectsSectionQueryResult
-  | SkillsSectionQueryResult
-  | ContactSectionWithContentQueryResult;
