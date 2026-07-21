@@ -34,8 +34,7 @@ export default async function Impressum() {
     ),
   };
 
-  return;
-  <LegalPage data={mappedData} />;
+  return <LegalPage data={mappedData} />;
 }
 
 function hasCompleteContactData(data: ContactData | null): data is ContactData {
