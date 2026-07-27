@@ -1,6 +1,6 @@
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import type {
-  HeaderDatas,
+  HeaderData,
   HeaderQueryResult,
   MainNavigationItem,
 } from "@/types/MainNavigation";
@@ -19,7 +19,7 @@ function isMainNavigationItem(
   return item !== null;
 }
 
-export function mapHeaderData(data: HeaderQueryResult): HeaderDatas | null {
+export function mapHeaderData(data: HeaderQueryResult): HeaderData | null {
   if (!data) return null;
 
   const logoImage = data.logo
