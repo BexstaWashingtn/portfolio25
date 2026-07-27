@@ -1,11 +1,11 @@
 import { ContactData } from "./shared/ContactData";
 import type { ImageWithType } from "./Image";
 import { SkillCategory } from "./SkillCategories";
-import { HeroSection } from "@/components/sections/hero/Hero.types";
+import { HeroSection } from "@/types/sections/Hero";
 import {
   SectionHeader,
   SectionSettings,
-} from "@/components/sections/Section.types";
+} from "@/types/sections/Section";
 
 export type StartpageSectionsData = {
   heroSection: HeroSection | null;

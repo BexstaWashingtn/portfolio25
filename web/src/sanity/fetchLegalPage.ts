@@ -1,4 +1,4 @@
-import { LegalPageDataQueryResult } from "@/components/pages/legalPages/LegalPage.types";
+import { LegalPageDataQueryResult } from "@/types/sanity/SanityLegalPage";
 import { client } from "./client";
 import { LEGAL_PAGE_QUERY } from "./queries/legalPagesQueries";
 

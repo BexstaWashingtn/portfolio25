@@ -1,13 +1,11 @@
-import {
-  HeroSection,
-  HeroSectionQueryResult,
-  LegalPageSections,
+import { LegalPageSections } from "@/types/legal/LegalPage";
+import type { HeroSection } from "@/types/sections/Hero";
+import type { ContentNotice } from "@/types/legal/ContentNotice";
+import type {
+  ContentNoticeQueryResult,
+  LegalHeroSectionQueryResult,
   LegalPageSectionsQueryResult,
-} from "@/components/pages/legalPages/LegalPage.types";
-import {
-  ContentNotice,
-  ContentNoticeTypeQueryResult,
-} from "@/components/ui/contentNotice/ContentNotice.type";
+} from "@/types/sanity/SanityLegalPage";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
 import { ImageWithType } from "@/types/Image";
@@ -39,7 +37,7 @@ export function mapLegalPageData(
 }
 
 function mapHeroSection(
-  section: HeroSectionQueryResult,
+  section: LegalHeroSectionQueryResult,
 ): HeroSection | null {
   const backgroundImage = mapImage(section.settings.backgroundImage);
   if (!backgroundImage) return null;
@@ -55,7 +53,7 @@ function mapHeroSection(
 }
 
 function mapContentNotice(
-  notice: ContentNoticeTypeQueryResult,
+  notice: ContentNoticeQueryResult,
 ): ContentNotice {
   const icon = notice.icon ? mapImage(notice.icon) : null;
 

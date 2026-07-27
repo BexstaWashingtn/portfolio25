@@ -6,25 +6,14 @@ import { BackgroundImageWrapper } from "../../layout/BackgroundImageWrapper";
 import { BackgroundGradientWrapper } from "../../layout/BackgroundGradientWrapper";
 import ProjectCardSlider from "./ProjectCardSlider";
 import type { ProjectPreviewData } from "@/types/projects/ProjectData";
-import { getProjectsPreview } from "@/sanity/fetchProjects";
-import { SanityProjectPreview } from "@/types/sanity/SanityProjectPreview";
-import { notFound } from "next/navigation";
-import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 import { ProjectsSection } from "@/types/StartpageData";
 
 type Props = {
   data: ProjectsSection;
+  projects: ProjectPreviewData[];
 };
 
-export default async function SectionProjects({ data }: Props) {
-  const projectsSanity: SanityProjectPreview[] = await getProjectsPreview();
-
-  if (!projectsSanity) {
-    notFound();
-  }
-
-  const sliderItems: ProjectPreviewData[] = mapProjectPreviews(projectsSanity);
-
+export default function SectionProjects({ data, projects }: Props) {
   return (
     <section className={styles.projects} id={data.settings.id}>
       <BackgroundImageWrapper
@@ -65,7 +54,7 @@ export default async function SectionProjects({ data }: Props) {
               </Inner>
             )}
             <Inner variant='full' paddingBottom='xxl'>
-              <ProjectCardSlider items={sliderItems} />
+              <ProjectCardSlider items={projects} />
             </Inner>
           </Stack>
         </BackgroundGradientWrapper>

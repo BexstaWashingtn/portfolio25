@@ -5,7 +5,7 @@ import { LockedpageQueryResult } from "@/types/sanity/SanityLockedpageData";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
 import { notFound } from "next/navigation";
-import { HeroSection } from "@/components/sections/hero/Hero.types";
+import { HeroSection } from "@/types/sections/Hero";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import type { Metadata } from "next";
 

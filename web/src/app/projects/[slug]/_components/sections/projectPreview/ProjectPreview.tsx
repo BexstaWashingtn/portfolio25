@@ -3,19 +3,12 @@ import Inner from "@/components/utils/Inner";
 import type { ProjectPreviewData } from "@/types/projects/ProjectData";
 import SectionHeader from "../../sectionHeader/SectionHeader";
 import { BackgroundGradientWrapper } from "@/components/layout/BackgroundGradientWrapper";
-import { getProjectsPreviewWithoutSlug } from "@/sanity/fetchProjects";
-import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 
 type Props = {
-  slug: string;
+  projects: ProjectPreviewData[];
 };
 
-export default async function ProjectPreview({ slug }: Props) {
-  const projectsWithoutSlug = await getProjectsPreviewWithoutSlug(slug);
-
-  const filteredProjects: ProjectPreviewData[] =
-    mapProjectPreviews(projectsWithoutSlug);
-
+export default function ProjectPreview({ projects }: Props) {
   return (
     <section>
       <BackgroundGradientWrapper
@@ -44,7 +37,7 @@ export default async function ProjectPreview({ slug }: Props) {
             <SectionHeader headline='weitere Projekte' />
           </Inner>
           <Inner variant='full' paddingTop='md'>
-            <ProjectCardSlider items={filteredProjects} />
+            <ProjectCardSlider items={projects} />
           </Inner>
         </Inner>
       </BackgroundGradientWrapper>

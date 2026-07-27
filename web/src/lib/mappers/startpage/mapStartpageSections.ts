@@ -1,13 +1,13 @@
 import {
   SectionHeader,
-  SectionHeaderQueryResult,
   SectionSettings,
-  SectionSettingsQueryResult,
-} from "@/components/sections/Section.types";
+} from "@/types/sections/Section";
+import { HeroSection } from "@/types/sections/Hero";
 import {
-  HeroSection,
   HeroSectionQueryResult,
-} from "@/components/sections/hero/Hero.types";
+  SectionHeaderQueryResult,
+  SectionSettingsQueryResult,
+} from "@/types/sanity/SanitySection";
 import { IMAGE_VARIANTS } from "@/sanity/constants/imageVariants";
 import { ImageWithType } from "@/types/Image";
 import {

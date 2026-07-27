@@ -10,19 +10,24 @@ import WorkingMethod from "@/components/sections/workingMethods/WorkingMethod";
 import Skills from "@/components/sections/skills/Skills";
 import Contact from "@/components/sections/contact/Contact";
 import { getStartpage } from "@/sanity/fetchStartpage";
-import { StartpageQueryResult } from "@/types/sanity/SanityStartpageData";
 import { notFound } from "next/navigation";
 import HeroOverlay from "@/components/sections/hero/HeroOverlay";
 import { mapStartpageSections } from "@/lib/mappers/startpage/mapStartpageSections";
+import { getProjectsPreview } from "@/sanity/fetchProjects";
+import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 
 export default async function Home() {
-  const sanityStartpageData: StartpageQueryResult = await getStartpage();
+  const [sanityStartpageData, sanityProjects] = await Promise.all([
+    getStartpage(),
+    getProjectsPreview(),
+  ]);
 
   if (!sanityStartpageData) {
     notFound();
   }
 
   const startpageSectionsData = mapStartpageSections(sanityStartpageData);
+  const projects = mapProjectPreviews(sanityProjects);
 
   const {
     heroSection,
@@ -95,7 +100,9 @@ export default async function Home() {
           aboutMeSectionContent
         )}
         {skillsSection && <Skills data={skillsSection} />}
-        {projectsSection && <Projects data={projectsSection} />}
+        {projectsSection && (
+          <Projects data={projectsSection} projects={projects} />
+        )}
         {contactSection && <Contact data={contactSection} />}
       </main>
     </>

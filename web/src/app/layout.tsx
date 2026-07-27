@@ -8,6 +8,8 @@ import HashScroll from "@/lib/utils/HashScroll";
 import { cookies } from "next/headers";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import { SkipToContent } from "@/components/utils/a11y";
+import { getHeader } from "@/sanity/fetchHeader";
+import { mapHeaderData } from "@/lib/mappers/header/mapHeaderData";
 
 const fullName = getProfileFullName();
 
@@ -36,12 +38,13 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const hasFreeEntry = Boolean(cookieStore.get("freeentry")?.value);
+  const headerData = hasFreeEntry ? mapHeaderData(await getHeader()) : null;
 
   return (
     <html lang='de'>
       <body>
         <SkipToContent />
-        {hasFreeEntry && <Header />}
+        {headerData && <Header data={headerData} />}
         {children}
         {/* <Analytics /> */}
         {hasFreeEntry && <Footer />}

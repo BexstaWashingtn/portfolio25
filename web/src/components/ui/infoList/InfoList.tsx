@@ -1,5 +1,5 @@
 import Inner from "@/components/utils/Inner";
-import type { InfoList, LegalPageContentItems } from "./InfoList.type";
+import type { InfoList, LegalPageContentItems } from "@/types/legal/InfoList";
 import styles from "./infoList.module.css";
 import Image from "next/image";
 import { ReactElement } from "react";

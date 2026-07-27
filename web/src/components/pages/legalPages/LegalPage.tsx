@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/hero/Hero";
 import ContentNotice from "@/components/ui/contentNotice/ContentNotice";
 import InfoList from "@/components/ui/infoList/InfoList";
-import { LegalPageData } from "./LegalPage.types";
+import { LegalPageData } from "@/types/legal/LegalPage";
 
 type Props = {
   data: LegalPageData;

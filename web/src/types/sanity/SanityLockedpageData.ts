@@ -1,4 +1,4 @@
-import { HeroSectionQueryResult } from "@/components/sections/hero/Hero.types";
+import { HeroSectionQueryResult } from "@/types/sanity/SanitySection";
 import { SanityImage } from "./SanityImage";
 import { SanityImageVariant } from "./SanityImageVariant";
 

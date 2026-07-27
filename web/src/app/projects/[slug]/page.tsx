@@ -6,13 +6,18 @@ import ProjectLearnings from "./_components/sections/ProjectLearnings";
 import ProjectPreview from "./_components/sections/projectPreview/ProjectPreview";
 import ViewedTracker from "./_components/ViewedTracker";
 import { notFound } from "next/navigation";
-import { getProjectBySlug } from "@/sanity/fetchProjects";
+import {
+  getProjectBySlug,
+  getProjectsPreviewWithoutSlug,
+} from "@/sanity/fetchProjects";
 import { getProjectMainColorRGB } from "@/lib/project/getProjectMainColorRGB";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { mapProjectData } from "@/lib/mappers/projects/mapProjectData";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import type { Metadata } from "next";
 import { cache } from "react";
+import { getPortfolioMainColor } from "@/sanity/fetchPortfolio";
+import { mapProjectPreviews } from "@/lib/mappers/projects/mapProjectPreviews";
 
 type Props = {
   params: Promise<{
@@ -80,7 +85,10 @@ export default async function ProjectView({ params }: Props) {
     notFound();
   }
 
-  const sanityProjectData = await getCachedProjectBySlug(slug);
+  const [sanityProjectData, sanityProjectPreviews] = await Promise.all([
+    getCachedProjectBySlug(slug),
+    getProjectsPreviewWithoutSlug(slug),
+  ]);
   if (!sanityProjectData) {
     notFound();
   }
@@ -89,9 +97,10 @@ export default async function ProjectView({ params }: Props) {
     notFound();
   }
 
-  const mainColorRGB = await getProjectMainColorRGB(
-    sanityProjectData.projectMainColor,
-  );
+  const mainColor =
+    sanityProjectData.projectMainColor ?? (await getPortfolioMainColor());
+  const mainColorRGB = getProjectMainColorRGB(mainColor);
+  const projectPreviews = mapProjectPreviews(sanityProjectPreviews);
 
   const projectData = mapProjectData(sanityProjectData, mainColorRGB);
 
@@ -116,7 +125,7 @@ export default async function ProjectView({ params }: Props) {
           <ProjectLearnings learnings={projectData.learnings} />
         )}
 
-        <ProjectPreview slug={slug} />
+        <ProjectPreview projects={projectPreviews} />
       </main>
       {/* Speichert das gesehene Projekt im LocalStorage*/}
       {slug && <ViewedTracker slug={slug} />}

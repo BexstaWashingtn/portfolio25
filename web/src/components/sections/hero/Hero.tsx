@@ -3,7 +3,7 @@ import styles from "./hero.module.css";
 import Logo from "../../ui/Logo";
 import StyledHeadline from "@/components/ui/StyledHeadline/StyledHeadline";
 import clsx from "clsx";
-import { HeroSection } from "./Hero.types";
+import { HeroSection } from "@/types/sections/Hero";
 
 type HeaderLayout = "fullscreen" | "compact";
 

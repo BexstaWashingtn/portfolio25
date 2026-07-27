@@ -1,5 +1,5 @@
 import LegalPage from "@/components/pages/legalPages/LegalPage";
-import { LegalPageDataQueryResult } from "@/components/pages/legalPages/LegalPage.types";
+import { LegalPageDataQueryResult } from "@/types/sanity/SanityLegalPage";
 import { mapLegalPageData } from "@/lib/mappers/legalPage/mapLegalPageData";
 import { getProfileFullName } from "@/lib/profile/getFullName";
 import { fetchLegalPage } from "@/sanity/fetchLegalPage";

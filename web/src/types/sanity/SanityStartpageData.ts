@@ -1,11 +1,11 @@
 import {
   SectionHeaderQueryResult,
   SectionSettingsQueryResult,
-} from "@/components/sections/Section.types";
+  HeroSectionQueryResult,
+} from "@/types/sanity/SanitySection";
 import { SkillCategory } from "../SkillCategories";
 import { SanityImage } from "./SanityImage";
 import { SanityImageVariant } from "./SanityImageVariant";
-import { HeroSectionQueryResult } from "@/components/sections/hero/Hero.types";
 
 export type StartpageSectionQueryResult = {
   heroSection: HeroSectionQueryResult | null;

@@ -1,9 +1,11 @@
 import {
   InfoList,
-  InfoListQueryResult,
   LegalPageContentItems,
+} from "@/types/legal/InfoList";
+import {
+  InfoListQueryResult,
   LegalPageContentItemsQueryResult,
-} from "@/components/ui/infoList/InfoList.type";
+} from "@/types/sanity/SanityLegalPage";
 import { mapSanityImage } from "@/lib/mappers/sanity/mapSanityImage";
 import { ContactData } from "@/types/shared/ContactData";
 import { ImageWithType } from "@/types/Image";

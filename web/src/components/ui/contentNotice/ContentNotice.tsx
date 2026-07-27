@@ -1,6 +1,6 @@
 import styles from "./contentNotice.module.css";
 import Image from "next/image";
-import type { ContentNotice } from "./ContentNotice.type.ts";
+import type { ContentNotice } from "@/types/legal/ContentNotice";
 
 type Props = {
   data: ContentNotice;
