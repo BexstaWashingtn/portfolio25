@@ -47,7 +47,6 @@ export default async function Home() {
       <main id='main' tabIndex={-1} className={styles.main}>
         {heroSection && (
           <Hero data={heroSection}>
-            {/* Overlay shows locked state of website*/}
             <HeroOverlay icon='down' />
           </Hero>
         )}
@@ -97,7 +96,6 @@ export default async function Home() {
         )}
         {skillsSection && <Skills data={skillsSection} />}
         {projectsSection && <Projects data={projectsSection} />}
-        {/*<SectionMusic />*/}
         {contactSection && <Contact data={contactSection} />}
       </main>
     </>
