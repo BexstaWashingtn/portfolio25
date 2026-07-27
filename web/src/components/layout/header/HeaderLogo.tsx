@@ -1,17 +1,17 @@
 "use client";
 
-import { LogoDatas } from "@/types/MainNavigation";
+import { LogoData } from "@/types/MainNavigation";
 import Logo from "../../ui/Logo";
 
 type Props = {
   isLogoVisible: boolean;
   style: string;
-  logoDatas: LogoDatas;
+  logoData: LogoData;
 };
 
-export default function HeaderLogo({ isLogoVisible, style, logoDatas }: Props) {
-  const { src, height, width, alt, title } = logoDatas.image;
-  const anchor = logoDatas.id;
+export default function HeaderLogo({ isLogoVisible, style, logoData }: Props) {
+  const { src, height, width, alt, title } = logoData.image;
+  const anchor = logoData.id;
 
   return (
     <div className={style}>

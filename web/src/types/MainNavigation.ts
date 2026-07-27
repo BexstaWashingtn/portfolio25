@@ -6,14 +6,14 @@ export type MainNavigationItem = {
   label: string;
 };
 
-export type LogoDatas = {
+export type LogoData = {
   image: Image;
   id: string;
 };
 
-export type HeaderDatas = {
+export type HeaderData = {
   navigation: MainNavigationItem[];
-  logo: LogoDatas;
+  logo: LogoData;
 };
 
 export type HeaderQueryResult = {

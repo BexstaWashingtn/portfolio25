@@ -1,11 +1,11 @@
 import styles from "./header.module.css";
 import HeaderClient from "./HeaderClient";
-import type { HeaderDatas } from "@/types/MainNavigation";
+import type { HeaderData } from "@/types/MainNavigation";
 
-export default function Header({ data }: { data: HeaderDatas }) {
+export default function Header({ data }: { data: HeaderData }) {
   return (
     <header className={styles.header}>
-      <HeaderClient styles={styles} headerDatas={data} />
+      <HeaderClient styles={styles} headerData={data} />
     </header>
   );
 }

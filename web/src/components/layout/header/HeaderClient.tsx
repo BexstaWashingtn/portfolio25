@@ -5,14 +5,14 @@ import { BackgroundGradientWrapper } from "../BackgroundGradientWrapper";
 import HeaderLogo from "./HeaderLogo";
 import NavigationClient from "./navigation/NavigationClient";
 import { usePathname } from "next/navigation";
-import { HeaderDatas } from "@/types/MainNavigation";
+import { HeaderData } from "@/types/MainNavigation";
 
 type Props = {
   styles: Record<string, string>;
-  headerDatas: HeaderDatas;
+  headerData: HeaderData;
 };
 
-export default function HeaderClient({ styles, headerDatas }: Props) {
+export default function HeaderClient({ styles, headerData }: Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const isStartpage = pathname === "/";
@@ -84,14 +84,14 @@ export default function HeaderClient({ styles, headerDatas }: Props) {
         <HeaderLogo
           isLogoVisible={isLogoVisible}
           style={styles.logoImageOverlay}
-          logoDatas={headerDatas.logo}
+          logoData={headerData.logo}
         />
 
-        {headerDatas.navigation.length > 0 && (
+        {headerData.navigation.length > 0 && (
           <NavigationClient
             isMobileMenuOpen={isMobileMenuOpen}
             setIsMobileMenuOpen={setIsMobileMenuOpen}
-            mainNavigationDatas={headerDatas.navigation}
+            mainNavigationDatas={headerData.navigation}
           />
         )}
       </div>
