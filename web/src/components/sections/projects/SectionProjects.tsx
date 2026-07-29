@@ -20,7 +20,7 @@ export default function SectionProjects({ data, projects }: Props) {
         image={{
           src: "/img/projects/background.jpg",
           alt: "CoWorking Place Außenansicht bei Nacht",
-          style: { opacity: 0.6 },
+          style: { opacity: 0.3 },
         }}
         blur={16}
       >
@@ -28,17 +28,21 @@ export default function SectionProjects({ data, projects }: Props) {
           gradient={{
             type: "radial",
             shape: "circle",
-            startX: "50%",
-            startY: "-25%",
+            startX: "75%",
+            startY: "0%",
             colorStops: [
               {
-                color: "rgba(0, 20, 45, 0.8)",
+                color: "rgba(113,21,33, 0.75)",
                 position: "0%",
               },
 
               {
-                color: "rgba(0, 0, 0, 0.8)",
+                color: "rgba(20,20,20, 0.75)",
                 position: "67%",
+              },
+              {
+                color: "rgba(75, 47, 38, 0.75)",
+                position: "100%",
               },
             ],
           }}

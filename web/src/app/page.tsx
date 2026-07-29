@@ -56,6 +56,12 @@ export default async function Home() {
           </Hero>
         )}
 
+        {projectsSection && (
+          <Projects data={projectsSection} projects={projects} />
+        )}
+
+        {skillsSection && <Skills data={skillsSection} />}
+
         {/* AboutME Section */}
 
         {aboutMeSection?.settings.backgroundImage?.src ? (
@@ -74,21 +80,17 @@ export default async function Home() {
               gradient={{
                 type: "radial",
                 shape: "circle",
-                startX: "75%",
-                startY: "0%",
+                startX: "50%",
+                startY: "-25%",
                 colorStops: [
                   {
-                    color: "rgba(113,21,33, 0.75)",
+                    color: "rgba(0, 20, 45, 0.8)",
                     position: "0%",
                   },
 
                   {
-                    color: "rgba(20,20,20, 0.75)",
+                    color: "rgba(0, 0, 0, 0.8)",
                     position: "67%",
-                  },
-                  {
-                    color: "rgba(75, 47, 38, 0.75)",
-                    position: "100%",
                   },
                 ],
               }}
@@ -99,10 +101,7 @@ export default async function Home() {
         ) : (
           aboutMeSectionContent
         )}
-        {skillsSection && <Skills data={skillsSection} />}
-        {projectsSection && (
-          <Projects data={projectsSection} projects={projects} />
-        )}
+
         {contactSection && <Contact data={contactSection} />}
       </main>
     </>
