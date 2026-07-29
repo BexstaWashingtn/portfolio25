@@ -12,21 +12,9 @@ export const HEADER_QUERY = groq`{
         }
       ),
       select(
-        aboutMeSection.sectionSettings.showInNavigation => {
-          "id": aboutMeSection.sectionSettings.sectionId,
-          "label": aboutMeSection.sectionSettings.navigationLabel
-        }
-      ),
-      select(
-        typeAnalysisSection.sectionSettings.showInNavigation => {
-          "id": typeAnalysisSection.sectionSettings.sectionId,
-          "label": typeAnalysisSection.sectionSettings.navigationLabel
-        }
-      ),
-      select(
-        workingMethodsSection.sectionSettings.showInNavigation => {
-          "id": workingMethodsSection.sectionSettings.sectionId,
-          "label": workingMethodsSection.sectionSettings.navigationLabel
+        projectsSection.sectionSettings.showInNavigation => {
+          "id": projectsSection.sectionSettings.sectionId,
+          "label": projectsSection.sectionSettings.navigationLabel
         }
       ),
       select(
@@ -36,9 +24,21 @@ export const HEADER_QUERY = groq`{
         }
       ),
       select(
-        projectsSection.sectionSettings.showInNavigation => {
-          "id": projectsSection.sectionSettings.sectionId,
-          "label": projectsSection.sectionSettings.navigationLabel
+        aboutMeSection.sectionSettings.showInNavigation => {
+          "id": aboutMeSection.sectionSettings.sectionId,
+          "label": aboutMeSection.sectionSettings.navigationLabel
+        }
+      ),
+      select(
+        workingMethodsSection.sectionSettings.showInNavigation => {
+          "id": workingMethodsSection.sectionSettings.sectionId,
+          "label": workingMethodsSection.sectionSettings.navigationLabel
+        }
+      ),
+      select(
+        typeAnalysisSection.sectionSettings.showInNavigation => {
+          "id": typeAnalysisSection.sectionSettings.sectionId,
+          "label": typeAnalysisSection.sectionSettings.navigationLabel
         }
       ),
       select(
